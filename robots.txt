@@ -1,0 +1,9 @@
+User-Agent: *
+Disallow: /@pew
+Disallow: /css
+Disallow: /fontes
+Disallow: /imagens
+Disallow: /js
+Disallow: /tmp
+
+Sitemap: http://reidasfechaduras.com.br/sitemap.xml

@@ -1,0 +1,3941 @@
+_openProduto_
+    _tituloProduto_FECHADURA QUADRA ZC 108044/40 - EXT_closeTituloProduto_
+    _descricaoProduto_
+        - Trinco reversível para instalação em portas que abram para a direita ou esquerda
+        - Cilindro em zamac com pinos e chaves em latão
+        - Garantia do Fornecedor 5 anos
+        - Composição em Aço
+        - Acabamento Cromado
+        - Roseta ou Espelho	Roseta
+        - Máquina 40 mm
+        - Composição da Maçaneta Alumínio
+    _closeDescricaoProduto_
+    _marcaProduto_Arouca_closeMarcaProduto_
+    _skuProduto_FE4273001588_closeSkuProduto_
+    _imageProduto__closeImageProduto_
+_closeProduto_
+    
+_openProduto_
+    _tituloProduto_FECHADURA QUADRA ZC 408044/40 - INT_closeTituloProduto_
+    _descricaoProduto_
+    - Trinco reversível para instalação em portas que abram para a direita ou esquerda
+    - Cilindro em zamac com pinos e chaves em latão
+    - Garantia do Fornecedor 5 anos
+    - Composição em Aço
+    - Acabamento Cromado
+    - Roseta ou Espelho	Roseta
+    - Máquina 40 mm
+    - Composição da Maçaneta Alumínio
+    _closeDescricaoProduto_
+    _marcaProduto_Arouca_closeMarcaProduto_
+    _skuProduto_FE42830079-00_closeSkuProduto_
+    _imageProduto__closeImageProduto_
+_closeProduto_
+    
+_openProduto_
+    _tituloProduto_FECHADURA QUADRA ZC 508044/40 - BAN_closeTituloProduto_
+    _descricaoProduto_
+        - Trinco reversível para instalação em portas que abram para a direita ou esquerda
+        - Cilindro em zamac com pinos e chaves em latão
+        - Garantia do Fornecedor 5 anos
+        - Composição em Aço
+        - Acabamento Cromado
+        - Roseta ou Espelho	Roseta
+        - Máquina 40 mm
+        - Composição da Maçaneta Alumínio
+    _closeDescricaoProduto_
+    _marcaProduto_Arouca_closeMarcaProduto_
+    _skuProduto_FE42930022-00_closeSkuProduto_
+    _imageProduto_quadra_cr_ban.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_FECHADURA QUADRA ZCE 108044/40 - EXT_closeTituloProduto_
+    _descricaoProduto_
+        - Trinco reversível para instalação em portas que abram para a direita ou esquerda
+        - Cilindro em zamac com pinos e chaves em latão
+        - Garantia do Fornecedor 5 anos
+        - Composição em Aço
+        - Acabamento Cromado avetinado
+        - Roseta ou Espelho	Roseta
+        - Máquina 40 mm
+        - Composição da Maçaneta Alumínio
+    _closeDescricaoProduto_
+    _marcaProduto_Arouca_closeMarcaProduto_
+    _skuProduto_FE42730015-00_closeSkuProduto_
+    _imageProduto_quadra_cra_ext.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cofre Eletrônico Yale Value Compact A200 L310 P200_closeTituloProduto_
+    _descricaoProduto_
+        A linha de Cofres Value Yale foi desenvolvida para atingir a melhor relação custo benefício. Possui dobradiças reforçadas travas a prova de impacto e acabamento em pintura epoxi. Seu mecanismo de travamento possui travas motorizadas em aço maciço e possibilita abertura de emergência através de chave de segurança.
+        O modelo mais compacto da linha ideal para aplicações onde o espaço for limitado.
+        Forro de carpete
+        Display digital
+        Dobradiças reforçadas
+        Travas a prova de impacto
+        Acabamento em pintura epoxi
+        Funciona com 4 baterias AA 1.5V
+        Sinaliza quando a bateria está acabando
+        Seu mecanismo de travamento possui travas motorizadas em aço maciço e possibilita abertura de emergência através de chave de segurança
+        Dimensões externas: 200x310x200mm
+        Dimensões internas: 190x300x150mm
+    _closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_CF03319881-00_closeSkuProduto_
+    _imageProduto_yale_cofre_value_compact.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cofre Eletrônico Yale Safe Home A250 L350 P300_closeTituloProduto_
+    _descricaoProduto_
+        O modelo mais indicado para aplicações residenciais com tamanho ideal e excelente custo benefício.
+        Dobradiças reforçadas
+        Travas a prova de impacto
+        Acabamento em pintura epoxi
+        Display LCD iluminado
+        Funciona com 4 baterias AA 1.5V
+        Sinaliza quando a bateria está acabando
+        Seu mecanismo de travamento possui travas motorizadas em aço maciço e possibilita abertura de emergência através de chave de segurança.
+        Dimensões externas: 250x350x300mm
+        Dimensões internas: 242x345x245mm
+    _closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_CF00402400-00_closeSkuProduto_
+    _imageProduto_yale_cofre_home.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cofre Eletrônico Yale Safe Laptop A200 L480 P350_closeTituloProduto_
+    _descricaoProduto_
+        Cofre com tamanho ideal para guardar seu laptop ou netbook sendo a opção mais versátil para escritórios ou residências com excelente custo benefício e design exclusivo.
+        Dobradiças reforçadas
+        Travas a prova de impacto
+        Acabamento em pintura epoxi
+        Display de LCD iluminado
+        Funciona com 4 baterias AA 1.5V
+        Sinaliza quando a bateria está acabando
+        Seu mecanismo de travamento possui travas motorizadas em aço maciço e possibilita abertura de emergência através de chave de segurança.
+        Dimensões externas: 200x480x350mm
+        Dimensões internas: 192x475x295mm
+    _closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_CF00602400-00_closeSkuProduto_
+    _imageProduto_yale_cofre_laptop.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Visor Olho Mágico Digital Prata JY8032_closeTituloProduto_
+    _descricaoProduto_
+        Tela de LCD de 3.2"
+        Imagem clara e aparelho de fácil operação
+        Câmera com visão de 105°
+        Desligamento automático após 10 segundos economia de bateria
+        Fácil instalação sem precisar de ferramentas específicas ou novos furos
+        Se ajusta à furação dos principais Olho Mágicos do mercado
+        Bateria permite até 600 acionamentos
+        Espessura de porta: 30-110mm
+        Diâmetro do furo: 14-22mm
+        Câmera: 0.3 Mega Pixel CMOS
+        Tela LCD: 3.2" TFT
+        Alimentação: 2 pilhas AAA inclusas
+        Ângulo de visão : 105°graus
+        Dimensões: 125(L) x 68(A) x 15(P)mm
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_VI00805602-00_closeSkuProduto_
+    _imageProduto__closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cofre Eletrônico Yale Safe Office A400 L350 P340_closeTituloProduto_
+    _descricaoProduto_
+        Com tamanho ideal para seu escritório é uma opção discreta e com excelente custo benefício.
+        Dobradiças reforçadas
+        Travas a prova de impacto
+        Acabamento em pintura epoxi
+        Display de LCD iluminado
+        Funciona com 4 baterias AA 1.5V
+        Sinaliza quando a bateria está acabando
+        Seu mecanismo de travamento possui travas motorizadas em aço maciço e possibilita abertura de emergência através de chave de segurança.
+        Dimensões externas: 400x350x340mm
+        Dimensões internas: 392x345x285mm
+        Dimensões: 125(L) x 68(A) x 15(P)mm 
+    _closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_CF00502456-00_closeSkuProduto_
+    _imageProduto_yale_cofre_office.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cofre Eletrônico Yale Certificado Professional A520 L350 P360_closeTituloProduto_
+    _descricaoProduto_
+        Modelo versátil indicado para aplicações residenciais e escritórios.
+        Iluminação interna através de 6 LEDs
+        Forro de carpete
+        Estrutura reforçada
+        Display de LCD iluminado
+        Dobradiças reforçadas
+        Travas a prova de impacto
+        Acabamento em pintura epoxi
+        Funciona com 4 baterias AA 1.5V
+        Sinaliza quando a bateria está acabando
+        Seu mecanismo de travamento possui travas motorizadas em aço maciço e possibilita abertura de emergência através de chave de segurança.
+        Dimensões externas: 520x350x360mm
+        Dimensões internas: 510x337x290mm
+    _closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_CF00802417-00_closeSkuProduto_
+    _imageProduto_yale_cofre_certificado_professional.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_FECHADURA ZM COPA CR 962-80 - INT_closeTituloProduto_
+    _descricaoProduto_
+        Material zamac
+        Fechadura interna
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE33830088-00_closeSkuProduto_
+    _imageProduto_copa_cr_int.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_FECHADURA ZM COPA CR 962-80 - INT - Cromado-Entrada/Externa_closeTituloProduto_
+    _descricaoProduto_
+        Material zamac
+        Fechadura externa
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE33830088-00-Cromado_closeSkuProduto_
+    _imageProduto_copa_cr_ext.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_FECHADURA COPA CROMADA INTERNA_closeTituloProduto_
+    _descricaoProduto_
+        Cromada interna
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_COPACRINT_closeSkuProduto_
+    _imageProduto_copa_cr_int_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_FECHADURA COPA CROMADA BANHEIRO_closeTituloProduto_
+    _descricaoProduto_
+        CROMADA BANHEIRO§
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_COPACRBAN_closeSkuProduto_
+    _imageProduto_copa_cr_ban.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Pado Copa_closeTituloProduto_
+    _descricaoProduto_
+        Zamac (O Zamac é uma Liga de Zinco composto por quatro componentes metálicos básicos para sua formação: Alumínio Cobre Magnésio e Zinco);
+        Material: Zamac (maçaneta cilindro) Aço Inox (roseta testa contra-testa);
+        Máquina: 40mm; composta por um cilindro normal;
+        Ítens inclusos: Máquina da fechadura contra-testa espelhos ou roseta cilindros maçanetas parafusos e pino e chaves;
+        Utilização: Esta fechadura é recomendada para áreas internas conforme padrão desenvolvido pelo fabricante;
+        Conforme informação do fabricante distribuidor e importador este produto possui a garantia de 5 anos.
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_962-80_closeSkuProduto_
+    _imageProduto_copa_cr_int_5.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_FECHADURA PADO COPA CR 962-80 BAN_closeTituloProduto_
+    _descricaoProduto_
+        FECHADURA ZM COPA CR 962-80 INT
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE3393003100_closeSkuProduto_
+    _imageProduto_copa_cr_ban_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_FECHADURA PADO COPA CR 962-80 EXT_closeTituloProduto_
+    _descricaoProduto_
+        FECHADURA ZM COPA CR 962-80 INT
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE3373002400_closeSkuProduto_
+    _imageProduto_copa_cr_ext_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_FECHADURA PADO COPA CRA 962-80 EXT_closeTituloProduto_
+    _descricaoProduto_
+        FECHADURA ZM COPA CR 962-80 INT
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE3403009300_closeSkuProduto_
+    _imageProduto_copa_cra_ext.jpeg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_FECHADURA PADO COPA CRA 962-80 INT_closeTituloProduto_
+    _descricaoProduto_
+        FECHADURA ZM COPA CR 962-80 INT
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE3413004700_closeSkuProduto_
+    _imageProduto_copa_cra_int.jpeg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_FECHADURA PADO COPA CRA 962-80 BAN_closeTituloProduto_
+    _descricaoProduto_
+        FECHADURA ZM COPA CR 962-80 INT
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE3423000900_closeSkuProduto_
+    _imageProduto_copa_cra_ban.jpe_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_FECHADURA PADO COPA CR 962-80 INT-Cromado-Passagem/Intern_closeTituloProduto_
+    _descricaoProduto_
+        FECHADURA ZM COPA CR 962-80 INT
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE3383008800_closeSkuProduto_
+    _imageProduto_copa_cr_int_6.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Performance Inox Lix 892 EXT A/R_closeTituloProduto_
+    _descricaoProduto_
+        Para portas com espessura entre 30 à 40mm
+        Utilização em portas de entrada ou comodos internos quartos salas despensas 
+        Tamanho da máquina (broca) 55mm
+        Materias - maçaneta inox rosetas inox máquina em aço
+        Tráfego intenso
+        Grau de resistência a corrosão 4
+        ABNT NBR 14193
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE4703006200_closeSkuProduto_
+    _imageProduto_lafonte_892_ixl_ext.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Performance Inox Lix 892 BAN A/R_closeTituloProduto_
+    _descricaoProduto_
+        Para portas com espessura entre 30 à 40mm
+        Utilização em portas de banheiros comodos internos quartos salas despensas 
+        Tamanho da máquina (broca) 55mm
+        Materias - maçaneta inox rosetas inox máquina em aço
+        Tráfego intenso
+        Grau de resistência a corrosão 4
+        ABNT NBR 14193
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE4723007000_closeSkuProduto_
+    _imageProduto_lafonte_892_inl_wc.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Performance Inox Lix 892 INT A/R_closeTituloProduto_
+    _descricaoProduto_
+        Para portas com espessura entre 30 à 40mm
+        Utilização em portas de cômodos internos quartos salas despensas
+        Tamanho da máquina (broca) 55mm
+        Materiais - maçaneta inox rosetas inox máquina em aço
+        Tráfego intenso
+        Grau de resistência a corrosão 4
+        ABNT NBR 14193
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE4713001600_closeSkuProduto_
+    _imageProduto_lafonte_892_inl_int.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tendency CR 401 EXT ST2/55 A/R_closeTituloProduto_
+    _descricaoProduto_
+        Para portas com espessura entre 30 à 40mm
+        Utilização em portas de entrada ou cômodos internos quartos salas despensas
+        Tamanho da máquina (broca) 55mm
+        Materiais - maçaneta zamac rosetas inox máquina em aço
+        Tráfego intenso
+        Grau de resistência a corrosão 4
+        ABNT NBR 14193
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE7690010000_closeSkuProduto_
+    _imageProduto_lafonte_401_cr_ext__2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tendency CR 401 B - BAN ST2/55 A/R_closeTituloProduto_
+    _descricaoProduto_
+        Para portas com espessura entre 30 à 40mm
+        Utilização em portas de banheiros cômodos internos quartos salas despensas
+        Tamanho da máquina (broca) 55mm
+        Materiais - maçaneta zamac rosetas inox máquina em aço
+        Tráfego intenso
+        Grau de resistência a corrosão 4
+        ABNT NBR 14193
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE7710011500_closeSkuProduto_
+    _imageProduto_lafonte_401_cr_wc.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tendency CR 401 I - INT ST2/55 A/R_closeTituloProduto_
+    _descricaoProduto_
+        Para portas com espessura entre 30 à 40mm
+        Utilização em portas de cômodos internos quartos salas despensas
+        Tamanho da máquina (broca) 55mm
+        Materiais - maçaneta zamac rosetas inox máquina em aço
+        Tráfego intenso
+        Grau de resistência a corrosão 4
+        ABNT NBR 14193
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE7700016100_closeSkuProduto_
+    _imageProduto_lafonte_401_cr_int.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tendency CRA 401 E - EXT ST2/55 A/R_closeTituloProduto_
+    _descricaoProduto_
+        Para portas com espessura entre 30 à 40mm
+        Utilização em portas de entrada ou cômodos internos quartos, salas, despensas.
+        Tamanho da máquina (broca) 55mm
+        Materiais - maçaneta zamac rosetas inox
+        Máquina em aço
+        Tráfego intenso
+        Grau de resistência a corrosão 4
+        ABNT NBR 14193
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE33830088_closeSkuProduto_
+    _imageProduto_lafonte_401_cra_ext.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tendency CRA 401 B - BAN ST2/55 A/R_closeTituloProduto_
+    _descricaoProduto_
+        Para portas com espessura entre 30 à 40mm
+        Utilização em portas de banheiros, cômodos internos, quartos, salas, despensas.
+        Tamanho da máquina (broca) 55mm
+        Materiais - maçaneta zamac
+        Rosetas inox
+        Máquina em aço
+        Tráfego intenso
+        Grau de resistência a corrosão 4
+        ABNT NBR 14193
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE9720014000_closeSkuProduto_
+    _imageProduto_lafonte_401_cra_wc.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tendency CRA 401 I - INT ST2/55 A/R_closeTituloProduto_
+    _descricaoProduto_
+        Para portas com espessura entre 30 à 40mm
+        Utilização em portas de cômodos internos, quartos, salas, despensas.
+        Tamanho da máquina (broca) 55mm
+        Materiais - maçaneta zamac
+        Rosetas inox
+        Máquina em aço
+        Tráfego intenso
+        Grau de resistência a corrosão 4
+        ABNT NBR 14193
+        Material
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE9710019600_closeSkuProduto_
+    _imageProduto_lafonte_401_cra_int.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Eagle 3 X 2.1/2 c/anel ACR - Reto (C/3PC)_closeTituloProduto_
+    _descricaoProduto_
+        Para portas leves até 35 KG
+        Espessura da porta de 30 à 40mm
+    _closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO3400042900_closeSkuProduto_
+    _imageProduto_eagle_325_cr1_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Eagle 4 X 3 c/ anel ACR - Reto (C/3PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO2030047600_closeSkuProduto_
+    _imageProduto_eagle_43_cr1_1_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Eagle 3 X 2.1/2 c/ anel Acresc (C/3PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO6550045800_closeSkuProduto_
+    _imageProduto_agle_325_cra1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Eagle 4 X 3 c/ anel Acresc - Reto (C/3PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_DO2080044400_closeSkuProduto_
+    _imageProduto_eagle_43_cra1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Premium Inox - Esc: 30 X 25 (3 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO7200040200_closeSkuProduto_
+    _imageProduto_apc_3x25_cra.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Premium Inox ESC 35 X 30 (3 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO7210041200_closeSkuProduto_
+    _imageProduto_apc_35x3_cra.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Premium Inox ESC 40 X 30 (3 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO7220042200_closeSkuProduto_
+    _imageProduto_apc_4x3_cra.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Premium Inox POL 30 X 25 (3 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO7230043200_closeSkuProduto_
+    _imageProduto_apc_3x25_cr_inox.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Premium Inox POL 35 X 30 (3 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO7240044200_closeSkuProduto_
+    _imageProduto_apc_35x3_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Premium Inox POL 40 X 30 (3 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO7250045200_closeSkuProduto_
+    _imageProduto_apc_4x3_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aerea Hidraúlica Soprano A530 F2 POTÊNCIA "2"_closeTituloProduto_
+    _descricaoProduto_
+        Você já reparou que em alguns lugares as portas fecham automaticamente sem que você precise puxá-la? Isso é porque elas são equipadas com algum tipo de mola para porta. A Mola Hidráulica Soprano A530 F2 foi desenvolvida para dar mais agilidade ao movimento evitando o problema de algumas delas em fechar a porta muito rápido ou com muita força. Com ela é você quem regula o movimento. Por meio de duas válvulas presentes no equipamento você pode definir a velocidade de fechamento de quando a porta está entre os ângulos 90º e 15º e com a segunda você faz a mesma coisa para os momentos finais entre 15º e 0º podendo diminuir a velocidade para evitar batidas bruscas contra o batente. Esse modo seguro evita acidentes e ainda ajuda a preservar o material da porta que não sofre com impactos fortes. Com acabamento em branco que combina com ambientes como clínicas restaurantes escritórios e banheiros a mola para portas funciona apenas com complementos entre 25 e 45kg mais ou menos do que isso pode prejudicar o desempenho do equipamento. Por isso é extremamente importante saber as medidas e o peso da porta na qual a mola será instalada. Calma que não para por aí. Outras vantagens do produto são: material reforçado dos braços mais resistentes o que evita danos por excesso de uso; evita a formação de correntes de ar; mantém a porta sempre fechada protegendo de sons externos; é reversível ou seja pode ser instalado tanto para aberturas à direita quanto à esquerda; e funciona bem com portas entre 900mm e 2100mm de largura. Não perca esta oportunidade de investir em conforto. 
+        TABELA TÉCNICA
+        Dados Técnicos
+        Mola Hidráulica Soprano A530 F2
+        Unidades: 1
+        Uso indicado: Portas internas e externas.
+        Potência: 2
+        Dimensões: 182mm x 85mm
+        Capacidade: Portas entre 850 e 2100mm de largura
+        Cor: Preto, Prata, Branco
+    _closeDescricaoProduto_
+    _marcaProduto_Soprano_closeMarcaProduto_
+    _skuProduto_MO06500803_closeSkuProduto_
+    _imageProduto_mola_prata.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Hidraulica Aerea Soprano A530 F2 POTÊNCIA "2" PRETA_closeTituloProduto_
+    _descricaoProduto_
+        A Soprano uma das líderes no mercado de molas hidráulicas desenvolveu a série de Molas Aéreas A530 com potência 2 para satisfazer a necessidade dos clientes mais exigentes. Essa linha atua na suavização do fechamento da porta evitando batidas e pancadas que podem danificar a porta e o batente. O modelo pode ser usado tanto em ambientes internos quanto externos. Por isso seu funcionamento parte de uma tecnologia mecânica-hidráulica reversível. Ou seja ela pode ser instalada em portas que abrem para a direita ou até mesmo para a esquerda sem precisar de qualquer tipo de modificação no equipamento. Mas as vantagens não param aqui: ela conta com braços reforçados que podem ser ajustados de acordo com a necessidade da instalação. Para oferecer uma performance ideal a mola conta com um sistema de regulagem da velocidade de fechamento. São duas válvulas independentes uma diz respeito ao intervalo de 90º a 15º e a outra controla a velocidade no intervalo de 15º até 0º. Dessa forma a porta desacelera gradativamente sem fechar muito rápido e nem muito devagar. A Mola Aérea Hidráulica Soprano A530 potência 2 é compacta e universal em sua aplicabilidade mas é indicada para portas com largura mínima de 850mm e máxima de 2100mm. Com relação ao peso da mesma é importante não ultrapassar os 45kg mas o intervalo ideal é entre os 25 e 40kg. O Rei das Fechaduras traz as melhores opções do mercado para resolver todos os seus problemas. Com nossas soluções você vai se sentir muito mais seguro.
+        TABELA TÉCNICA
+        Dados Técnicos
+        Produto: Mola Aérea Soprano A530 Potência 2
+        Unidades: 1
+        Uso indicado: Portas internas e externas.
+        Potência: 2
+        Dimensões: 182mm x 85mm
+        Capacidade: Portas entre 850 e 2100mm de largura
+        Cor: Prata, Preto e Branco
+    _closeDescricaoProduto_
+    _marcaProduto_Soprano_closeMarcaProduto_
+    _skuProduto_MO0670081000_closeSkuProduto_
+    _imageProduto_mola_preta.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Hidráulica Aerea Soprano A530 F2 POTÊNCIA "2" BRANCA_closeTituloProduto_
+    _descricaoProduto_
+        Mola p/porta
+        Para portas de 25 a 45 kg
+        com braço ajustável
+    _closeDescricaoProduto_
+    _marcaProduto_Soprano_closeMarcaProduto_
+    _skuProduto_MO0660086700_closeSkuProduto_
+    _imageProduto_soprano_branca_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Hidráulica Aerea para Porta Soprano A530 F2 POTÊNCIA "2" PRATA_closeTituloProduto_
+    _descricaoProduto_
+        Mola hidráulica p/porta
+        Para portas de 25 a 45 kg  900x2100
+        Braço ajustável
+        Acompanha gabarito de montagem
+    _closeDescricaoProduto_
+    _marcaProduto_Soprano_closeMarcaProduto_
+    _skuProduto_MO0650080300_closeSkuProduto_
+    _imageProduto_mola_prata_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Dorma BTS-75V COMPLETA "T" ESP INOX_closeTituloProduto_
+    _descricaoProduto_
+        As famosas portas vai e vem são aquelas que abrem tanto para o lado direito quanto para o lado esquerdo num movimento que permite de 180º à 360º de abertura. A Mola Dorma BTS-75V hidráulica de piso é indicada para portas de banco hospitais escritórios prédios empresariais e estabelecimentos comerciais e serve para os modelos de batente e vai-e-vem. Ela permite uma fácil regulagem da força de fechamento por meio da utilização de parafusos de ajuste. Dessa forma ela serve desde para potência 1 até 4. Resistente e sólida é indicada para portas que pesem no máximo 120kg e tenham até 1100mm de largura. A Dorma desenvolveu uma tecnologia inovadora que garante muito mais durabilidade para o equipamento e assegura a qualidade do produto durante o período completo de garantia. Com corpo confeccionado em alumínio e caixa em ferro galvanizado é mais leve e ultra resistente à corrosão do ambiente. Conheça as funções: Velocidade de Fechamento: São duas válvulas que regulam o fechamento da porta. A primeira diz respeito à zona de 180º à 15º a segunda regula dos 15º a 0º. Trava: A trava permite reter a porta aberta em um ângulo de 90º. Backcheck: É um sistema de amortecimento mecânico que ajuda a proteger a porta de batidas bruscas evitando danos à parede. Válvula hidráulica de segurança: Ela alivia a pressão interna recebida pelo óleo hidráulico em situações que a porta é submetida a subpressões durante o fechamento. 
+        FICHA TÉCNICA
+        Dados Técnicos
+        Produto: Mola Dorma BTS-75V
+        Unidades: 1
+        Uso indicado: Portas vai-e-vem e de batente
+        Potência: Ajustável de 1 a 4.
+        Dimensões: 105mm x 286mm
+        Capacidade: Até 1100mm
+        Trava: Sim
+    _closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0140082700_closeSkuProduto_
+    _imageProduto_bts_75.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cofre Eletrônico Yale Safe Compact A200 L350 P200_closeTituloProduto_
+    _descricaoProduto_
+        Este é modelo mais compacto da linha de cofres da Yale abertura através de senha(cadastrada pelo próprio usuário) seu mecanismo de travamento possue travas motorizadas em aço maciço e também chave para abertura de emergência possui dysplay LCD dobradiças reforçadas acabamento em pintura em epoxi funciona com 4 baterias AA 15 V e sinaliza quando a bateria está acabando possui travas a prova de impacto.
+        Dimensões externas: 200x350 x200mm
+        Dimensões internas:192x345x145
+    _closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_CF0030244900_closeSkuProduto_
+    _imageProduto_yale_cofre_compact.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Digital Yale YRD221 - Embutir_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura digital de embutir YRD 221.
+        Fechadura com 2 opções de operação: teclado numérico e chave de segurança.
+        Configurável podendo ser aberta através de senha PIN ou através de sistemas de automação residencial. 
+        Indicada para aplicações residenciais e comerciais.
+        Outras características técnicas:
+        Fechamento com um toque
+        Teclado iluminado (touchpad)
+        Resistente a intempéries
+        Protetor acrílico para teclado
+        Teclado simplificado com 12 teclas
+        Vedação de borracha contra umidade
+        Alarme de código errado configurável pelo usuário
+        Botão de privacidade que permite o bloqueio do acesso de todos os usuários
+        Circuito de controle no lado interno
+        Trinco cônico que facilita o trancamento de portas desalinhadas
+        Programação assistida por voz (inglês
+        espanhol e francês)
+        Operação de notificação do status: Sempre que alguma operação é realizada o teclado informa o tipo de operação através de uma seqüência de alinhamento diferente dos números.
+        Chave mecânica: Em caso de emergência a fechadura pode ser aberta com a chave mecânica codificada.
+        Travamento automático: Essa função tranca automaticamente a porta após um determinado tempo. (Este tempo pode ser configurado através de sistemas de automação residencial).
+        * Sistema antipânico: Para conveniência do usuário e em caso de emergência a porta será desbloqueada automaticamente sempre que a tranqueta for acionada.
+        Personalize ambientes: Crie ambientes conforme o gosto do usuário. Abra cortinas acenda as luzes
+        ligue o ar condicionado. Tudo isso de uma maneira automática e fácil operação.
+        * Acionamento remoto: Abra ou feche a porta remotamente com o uso de um smartphone ou tablet. Você pode trancar ou abrir sua fechadura a qualquer lugar e distância.
+        * Mensagens de textos ou e-mail de alerta: Receba mensagens de textos ou e-mail de alerta no celular através de configurações pré-programadas.
+        * Modo Privacidade: O modo de privacidade permite uma maior segurança e pode ser acionado internamente permitindo que nenhum usuário abra a porta.
+        * Agendamento e permissão de acesso: Programe o dia e a hora que o usuário poderá entrar. Terceiros ou prestadores de serviços autorizados terão acesso apenas em dias úteis e em horários comerciais.
+        * Histórico de acesso: Função que permite a visualização do histórico de quando quem e a que horas a fechadura foi aberta.
+        * Se faz necessário módulo de rede de automação residencial para que as funções sejam habilitadas. 
+    _closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_FE9770011800_closeSkuProduto_
+    _imageProduto_yale_yrd_221.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Biométrica Yale de Embutir YDM 4109_closeTituloProduto_
+    _descricaoProduto_
+        YDM 4109 COM MAÇANETA
+        • Fechadura biométrica de embutir;
+        • Leitura de impressão digital;
+        • Espessura de porta - 35 a 55mm;
+        • Distância de broca - 60mm;
+        • Guia status visual e sonoro;
+        • Teclado inteligente • Saída anti-pânico;
+        • Cadastra até 20 usuários;
+        • Acabamento em Black Piano;
+    _closeDescricaoProduto_
+    _marcaProduto_Yale _closeMarcaProduto_
+    _skuProduto_FE9013008100_closeSkuProduto_
+    _imageProduto_yale_4109_top.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Biométrica Yale de Embutir YDM 4109 RL - Rolete_closeTituloProduto_
+    _descricaoProduto_
+        YDM 4109 SEM MAÇANETA
+        · Modelo de embutir sem maçaneta;
+        · Para uso em portas com puxador;
+        · Senha e biometria;
+        · Permite até 20 usuários;
+        · Utilize a senha em conjunto com a biometria;
+        · Chave mecânica;
+        · Entrada para bateria de emergência;
+        · Fechamento automático/manual;
+        · Guia de voz em português;
+        · Controle do volume de som;
+        · Alarme de invasão;
+        · Permite uso com controle remoto (opcional).
+    _closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_FE9883002300_closeSkuProduto_
+    _imageProduto_yale_4109tr_perfil.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect CRA 6239 E - EXT A/R_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE9440011300_closeSkuProduto_
+    _imageProduto_lafonte_6239_cra_ext.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect CRA 6239 I - INT A/R_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE9450017700_closeSkuProduto_
+    _imageProduto_lafonte_6239_cra_int.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect CRA 6239 B - BAN A/R_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE9460012000_closeSkuProduto_
+    _imageProduto_lafonte_6239_cra_wc.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect CR 6239 E - EXT A/R_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE0280011000_closeSkuProduto_
+    _imageProduto_lafonte_6239_cr_ext.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect CR 6239 I - INT A/R_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE0300012500_closeSkuProduto_
+    _imageProduto_lafonte_6239_cr_int.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect CR 6239 B - BAN A/R_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE0310018900_closeSkuProduto_
+    _imageProduto_lafonte_6239_cr_wc.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect AB 6239 E - EXT A/R_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE3493008600_closeSkuProduto_
+    _imageProduto_lafonte_6239_ab_ext.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect AB 6239 I - INT A/R_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE3503003800_closeSkuProduto_
+    _imageProduto_lafonte_6239_ab_int.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect AB 6239 B - BAN A/R_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE3513009100_closeSkuProduto_
+    _imageProduto_lafonte_6239_ab_wc.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Linnus AB 451 E - EXT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE3313000000_closeSkuProduto_
+    _imageProduto_lafonte_451_ab_ext.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Linnus AB 451 I - INT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE3323005600_closeSkuProduto_
+    _imageProduto_lafonte_451_ab_int.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Linnus AB 451 B - BAN_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE3333000000_closeSkuProduto_
+    _imageProduto_lafonte_451_ab_ban.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Linnus CR 451 E - EXT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2293005100_closeSkuProduto_
+    _imageProduto_lafonte_451_cr_ext.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Linnus CR 451 I - INT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2303000300_closeSkuProduto_
+    _imageProduto_lafonte_451_cr_int.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Linnus CR 451 B - BAN_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2313006700_closeSkuProduto_
+    _imageProduto_lafonte_451_cr_wct.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Linnus CRA 451 E - EXT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2323001000_closeSkuProduto_
+    _imageProduto_lafonte_451_cra_ext.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Linnus CRA 451 I - INT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2333007400_closeSkuProduto_
+    _imageProduto_lafonte_451_cra_int_1_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Linnus CRA 451 B - BAN_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2343002800_closeSkuProduto_
+    _imageProduto_lafonte_451_cra_wc.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Acionador Elétrico para Fechadura AF-62_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Amelco_closeMarcaProduto_
+    _skuProduto_AC0050997300_closeSkuProduto_
+    _imageProduto_amelco_af62.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Controle de Acesso por Senha Amelco AM CDA 100_closeTituloProduto_
+    _descricaoProduto_
+        O mais seguro controlador de acesso da categoria o AM CDA 100 possui baixo consumo de energia e permite cadastrar de maneira descomplicada até 100 senhas de 4 dígitos além de 6 tipos de horários. Fácil de instalar ele pode ser integrado com botoeira e porteiros eletrônicos Amelco fechos e fechaduras eletromagnéticas ou eletroímã. Com apenas 3 fios entre as unidades a instalação é muito simples com funcionamento em 110 ou 220 Vac. Na falta de energia elétrica o AM-CDA 100 pode ser alimentado com 8 pilhas alcalinas. Além disso possui Operação Disfarce impossibilitando que um observador memorize a senha digitada tempo de retenção ou pulsante programável e tecla de campainha.
+    _closeDescricaoProduto_
+    _marcaProduto_Amelco_closeMarcaProduto_
+    _skuProduto_CA0080993400_closeSkuProduto_
+    _imageProduto_amelco_cda100.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Controle de Acesso por Senha Amelco CDA200_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Amelco_closeMarcaProduto_
+    _skuProduto_CA0120995700_closeSkuProduto_
+    _imageProduto_amelco_cda200.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura para Vidro Elétrica Amelco FV-32_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Amelco_closeMarcaProduto_
+    _skuProduto_FE9930019200_closeSkuProduto_
+    _imageProduto_amelco_fv32i_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura para Vidro Elétrica Amelco FV-32E_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_Amelco_closeSkuProduto_
+    _imageProduto_amelco_fv32e_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Elétrica Amelco FV-33 Vidro/Alvenaria_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Amelco_closeMarcaProduto_
+    _skuProduto_FE9920013900_closeSkuProduto_
+    _imageProduto_amelco_fv33i_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Elétrica Amelco FV-33E p/ Vidro e Alvenaria_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Amelco_closeMarcaProduto_
+    _skuProduto_FE4040015800_closeSkuProduto_
+    _imageProduto_amelco_fv33e_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Eletromagnética Amelco FN-65 p/ portão_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Amelco_closeMarcaProduto_
+    _skuProduto_FE4020014000_closeSkuProduto_
+    _imageProduto_amelco_fn65.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Eletromagnética Amelco FN-66_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Amelco_closeMarcaProduto_
+    _skuProduto_FE4250010900_closeSkuProduto_
+    _imageProduto_amelco_fn66.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Eletromagnético Amelco FE 12 12V Standart_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Amelco_closeMarcaProduto_
+    _skuProduto_FC0030996600_closeSkuProduto_
+    _imageProduto_amelco_fe12.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Eletromagnético Amelco FE 61 12V Reforçado_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Amelco_closeMarcaProduto_
+    _skuProduto_FC0040991000_closeSkuProduto_
+    _imageProduto_amelco_fe12_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Porteiro Eletrônico Residencial Amelco AM-M200 GRAF/PR C/ACION_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Amelco_closeMarcaProduto_
+    _skuProduto_PE0081302800_closeSkuProduto_
+    _imageProduto_amelco_amm200.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Eletrica C-90 Dupla Cinza_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_HDL_closeMarcaProduto_
+    _skuProduto_FE8230013500_closeSkuProduto_
+    _imageProduto_hdl_c90_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra Antipânico Push T1 S Horiz Prata_closeTituloProduto_
+    _descricaoProduto_
+        Produto produzido de acordo com a norma NBR 11785.
+        Barra com acionamento através de alavanca feita em aço com pintura epóxi  para aplicação em portas simples e duplas de acessos de segurança. Possui sistema de reversão da barra possibilitando a instalação em portas esquerdas e direitas. 
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_BA0311260800_closeSkuProduto_
+    _imageProduto_yale_barra_pusht1_ppt.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra Antipânico Push T1 M/C Horiz Prata c/ Fechadura_closeTituloProduto_
+    _descricaoProduto_
+        Produto produzido de acordo com a norma NBR 11785
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_BA0321265300_closeSkuProduto_
+    _imageProduto_yale_barra_pusht1_ppt_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra Antipânico Push T2 S Vert Prata_closeTituloProduto_
+    _descricaoProduto_
+        Produto produzido de acordo com a norma NBR 11785
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_BA0331260700_closeSkuProduto_
+    _imageProduto_yale_barrapusht2_ppt.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra Antipânico Touch T1 S Horiz Prata_closeTituloProduto_
+    _descricaoProduto_
+        Produto produzido de acordo com a norma NBR 11785.
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_BA0351261400_closeSkuProduto_
+    _imageProduto_yale_barra_toucht1_ppt.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra Antipânico Touch T1 M/C Horiz Prata c/ Fechadura_closeTituloProduto_
+    _descricaoProduto_
+        Produto produzido de acordo com a norma NBR 11785.
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_BA0361267800_closeSkuProduto_
+    _imageProduto_yale_barra_toucht1_ppt_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra Antipânico Touch T2 S Vert Prata_closeTituloProduto_
+    _descricaoProduto_
+        Produto produzido de acordo com a norma NBR 11785
+    _closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_BA0371262100_closeSkuProduto_
+    _imageProduto_yale_barra_toucht2_ppt.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Tarjeta 719 CR Livre/Ocupado_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_TA0230235700_closeSkuProduto_
+    _imageProduto_lafonte_tarjeta_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Tarjeta 719 CRA Livre/Ocupado_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_TA0470236000_closeSkuProduto_
+    _imageProduto_lafonte_tarjeta_cr_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola de Topo Yale 9000 Cromado_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+        _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_MT0150088000_closeSkuProduto_
+    _imageProduto_yale_moladetopo_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola de Topo Yale 9000 CRA - Cromo Acetinado_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_MT0200085700_closeSkuProduto_
+    _imageProduto_yale_moladetopo_cr_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra Antipânico NT1-MC Direita CRA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_BA0091260300_closeSkuProduto_
+    _imageProduto_lafonte_barrant1_cra.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra Antipânico NT1-MC Esquerda CRA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_BA0101265700_closeSkuProduto_
+    _imageProduto_lafonte_barrant1esq_cra.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra Antipânico NT2-MC CRA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_BA0111260000_closeSkuProduto_
+    _imageProduto__closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 85 AB 30 X 25 (3 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_DO3350045200_closeSkuProduto_
+    _imageProduto_lafonte_85ab_325.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 85 AB 35 X 30 (3 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_DO3360040600_closeSkuProduto_
+    _imageProduto_lafonte_85ab3530.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 80 AB 40 X 30 (3 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_DO3370046000_closeSkuProduto_
+    _imageProduto_lafonte_85ab_4030.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 80 AB 50 X 40 _closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_DO3380041300_closeSkuProduto_
+    _imageProduto_lafonte_85ab_5040.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 85 LPE 30 X 25 (03 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_DO4400046400_closeSkuProduto_
+    _imageProduto_lafonte_85lpe_325.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 85 LPE 35 X 30 _closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_DO6270042100_closeSkuProduto_
+    _imageProduto_lafonte_85lpe_3530.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 80 LPE 40 X 30_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_DO4650042100_closeSkuProduto_
+    _imageProduto_lafonte_85lpe_4030.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 80 LPE 50 X 40_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_DO6280048500_closeSkuProduto_
+    _imageProduto_lafonte_85lpe_5040.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 85 LLE 30 X 25 X 2 (3 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_DO6190049400_closeSkuProduto_
+    _imageProduto_lafonte_85lle_325.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 85 LLE 35 X 30 (3 PC)_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_DO6200044600_closeSkuProduto_
+    _imageProduto_lafonte_85lle_3530.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 80 LLE 40 X 30_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_DO6210040800_closeSkuProduto_
+    _imageProduto_lafonte_85lle_4030.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça 80 LLE 50 X 40_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO6220045300_closeSkuProduto_
+    _imageProduto_lafonte_85lle_5040.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Concha La Fonte 503 CR sem furo_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_CO1080032801_closeSkuProduto_
+    _imageProduto_lafonte_503_cr_sf_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Concha La Fonte 503 CR com Furo_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_CO1080032802_closeSkuProduto_
+    _imageProduto_lafonte_503_cr_cf.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Concha La Fonte 503 CRA sem Furo_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_CO1090038101_closeSkuProduto_
+    _imageProduto_lafonte_503_cra_sf_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Concha La Fonte 503 CRA com Furo_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_CO1090038102_closeSkuProduto_
+    _imageProduto_lafonte_503_cra_cf_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Embutir 400 - 20CM 3/4" LC_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FC0540064300_closeSkuProduto_
+    _imageProduto_lafonte_400_20_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Embutir 400 - 40CM 3/4" LC_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FC0550060500_closeSkuProduto_
+    _imageProduto_lafonte_400_20_cra.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Embutir 400 - 20cm 3/4" CRA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FC2800063300_closeSkuProduto_
+    _imageProduto_lafonte_400_20_cra_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Embutir 400 - 40cm 3/4" CRA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FC2810069700_closeSkuProduto_
+    _imageProduto_lafonte_400_40_cra.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Embutir 400 - 20cm 3/4" AB_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FC1510061800_closeSkuProduto_
+    _imageProduto_lafonte_400_20_lo.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Embutir 400 - 40cm 3/4" LO_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FC1520067100_closeSkuProduto_
+    _imageProduto_lafonte_400_40_lo.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Embutir 400 - 20cm 3/4" LP_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FC3610063300_closeSkuProduto_
+    _imageProduto_lafonte_400_20_lpe.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Embutir 400 - 40cm 3/4" LP_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FC3620069700_closeSkuProduto_
+    _imageProduto_lafonte_400_40_lpe.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Embutir 400 - 20cm 3/4" PB - PRETO_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FC1490060200_closeSkuProduto_
+    _imageProduto_lafonte_400_20_pb.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Embutir 400 - 40cm 3/4" PB - PRETO_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _sku_0066400_closeSkuProduto_
+    _imageProduto__closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura 1070/45 LC_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2090015500_closeSkuProduto_
+    _imageProduto_lafonte_1070_cr_3.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura 1070/55 CRA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE7330014400_closeSkuProduto_
+    _imageProduto_lafonte_1070_cr_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Rolete 1070 45mm CR - BAN_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE3263002600_closeSkuProduto_
+    _imageProduto_lafonte_1070str_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Rolete 1070 45mm CRA - BAN_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE3273008000_closeSkuProduto_
+    _imageProduto_lafonte_1070str_cr_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura para Porta de Correr 1222/22 CR - EXT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE8140014400_closeSkuProduto_
+    _imageProduto_lafonte_1222_cr_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura para Porta de Correr 1222/22 CRA - EXT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE0690015100_closeSkuProduto_
+    _imageProduto_lafonte_1222_cra.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Para Porta de Correr 1222/22 LLE - EXT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2470012600_closeSkuProduto_
+    _imageProduto_lafonte_1222_lle_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura 222N CR 45mm - E p/ Porta de Correr_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE8190011200_closeSkuProduto_
+    _imageProduto_lafonte_222n_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura 222N CRA 45mm E p/ Porta de Correr_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE8460019500_closeSkuProduto_
+    _imageProduto_lafonte_222n_cra_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura 222N LLE 45mm E p/ Porta de Correr_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2030012300_closeSkuProduto_
+    _imageProduto_lafonte_222_lle_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura 378 LC 45mm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE8770018200_closeSkuProduto_
+    _imageProduto_lafonte_378_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura 378 LO 45mm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE8760012900_closeSkuProduto_
+    _imageProduto_lafonte_378_lle_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Rolete 378 CR 45mm TR_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE1493000500_closeSkuProduto_
+    _imageProduto_lafonte_378tr_cr_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Rolete 378 CRA 45mm TR_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE1973002000_closeSkuProduto_
+    _imageProduto_lafonte_378tr_cr_3.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Rolete 378 LPE 45mm TR_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE1293001600_closeSkuProduto_
+    _imageProduto_lafonte_378tr_lle_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte 4021 CR EVO S 45mm - Tranqueta_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2000016200_closeSkuProduto_
+    _imageProduto_lafonte_4021_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte 4021 CRA EVO S 45mm - Tranqueta_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2010011600_closeSkuProduto_
+    _imageProduto_lafonte_4021_cr_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Rolete 330 ST2/55 TR CR - EXT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE3283003300_closeSkuProduto_
+    _imageProduto_lafonte_330tr_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Rolete 330 ST2/55 TR CRA - EXT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE3293009700_closeSkuProduto_
+    _imageProduto_lafonte_330tr_cra.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Rolete 330 ST2/55 TR LLE - EXT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE3303004900_closeSkuProduto_
+    _imageProduto__closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Digital Milre 1200 para Armário e Gavetas_closeTituloProduto_
+    _descricaoProduto_
+        Exclusivo projeto de design anti-hacker impossibilita a conexão de capturador de dados. Abertura através de 01 senha (de 04 a 12 dígitos) + até 15 CHAVES DIGITAIS. Painel não retém a digital. Trava a porta automaticamente se estiver no modo automático. Alarme e sistema de bloqueio no caso de se inserir mais de 5 vezes a senha errada. Funciona a pilhas (3 alcalinas tipo AA). Aviso de esgotamento de pilhas. Vida útil das pilhas de aproximadamente 1 ANO/30 aberturas/dia. Pode ser instalada em portas de madeira ou metal (neste caso é necessária adaptação da espessura). Pode ser instalada em área de alta umidade. Dispensa o uso de puxadorInstalação prática e fácil.
+    _closeDescricaoProduto_
+    _marcaProduto_Milre_closeMarcaProduto_
+    _skuProduto_FE8953007100_closeSkuProduto_
+    _imageProduto_milre_1200_frente.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Digital Milre 4700 de sobrepor_closeTituloProduto_
+    _descricaoProduto_
+        Modelo sem maçaneta Acompanham cada fechadura 04 chaves digitais. Painel Touchscreen iluminado para facilitar a abertura em ambientes escuros Trava a porta automaticamente evitando que ela fique aberta por descuido. Dispositivo anti-hacker não é possível conectar nenhum tipo de capturador de dados Alarme e sistema de bloqueio no caso de se inserir mais de 5 vezes a senha errada. Sensor térmico que destrava a porta em caso de incêndio no interior da casa Controle do volume do sinal sonoro para abertura da porta Funciona a pilhas (4 alcalinas tipo AA) Aviso de esgotamento de pilhas Vida útil das pilhas de aproximadamente 1 ANO/20 aberturas/dia Pode ser instalada em portas de madeira ou metal com batente ou pivotante Pode ficar em área externa desde que sob cobertura para proteção contra intempéries. 
+    _closeDescricaoProduto_
+    _marcaProduto_Milre_closeMarcaProduto_
+    _skuProduto_FE8963002500_closeSkuProduto_
+    _imageProduto_milre_4700_externa.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Digital Milre 6300 com maçaneta_closeTituloProduto_
+    _descricaoProduto_
+        Modelo de embutir.
+        Acompanham cada fechadura 04 chaves digitais. Alarme contra tentativa de invasão para o caso de forçarem a abertura da porta. Painel Touchscreen iluminado para facilitar a abertura em ambientes escuros Trava a porta automaticamente evitando que ela fique aberta por descuido. Dispositivo anti-hacker não é possível conectar nenhum tipo de capturador de dados. Alarme e sistema de bloqueio no caso de se inserir mais de 5 vezes a senha errada. Controle do volume do sinal sonoro para abertura da porta Funciona a pilhas (4 alcalinas tipo AA)Aviso de esgotamento de pilhas Vida útil das pilhas de aproximadamente 1 ANO/20 aberturas/dia Pode ser instalada em portas de madeira ou metal com batente ou pivotante Pode ficar em área externa desde que sob cobertura para proteção contra intempéries. Instalação prática e fácil 
+    _closeDescricaoProduto_
+    _marcaProduto_Milre_closeMarcaProduto_
+    _skuProduto_FE8993009600_closeSkuProduto_
+    _imageProduto_milre_6300_frente.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura digital Milre A2300 de sobrepor_closeTituloProduto_
+    _descricaoProduto_
+        - Projetada em sistema anti-hacker
+        impossibilita a conexão de capturador de dados.
+        -Abertura através de 01 SENHA (de 4 a 12 dígitos).
+        -Teclado não retém a digital Trava a porta automaticamente
+        evitando que ela fique aberta por descuido.
+        -Alarme e sistema de bloqueio
+        no caso de se inserir mais de 5 vezes a senha errada.
+        -Pode desabilitar temporariamente o sinal sonoro de abertura da porta Funciona com pilhas (4 alcalinas tipo AA) Aviso de esgotamento de pilhas.
+        -Vida útil das pilhas de aproximadamente 1 ANO/30 aberturas/dia.
+        -Pode ser instalada em portas de madeira ou metal
+        com batente ou pivotante.
+        -Pode ficar em área externa
+        desde que sob cobertura
+        para proteção contra intempéries.
+        - Trava automaticamente quando a porta está fechada.
+    _closeDescricaoProduto_
+    _marcaProduto_Milre_closeMarcaProduto_
+    _skuProduto_FE8943001800_closeSkuProduto_
+    _imageProduto_milre_a2300_externa_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Eletrônica Touch 6400 S/MAC_closeTituloProduto_
+    _descricaoProduto_
+        Modelo de embutir com maçaneta 
+        Acompanham cada fechadura 04 chaves digitais. Painel Touch Screen iluminado para facilitar a abertura em ambientes escuros 
+        Sistema de Proteção de senha em exposição evita que o acompanhante entenda sua senha. Trava a porta automaticamente evitando que ela fique aberta por descuido. Dispositivo anti-hacker não é possível conectar nenhum tipo de capturador de dados 
+        Alarme e sistema de bloqueio no caso de se inserir mais de 5 vezes a senha errada. Controle do volume do sinal sonoro para abertura da porta Funciona a pilhas (4 alcalinas tipo AA)Aviso de esgotamento de pilhas 
+        Vida útil das pilhas de aproximadamente 1 ANO/20 aberturas/dia Pode ser instalada em portas de madeira ou metal com batente ou pivotante 
+        Pode ficar em área externa desde que sob cobertura para proteção contra intempéries. Instalação prática e fácil
+    _closeDescricaoProduto_
+    _marcaProduto_Milre_closeMarcaProduto_
+    _skuProduto_FE8983003200_closeSkuProduto_
+    _imageProduto_milre_6400_frente.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Digital Milre 4600 para vidro com controle remoto_closeTituloProduto_
+    _descricaoProduto_
+        Modelo sem maçaneta
+        Projetada em sistema anti-hacker
+        impossibilita a conexão de capturador de dados
+        Abertura através de até 08 SENHAS (de 04 a 19 dígitos) + até 45 CHAVES DIGITAISAcompanham cada fechadura 04 chaves digitais.Painel Touchscreen iluminado
+        para facilitar a abertura em ambientes escuros.
+        Trava a porta automaticamente
+        evitando que ela fique aberta por descuido.
+        Dispositivo anti-hacker
+        não é possível conectar nenhum tipo de capturador de dadosAlarme e sistema de bloqueio
+        no caso de se inserir mais de 5 vezes a senha errada.
+        Sensor térmico que destrava a porta em caso de incêndio no interior da casa
+        Controle do volume do sinal sonoro para abertura da porta
+        Funciona a pilhas (4 alcalinas tipo AA)Pode ficar em área externa
+        desde que sob cobertura
+        para proteção contra intempéries.
+    _closeDescricaoProduto_
+    _marcaProduto_Milre_closeMarcaProduto_
+    _skuProduto_FE8883009800_closeSkuProduto_
+    _imageProduto_4600frente.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Visor Olho Mágico Digital Mini A500_closeTituloProduto_
+    _descricaoProduto_
+        Interruptor automático em 10 segundos Tela de 2"6
+        Ângulo de visão de 100º. utiliza 2 pilhas AAA como fonte de energia. Vida útil das pilhas de aproximadamente 700 avisos sonoros Resolution: 320*240 Pode ser instalada em portas de madeira ou metal
+        com batente ou pivotante
+        Externa	31 mm de diâmetro
+        Interna	59(A) x 106(L) x 15(F) mm
+        Sensor	De 0
+        3 Mega Pixel CMOS
+        Tela	LCD de 2
+        6 TFT
+        Acabamento	ABS e Policarbonato
+        Cores	Preta
+        Espessura da porta	De 38 até 110 mm
+        Diâmetro do furo da porta	De 14 a 22 mm
+        Peso	150 gramas
+        Pilhas	Duas pilhas alcalinas de 1
+        5 V (AAA)
+        Vida das pilhas	Aproximadamente 12 meses (com uma média de uso de 20 vezes ao dia)
+    _closeDescricaoProduto_
+    _marcaProduto_Milre_closeMarcaProduto_
+    _skuProduto_VI0060569700_closeSkuProduto_
+    _imageProduto__closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Papaiz Unificado CR 20_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço haste de aço cementada e cromada acompanha 1 chave latão niquelada. Unificado possiblita a abertura de todos os cadeados do mesmo modelo com apenas um chave. 
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0810193000_closeSkuProduto_
+    _imageProduto_papaiz_20unificado.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Papaiz Unificado CR 25_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada
+        acompanha 1 chave latão niquelada.
+        Unificado
+        possiblita a abertura de todos os cadeados do mesmo modelo com apenas um chave.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0820199400_closeSkuProduto_
+    _imageProduto_papaiz_25unificado.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Papaiz Unificado CR 30_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço haste de aço cementada e cromada acompanha 1 chave latão niquelada. Unificado possiblita a abertura de todos os cadeados do mesmo modelo com apenas um chave. 
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0830194800_closeSkuProduto_
+    _imageProduto_papaiz_30unificado.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Papaiz Unificado CR 35_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço haste de aço cementada e cromada acompanha 1 chave latão niquelada. Unificado possiblita a abertura de todos os cadeados do mesmo modelo com apenas um chave. 
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0840190000_closeSkuProduto_
+    _imageProduto_papaiz_35unificado.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Papaiz Unificado CR 40_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço haste de aço cementada e cromada acompanha 1 chave latão niquelada. Unificado possiblita a abertura de todos os cadeados do mesmo modelo com apenas um chave. 
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD9340190600_closeSkuProduto_
+    _imageProduto_papaiz_40unificado.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Papaiz Unificado CR 45_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciçohaste de aço cementada e cromadaacompanha 1 chave latão niquelada.Unificadopossiblita a abertura de todos os cadeados do mesmo modelo com apenas um chave. 
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0780197100_closeSkuProduto_
+    _imageProduto_papaiz_45unificado.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Papaiz Unificado CR 50_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço haste de aço cementada e cromada acompanha 1 chave latão niquelada. Unificado possiblita a abertura de todos os cadeados do mesmo modelo com apenas um chave. 
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD9350195100_closeSkuProduto_
+    _imageProduto_papaiz_50unificado.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Tetra Chave Papaiz CRT 50_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 tetra-chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0420190600_closeSkuProduto_
+    _imageProduto_tetra50.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Tetra Chave Papaiz CRT 60_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 tetra-chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0430196000_closeSkuProduto_
+    _imageProduto_tetra_crt_60_p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Tetra Chave Papaiz CRT 70_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 tetra-chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0440191300_closeSkuProduto_
+    _imageProduto_tetra_crt_70_p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 30/50_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0090190300_closeSkuProduto_
+    _imageProduto_haste_longa_30-50p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 30/70_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0100196500_closeSkuProduto_
+    _imageProduto_haste_longa_30-70p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 35/70_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD01101919_closeSkuProduto_
+    _imageProduto_haste_longa_35-70p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 45/70_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0540196800_closeSkuProduto_
+    _imageProduto_haste_longa_45-70p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Stam com segredo 25mm - LAT_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em zamac
+        haste em aço
+        com 3 digitos.  
+        ATENÇÃO: ESTE MODELO NÃO TEM DISPONIBILIDADE DE TROCA DE SEGREDO
+        SENHA FIXA DE FÁBRICA.
+    _closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_CD0570192900_closeSkuProduto_
+    _imageProduto_stam_seg_25.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado Stam com segredo 40MM_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em Zamac
+        haste em aço
+        Segredo de 4 digitos que permite alteração da senha.
+    _closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_CD0410195200_closeSkuProduto_
+    _imageProduto_stam_seg_40.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 20_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço       
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0010197400_closeSkuProduto_
+    _imageProduto_std20p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 25_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0020192800_closeSkuProduto_
+    _imageProduto_std25p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 30_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0030198100_closeSkuProduto_
+    _imageProduto_std30p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 35_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0040193500_closeSkuProduto_
+    _imageProduto_std35p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 40_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0340197900_closeSkuProduto_
+    _imageProduto_std40p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 45_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0050199900_closeSkuProduto_
+    _imageProduto_std45p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 50_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0060194200_closeSkuProduto_
+    _imageProduto_std50p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 60_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_CD0070190400_closeSkuProduto_
+    _imageProduto_std60p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cadeado CR 70_closeTituloProduto_
+    _descricaoProduto_
+        Produzido em latão maciço
+        haste de aço cementada e cromada. 2 chaves de latão niqueladas.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_closeSD0080195000Produto
+    _imageProduto_std70p.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aerea Soprano A530 F3 Potência "3" _closeTituloProduto_
+    _descricaoProduto_
+        Você se sente incomodado por sua porta não permanecer fechada e você precisar enfrentar problemas como correntes de ar e barulhos externos atrapalhando o seu trabalho? Então
+        a Mola Aérea Soprano A530 F3
+        com potência 3
+        pode ser a solução para esses problemas. Na cor preta
+        ela atua no fechamento automático da porta
+        evitando batidas bruscas e que ela permaneça aberta quando não está sendo usada.
+        A série foi desenvolvida para suportar portas que tenham entre 1000mm e 2300mm de largura
+        o que corresponde aos modelos de médio porte. Sendo que o peso ideal é de até 65kg
+        mas acima de 40kg para ter seu desempenho otimizado. Dessa forma
+        são ótimas opções para portas de banheiros públicos
+        anfiteatros
+        salas de aula e escritórios.
+        Com design arrojado
+        mas de fácil instalação
+        a mola funciona através de um sistema mecânico-hidráulico que permite a regulagem da velocidade em que a porta vai se fechar. O método usa duas válvulas que podem ser configuradas facilmente
+        uma delas diz respeito ao momento em que a porta está entre os 90º e 15º e a outra controla a velocidade entre os 15º e 0º.
+        As vantagens desse modelo são inúmeras: é versátil
+        pode ser usada tanto em ambientes internos quanto externos
+        é durável
+        com garantia de 1 ano pelo fabricante
+        conta com braço reforçado para suportar portas mais pesadas e ainda pode ser instalada tanto para aberturas à direita
+        quanto à esquerda. Invista em segurança e comodidade
+        pois as molas Soprano foram desenvolvidas com tecnologia inovadora para te garantir a melhor qualidade do mercado.
+        TABELA TÉCNICA
+        Dados Técnicos
+        Produto: Mola Aérea Soprano A530 Potência 3
+        Unidades: 1
+        Uso indicado: Portas internas e externas.
+        Potência: 3
+        Dimensões: 182mm x 85mm
+        Capacidade: Portas entre 1000 e 2300mm de largura
+        Cor: Prata
+    _closeDescricaoProduto_
+    _marcaProduto_Soprano_closeMarcaProduto_
+    _skuProduto_MO06800874_closeSkuProduto_
+    _imageProduto_mola_prata_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aerea Soprano A530 F3 Potência "3" PRATA_closeTituloProduto_
+    _descricaoProduto_
+        Espaços com um fluxo constante de pessoas exigem cuidados maiores com a porta
+        uma vez que
+        com a correria
+        é comum deixá-la aberta ou bater com mais força do que é necessário. A Mola Aérea Soprano A530
+        com potência 3
+        é ideal até mesmo para evitar acidentes
+        como prender os dedos ou a mão na porta. Dessa forma
+        o proprietário consegue regular a velocidade com que a porta se fecha
+        suavizando o movimento.
+        São diversos modelos específicos para atender as demandas de qualquer necessidade
+        seja de portas de empresas
+        corporações
+        consultórios ou até mesmo de residências domiciliares. Neste caso
+        a mola conta com força 3
+        que diz respeito à capacidade de sustentação do tamanho e peso da porta em questão. Portanto
+        é indicada para portas entre 1000mm e 2300mm de largura. Quanto ao peso
+        o ideal é que tenha mais do que 40kg e menos de 65kg.
+        Mas como o equipamento funciona? É bem simples
+        a mola é fixada no bordo superior da porta e na parede. Assim
+        através de um sistema mecânico-hidráulico
+        o braço controla
+        por meio de duas válvulas
+        a velocidade com que a porta se fechará. A instalação não é complexa e a regulagem diz respeito ao momento de fechamento dos 90º a 15º e depois dos 15º a 0º.
+        Faça um investimento certeiro
+        o modelo em questão conta com braços reforçados e é reversível
+        podendo ser instalado para abertura à direita ou à esquerda. Além de funcionar tão bem em ambientes internos e externos. O Rei das Fechaduras conta com produtos que são aprovados pelas normas internacionais e pelos principais especialistas da área.
+        TABELA TÉCNICA
+        Dados Técnicos
+        Produto: Mola Aérea Soprano A530 Potência 3
+        Unidades: 1
+        Uso indicado: Portas internas e externas.
+        Potência: 3
+        Dimensões: 182mm x 85mm
+        Capacidade: Portas entre 1000 e 2300mm de largura
+        Cor: Prata
+    _closeDescricaoProduto_
+    _marcaProduto_Soprano_closeMarcaProduto_
+    _skuProduto_MO0680087400_closeSkuProduto_
+    _imageProduto_mola_prata_3.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aerea Soprano A530 F3 Potência "4"_closeTituloProduto_
+    _descricaoProduto_
+        Está cansado de levar um susto todas as vezes que alguém bate a porta do escritório? Ou as crianças sempre prendem a mão no batente? Então
+        a solução para os seus problemas
+        você encontra aqui no Rei das Fechaduras. A Mola Aérea Soprano A530 F3
+        com potência 4
+        está há bastante tempo no mercado atendendo a necessidade dos clientes de todo o Brasil.
+        O que diferencia os diversos modelos da Soprano são o acabamento
+        que pode ser branco
+        preto ou prata
+        e a força
+        que diz respeito ao peso e largura da porta na qual será aplicada. A série A530 F3 é recomendada para portas de até 65kg
+        mas o peso ideal é acima dos 40kg. Já a largura da porta deve de 1000mm
+        no mínimo
+        e 2300mm
+        no máximo.
+        Vantagens: Sistema mecânico-hidráulico.
+        Podem ser instaladas em portas que abrem tanto para a direita
+        quanto para a esquerda.
+        Braços fabricados com material reforçado que permitem ajustes.
+        Duas válvulas que regulam a velocidade de fechamento - uma de 90º a 15º e outra de 15º a 0º.
+        Servem para portas externas e internas.
+        Mantém a temperatura ambiente por garantir que a porta permaneça fechada.
+        Com essas vantagens
+        o seu investimento em conforto é certeiro. Nunca mais vai ouvir porta batendo ou ter que lidar com acidentes domésticos com a porta.
+        FICHA TÉCNICA
+        Dados Técnicos
+        Produto: Mola Hidráulica Soprano A530 F3
+        Unidades: 1
+        Uso indicado: Portas internas e externas.
+        Potência: 3
+        Dimensões: 182mm x 85mm
+        Capacidade: Portas entre 1000mm e 2300mm de largura
+        Cor: Prata
+    _closeDescricaoProduto_
+    _marcaProduto_Soprano_closeMarcaProduto_
+    _skuProduto_MO07100833_closeSkuProduto_
+    _imageProduto_mola_prata_4.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aerea Soprano A530 F3 Potência "4" PRATA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Soprano_closeMarcaProduto_
+    _skuProduto_MO0710083300_closeSkuProduto_
+    _imageProduto_mola_prata_5.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Dorma BTS-75R COMPLETA "T" ESP INOX_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0120081000_closeSkuProduto_
+    _imageProduto_bts_75_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Dorma BTS-75V Miolo e caixa s/trava_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0600083500_closeSkuProduto_
+    _imageProduto_bts_75_1_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Dorma BTS-65 INOX "T"POT 3 COMPLETA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0130087300_closeSkuProduto_
+    _imageProduto_bts_65_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Dorma BTS-84 FLEX INOX "T"_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0250082500_closeSkuProduto_
+    _imageProduto_bts_84.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Armário Porta Chaves Acrimet para 24 CHAVES_closeTituloProduto_
+    _descricaoProduto_
+        Armário fabricado em MDF na cor areia
+        com ótimo acabamento.
+        Acompanha 24 chaveiros em cores sortidas e etiquetas de identificação.
+        Possui fechadura na porta
+        com duas chaves.
+        Acompanha parafusos para fixação do armário.
+    _closeDescricaoProduto_
+    _marcaProduto_Acrimet_closeMarcaProduto_
+    _skuProduto_AC0181226200_closeSkuProduto_
+    _imageProduto_acrimet_24c.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Armário Porta Chaves Acrimet para 48 CHAVES_closeTituloProduto_
+    _descricaoProduto_
+        Armário fabricado em MDF na cor areia
+        com ótimo acabamento.
+        Acompanha 48 chaveiros em cores sortidas e etiquetas de identificação.
+        Possui fechadura na porta
+        com duas chaves.
+        Acompanha parafusos para fixação do armário.
+    _closeDescricaoProduto_
+    _marcaProduto_Acrimet_closeMarcaProduto_
+    _skuProduto_AC0191221600_closeSkuProduto_
+    _imageProduto_acrimet_48.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Armário Porta Chaves Acrimet para 96 Chaves_closeTituloProduto_
+    _descricaoProduto_
+        Armário fabricado em MDF na cor areia
+        com ótimo acabamento.
+        Acompanha 96 chaveiros em cores sortidas e etiquetas de identificação.
+        Possui fechadura na porta
+        com duas chaves.
+        Acompanha parafusos para fixação do armário.
+    _closeDescricaoProduto_
+    _marcaProduto_Acrimet_closeMarcaProduto_
+    _skuProduto_AC0141224800_closeSkuProduto_
+    _imageProduto_acrimet_96.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Armário Porta Chaves Acrimet para 128 Chaves_closeTituloProduto_
+    _descricaoProduto_
+        Armário fabricado em MDF na cor areia
+        com ótimo acabamento.
+        Acompanha 128 chaveiros em cores sortidas e etiquetas de identificação.
+        Possui fechadura na porta
+        com duas chaves.
+        Acompanha parafusos para fixação do armário
+    _closeDescricaoProduto_
+    _marcaProduto_Acrimet_closeMarcaProduto_
+    _skuProduto_AC0081221800_closeSkuProduto_
+    _imageProduto_acrimet_128.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Armário Porta Chaves Acrimet P/256 Chaves_closeTituloProduto_
+    _descricaoProduto_
+        Armário fabricado em MDF na cor areia
+        com ótimo acabamento.
+        Acompanha 256 chaveiros em cores sortidas e etiquetas de identificação.
+        Possui fechadura na porta
+        com duas chaves.
+        Acompanha parafusos para fixação do armário.
+    _closeDescricaoProduto_
+    _marcaProduto_Acrimet_closeMarcaProduto_
+    _skuProduto_AC0251224600_closeSkuProduto_
+    _imageProduto_acrimet_256.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Etiquetas Plásticas para chaves Acrimet pote com 60_closeTituloProduto_
+    _descricaoProduto_
+        Chaveiros fabricados em polipropileno com etiquetas de identificação. 
+        Uma maneira prática e eficiente de organizar suas chaves.
+    _closeDescricaoProduto_
+    _marcaProduto_Acrimet_closeMarcaProduto_
+    _skuProduto_AC0121223060_closeSkuProduto_
+    _imageProduto_acrimet_60chaveiros.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Porta Chaves com Suporte Acrimet REF 143_closeTituloProduto_
+    _descricaoProduto_
+        Suporte autoadesivo com capacidade para organizar 8 chaveiros.
+        Acompanha 8 chaveiros em cores sortidas.
+        Possui orifícios que também possibilitam a fixação por meio de parafusos (não inclusos).
+        Uma maneira prática e eficiente de organizar suas chaves.
+    _closeDescricaoProduto_
+    _marcaProduto_Acrimet_closeMarcaProduto_
+    _skuProduto_AC0111228700_closeSkuProduto_
+    _imageProduto_acrimet_ref143.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Organizador de Chaves - Pasta Suspensa_closeTituloProduto_
+    _descricaoProduto_
+        Organizador de chaves um formato de pasta suspensa para arquivo. 
+        Tamanho ofício acompanha 24 chaveiros em cores sortidas.
+        Uma maneira prática e eficiente de organizar e proteger suas chaves.
+    _closeDescricaoProduto_
+    _marcaProduto_Acrimet_closeMarcaProduto_
+    _skuProduto_AC0131229400_closeSkuProduto_
+    _imageProduto_acrimet_suspensa.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Lixeira Automática com Sensor 6l - 6LC_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_LX0042099900_closeSkuProduto_
+    _imageProduto_peters_6lcc.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Lixeira Automática com Sensor 9L - 9LC_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_LX0052094200_closeSkuProduto_
+    _imageProduto_lixeira_ambiente_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Lixeira Automática com Sensor 12L - 12LC_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_LX0062090400_closeSkuProduto_
+    _imageProduto_peters_12lcc.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Lixeira Automática com Sensor 30L - 30LB_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_LX0122092600_closeSkuProduto_
+    _imageProduto_peters_30lba_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Lixeira Automática com Sensor 3L - 3LA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_LX0032093500_closeSkuProduto_
+    _imageProduto_peters_3la.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra De Apoio Access 30cm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Jackwal_closeMarcaProduto_
+    _skuProduto_BS0121231100_closeSkuProduto_
+    _imageProduto_jackwal_acces_30.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra de Apoio Access 40cm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Jackwal_closeMarcaProduto_
+    _skuProduto_BS0131237500_closeSkuProduto_
+    _imageProduto_jackwal_acces_40.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra de Apoio Access 60cm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Jackwal_closeMarcaProduto_
+    _skuProduto_BS0171239000_closeSkuProduto_
+    _imageProduto_jackwal_acces_60.jpg_closeImageProduto_
+_closeProduto_
+
+
+_openProduto_
+    _tituloProduto_Barra de Apoio Access 70cm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Jackwal_closeMarcaProduto_
+    _skuProduto_BS0141232900_closeSkuProduto_
+    _imageProduto_jackwal_acces_70.jpg_closeImageProduto_
+_closeProduto_
+
+
+_openProduto_
+    _tituloProduto_Barra de Apoio Access 80cm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Jackwal_closeMarcaProduto_
+    _skuProduto_BS0151238200_closeSkuProduto_
+    _imageProduto_jackwal_acces_80.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra de Apoio Access Rebatível_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Jackwal_closeMarcaProduto_
+    _skuProduto_BS0181234300_closeSkuProduto_
+    _imageProduto_jackwal_acces_rebativel.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Barra de Apoio Access Curva 70cm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Jackwal_closeMarcaProduto_
+    _skuProduto_BS0161233600_closeSkuProduto_
+    _imageProduto_jackwal_acces_70curva.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Dorma BTS-60 INOX "T"POT 3 COMPLETA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0350085300_closeSkuProduto_
+    _imageProduto_dorma_bts60t__1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aerea TS Compakt_closeTituloProduto_
+    _descricaoProduto_
+        Com muita frequência as portas dos cômodos de casa ficam abertas pelo simples motivos de esquecermos de fechá-las. 
+        Isso possibilita a entrada de insetos e a circulação de sujeira na casa. 
+        Outra situação que acontece bastante com portas comuns é que elas fiquem marcadas ou rachem com o passar do tempo devido aos fortes impactos sofridos com as batidas. 
+        Pensando em resolver esses problemas a Dorma desenvolveu a linha de molas aéreas TS Compakt.
+        Compacto
+        o modelo conta com força de fechamento ajustável em potência 2, 3 e 4 de modo que atende a diferentes tipos de porta.
+        Por isso ele é considerado praticamente um modelo universal e o único para portas de larguras entre 700mm e 1100mm.
+        Além de ser certificado pelo ISO 9001.
+        As vantagens são inúmeras tanto para o usuário quanto para o profissional que vai instalar.
+        Confira:
+        Usuário: Com um modelo único para qualquer tipo comum de porta o usuário não precisa correr atrás de peças específicas para cada porta da casa ou estabelecimento. 
+        Há também o benefício de manter os ambientes climatizados e evitar que barulhos externos incomodem a rotina diária uma vez que a porta permanecerá sempre fechada.
+        Para evitar batidas bruscas o modelo conta com duas válvulas que regulam a velocidade de fechamento uma dos 180º aos 15º e outra dos 15º a 0º.
+        Instalador: A instalação é simples e ágil além de não exigir uma placa de fixação.
+        A aplicação pode ser realizada tanto para portas que abrem à direita quanto à esquerda.
+        Por fim o equipamento vem acompanhado de gabarito que se aplica à qualquer tipo de porta. Invista num futuro mais confortável e seguro adquira a Mola Aérea TS Compakt. 
+        FICHA TÉCNICA 
+        Dados Técnicos
+        Produto: Mola Aérea TS Compakt
+        Unidades: 1
+        Uso indicado: Todo modelo comum de porta
+        Potência: Ajustável em 2, 3 e 4
+        Dimensões: 205mm x 94mm
+        Capacidade: Portas entre 700 e 1100mm de largura
+        Cor: Prata, Preto e Branco
+    _closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0470082188_closeSkuProduto_
+    _imageProduto_ts-compakt.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Hidraulica Aerea TS Compakt - PRATA_closeTituloProduto_
+    _descricaoProduto_
+        Mola hidráulica p/porta
+        Caracteristicas Técnicas:
+        Solução ideal para portas convencionais que possuam de 700 à 1100 mm podem ser aplicadas em porta direita ou esquerda são de instalação fácil e rápida possuem ajuste de gabarito que permite a seleção de força de fechamento a diferentes tamanhos de porta um modelo único para qualquer posição de instalação otimização da velocidade de fechamento com duas válvulas de regulagem. 
+        Fabricação certificada pela ISO 9001.
+        Cor: Prata
+    _closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0470082100_closeSkuProduto_
+    _imageProduto_ts-compakt_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aerea TS Compakt - PRETA_closeTituloProduto_
+    _descricaoProduto_
+        Mola hidráulica p/porta
+        Caracteristicas Técnicas:
+        Solução ideal para portas convencionais que possuam de 700 à 1100 mm podem ser aplicadas em porta direita ou esquerda são de instalação fácil e rápida possuem ajuste de gabarito que permite a seleção de força de fechamento a diferentes tamanhos de porta um modelo único para qualquer posição de instalação otimização da velocidade de fechamento com duas válvulas de regulagem. 
+        Fabricação certificada pela ISO 9001.
+        Cor: preta
+    _closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0370088700_closeSkuProduto_
+    _imageProduto_mola_dorma_ts_compakt_preta.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aerea TS Compakt - BRANCO BL_closeTituloProduto_
+    _descricaoProduto_
+        Mola hidráulica p/porta
+        Caracteristicas Técnicas:
+        Solução ideal para portas convencionais que possuam de 700 à 1100 mm podem ser aplicadas em porta direita ou esquerda são de instalação fácil e rápida possuem ajuste de gabarito que permite a seleção de força de fechamento a diferentes tamanhos de porta um modelo único para qualquer posição de instalação otimização da velocidade de fechamento com duas válvulas de regulagem. 
+        Fabricação certificada pela ISO 9001.
+        Cor: Branca
+    _closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0440086000_closeSkuProduto_
+    _imageProduto_mola_dorma_ts_compakt_branca.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aérea Dorma MA-200/2_closeTituloProduto_
+    _descricaoProduto_
+        A Mola Aérea Dorma MA 200 com potência de fechamento 2 é ideal para portas simples de escritório divisórias lavabos e cozinhas.
+        Quem lida com a preparação de alimentos na cozinha sabe muito bem que a porta do cômodo deve permanecer sempre fechada para que assim impurezas não adentrem o ambiente e a circulação de pessoas sem toucas e equipamentos higiênicos seja também evitada. 
+        Foi pensando em facilitar a circulação de pessoas nesses ambientes que a Dorma desenvolveu a linha MA 200/2. 
+        A especificação atende tipos de portas que tenham largura mínimas de 700mm e máxima de 850mm. Com o equipamento a porta se fechará automaticamente e de forma suave de acordo com a velocidade de fechamento escolhida pelo usuário na hora da instalação. 
+        Assim é possível evitar batidas bruscas e acidentes. O equipamento é o primeiro produzido em todo o Brasil a contar com o sistema “rack-and-pinion” que garante um modelo compacto para todos os tipos de potência. 
+        Dessa forma é possível ter um controle hidráulico eficaz da velocidade de fechamento a partir dos 180º. 
+        Tudo desenvolvido com tecnologia de ponta eficiência e qualidade para garantir o seu conforto. 
+        A mola pode ser instalada tanto no batente quanto direto na porta e ainda funciona num sistema hidráulico reversível. 
+        Garante a abertura tanto para o lado direito quanto para o lado esquerdo sem precisar de ajustes técnicos no aparelho. 
+        Invista em conforto e segurança para a sua casa e local de trabalho. 
+        É a Dorma investindo na sua felicidade. 
+        TABELA TÉCNICA
+        Dados Técnicos
+        Produto: Mola Aérea Dorma 200/2
+        Unidades: 1
+        Uso indicado: Todo modelo comum de porta
+        Potência: 2
+        Dimensões: 180mm x 89mm
+        Capacidade: Portas entre 700mm a 850mm de largura
+        Cor: Prata, Preto e Branco
+    _closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0390089488_closeSkuProduto_
+    _imageProduto_dorma_ma200_prata.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aérea Dorma MA-200/2 - Prata_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0390089400_closeSkuProduto_
+    _imageProduto_dorma_ma200_prata_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aérea Dorma MA-200/2 - Preto_closeTituloProduto_
+    _descricaoProduto_
+        Mola Hidráulica Aérea para Porta MA 200/2 Dorma utilizada para fechamento da porta sozinho
+        suavemente e sem ruídos. Esta mola hidráulica aérrea utiliza o sistema "Rack and Pinion" (Pinhão e Cremalheira) reconhecido e aprovado internacionalmente permitindo um controle hidráulico total a partir de um ângulo 180º (ângulo de abertura da porta)  Tecnologia eficiência e qualidade garantidas pela marca Dorma. Equipada com duas válvulas de regulagem que permitem a adaptação à diversas situações. A primeira válvula permite regular a velocidade de fechamento de 180° a 20° e a segunda válvula regula a velocidade do "golpe final" de 20° a 0° fechando a porta lenta e silenciosamente quando usada em portas com fechaduras de fechamento suave.
+        Principais funções:
+        - Indicada para portas com largura de 700 até 900mm e de até 50Kg.
+        - Mantém a porta fechada;
+        - Elimina correntes de ar;
+        - Isolamento de ambientes;
+        - Fácil instalação;
+        - Reversível para portas direita ou esquerda; sem a necessidade de modificações no mecanismo
+        - Não requer ferramentas especiais;
+        - Pode ser instalada na porta ou no batente;
+        - Indicada para qualquer tipo de porta ou portão;
+        - Para instalação em portas de vidro necessita do suporte para portas de vidro MA200.
+        Especificação técnica:
+        NCM: 83026000
+        Fabricante: Dorma
+        Unidade: peça
+        Aplicação: Portas de madeira
+        portas corta fogo
+        porta de ferro
+        portas de alumínio.
+        Cor: Prata
+        Material: corpo em alumínio e braço hidráulico em aço.
+        Dimensões: 
+        - Corpo sem braço: 180x43x65mm (largura x altura x profundidade)
+        - Corpo com braço: 180x89x65mm (largura x altura x profundidade)
+        Peso: 1.525Kg
+        Dísponíveis nas cores: prata branca e preta.
+    _closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0550086900_closeSkuProduto_
+    _imageProduto_dorma_ma200_preta.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aérea Dorma MA-200/2 - Branco_closeTituloProduto_
+    _descricaoProduto_
+        Mola Hidráulica Aérea para Porta MA 200/2 Dorma utilizada para fechamento da porta sozinho
+        suavemente e sem ruídos. Esta mola hidráulica aérrea utiliza o sistema "Rack and Pinion" (Pinhão e Cremalheira) reconhecido e aprovado internacionalmente permitindo um controle hidráulico total a partir de um ângulo 180º (ângulo de abertura da porta)  Tecnologia eficiência e qualidade garantidas pela marca Dorma. Equipada com duas válvulas de regulagem que permitem a adaptação à diversas situações. A primeira válvula permite regular a velocidade de fechamento de 180° a 20° e a segunda válvula regula a velocidade do "golpe final" de 20° a 0° fechando a porta lenta e silenciosamente quando usada em portas com fechaduras de fechamento suave.
+        Principais funções:
+        - Indicada para portas com largura de 700 até 900mm e de até 50Kg.
+        - Mantém a porta fechada;
+        - Elimina correntes de ar;
+        - Isolamento de ambientes;
+        - Fácil instalação;
+        - Reversível para portas direita ou esquerda; sem a necessidade de modificações no mecanismo
+        - Não requer ferramentas especiais;
+        - Pode ser instalada na porta ou no batente;
+        - Indicada para qualquer tipo de porta ou portão;
+        - Para instalação em portas de vidro necessita do suporte para portas de vidro MA200.
+        Especificação técnica:
+        NCM: 83026000
+        Fabricante: Dorma
+        Referência: MA200/2
+        Unidade: peça
+        Aplicação: Portas de madeira
+        portas corta fogo
+        porta de ferro
+        portas de alumínio.
+        Cor: Prata
+        Material: corpo em alumínio e braço hidráulico em aço.
+        Dimensões:
+        - Corpo sem braço: 180x43x65mm (largura x altura x profundidade)
+        - Corpo com braço: 180x89x65mm (largura x altura x profundidade)
+        Peso: 1.525Kg
+        Dísponíveis nas cores: prata, branca e preta.
+    _closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0540080500_closeSkuProduto_
+    _imageProduto_dorma_ma200_branca.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aérea Hidráulica Dorma MA-200/3_closeTituloProduto_
+    _descricaoProduto_
+        Destinada a qualquer tipo de porta ou portão a mola aérea MA 200 da Dorma é nada menos do que a primeira de sua categoria trazida ao Brasil e produzida aqui. Com a tecnologia de ponta da fabricante o modelo logo se destacou por seu tamanho compacto variedade de cores fácil instalação e formato estético atraente. Suas funções são inúmeras: fechar a porta de forma suave e sem ruídos mantê-la fechada proteger contra correntes de ar evitar acidentes e até mesmo retardar a propagação de fogo. A MA 200 conta com o sistema “rack-and-pinion” que consiste em um produto final compacto de mesmo tamanho para as três potências de mola cada uma destinada a uma largura e peso diferente de porta e com abertura de 180º. A potência 2 serve para larguras menores de 85cm a 3 - que condiz com o produto desta página - para larguras entre 85cm de 95cm e a 4 para menores de 110cm e maiores de 95cm. Além disso conta com duas válvulas independentes para a regulagem da velocidade de fechamento uma para o intervalo dos 180º aos 20º e outra dos 20º ao 0º. A Dorma traz um sistema inteligente que é totalmente reversível permitindo que seus modelos sejam instalados tanto em portas à esquerda quanto à direita sem precisar inverter a estrutura. O revestimento do modelo é feito em esmalte sintético o que garante mais proteção contra a ação do tempo e maior beleza junto à decoração. Só aqui no Rei das Fechaduras você encontra a Mola Aérea Dorma MA 200/3 e diversos outros produtos de ferragens e acessórios reconhecidos no mercado.
+ 
+        TABELA TÉCNICA
+        Dados Técnicos
+        Produto: Mola Aérea Hidráulica Dorma MA 200/3
+        Unidades: 1
+        Uso indicado: Portas de entrada
+        alumínio e madeira.
+        Potência: 3
+        Dimensões: 180 x 43 x 65mm
+        Largura da porta: Portas entre 850 e 950mm de largura
+        Cor: Prata, Preto e Branco
+    _closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0480088588_closeSkuProduto_
+    _imageProduto_dorma_ma200_branca_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aérea Hidráulica Dorma MA-200/3 - Prata_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0420085300_closeSkuProduto_
+    _imageProduto_dorma_ma200_prata_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aérea Hidráulica Dorma MA-200/3 - Preto_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0560081200_closeSkuProduto_
+    _imageProduto_dorma_ma200_preta_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Aérea Hidráulica Dorma MA-200/4_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0570087688_closeSkuProduto_
+    _imageProduto_ma200_preta.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Dorma MA-200/4 PRETA POTÊNCIA "4"_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0570087600_closeSkuProduto_
+    _imageProduto_ma200_preta_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola a implantar_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0570087300_closeSkuProduto_
+    _imageProduto_ma200_preta_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Selante de Proteção para Mola de Piso_closeTituloProduto_
+    _descricaoProduto_
+        Selante
+    _closeDescricaoProduto_
+    _marcaProduto_Dorma_closeMarcaProduto_
+    _skuProduto_MO0200107100_closeSkuProduto_
+    _imageProduto_seal_protect.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Arouca Blim-Blim 650 ZBT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Arouca_closeMarcaProduto_
+    _skuProduto_FE4450019000_closeSkuProduto_
+    _imageProduto_650_zbt_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Arouca Blim-Blim 650 ZC_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Arouca_closeMarcaProduto_
+    _skuProduto_FE4460014300_closeSkuProduto_
+    _imageProduto_arouca_650_zc.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Arouca Blim-Blim 650 ZCE_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Arouca_closeMarcaProduto_
+    _skuProduto_FE3050017600_closeSkuProduto_
+    _imageProduto_arouca_650_zce.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Arouca Blim-Blim 650 LPE_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Arouca_closeMarcaProduto_
+    _skuProduto_FE7730012200_closeSkuProduto_
+    _imageProduto_660_lp.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça para Mármore 0580 CR 20mm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO4990048000_closeSkuProduto_
+    _imageProduto_dobradi__a_550__4d97632137230_198x188.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça para Marmore 550-825 CR Direita_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_DO4970047200_closeSkuProduto_
+    _imageProduto_dobradi__a_550__4d97632137230_198x188_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cantoneira 552-840 CR_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_CA0180955500_closeSkuProduto_
+    _imageProduto_cantoneira_552_4da797a7a0acc_198x188.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cantoneira para Mármore 554/845 CR_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_CA0160954800_closeSkuProduto_
+    _imageProduto_cantoneira_4e53e03229af1_198x188.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Batente para Mármore 0581-820 CR P/20mm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_BA0130630800_closeSkuProduto_
+    _imageProduto_batente_551_4da798a352c93_198x188.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Batente 0551-830 CR P/30mm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_BA0110639200_closeSkuProduto_
+    _imageProduto_batente_551_4da798a352c93_198x188_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Parafuso 560 CR com Porca 20mm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_PA9920609900_closeSkuProduto_
+    _imageProduto_parafuso_4e53e7ccdc91c_198x188.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Parafuso 860 CR com porca 30mm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_PA9930604200_closeSkuProduto_
+    _imageProduto_parafuso_4e53e7ccdc91c_198x188_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Tarjeta 819 CR Livre/Ocupado_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_TA0460230700_closeSkuProduto_
+    _imageProduto_targeta_4e53e922c69f7_198x188.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Parafuso 561-861 CR Atarraxante_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_PA9950605000_closeSkuProduto_
+    _imageProduto_parafuso_4e53e80478511_198x188_1_.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Parafuso 862 CR para Chumbar_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_PA9940600400_closeSkuProduto_
+    _imageProduto_parafuso_4e53e83a802e4_198x188_3.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Suporte 583 850 CR - Chapa 20mm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_CA0190390000_closeSkuProduto_
+    _imageProduto_chapa_553_4da798c3e99f6_198x188.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Suporte 583 850 CR - Chapa 20mm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto__closeMarcaProduto_
+    _skuProduto_CA0190390000_closeSkuProduto_
+    _imageProduto_chapa_553_4da798c3e99f6_198x188.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Pado Super Trava 1000 Inox_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE1020013400_closeSkuProduto_
+    _imageProduto_pado_1000_cr.jpeg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Pado Super Trava 11000 Inox - 02 peças com o mesmo segredo_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE2860015000_closeSkuProduto_
+    _imageProduto_pado_11000_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Pado Super Trava ZM MILANO 1500 CR_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE6310010000_closeSkuProduto_
+    _imageProduto_pado_1500_cr.jpeg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Pado Super Trava ZM Milano 11500 CR 2 peças com o mesmo segredo_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE6150012700_closeSkuProduto_
+    _imageProduto_pado_11500_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Pado Super Trava ZM Milano 1500 CRA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE2870010400_closeSkuProduto_
+    _imageProduto_pado_1500_cra.jpeg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Pado Super Trava ZM Milano 11500 CRA 2 peças com o mesmo segredo_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE2880016800_closeSkuProduto_
+    _imageProduto_pado_11500_cra.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Stam 602/03 Inox_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_FE5940010200_closeSkuProduto_
+    _imageProduto_stam-perfil-metalico-602-03.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Stam 603/11 - 20mm Inox_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_FE1570013500_closeSkuProduto_
+    _imageProduto_stam-perfil-metalico-603-11.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Stam 901 Inox Bico De Papagaio_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_FE3940012300_closeSkuProduto_
+    _imageProduto_stam_901_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Stam 1201 Tetra p/ Porta de Enrolar_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_FE3960013000_closeSkuProduto_
+    _imageProduto_stam-porta-de-enrolar-1201_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Stam 1701/100 - Tetra Sobrepor_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_FE8980012500_closeSkuProduto_
+    _imageProduto_stam-sobrepor-1701-100.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Stam 803/03 INOX - EXT_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_FE4530012700_closeSkuProduto_
+    _imageProduto_stam-residencial-803-03-ri.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Stam Morcego 1006 CR - ROS Quadra_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_FE5770017600_closeSkuProduto_
+    _imageProduto_stam-porta-de-correr-1006-roseta-quadrada_02.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Stam Morcego 1006 OX ROS Quadra_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_FE5900018000_closeSkuProduto_
+    _imageProduto_stam-porta-de-correr-1006-desenho_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Papaiz Tetra Chave 140 CR R68_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_FE3170012800_closeSkuProduto_
+    _imageProduto_papaiz_140_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Papaiz Tetra Chave 140 CR R68 - 2 peças com o mesmo segredo_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_FE3180018100_closeSkuProduto_
+    _imageProduto_papaiz_140x2_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Papaiz Tetra Chave 140 CA R68_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_FE3740013400_closeSkuProduto_
+    _imageProduto_papaiz_tetra_140_ca.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Papaiz Tetra Chave 140 R68 Cromo Acetinado 2 peças com o mesmo segredo_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_FE3220010200_closeSkuProduto_
+    _imageProduto_papaiz_140x2_ca.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Prendedor Magnético para Porta 315 Z CR_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Imab_closeMarcaProduto_
+    _skuProduto_PR0130125000_closeSkuProduto_
+    _imageProduto_prendedor_315_cr.jpeg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Prendedor Magnético para Porta 315 Z CA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Imab_closeMarcaProduto_
+    _skuProduto_PR0120120400_closeSkuProduto_
+    _imageProduto_prendedor_315_ca.jpeg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Prendedor Magnético para Porta 314 Z CR_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Imab_closeMarcaProduto_
+    _skuProduto_PR0670120500_closeSkuProduto_
+    _imageProduto_prendedor_314_cr.jpeg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Prendedor Magnético para Porta 314 Z CA_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Imab_closeMarcaProduto_
+    _skuProduto_PR0680125000_closeSkuProduto_
+    _imageProduto_imab_314_ca_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Kit Fechadura Segurança Orion BL TRIO 5570Z - Tetra_closeTituloProduto_
+    _descricaoProduto_
+        Kit Trio Tetra Fort Quadra 55mm (Z-T) > Trio Tetra Fort Quadra 5570 (Z -T)
+        COMPOSIÇÃO:
+        01 FECHADURA TETRA FORT QUADRA 55MM
+        02 TRAVAS DE SEGURANÇA
+    _closeDescricaoProduto_
+    _marcaProduto_Aliança_closeMarcaProduto_
+    _skuProduto_FE1450018300_closeSkuProduto_
+    _imageProduto_alian_a_kit_5570_bl.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Kit Fechadura Segurança Orion CR TRIO 5570Z - Tetra_closeTituloProduto_
+    _descricaoProduto_
+        Kit Trio Tetra Fort Quadra 55mm (Z-T) > Trio Tetra Fort Quadra 5570 (Z -T)
+        COMPOSIÇÃO:
+        01 FECHADURA TETRA FORT QUADRA 55MM
+        02 TRAVAS DE SEGURANÇA
+    _closeDescricaoProduto_
+    _marcaProduto_Aliança_closeMarcaProduto_
+    _skuProduto_FE7170017000_closeSkuProduto_
+    _imageProduto_alian_a_kit_5570_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cilindro Tambor Miolo Stam 501/601/803/901/1401 CR_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_CI0020184700_closeSkuProduto_
+    _imageProduto_stam-pino-501_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cilindro Tambor Miolo Stam 1800/1803 - Tetra Cromado_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Stam_closeMarcaProduto_
+    _skuProduto_CI0970187900_closeSkuProduto_
+    _imageProduto_stam-tetra-1800_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cilindro Tambor Miolo La Fonte ST2 CRA - 60mm_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_CI9970185528_closeSkuProduto_
+    _imageProduto_cilindro_la_fonte_cra.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cilindro Tambor Miolo Aliança C400 CR_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Aliança_closeMarcaProduto_
+    _skuProduto_CI0590185500_closeSkuProduto_
+    _imageProduto_alian_a_cilindro-p-fechadura-c400_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cilindro Tambor Miolo Aliança p/ Fechadura Tetra Fort BL_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Aliança_closeMarcaProduto_
+    _skuProduto_CI0850187400_closeSkuProduto_
+    _imageProduto_mini_tetra-c800.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cilindro Tambor Miolo Aliança p/ Fechadura Tetra fort CR_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Aliança_closeMarcaProduto_
+    _skuProduto_CI0840181000_closeSkuProduto_
+    _imageProduto_alian_a_cilindro-p-fechadura-c1200_cr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Pivo Inox p/ Portas Pivotantes até 100kg_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Bello inox_closeMarcaProduto_
+    _skuProduto_PI0150592000_closeSkuProduto_
+    _imageProduto_bello_pivo.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Pivot Inox Reforçado p/ Portas Pivotantes até 250kg_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Bello inox_closeMarcaProduto_
+    _skuProduto_PI0190594500_closeSkuProduto_
+    _imageProduto_bello_pivo_reforcado.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Mola Hidraulica de Piso Soprano P330 POT AJUSTAVEL_closeTituloProduto_
+    _descricaoProduto_
+        - Potência Ajustável 1 a 4
+        - Para portas de aproximadamente 1100x2100 e peso de até 120kg
+        - Disponível no acabamento: Aço Inox Polido
+    _closeDescricaoProduto_
+    _marcaProduto_Soprano_closeMarcaProduto_
+    _skuProduto_MO0740080200_closeSkuProduto_
+    _imageProduto_soprano_s_rie_p330.jpeg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Prendedor Auto Adesivo para Porta SM-035 CR_closeTituloProduto_
+    _descricaoProduto_
+        Fixador de porta em zamac com sistema magnético.
+        Com fixação autoadesiva de alta resistência na parede ou no piso.
+        Dispensa o uso furadeiras e brocas.
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_PR0660124300_closeSkuProduto_
+    _imageProduto_pado_sm035.jpeg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Para Porta De Vidro JBM - Giro ou Pivotante_closeTituloProduto_
+    _descricaoProduto_
+        Fechaduras para portas de Giro com tetra-chave auto blocável. (portas Pivotantes).
+        Para vidros de 8mm a 10mm.
+        Não necessita de furos para a instalação. Apenas encaixada.
+    _closeDescricaoProduto_
+    _marcaProduto_JBM_closeMarcaProduto_
+    _skuProduto_FE9070010400_closeSkuProduto_
+    _imageProduto_jbm_fa1_giro.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura para Porta De Vidro JBM - Correr_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura para portas de vidro de correr. Com tetra-chave.
+        Vidros de 8 a 10mm
+        Não necessita de furos para a instalação. Somente encaixada
+    _closeDescricaoProduto_
+    _marcaProduto_JBM_closeMarcaProduto_
+    _skuProduto_FE9080015000_closeSkuProduto_
+    _imageProduto_jbm_fc1_correr.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura de Segurança 04 pinos Volper Keso 60291 CRA_closeTituloProduto_
+    _descricaoProduto_
+        FECHADURA DE SEGURANÇA 04 PINOS
+        Caixa totalmente fechada em aço cromado
+        Testa e contra testa em aço inox 304L
+        Trinco em zamak cromado com amortecedor em poliacetal
+        Lingueta em aço 1045 cromado em forma de pinos
+        ACOMPANHA O CILINDRO 
+    _closeDescricaoProduto_
+    _marcaProduto_Keso_closeMarcaProduto_
+    _skuProduto_FE9503005000_closeSkuProduto_
+    _imageProduto_fechadura_60291_1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cilindro Duplo Europerfil Keso 8000_closeTituloProduto_
+    _descricaoProduto_
+        Cilindro duplo Europerfil Keso
+        Ligação: Aço
+        Comprimento padrão: 70mm
+        Pronlogamento: até 140mmm (standart)
+        Mestragem: possível sem restrição
+        ACIONADOR ÚNICO norma (DIN) com 03 cahves + cartão de segurança
+    _closeDescricaoProduto_
+    _marcaProduto_Keso_closeMarcaProduto_
+    _skuProduto_CI0520187000_closeSkuProduto_
+    _imageProduto_cilindro_euro_keso.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura de Segurança Rolete 04 pinos - Central - Volper Keso 70291 CRA_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura de segurança 04 pinos rolete. Caixa totalmente fechada em Aço Cromado. Testa e contra testa em inox 304L Trinco rolete em latão cromoado com regulagem de pressão. Lingueta em Aço 1045 Cromado em forma de pinos.
+        ACOMPANHA CILINDRO 
+    _closeDescricaoProduto_
+    _marcaProduto_Keso_closeMarcaProduto_
+    _skuProduto_FE9893008700_closeSkuProduto_
+    _imageProduto_fechadura_70291.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura de Segurança 03 pontos - Rolete - 12 pinos - Volper Keso - CRA - 70200_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura de segurança O3 pontos Rolete – 12 pinos. Caixa totalmente fechada em aço cromado. Testa em alumínio escovado. Contra testa em inox 304 escovado. Trinco Rolete em Latão cromado com regulagem de pressão. Lingüeta em aço 1045 cromado em forma de pinos.
+        ACOMPANHA CILINDRO 
+    _closeDescricaoProduto_
+    _marcaProduto_Keso_closeMarcaProduto_
+    _skuProduto_FE0361984200_closeSkuProduto_
+    _imageProduto_fechadura_70200.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura de Segurança 03 pontos - 12 pinos - Volper Keso - CRA - 60200_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura de segurança 03 pontos - 12 pinos. Caixa totalmente fechada em Aço Cromado. Testa em alumínio escovado. Contra testa em inox 304 escovado. Trinco em zamac cromado com amortecedor em poliacetal. Lingueta em Aço 1045 Cromado em forma de pinos.
+        ACOMPANHA CILINDRO 
+    _closeDescricaoProduto_
+    _marcaProduto_Keso_closeMarcaProduto_
+    _skuProduto_FE99630006000_closeSkuProduto_
+    _imageProduto_fechadura_60200.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo TR TB Inox Escovado JHF - 300 mm_closeTituloProduto_
+    _descricaoProduto_
+        Linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador TR da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 455mm Tamanho de furo a furo: 300mm 
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_0072700_closeSkuProduto_
+    _imageProduto_/p/u/puxador_ad_tr_tb.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo TR TB Inox Escovado JHF - 600 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador TR linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador TR da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 770mm Furo a Furo: 600mm
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_0078000_closeSkuProduto_
+    _imageProduto_/p/u/puxador_ad_tr_tb_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo TR TB Inox Escovado JHF - 800 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador TR linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador TR da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 988mm Tamanho de furo a furo: 800mm
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3320073400_closeSkuProduto_
+    _imageProduto_puxador_ad_tr_tb_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo TR TB Inox Escovado JHF - 1000 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador TR linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador TR da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 1185mm Tamanho de furo a furo: 1000mm
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3190072000_closeSkuProduto_
+    _imageProduto_puxador_ad_tr_tb_3.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo TR TB Inox Polido JHF - 300 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador TR linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador TR da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 455mm Tamanho de furo a furo: 300mm 
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3270076800_closeSkuProduto_
+    _imageProduto_puxador_ad_tr_tb_4.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo TR TB Inox Polido JHF - 600 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador TR linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador TR da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 770mm Furo a Furo: 600mm 
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3280071100_closeSkuProduto_
+    _imageProduto_puxador_ad_tr_tb_5.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo TR TB Inox Polido JHF - 800 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador TR linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador TR da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 988mm Furo a Furo: 800mm
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3290077500_closeSkuProduto_
+    _imageProduto_puxador_ad_tr_tb_6.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo TR TB Inox Polido JHF - 1000 mm_closeTituloProduto_
+    _descricaoProduto_
+        Puxador para porta de madeira.
+        Puxador para porta de vidro.
+        Puxador duplo.
+        Alça dupla.
+        Manilhão.
+        Pegador para porta.
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3200078200_closeSkuProduto_
+    _imageProduto_puxador_ad_tr_tb_1_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo AD H0001 Inox Escovado JHF - 200 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador H0001 linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador H0001 da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 225mm e Furo a Furo: 200mm 
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3440079600_closeSkuProduto_
+    _imageProduto_puxador_h0001.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo AD H0001 Inox Escovado JHF - 300 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador H0001 linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador H0001 da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 325mm Furo a Furo: 300mm 
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3450074000_closeSkuProduto_
+    _imageProduto_puxador_h0001_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo AD H0001 Inox Escovado JHF - 400 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador H0001 linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador H0001 da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 425mm Furo a Furo: 400mm 
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3620072700_closeSkuProduto_
+    _imageProduto_puxador_h0001_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo AD H0001 Inox Escovado JHF - 600 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador H0001 linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador H0001 da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 625mm Furo a Furo: 600mm 
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3460070100_closeSkuProduto_
+    _imageProduto_puxador_h0001_3.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo AD H0001 Inox Polido JHF - 200 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador H0001 linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador H0001 da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 225mm e Furo a Furo: 200mm 
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3480070000_closeSkuProduto_
+    _imageProduto_puxador_h0001_4.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo AD H0001 Inox Polido JHF - 300 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador H0001 linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador H0001 da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 325mm e Furo a Furo: 300mm 
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3490076400_closeSkuProduto_
+    _imageProduto_puxador_h0001_5.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ Porta Duplo AD H0001 Inox Polido JHF - 400 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador H0001 linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador H0001 da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 425mm Furo a Furo: 400mm 
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU3630077300_closeSkuProduto_
+    _imageProduto_puxador_h0001_6.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador p/ porta Duplo AD H0001 Inox Polido JHF - 600 mm_closeTituloProduto_
+    _descricaoProduto_
+        O puxador H0001 linha inox desenvolvido pela JHF possui design clássico sua forma linear concede um toque de requinte a sua porta. A linha inox é básica e clean livre de exageros embeleza qualquer ambiente. Fabricada em aço inox material resistente garantindo a qualidade e durabilidade do produto outro beneficio importante é a facilidade de limpeza concedendo maior praticidade a sua rotina. O puxador H0001 da JHF fica magnifico em portas pivotantes e outras podendo ser de madeira e vidro você pode escolher o acabamento que melhor combina com sua decoração o inox polido ou escovado garantindo a harmonia do seu ambiente. Tamanho total: 625mm Furo a Furo: 600mm 
+    _closeDescricaoProduto_
+    _marcaProduto_JHF_closeMarcaProduto_
+    _skuProduto_PU35000716_closeSkuProduto_
+    _imageProduto_puxador_h0001_7.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect 751 E CR - EXT ST2/55_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2433001900_closeSkuProduto_
+    _imageProduto_lafonte_751_ros_ext_cr_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect 751 I CR - INT ST2/55_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2443007200_closeSkuProduto_
+    _imageProduto_lafonte_751_ros_int_cr_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura La Fonte Architect 751 B CR - Ban ST2/55_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_La Fonte_closeMarcaProduto_
+    _skuProduto_FE2453002600_closeSkuProduto_
+    _imageProduto_lafonte_751_ros_ban_cr_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cofre Eletrônico Mini Yale - Azul_closeTituloProduto_
+    _descricaoProduto_
+        O Cofre Eletrônico Mini Yale azul é compacto e combina perfeitamente com decorações de quartos e escritórios. Suas medidas seguem a proporção de 16x22x12 cm no interior e 17x23x17 na parte externa. Para destravá-la é preciso usar uma senha numérica ou uma chave de segurança. O produto vem acompanhado de duas chaves e permite o registro de uma sequencia numérica de 3 à 8 digitos. O sistema elétrico funciona através de 4 pilhas AA que alimentam a energia do sistema de iluminação de led. 
+    _closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_CF0190240100_closeSkuProduto_
+    _imageProduto_cofre_mini_yale_-_azul.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cofre Eletrônico Mini Yale - Rosa_closeTituloProduto_
+    _descricaoProduto_
+        O Cofre Eletrônico Mini Yale rosa funciona no sistema de senha numérica. O produto permite o cadastro de uma senha de 3 a 8 números e quando digitado acende luzes verdes de led se estiver correta e vermelha se estiver errada. Com um sistema super seguro o modelo vem acompanhado de duas chaves de segurança para situações de emergência. O interior mede 16x22x12 e o exterior tem 17x23x17. Além de não ocupar espaço o cofre é bastante discreto. 
+    _closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_CF0200240200_closeSkuProduto_
+    _imageProduto_cofre_mini_yale_-_rosa.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Cofre Eletrônico Mini Yale - Preto_closeTituloProduto_
+    _descricaoProduto_
+        O Cofre Eletrônico Mini Yale preto é discreto e combina perfeitamente com qualquer cômodo da casa ou do escritório. Indicado para guardar pertences pessoais dinheiro documentos e valore o cofre tem 16x22x12 na área externa e 17x23x17 de tamanho externo. O sistema de segurança funciona tanto com senha numérica (3 a 8 dígitos) quanto com a chave de segurança para momentos em que se esquece a senha ou há algum emprevisto. 
+    _closeDescricaoProduto_
+    _marcaProduto_Yale_closeMarcaProduto_
+    _skuProduto_CF0230240300_closeSkuProduto_
+    _imageProduto_cofre_mini_yale_-_preto.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador Alça dupla para porta DH210 25 X 45 X 800 X 600MM AE/AIP_closeTituloProduto_
+    _descricaoProduto_
+        Tamanhos: 600 mm (entre furos)
+        Dimensões: 800 mm (comprimento) X 25-45 mm (diâmetro)
+        Acabamento: aço escovado
+        Material: aço inox 304
+    _closeDescricaoProduto_
+    _marcaProduto_BSKF_closeMarcaProduto_
+    _skuProduto_PU1640070400_closeSkuProduto_
+    _imageProduto_alca-para-porta-dh-210.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador Alça dupla para porta DH8020 45 X 25 X 800 X 600MM AE/AIP_closeTituloProduto_
+    _descricaoProduto_
+        Tamanhos: 600 mm (entre furos)
+        Dimensões: 800 mm (comprimento) X 45 X 25 mm (tubo)
+        Acabamento: aço escovado/polido
+        Material: aço inox 304 
+    _closeDescricaoProduto_
+    _marcaProduto_BSKF_closeMarcaProduto_
+    _skuProduto_PU1620070500_closeSkuProduto_
+    _imageProduto_alca-para-porta-dh-8020.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador Alça dupla para porta HD 257 DOURADO 400MM_closeTituloProduto_
+    _descricaoProduto_
+        Tamanho: 400 mm (entre furos)
+        Dimensões: 700 mm (comprimento) X 19 mm X 38 mm
+        Acabamento: dourado
+        Material: aço inox 304
+    _closeDescricaoProduto_
+    _marcaProduto_BSKF_closeMarcaProduto_
+    _skuProduto_PU8800111300_closeSkuProduto_
+    _imageProduto_alca-para-porta-hd-257.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador Alça dupla para porta HD 257 DOURADO 700MM_closeTituloProduto_
+    _descricaoProduto_
+        Tamanho: 700 mm (entre furos)
+        Dimensõe: 1000 mm (comprimento) X 19 mm X 38 mm
+        Acabamento: dourado
+        Material: aço inox 304
+    _closeDescricaoProduto_
+    _marcaProduto_BSKF_closeMarcaProduto_
+    _skuProduto_PU8820112000_closeSkuProduto_
+    _imageProduto_alca-para-porta-hd-257_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxadora Alça dupla para porta JY235A 38 X 1200 X 800MM AE_closeTituloProduto_
+    _descricaoProduto_
+        Tamanhos: 800 mm (entre furos)
+        Dimensões: 1200 mm (comprimento) X 38 mm (diâmetro)
+        Acabamento: aço escovado
+        Material: aço inox 304
+    _closeDescricaoProduto_
+    _marcaProduto_BSKF_closeMarcaProduto_
+    _skuProduto_PU1630075000_closeSkuProduto_
+    _imageProduto_alca-para-porta-jy-235a.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador Alça dupla para porta JY565A 1200 X 800MM AIP_closeTituloProduto_
+    _descricaoProduto_
+        Tamanhos: 800 mm (entre furos)
+        Dimensões: 1200 mm (comprimento) X 58-30 mm (diâmetro)
+        Acabamento: aço inox polido
+        Material: aço inox 304
+    _closeDescricaoProduto_
+    _marcaProduto_BSKF_closeMarcaProduto_
+    _skuProduto_PU1650076800_closeSkuProduto_
+    _imageProduto_alca-para-porta-jy-565.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Puxador Alça dupla para porta SPH060 32 X 600 X 555MM AE_closeTituloProduto_
+    _descricaoProduto_
+        Tamanhos: 555 mm (entre furos)
+        Dimensões: 600 mm (comprimento) X 80 mm (altura) X 32 mm (diâmetro)
+        Acabamento: aço escovado
+        Material: aço inox 304
+    _closeDescricaoProduto_
+    _marcaProduto_BSKF_closeMarcaProduto_
+    _skuProduto_PU1610074300_closeSkuProduto_
+    _imageProduto_alca-para-porta-sph-060.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Automatica Page 325 LC - 35" x 30" _closeTituloProduto_
+    _descricaoProduto_
+        Dobradiça Automática para porta em Latão Cromado
+        - Mola interna
+        - Sem dispositivos externos
+        - Fácil regulagem
+        - Mantém a estética da porta
+        - Economiza espaço
+        OBS: Em regiões litorâneas recomendamos somente utilizar acabamento em Latão ou Aço Inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO4670043900_closeSkuProduto_
+    _imageProduto_dobradi_a_pag_325_1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Automatica Page 325 LO - 35" x 30"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiça Automática para porta em Latão Oxidado
+        - Mola interna
+        - Sem dispositivos externos
+        - Fácil regulagem
+        - Mantém a estética da porta
+        - Economiza espaço
+        OBS: Em regiões litorâneas recomendamos somente utilizar acabamento em Latão ou Aço Inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_0049200_closeSkuProduto_
+    _imageProduto_/d/o/dobradi_a_page_325_lo_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Automatica Page 225 Aço cromado - 35" x 30"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiça Automática para porta em aço cromado
+        - Mola interna
+        - Sem dispositivos externos
+        - Fácil regulagem
+        - Mantém a estética da porta
+        - Economiza espaço
+        OBS: Em regiões litorâneas recomendamos somente utilizar acabamento em Latão ou Aço Inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO4660048500_closeSkuProduto_
+    _imageProduto_dobradi_a_pag_225_a_o_cromo_escovado_3.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Automatica Page 225 Aço cromo acetinado - 35" x 30"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiça Automática para porta em Aço Cromo Acetinado
+        - Mola interna
+        - Sem dispositivos externos
+        - Fácil regulagem
+        - Mantém a estética da porta
+        - Economiza espaço
+        OBS: Em regiões litorâneas recomendamos somente utilizar acabamento em Latão ou Aço Inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO4710045100_closeSkuProduto_
+    _imageProduto_dobradi_a_pag_225_a_o_cromo_escovado_4.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Vai e Vem 355 LP- Latão Polido - 4"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiças vai e vem normalmente aplicadas em porta bang bang (tipo saloon) porta balcão ou passagem onde necessita-se que a porta abra para os dois lados como em portas de acesso a cozinha em restaurantes ou em hospitais etc
+        - 2 molas internas
+        - Movimentos suaves
+        - Fácil regulagem
+        - Sem dispositivos externos
+        - Mantém a estética da porta
+        -Economiza espaço
+        OBS: Em regiões litorâneas recomendamos utilizar Latão ou Aço inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO0880043000_closeSkuProduto_
+    _imageProduto_dobradi_a_page_vai_e_vem-_355_2_lp_4_.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Vai e Vem 355 LP- Latão Polido - 3"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiças vai e vem normalmente aplicadas em porta bang bang (tipo saloon) porta balcão ou passagem onde necessita-se que a porta abra para os dois lados como em portas de acesso a cozinha em restaurantes ou em hospitais etc
+        - 2 molas internas
+        - Movimentos suaves
+        - Fácil regulagem
+        - Sem dispositivos externos
+        - Mantém a estética da porta
+        - Economiza espaço
+        OBS: Em regiões litorâneas recomendamos utilizar Latão ou Aço inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO0870048600_closeSkuProduto_
+    _imageProduto_dobradi_a_page_vai_e_vem-_355_lp_3_.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Vai e Vem 355 LCRA- Latão Cromo Acetinado - 4"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiças vai e vem normalmente aplicadas em porta bang bang (tipo saloon) porta balcão ou passagem onde necessita-se que a porta abra para os dois lados como em portas de acesso a cozinha em restaurantes ou em hospitais etc
+        - 2 molas internas
+        - Movimentos suaves
+        - Fácil regulagem
+        - Sem dispositivos externos
+        - Mantém a estética da porta
+        -Economiza espaço
+        OBS: Em regiões litorâneas recomendamos utilizar Latão ou Aço inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO2960044800_closeSkuProduto_
+    _imageProduto_dobradi_a_page_vai_e_vem-_355_2_cra_4_.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Vai e Vem 355 LCRA- Latão Cromo Acetinado - 3"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiças vai e vem normalmente aplicadas em porta bang bang (tipo saloon) porta balcão ou passagem onde necessita-se que a porta abra para os dois lados como em portas de acesso a cozinha em restaurantes ou em hospitais etc
+        - 2 molas internas
+        - Movimentos suaves
+        - Fácil regulagem
+        - Sem dispositivos externos
+        - Mantém a estética da porta
+        - Economiza espaço
+        OBS: Em regiões litorâneas recomendamos utilizar Latão ou Aço inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO2910047000_closeSkuProduto_
+    _imageProduto_dobradi_a_page_vai_e_vem-_355_2_cra_4__1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Vai e Vem 355 LC- Latão Cromado - 4"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiças vai e vem normalmente aplicadas em porta bang bang (tipo saloon) porta balcão ou passagem onde necessita-se que a porta abra para os dois lados como em portas de acesso a cozinha em restaurantes ou em hospitais etc
+        - 2 molas internas
+        - Movimentos suaves
+        - Fácil regulagem
+        - Sem dispositivos externos
+        - Mantém a estética da porta
+        - Economiza espaço
+        OBS: Em regiões litorâneas recomendamos utilizar Latão ou Aço inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO2880040000_closeSkuProduto_
+    _imageProduto_dobradi_a_page_vai_e_vem-_355_lc_4_.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Vai e Vem 355 LC- Latão Cromado - 3"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiças vai e vem normalmente aplicadas em porta bang bang (tipo saloon) porta balcão ou passagem onde necessita-se que a porta abra para os dois lados como em portas de acesso a cozinha em restaurantes ou em hospitais etc
+        - 2 molas internas
+        - Movimentos suaves
+        - Fácil regulagem
+        - Sem dispositivos externos
+        - Mantém a estética da porta
+        -Economiza espaço
+        OBS: Em regiões litorâneas recomendamos utilizar Latão ou Aço inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO2870045700_closeSkuProduto_
+    _imageProduto_dobradi_a_page_vai_e_vem-_355_lc_3_.jpg _closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Vai e Vem 355 LOX- Latão Oxidado - 4"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiças vai e vem normalmente aplicadas em porta bang bang (tipo saloon) porta balcão ou passagem onde necessita-se que a porta abra para os dois lados como em portas de acesso a cozinha em restaurantes ou em hospitais etc
+        - 2 molas internas
+        - Movimentos suaves
+        - Fácil regulagem
+        - Sem dispositivos externos
+        - Mantém a estética da porta
+        - Economiza espaço
+        OBS: Em regiões litorâneas recomendamos utilizar Latão ou Aço inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO0900044500_closeSkuProduto_
+    _imageProduto_dobradi_a_page_vai_e_vem-_355_lox_4_.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Vai e Vem 355 LOX- Latão Oxidado - 3"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiças vai e vem normalmente aplicadas em porta bang bang (tipo saloon) porta balcão ou passagem onde necessita-se que a porta abra para os dois lados como em portas de acesso a cozinha em restaurantes ou em hospitais etc
+        - 2 molas internas
+        - Movimentos suaves
+        - Fácil regulagem
+        - Sem dispositivos externos
+        - Mantém a estética da porta
+        - Economiza espaço
+        OBS: Em regiões litorâneas recomendamos utilizar Latão ou Aço inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO0890049300_closeSkuProduto_
+    _imageProduto_dobradi_a_page_vai_e_vem-_355_lox_3_.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Vai e Vem 255 FN- Ferro Niquelado - 4"_closeTituloProduto_
+    _descricaoProduto_
+        Dobradiças vai e vem normalmente aplicadas em porta bang bang (tipo saloon) porta balcão ou passagem onde necessita-se que a porta abra para os dois lados como em portas de acesso a cozinha em restaurantes ou em hospitais etc
+        - 2 molas internas
+        - Movimentos suaves
+        - Fácil regulagem
+        - Sem dispositivos externos
+        - Mantém a estética da porta
+        - Economiza espaço
+        OBS: Em regiões litorâneas recomendamos utilizar Latão ou Aço inox
+    _closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO5890047000_closeSkuProduto_
+    _imageProduto_dobradi_a_page_vai_e_vem-_255_fn_3_.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Dobradiça Vai e Vem 255 FN- Ferro Niquelado - 3"_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Page_closeMarcaProduto_
+    _skuProduto_DO5880041700_closeSkuProduto_
+    _imageProduto_dobradi_a_page_vai_e_vem-_255_fn_3_.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tubular Vouga Branca 90mm_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura Tubular Vouga Branca de 90 mm usada em divisórias com acionamento por chave do lado externo e botão do lado interno com gatilho de 90 mm o que permite com que a maçaneta se posicione a 90mm da testa da porta facilitando sua abertura sem enroscar a mão no batente da porta. É indicada para portas com espessura entre 32 e 37 mm 
+    _closeDescricaoProduto_
+    _marcaProduto_Vouga_closeMarcaProduto_
+    _skuProduto_FE4150015600_closeSkuProduto_
+    _imageProduto_fechadura_vouga_branca.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tubular Vouga Preta 90mm_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura Tubular Vouga Preta de 90 mm usada em divisórias com acionamento por chave do lado externo e botão do lado interno com gatilho de 90 mm o que permite com que a maçaneta se posicione a 90mm da testa da porta facilitando sua abertura sem enroscar a mão no batente da porta. É indicada para portas com espessura entre 32 e 37 mm 
+    _closeDescricaoProduto_
+    _marcaProduto_Vouga_closeMarcaProduto_
+    _skuProduto_FE4180011700_closeSkuProduto_
+    _imageProduto_fechadura_vouga_preta.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tubular Vouga Cromada 90mm_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura Tubular Vouga Preta de 90 mm usada em divisórias com acionamento por chave do lado externo e botão do lado interno com gatilho de 90 mm o que permite com que a maçaneta se posicione a 90mm da testa da porta facilitando sua abertura sem enroscar a mão no batente da porta. É indicada para portas com espessura entre 32 e 37 mm 
+    _closeDescricaoProduto_
+    _marcaProduto_Vouga_closeMarcaProduto_
+    _skuProduto_FE4140010000_closeSkuProduto_
+    _imageProduto_image2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tubular ABS 41410N-90MM - Lockwell - Preta_closeTituloProduto_
+    _descricaoProduto_
+        Com um sistema de trinco muito prático e resistente que facilita muito a instalação das fechaduras reduzindo em 50% o tempo de intalação e uso de ferramentas especiais. Este sistema de chave/botão de girar trava e destrava pelo botão ou chave e são utilizado na montagem de divisórias para escritórios consultórios hotéis flats residências entre outras aplicações. 
+    _closeDescricaoProduto_
+    _marcaProduto_Lockwell_closeMarcaProduto_
+    _skuProduto_FE7140010900_closeSkuProduto_
+    _imageProduto_tubular_preta_lockwell.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tubular ABS 41416N-90MM BRANCA - Lockwell_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura Lockwell Tubular ABS 41416N - 90mm tem um sistema de trinco muito prático e resistente que facilita muito a instalação das fechaduras reduzindo em 50% o tempo de intalação e uso de ferramentas especiais. Este sistema de chave/botão de girar trava e destrava pelo botão ou chave e são utilizado na montagem de divisórias para escritórios consultórios hotéis flats residências entre outras aplicações. 
+    _closeDescricaoProduto_
+    _marcaProduto_Lockwell_closeMarcaProduto_
+    _skuProduto_FE7160011600_closeSkuProduto_
+    _imageProduto_tubular_branca_lockwell2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tubular ABS 41414N-90MM - Lockwell - Ocre_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura Lockwell Tubular ABS 41414N - 90mm tem um sistema de trinco muito prático e resistente que facilita muito a instalação das fechaduras reduzindo em 50% o tempo de intalação e uso de ferramentas especiais. Este sistema de chave/botão de girar trava e destrava pelo botão ou chave e são utilizado na montagem de divisórias para escritórios consultórios hotéis flats residências entre outras aplicações. 
+    _closeDescricaoProduto_
+    _marcaProduto_Lockwell_closeMarcaProduto_
+    _skuProduto_FE7150016200_closeSkuProduto_
+    _imageProduto_fechadura-90-mm-lockwell-cor-ocre-65893.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tubular ABS 41110N-61MM Preta - Lockwell_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura Lockwell Tubular ABS 41410 - 61mm tem um sistema de trinco muito prático e resistente que facilita muito a instalação das fechaduras reduzindo em 50% o tempo de intalação e uso de ferramentas especiais. Este sistema de chave/botão de girar trava e destrava pelo botão ou chave e são utilizado na montagem de divisórias para escritórios consultórios hotéis flats residências entre outras aplicações. 
+    _closeDescricaoProduto_
+    _marcaProduto_Lockwell_closeMarcaProduto_
+    _skuProduto_FE7050011800_closeSkuProduto_
+    _imageProduto_fechadura-90-mm-lockwell-cor-preto-65891_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tubular ABS 4119N-61MM Cromada - Lockwell_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura Lockwell Tubular ABS 4119 - 61mm tem um sistema de trinco muito prático e resistente que facilita muito a instalação das fechaduras reduzindo em 50% o tempo de intalação e uso de ferramentas especiais. Este sistema de chave/botão de girar trava e destrava pelo botão ou chave e são utilizado na montagem de divisórias para escritórios consultórios hotéis flats residências entre outras aplicações. 
+    _closeDescricaoProduto_
+    _marcaProduto_Lockwell_closeMarcaProduto_
+    _skuProduto_FE7190018700_closeSkuProduto_
+    _imageProduto_fechadura-90-mm-lockwell-cor-cromado-65894.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tubular ABS 4149N-90MM Cromada - Lockwell_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura Lockwell Tubular ABS 4149N - 90mm tem um sistema de trinco muito prático e resistente que facilita muito a instalação das fechaduras reduzindo em 50% o tempo de intalação e uso de ferramentas especiais. Este sistema de chave/botão de girar trava e destrava pelo botão ou chave e são utilizado na montagem de divisórias para escritórios consultórios hotéis flats residências entre outras aplicações. 
+    _closeDescricaoProduto_
+    _marcaProduto_Lockwell_closeMarcaProduto_
+    _skuProduto_FE7130015500_closeSkuProduto_
+    _imageProduto_fechadura-90-mm-lockwell-cor-cromado-65894_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Tubular BRS 4143N-90MM LP - dourada -Lockwell_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura Lockwell Tubular ABS 4143N - 90mm tem um sistema de trinco muito prático e resistente que facilita muito a instalação das fechaduras reduzindo em 50% o tempo de intalação e uso de ferramentas especiais. Este sistema de chave/botão de girar trava e destrava pelo botão ou chave e são utilizado na montagem de divisórias para escritórios consultórios hotéis flats residências entre outras aplicações. 
+    _closeDescricaoProduto_
+    _marcaProduto_Lockwell_closeMarcaProduto_
+    _sku_FE8750017500_closeSkuProduto_
+    _imageProduto__closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Classic 0 01 - Prata - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0280836601_closeSkuProduto_
+    _imageProduto_caixa_cartas_classic_001_prata_-foto1_1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Classic - Prates Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0280836600_closeSkuProduto_
+    _imageProduto_caixa_cartas_frontal_classic_021_1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Classic 2 01 - Branca - Prates Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0270830202_closeSkuProduto_
+    _imageProduto_caixa_cartas_classic_001_branca_-foto2.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Decor 0 02 - Prata - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0340839600_closeSkuProduto_
+    _imageProduto_caixa_cartas_decor_0_02_prata_-foto1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Imperial - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC03008371_closeSkuProduto_
+    _imageProduto_caixa_cartas_imperial_000_prata_-foto1_1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Imperial 0 44 - Prata - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0300837100_closeSkuProduto_
+    _imageProduto_caixa_cartas_imperial_000_prata_-foto1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas IMPERIAL 2 44 - Branca - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _sku_CC0290831000_closeSkuProduto_
+    _imageProduto__closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Regiane - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC02608359_closeSkuProduto_
+    _imageProduto_caixa_cartas_regiane_042_prata_-foto1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Regiane 0 42 - Prata - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0260835900_closeSkuProduto_
+    _imageProduto_caixa_cartas_regiane_042_prata_-foto1_1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Regiane 2 42 - Branca - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0250830300_closeSkuProduto_
+    _imageProduto_caixa_cartas_regiane_242_branca_-foto1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartasYankee - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC03608301_closeSkuProduto_
+    _imageProduto_caixa_cartas_yankee_2_56_branca_-foto1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Yankee 0 56 - Prata - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0360830100_closeSkuProduto_
+    _imageProduto_caixa_cartas_yankee_0_56_prata_-foto4.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Yankee 2 56 - Branca - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0350834000_closeSkuProduto_
+    _imageProduto_caixa_cartas_yankee_2_56_branca_-foto1_1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Safira - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC03208389_closeSkuProduto_
+    _imageProduto_caixa_cartas_safira_0_10_prata_-foto1_1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Safira 0 10 - Prata - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0320838900_closeSkuProduto_
+    _imageProduto_caixa_cartas_safira_0_10_prata_-foto2.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Safira 2 10 - Branca - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0310832500_closeSkuProduto_
+    _imageProduto_caixa_cartas_safira_2_10_branca_-foto1_1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Vitoria - Prates e Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC03808300_closeSkuProduto_
+    _imageProduto_caixa_cartas_vitoria_2_41.foto1png_2.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Vitoria 0 41 - Prata - Prates Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0380830000_closeSkuProduto_
+    _imageProduto_caixa_cartas_vitoria_2_41.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Caixa p/cartas Safira 2 41 - Branca - Prates Barbosa_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Prates e Barbosa_closeMarcaProduto_
+    _skuProduto_CC0370835700_closeSkuProduto_
+    _imageProduto_caixa_cartas_vitoria_branca.foto1png.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Pega Ladrao 505A FC_closeTituloProduto_
+    _descricaoProduto_
+        Fecho de uso residencial ou comercial. Fácil Instalação e ótima qualidade. Alta durabilidade fácil limpeza segurança e beleza no acabamento. Indicado para residencias hotéis hospitais e qualquer lugar onde se necessite abrir uma fresta da porta de modo a não permitir que o invasor empurre a mesma e adentre ao local 
+    _closeDescricaoProduto_
+    _marcaProduto_Datti_closeMarcaProduto_
+    _skuProduto_FC0020346700_closeSkuProduto_
+    _imageProduto_pega_ladrao_505a_fc.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fecho Pega Ladrao 3009.0055.28 CRA_closeTituloProduto_
+    _descricaoProduto_
+        Fecho de uso residencial ou comercial. Fácil Instalação e ótima qualidade. Alta durabilidade fácil limpeza segurança e beleza no acabamento. Indicado para residencias hotéis hospitais e qualquer lugar onde se necessite abrir uma fresta da porta de modo a não permitir que o invasor empurre a mesma e adentre ao local 
+    _closeDescricaoProduto_
+    _marcaProduto_Soprano_closeMarcaProduto_
+    _skuProduto_FC0080349900_closeSkuProduto_
+    _imageProduto_pega_ladrao_trinfor_v18l_cr.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Nina ZM CR 221-90E - EXT_closeTituloProduto_
+    _descricaoProduto_
+        Maçaneta e roseta em zamac Testa e contra testa em aço inoxidável Cilindro em latão maciço Acabamento cromado Máquina: 55mm; composta por um cilindro normal Utilização: Esta fechadura é recomendada para portas externas em geral ou portas internas onde se requer mais segurança conforme padrão desenvolvido pelo fabricante
+        Garantia: Conforme informação do fabricante distribuidor e importador este produto possui a garantia de 5 anos.
+        Atenção: Imagem meramente ilustrativa podendo conter alguma diferença em sua tonalidade.
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE3343006300_closeSkuProduto_
+    _imageProduto_nina_externa.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Nina ZM CR 221-90I - INT_closeTituloProduto_
+    _descricaoProduto_
+        Maçaneta e roseta em zamac Testa e contra testa em aço inoxidável Acabamento cromado 
+        Máquina: 55mm;  
+        Utilização: Esta fechadura é recomendada para portas internas ou de passagem conforme padrão desenvolvido pelo fabricante; 
+        Garantia: Conforme informação do fabricante distribuidor e importador este produto possui a garantia de 5 anos. 
+        Atenção: Imagem meramente ilustrativa podendo conter alguma diferença em sua tonalidade. 
+    _closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE3353001700_closeSkuProduto_
+    _imageProduto_nina_interna.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Nina ZM CR 221-90B - BAN_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Pado_closeMarcaProduto_
+    _skuProduto_FE3363007000_closeSkuProduto_
+    _imageProduto_nina_banheiro.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Inoxvita Linea - MI610_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_FE8433003100_closeSkuProduto_
+    _imageProduto_inoxvita_linea_externa_1.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Inoxvita Linea CA MI610_closeTituloProduto_
+    _descricaoProduto_
+        Fechadura em Aço Inox (testa e contra-testa maçaneta lingueta);
+        Máquina: 55mm; 
+        Ítens inclusos: Máquina da fechadura contra-testa espelhos ou roseta cilindros maçanetas parafusos e pino e chaves;
+        Utilização: Esta fechadura é recomendada para áreas internas; altamente resistente a umidade e maresia - IDEAL PARA REGIÕES LITORÂNEAS conforme padrão desenvolvido pelo fabricante;
+        Garantia: Conforme informação do fabricante distribuidor e importador este produto possui a garantia de 5 anos.
+    _closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_FE8443009500_closeSkuProduto_
+    _imageProduto_inoxvita_linea_int.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Inoxvita Linea CA MI610_closeTituloProduto_
+    _descricaoProduto__closeDescricaoProduto_
+    _marcaProduto_Papaiz_closeMarcaProduto_
+    _skuProduto_FE8453004900_closeSkuProduto_
+    _imageProduto_inoxvita_linea_banheiro.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Digital Intelbras FR200 Senha ou Cartão_closeTituloProduto_
+    _descricaoProduto_
+        FR 200 O produto ideal para consumidores que buscam praticidade design e segurança  em um único produto. Modos de abertura Ela pode ser aberta via senha numérica pelo teclado touch screen  ou através de chaveiros RFID (cartão de proximidade).
+        Baixo consumo de bateria A fechadura digital é alimentada por quatro pilhas alcalinas AA com autonomia de um ano considerando uma média de até dez acessos diários.
+        Alarme antiarrombamento O alarme antifurto aciona um aviso sonoro (durante 1 minuto) na própria fechadura quando negadas 5 tentativas consecutivas de abertura.
+        O alarme também será acionado caso a porta seja arrombada Função não perturbe Tenha mais privacidade ativando a função Não Perturbe.
+        Com ela você pode desabilitar a abertura da fechadura pelo lado de fora Bateria de emergência Para casos em que a carga que as pilhas fornecem à fechadura for insuficiente para a abertura da porta basta conectar uma bateria de 9 V na fechadura e digitar a senha cadastrada ou usar o chaveiro RFID Função senha protegida Essa função dificulta que descubram as senhas pelas marcas de digitais deixadas no teclado da fechadura.
+        Quando habilitada fornece números aleatórios a serem digitados pelo usuário após a senha . Outras características:
+        • Cadastro de até quatro senhas
+        • Cadastro de até 30 chaveiros RFID
+        • Sinalização de pilha fraca com
+        1 semana de antecedência
+        • Adaptável a portas de 25 à 50 mm
+        • Fechadura de sobrepor de fácil instalação
+        Embalagem individual
+        Peso 1.4 Kg
+        85 mm (h)
+        260 mm (P)
+        Conteúdo da embalagem: 1 fechadura digital,  1 manual, 5 chaveiros RFID, 1 gabarito de instalação e 4 pilhas AA
+    _closeDescricaoProduto_
+    _marcaProduto_Intelbras_closeMarcaProduto_
+    _skuProduto_FE9043001400_closeSkuProduto_
+    _imageProduto_intelbras_fr200_externa_1.jpg_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Fechadura Digital Intelbrás FR100 Senha_closeTituloProduto_
+    _descricaoProduto_
+        A fechadura digital FR 100 possui acesso por senha numérica teclado de 12 teclas e instalação simplificada. É a solução perfeita para o controle de acesso de residências escritórios e apartamentos. Fácil de instalar e sem fios A FR 100 possui instalação simplificada e manual em português. Ela pode ser instalada em portas de 25 a 50 mm de espessura e funciona com 4 pilhas alcalinas (AA). Utiliza senha para liberar a porta Agora você não precisa mais procurar pela chave da sua casa ou do escritório. Ela está na ponta dos seus dedos: abra sua fechadura com até quatro senhas diferentes de 4 a 12 dígitos. Função não perturbe Tenha mais privacidade ativando a função Não Perturbe. Com ela você pode desabilitar a abertura da fechadura pelo lado de fora. 
+    _closeDescricaoProduto_
+    _marcaProduto_Intelbras_closeMarcaProduto_
+    _skuProduto_FE9063003000_closeSkuProduto_
+    _imageProduto_flyer_digital_lancamento_fr_100_03.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Gancho Adesivo 3M Command Design Pequeno_closeTituloProduto_
+    _descricaoProduto_
+        Detalhes
+        Não estraga as paredes servindo para pendurar sem furar Não deixa resíduos Gancho para pendurar fácil de aplicar e ser removido.
+        Suporta até 450 g Disponível em vários desenhos para combinar com sua decoração e seu estilo Dê personalidade aos seus espaços sem danificar as superfícies! 
+        Seus espaços na casa e no escritório falam sobre você. O Gancho Plástico 3M Command™ Design é um adesivo removível com ganchos para decorar e organizar a sua casa de forma prática sem sujeira e sem furos na parede. 
+        A tecnologia do adesivo Command permite trocar o gancho de lugar sem danificar as paredes. É ideal para organizar cozinhas lavanderias e quartos. Aplicação forte remoção limpa resultados sem danos na parede Sem deixar resíduos e sujeira o Gancho Plástico 3M Command™ Design pode ser aplicado em várias superfícies. Com cores e tamanhos diferentes ele garante estilo para sua decoração. É fácil de ser colocado em diversas superfícies como paredes pintadas vidros azulejos madeira e metal. Cada embalagem contém dois ganchos plásticos Design pequenos e quatro adesivos pequenos sendo que cada gancho suporta até 450 g.O Gancho Plástico 3M Command™ Design está disponível em vários desenhos para combinar com sua decoração e seu estilo. Também pode ser encontrado em diversos tamanhos segurando uma quantidade surpreendente de peso – dependendo do modelo até sete quilos e meio! Esqueça os pregos parafusos e tachas: esses ganchos adesivos 3M são rápidos e fáceis de pendurar podem ser utilizados em diversas superfícies e são removidos de forma limpa sempre que você desejar. Para aplicar estes ganchos de parede limpe a parede com álcool e um pano seco. Não use produtos de limpeza aerossóis ou toalhinhas de limpeza pois elas deixam um resíduo escorregadio que impede a aderência. Separe as tiras e remova o recobrimento do adesivo. Pressione a tira sobre a parte posterior do gancho. Agora pressione o gancho firmemente contra a parede ou superfície durante mais ou menos 30 segundos. Quanto maior for a pressão mais forte será a adesão. Para que realmente exista uma aderência você tem que deslizar o gancho para cima fora da base de montagem. Espere 1 hora antes de pendurar algum artigo. Para remover empurre para cima a parte inferior do gancho para deixar a base à vista na parede. Segure a base com cuidado não a pressione contra a parede. Lembre-se de que você nunca deve puxar a tira em sua direção sempre puxe para baixo o mais devagar que você puder. Pressione com o polegar a tira grudada na parede e com a outra mão puxe lentamente para baixo mantendo-a esticada aproximadamente 30 cm ou até que esta desgrude da superfície. Aplicações sugeridas Ideal para organizar cozinhas lavanderias quartos e banheiros sem sujeira Pode ser aplicado em diversas superfícies Pode ser utilizado em áreas úmidas 
+    _closeDescricaoProduto_
+    _marcaProduto_3M_closeMarcaProduto_
+    _skuProduto_GA0551490000_closeSkuProduto_
+    _imageProduto_ganchos_design_pequenos_3m.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Camera de Segurança Intelbras WI-FI HD IC3 interna_closeTituloProduto_
+    _descricaoProduto_
+        Câmera de segurança Wi-Fi HD | iC3
+        Câmera de Segurança Wi-Fi HD - As câmeras de segurança Wi-Fi HD iC3 foram desenvolvidas para que o usuário tenha o poder de cuidar da própria segurança. Todo o controle necessário estará nas mãos do cliente em qualquer lugar através do smartphone desde a instalação e gravação¹ até o recebimento de notifi cações por movimento. As câmeras de segurança Wi-Fi HD iC3 também têm imagem em alta defi nição HD campo de visão de 111° (diagonal) e visão noturna tudo para deixar o monitoramento ainda mais claro e amplo. Características » Conexão Wi-Fi » Armazenamento em cartão micro-SD¹(não incluso) » Uso Interno » Campo de visão de 111° (diagonal)² » Imagens em HD » Plug & Play: fácil instalação » Notificação de movimento » Áudio bidirecional 
+    _closeDescricaoProduto_
+    _marcaProduto_Intelbras_closeMarcaProduto_
+    _skuProduto_CA0141309500_closeSkuProduto_
+    _imageProduto_ic3_frente_2_led.png_closeImageProduto_
+_closeProduto_
+
+_openProduto_
+    _tituloProduto_Camera de Segurança Intelbras WI-FI HD IC5 Externa_closeTituloProduto_
+    _descricaoProduto_
+        Câmera de segurança Wi-Fi HD | iC5 As câmeras de segurança Wi-Fi HD iC5 foram desenvolvidas para que você tenha o poder de cuidar da própria segurança. Todo o controle necessário estará em suas mãos de qualquer lugar através do seu smartphone desde a instalação e gravação¹ até o recebimento de notificações por movimento. As câmeras de segurança Wi-Fi HD iC5 também têm imagem em alta definição HD 114° de abertura visão noturna de até 30 metros e proteção contra chuva (IP66) tudo para deixar o monitoramento interno ou externo ainda mais claro e amplo. Siga os passos desse guia e inicie o monitoramento agora mesmo. ¹Cartão micro-SD não incluso. Cartão é necessário para gravação. Características » Conexão Wi-Fi » Armazenamento em cartão micro-SD¹ » Campo de visão de 114° (diagonal)² » Imagens em HD » Plug & Play: fácil instalação » Notificação de movimento » Preparada para uso externo ¹ Necessário cartão micro-SD vendido separadamente para a gravação das imagens. ² Abertura horizontal de 92°. 
+    _closeDescricaoProduto_
+    _marcaProduto_Intelbras_closeMarcaProduto_
+    _skuProduto_CA01513000_closeSkuProduto_
+    _imageProduto_ic5_pers_dir-1.png_closeImageProduto_
+_closeProduto_
