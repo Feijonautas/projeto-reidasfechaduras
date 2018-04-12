@@ -523,7 +523,7 @@
             $nomeProduto = $infoProduto["nome"];
             $precoProduto = $infoProduto["preco"];
             $precoPromocaoProduto = $infoProduto["preco_promocao"];
-            $promocaoAtiva = $infoProduto["promocao_ativa"] == true && $precoPromocaoProduto > 0 && $precoPromocaoProduto < $precoProduto;
+            $promocaoAtiva = $infoProduto["promocao_ativa"] == 1 && $precoPromocaoProduto > 0 && $precoPromocaoProduto < $precoProduto ? true : false;
             $precoFinal = $promocaoAtiva == true ? $precoPromocaoProduto : $precoProduto;
             $precoBoleto = $precoFinal - ($precoFinal * 0.05);
             $qtdParcelas = 6;

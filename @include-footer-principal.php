@@ -4,7 +4,7 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        background-color: #e2e2e2;
+        background-color: #f7f7f7;
         font-size: 16px;
         flex-flow: row wrap;
         overflow: hidden;
@@ -222,7 +222,7 @@
 </script>
 <footer class="footer-principal">
     <div class="newsletter">
-        <h3 class="titulo">RECEBA AS NOVIDADES DA MAIDI GREY</h3>
+        <h3 class="titulo">RECEBA AS NOVIDADES DO REI DAS FECHADURAS</h3>
         <h4 class="subtitulo">Lançamentos e promoções em primeira mão</h4>
         <form class="form-newsletter">
             <input type="text" placeholder="Digite seu nome" name="nome" class="input-nome">
@@ -302,15 +302,15 @@
 
         $link_footer = null;
         $link_footer[0] = new FooterLinks("PÁGINA INICIAL", "index.php");
-        $link_footer[1] = new FooterLinks("FEMENINO", "loja.php?departamento=feminino");
-        $link_footer[1]->add_sublink(1, "CATEGORIA 1", "loja.php?departamento=feminino&categoria=categoria_1");
-        $link_footer[1]->add_sublink(2, "CATEGORIA 2", "loja.php?departamento=feminino&categoria=categoria_2");
-        $link_footer[1]->add_sub_sublink(1, "SUBCATEGORIA 1", "loja.php?departamento=feminino&categoria=categoria_1&subcategoria=subcategoria_1");
-        $link_footer[1]->add_sub_sublink(1, "SUBCATEGORIA 2", "loja.php?departamento=feminino&categoria=categoria_1&subcategoria=subcategoria_2");
-        $link_footer[2] = new FooterLinks("MASCULINO", "loja.php?departamento=masculino");
-        $link_footer[3] = new FooterLinks("MOCHILAS", "loja.php?departamento=mochilas");
-        $link_footer[4] = new FooterLinks("ACESSÓRIOS", "loja.php?departamento=acessorios");
-        $link_footer[5] = new FooterLinks("BAZAR", "loja.php?departamento=bazar");
+        $link_footer[1] = new FooterLinks("FECHADURAS", "loja.php?departamento=#");
+        $link_footer[1]->add_sublink(1, "CATEGORIA 1", "loja.php?departamento=#&categoria=#");
+        $link_footer[1]->add_sublink(2, "CATEGORIA 2", "loja.php?departamento=#&categoria=#");
+        $link_footer[1]->add_sub_sublink(1, "SUBCATEGORIA 1", "loja.php?departamento=#&categoria=#&subcategoria=#");
+        $link_footer[1]->add_sub_sublink(1, "SUBCATEGORIA 2", "loja.php?departamento=#&categoria=#&subcategoria=#");
+        $link_footer[2] = new FooterLinks("FERRAGENS E ACESSÓRIOS", "loja.php?departamento=#");
+        $link_footer[3] = new FooterLinks("SEGURANÇA", "loja.php?departamento=#");
+        $link_footer[4] = new FooterLinks("DOBRADIÇAS", "loja.php?departamento=#");
+        $link_footer[5] = new FooterLinks("CADEADOS ", "loja.php?departamento=#");
         $link_footer[6] = new FooterLinks("DICAS", "dicas.php");
 
         $quantidadeLinks = count($link_footer);
