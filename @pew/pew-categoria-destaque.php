@@ -1,16 +1,15 @@
 <?php
-session_start();
-require_once "pew-system-config.php";
-$name_session_user = $pew_session->name_user;
-$name_session_pass = $pew_session->name_pass;
-$name_session_nivel = $pew_session->name_nivel;
-$name_session_empresa = $pew_session->name_empresa;
-if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) && isset($_SESSION[$name_session_nivel]) && isset($_SESSION[$name_session_empresa])){
-    $efectus_empresa_administrativo = $_SESSION[$name_session_empresa];
-    $efectus_user_administrativo = $_SESSION[$name_session_user];
-    $efectus_nivel_administrativo = $_SESSION[$name_session_nivel];
-    $navigation_title = "Categoria destaque - $efectus_empresa_administrativo";
-    $page_title = "Gerenciamento da Categoria Destaque";
+    session_start();
+    
+    $thisPageURL = substr($_SERVER["REQUEST_URI"], strpos($_SERVER["REQUEST_URI"], '@pew'));
+    $_POST["next_page"] = str_replace("@pew/", "", $thisPageURL);
+    $_POST["invalid_levels"] = array(1);
+    
+    require_once "@link-important-functions.php";
+    require_once "@valida-sessao.php";
+
+    $navigation_title = "Categoria destaque - " . $pew_session->empresa;
+    $page_title = "Gerenciamento das Categorias Destaque";
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,15 +20,10 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
         <meta name="description" content="Acesso Restrito. Efectus Web.">
         <meta name="author" content="Efectus Web">
         <title><?php echo $navigation_title; ?></title>
-        <!--LINKS e JS PADRAO-->
-        <link type="image/png" rel="icon" href="imagens/sistema/identidadeVisual/icone-efectus-web.png">
-        <link type="text/css" rel="stylesheet" href="css/estilo.css">
-        <link type="text/css" rel="stylesheet" href="css/categorias.css">
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/standard.js"></script>
-        <!--FIM LINKS e JS PADRAO-->
-        <!--THIS PAGE LINKS-->
-        <!--FIM THIS PAGE LINKS-->
+        <?php
+            require_once "@link-standard-styles.php";
+            require_once "@link-standard-scripts.php";
+        ?>
         <script>
             var filaAtiva = false;
             var cadastrando = false;
@@ -45,7 +39,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
             var classIconClose = "fa-folder";
             var qtdCategorias = 0;
             var btnCadCategoria = "";
-            var lastDepartamento = null; 
+            var lastDepartamento = null;
             function carregarDestaque(idDestaque, boxDestaque){
                 destaqueAtivo = idDestaque;
                 boxDestaque.addClass(classDestaqueActive);
@@ -74,7 +68,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     loadPage();
                 }, animationDelay);
             }
-            
+
             function destaqueFocus(idDestaque){
                 setTimeout(function(){
                     $(".box-categoria").each(function(){
@@ -87,7 +81,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     });
                 }, animationDelay);
             }
-            
+
             function unselectDestaque(){
                 if(qtdCategorias > 0){
                     btnCadCategoria.removeClass("btn-add-colecao-active");
@@ -100,11 +94,11 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     destaqueAtivo = null;
                 }
             }
-            
+
             $(document).ready(function(){
                 objGerDestaque = $(".display-ger-categorias");
                 btnCadCategoria = $(".btn-add-categoria");
-                
+
                 var firstCategoria = true;
                 $(".box-categoria").each(function(){
                     qtdCategorias++;
@@ -175,20 +169,24 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
     </head>
     <body>
         <?php
-            /*REQUIRE PADRAO*/
-            require_once "header-efectus-web.php";
-            require_once "pew-interatividade.php";
-            /*FIM PADRAO*/
-    
+            // STANDARD REQUIRE
+            require_once "@include-body.php";
+            if(isset($block_level) && $block_level == true){
+                $pew_session->block_level();
+            }
+
             if(isset($_GET["focus"])){
                 $focus = $_GET["focus"];
                 echo "<script>$(document).ready(function(){ destaqueFocus('$focus'); })</script>";
             }
         ?>
-        <h1 class="titulos"><?php echo $page_title; ?><a href="pew-vitrine.php" class="btn-voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a></h1>
+        <!--PAGE CONTENT-->
+        <h1 class="titulos"><?php echo $page_title; ?></a></h1>
         <section class="conteudo-painel">
-            <center><a class="btn-padrao btn-add-categoria" title="Adicionar categoria a vitrine">Adicionar categoria destaque</a></center>
-            <div class='painel-categorias'>
+            <div class="full label clear">
+                <a class="btn-add-categoria btn-flat" title="Adicionar categoria destaque"><i class="fas fa-plus"></i> Adicionar categoria destaque</a>
+            </div>
+            <div class='painel-categorias full'>
                 <?php
                     require_once "pew-system-config.php";
                     $tabela_categoria_destaque = $pew_custom_db->tabela_categoria_destaque;
@@ -217,7 +215,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
             <?php
                 $class = "";
                 if($ctrlQtdDestaques == 0){
-                    echo "<br style='clear: both;'><h3 class='mensagem-padrao'>Nenhuma categoria destaque foi encontrada. <a class='link-padrao btn-add-categoria'>Clique aqui e cadastre</a></h3>";
+                    echo "<br class='clear'><h3 class='mensagem-padrao' align=center>Nenhuma categoria destaque foi encontrada. <a class='link-padrao btn-add-categoria'>Clique aqui e cadastre</a></h3>";
                     $class = "display-ger-center";
                 }
                 echo "<div class='display-ger-categorias $class'></div>";
@@ -225,9 +223,3 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
         </section>
     </body>
 </html>
-<?php
-    mysqli_close($conexao);
-}else{
-    header("location: index.php?msg=Área Restrita. É necessário fazer login para continuar.");
-}
-?>

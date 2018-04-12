@@ -1,15 +1,14 @@
 <?php
-session_start();
-require_once "pew-system-config.php";
-$name_session_user = $pew_session->name_user;
-$name_session_pass = $pew_session->name_pass;
-$name_session_nivel = $pew_session->name_nivel;
-$name_session_empresa = $pew_session->name_empresa;
-if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) && isset($_SESSION[$name_session_nivel]) && isset($_SESSION[$name_session_empresa])){
-    $efectus_empresa_administrativo = $_SESSION[$name_session_empresa];
-    $efectus_user_administrativo = $_SESSION[$name_session_user];
-    $efectus_nivel_administrativo = $_SESSION[$name_session_nivel];
-    $navigation_title = "Editar Usuário Administrativo - $efectus_empresa_administrativo";
+    session_start();
+    
+    $thisPageURL = substr($_SERVER["REQUEST_URI"], strpos($_SERVER["REQUEST_URI"], '@pew'));
+    $_POST["next_page"] = str_replace("@pew/", "", $thisPageURL);
+    $_POST["invalid_levels"] = array(1, 2);
+    
+    require_once "@link-important-functions.php";
+    require_once "@valida-sessao.php";
+
+    $navigation_title = "Editar usuário - " . $pew_session->empresa;
     $page_title = "Editando Usuário Administrativo";
 ?>
 <!DOCTYPE html>
@@ -21,12 +20,10 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
         <meta name="description" content="Acesso Restrito. Efectus Web.">
         <meta name="author" content="Efectus Web">
         <title><?php echo $navigation_title; ?></title>
-        <!--LINKS e JS PADRAO-->
-        <link type="image/png" rel="icon" href="imagens/sistema/identidadeVisual/icone-efectus-web.png">
-        <link type="text/css" rel="stylesheet" href="css/estilo.css">
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/standard.js"></script>
-        <!--FIM LINKS e JS PADRAO-->
+        <?php
+            require_once "@link-standard-styles.php";
+            require_once "@link-standard-scripts.php";
+        ?>
         <style>
             .formulario{
                 width: 40%;
@@ -47,12 +44,12 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 text-align: left;
             }
             .niveis h2{
-                margin: 0px;   
+                margin: 0px;
             }
             .niveis h3{
-                margin: 5px;   
-                margin-top: 10px;   
-                margin-bottom: 10px;   
+                margin: 5px;
+                margin-top: 10px;
+                margin-bottom: 10px;
             }
             .label-submit select{
                 width: 40%;
@@ -104,7 +101,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                             mensagemAlerta("Selecione um nível para o usuário.", objNivel);
                             enviarFormulario = false;
                             return false;
-                        }  
+                        }
                         $(this).submit();
                     }
                 });
@@ -134,11 +131,15 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
     </head>
     <body>
         <?php
-            /*REQUIRE PADRAO*/
-            require_once "header-efectus-web.php";
-            require_once "pew-interatividade.php";
-            /*FIM PADRAO*/
+            // STANDARD REQUIRE
+            require_once "@include-body.php";
+            if(isset($block_level) && $block_level == true){
+                $pew_session->block_level();
+            }
+            
+            // SET TABLES
             $tabela_usuarios = $pew_db->tabela_usuarios_administrativos;
+            
             $idUsuario = isset($_GET["id_usuario"]) ? (int)$_GET["id_usuario"] : 0;
             $contarUsuario = mysqli_query($conexao, "select count(id) as total_usuario from $tabela_usuarios where id = '$idUsuario'");
             $contagem = mysqli_fetch_assoc($contarUsuario);
@@ -150,31 +151,35 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 $email = $arrayUsuario["email"];
                 $nivel = $arrayUsuario["nivel"];
         ?>
+        <!--PAGE CONTENT-->
         <h1 class="titulos"><?php echo $page_title; ?><a href="pew-usuarios.php" class="btn-voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a></h1>
         <section class="conteudo-painel">
             <div class="formulario">
                 <form action="pew-update-usuario.php" method="post" id="formUpdateUsuario">
                     <input type="hidden" name="id_usuario" value="<?php echo $idUsuario;?>">
-                    <label class="label-full">
-                        <h3 class="input-title">Usuário</h3>
-                        <input type="text" class="input-full" placeholder="Usuário" name="usuario" id="usuario" value="<?php echo $usuario;?>">
+                    <label class="label full">
+                        <h3 class="label-title">Usuário</h3>
+                        <input type="text" class="label-input" placeholder="Usuário" name="usuario" id="usuario" value="<?php echo $usuario;?>">
                     </label>
-                    <label class="label-full">
-                        <h3 class="input-title">Nova Senha</h3>
-                        <input type="password" class="input-full" placeholder="Senha" name="newsenha" id="newsenha">
+                    <label class="label full">
+                        <h3 class="label-title">Nova Senha</h3>
+                        <input type="password" class="label-input" placeholder="Senha" name="newsenha" id="newsenha">
                     </label>
-                    <label class="label-full">
-                        <h3 class="input-title">E-mail</h3>
-                        <input type="email" class="input-full" placeholder="E-mail" name="email" id="email" value="<?php echo $email;?>">
+                    <label class="label full">
+                        <h3 class="label-title">E-mail</h3>
+                        <input type="email" class="label-input" placeholder="E-mail" name="email" id="email" value="<?php echo $email;?>">
                     </label>
-                    <label class="label-full label-submit">
-                        <h3 class="input-title">Nível</h3>
-                        <select class="input-full" name="nivel" id="nivel">
+                    <label class="label half">
+                        <h3 class="label-title">Nível</h3>
+                        <select class="label-input" name="nivel" id="nivel">
                             <option value="1" <?php if($nivel == 1){ echo "selected"; } ?>>Designer</option>
                             <option value="2" <?php if($nivel == 2){ echo "selected"; } ?>>Comercial</option>
                             <option value="3" <?php if($nivel == 3){ echo "selected"; } ?>>Administrador</option>
                         </select>
-                        <input type="submit" value="Atualizar" class="btn-submit">
+                    </label>
+                    <label class="label half">
+                        <h3 class="label-title"><!--ESPAÇAMENTO-->&nbsp;</h3>
+                        <input type="submit" value="Atualizar" class="btn-submit label-input">
                     </label>
                 </form>
             </div>
@@ -197,8 +202,4 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
             }else{
                 echo "<script>window.location.href='pew-usuarios.php?msg=O usuário não foi encontrado';</script>";
             }
-    mysqli_close($conexao);
-}else{
-    header("location: index.php?msg=Área Restrita. É necessário fazer login para continuar.");
-}
 ?>

@@ -29,17 +29,28 @@ if(isset($dataSend)){
         $ctrlColluns++;
     }
     
+    /*CUSTOM SEARCH VARS*/
+    $custom_table = false;
+    if($dataType == "POST"){
+        $custom_table = isset($_POST["custom_table"]) && $_POST["custom_table"] != null ? $_POST["custom_table"] : false;
+    }else{
+        $custom_table = isset($_GET["custom_table"]) && $_GET["custom_table"] != null ? $_GET["custom_table"] : false;
+    }
+    /*END CUSTOM SEARCH VARS*/
+
     function contarResultados($table, $condition){
         global $conexao;
+        $condition = str_replace("where", "", $condition);
         $contar = mysqli_query($conexao, "select count(id) as total from $table where $condition");
         $contagem = mysqli_fetch_assoc($contar);
         $totalContagem = $contagem["total"];
         return $totalContagem;
     }
-    
+
     $produtosSelecionados = array();
     $ctrlProdutos = 0;
-    if(contarResultados($tabela_produtos, $searchCondition) > 0){
+    if($custom_table == false){
+        $totalResultado = contarResultados($tabela_produtos, $searchCondition);
         $queryProdutos = mysqli_query($conexao, "select id from $tabela_produtos where $searchCondition");
         while($produtos = mysqli_fetch_array($queryProdutos)){
             $idProduto = $produtos["id"];
@@ -55,12 +66,28 @@ if(isset($dataSend)){
                 $ctrlProdutos++;
             }
         }
-        if($datatype == "POST" && isset($_POST["categoria"])){
+        if($dataType == "POST" && isset($_POST["categoria"])){
             buscarCategorias();
         }else if(isset($_POST["categoria"])){
             buscarCategorias();
         }
         print_r(json_encode($produtosSelecionados));
+    }else if($custom_table != false && $custom_table != null){
+        $custom_search = str_replace("where", "", $dataSend);
+        $totalResultados = contarResultados($custom_table, $custom_search);
+        if($totalResultados > 0){
+            $resultadosSelecionados = array();
+            $ctrlResultados = 0;
+            $query = mysqli_query($conexao, "select id from $custom_table where $custom_search");
+            while($info = mysqli_fetch_array($query)){
+                $id = $info["id"];
+                $resultadosSelecionados[$ctrlResultados] = $id;
+                $ctrlResultados++;
+            }
+            print_r(json_encode($resultadosSelecionados));
+        }else{
+            echo "false";
+        }
     }else{
         echo "false";
     }

@@ -1,15 +1,14 @@
 <?php
-session_start();
-require_once "pew-system-config.php";
-$name_session_user = $pew_session->name_user;
-$name_session_pass = $pew_session->name_pass;
-$name_session_nivel = $pew_session->name_nivel;
-$name_session_empresa = $pew_session->name_empresa;
-if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) && isset($_SESSION[$name_session_nivel]) && isset($_SESSION[$name_session_empresa])){
-    $efectus_empresa_administrativo = $_SESSION[$name_session_empresa];
-    $efectus_user_administrativo = $_SESSION[$name_session_user];
-    $efectus_nivel_administrativo = $_SESSION[$name_session_nivel];
-    $navigation_title = "Orçamentos - $efectus_empresa_administrativo";
+    session_start();
+    
+    $thisPageURL = substr($_SERVER["REQUEST_URI"], strpos($_SERVER["REQUEST_URI"], '@pew'));
+    $_POST["next_page"] = str_replace("@pew/", "", $thisPageURL);
+    $_POST["invalid_levels"] = array(1);
+    
+    require_once "@link-important-functions.php";
+    require_once "@valida-sessao.php";
+
+    $navigation_title = "Orçamentos - " . $pew_session->empresa;
     $page_title = "Gerenciamento de pedidos de orçamento";
 ?>
 <!DOCTYPE html>
@@ -21,38 +20,56 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
         <meta name="description" content="Acesso Restrito. Efectus Web.">
         <meta name="author" content="Efectus Web">
         <title><?php echo $navigation_title; ?></title>
-        <!--LINKS e JS PADRAO-->
-        <link type="image/png" rel="icon" href="imagens/sistema/identidadeVisual/icone-efectus-web.png">
-        <link type="text/css" rel="stylesheet" href="css/estilo.css">
-        <script type="text/javascript" src="../js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/standard.js"></script>
-        <!--FIM LINKS e JS PADRAO-->
+        <?php
+            require_once "@link-standard-styles.php";
+            require_once "@link-standard-scripts.php";
+        ?>
     </head>
     <body>
         <?php
-            /*REQUIRE PADRAO*/
-            require_once "header-efectus-web.php";
-            require_once "pew-interatividade.php";
-            /*FIM PADRAO*/
+            // STANDARD REQUIRE
+            require_once "@include-body.php";
+            if(isset($block_level) && $block_level == true){
+                $pew_session->block_level();
+            }
         ?>
+        <!--PAGE CONTENT-->
         <h1 class="titulos"><?php echo $page_title; ?></h1>
         <section class="conteudo-painel">
-            <a href="pew-cadastra-orcamento.php" class="btn-padrao" title="Cadastre um novo produto">Cadastrar novo</a>
-            <br><br><br>
-            <form class="form-busca" method="get" action="pew-orcamentos.php">
-                <label class="field-busca">
-                    <h3 class="titulo-busca">Buscar pedidos</h3>
-                    <input type="search" name="busca" placeholder="Busque por nome, email, telefone, RG ou CPF" class="barra-busca" autocomplete="off">
-                    <input type="submit" value="Buscar" class="btn-buscar">
-                </label>
-            </form>
-            <table class="table-padrao" cellspacing="0">
+            <div class="group clear">
+                <form action="pew-orcamentos.php" method="get" class="label half clear">
+                    <label class="group">
+                        <div class="group">
+                            <h3 class="label-title">Busca de orçamentos</h3>
+                        </div>
+                        <div class="group">
+                            <div class="xlarge" style="margin-left: -5px; margin-right: 0px;">
+                                <input type="search" name="busca" placeholder="Nome, email, telefone, RG ou CPF" class="label-input" title="Buscar">
+                            </div>
+                            <div class="xsmall" style="margin-left: 0px;">
+                                <button type="submit" class="btn-submit label-input btn-flat" style="margin: 10px;">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </label>
+                </form>
+                <div class="label half jc-left">
+                    <div class="full">
+                        <h4 class="subtitulos" align=left>Mais funções</h4>
+                    </div>
+                    <div class="label full">
+                        <a href="pew-cadastra-orcamento.php" class="btn-padrao btn-flat" title="Cadastre um novo orçamento"><i class="fas fa-plus"></i> Cadastrar orçamento</a>
+                    </div>
+                </div>
+            </div>
+            <table class="table-padrao group clear" cellspacing="0">
             <?php
                 $tabela_orcamentos = $pew_custom_db->tabela_orcamentos;
                 if(isset($_GET["busca"]) && $_GET["busca"] != ""){
                     $busca = pew_string_format($_GET["busca"]);
                     $strBusca = "where nome_cliente like '%".$busca."%' or telefone_cliente like '%".$busca."%' or email_cliente like '%".$busca."%' or rg_cliente like '%".$busca."%' or cpf_cliente like '%".$busca."%'";
-                    echo "<h3>Exibindo resultados para: $busca</h3>";
+                    echo "<div class='full clear'><h3>Exibindo resultados para: $busca</h3></div>";
                 }else{
                     $strBusca = "";
                 }
@@ -98,7 +115,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                         echo "<td>$cpf</td>";
                         echo "<td>R$ $totalOrcamento</td>";
                         echo "<td>$status</td>";
-                        echo "<td><a href='pew-edita-orcamento.php?id_orcamento=$id' class='btn-editar'><i class='fa fa-eye' aria-hidden='true'></i></a></td></tr>";
+                        echo "<td align=center><a href='pew-edita-orcamento.php?id_orcamento=$id' class='btn-editar'><i class='fa fa-eye' aria-hidden='true'></i></a></td></tr>";
                     }
                     echo "</tbody></table>";
                 }else{
@@ -110,9 +127,3 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
         </section>
     </body>
 </html>
-<?php
-    mysqli_close($conexao);
-}else{
-    header("location: index.php?msg=Área Restrita. É necessário fazer login para continuar.");
-}
-?>

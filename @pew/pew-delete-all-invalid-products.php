@@ -7,7 +7,7 @@
     $tabela_departamentos_produtos = $pew_custom_db->tabela_departamentos_produtos;
     $tabela_categorias_produtos = $pew_custom_db->tabela_categorias_produtos;
     $tabela_subcategorias_produtos = $pew_custom_db->tabela_subcategorias_produtos;
-    
+
     function contarProduto($id){
         global $conexao, $tabela_produtos;
         $contar = mysqli_query($conexao, "select count(id) as total from $tabela_produtos where id = '$id'");
@@ -15,7 +15,7 @@
         $total = $contagem["total"];
         return $total;
     }
-    
+
     $queryImagensProdutos = mysqli_query($conexao, "select * from $tabela_imagens_produtos");
     while($imagens = mysqli_fetch_array($queryImagensProdutos)){
         $idImagem = $imagens["id"];

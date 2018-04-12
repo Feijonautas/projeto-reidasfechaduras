@@ -1,15 +1,14 @@
 <?php
-session_start();
-require_once "pew-system-config.php";
-$name_session_user = $pew_session->name_user;
-$name_session_pass = $pew_session->name_pass;
-$name_session_nivel = $pew_session->name_nivel;
-$name_session_empresa = $pew_session->name_empresa;
-if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) && isset($_SESSION[$name_session_nivel]) && isset($_SESSION[$name_session_empresa])){
-    $efectus_empresa_administrativo = $_SESSION[$name_session_empresa];
-    $efectus_user_administrativo = $_SESSION[$name_session_user];
-    $efectus_nivel_administrativo = $_SESSION[$name_session_nivel];
-    $navigation_title = "Cadastrar Orçamento - $efectus_empresa_administrativo";
+    session_start();
+    
+    $thisPageURL = substr($_SERVER["REQUEST_URI"], strpos($_SERVER["REQUEST_URI"], '@pew'));
+    $_POST["next_page"] = str_replace("@pew/", "", $thisPageURL);
+    $_POST["invalid_levels"] = array(1);
+    
+    require_once "@link-important-functions.php";
+    require_once "@valida-sessao.php";
+
+    $navigation_title = "Cadastrar orçamento - " . $pew_session->empresa;
     $page_title = "Cadastrar orçamento";
 ?>
 <!DOCTYPE html>
@@ -21,14 +20,10 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
         <meta name="description" content="Acesso Restrito. Efectus Web.">
         <meta name="author" content="Efectus Web">
         <title><?php echo $navigation_title; ?></title>
-        <!--LINKS e JS PADRAO-->
-        <link type="image/png" rel="icon" href="imagens/sistema/identidadeVisual/icone-efectus-web.png">
-        <link type="text/css" rel="stylesheet" href="css/estilo.css">
-        <script type="text/javascript" src="../js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/standard.js"></script>
-        <!--FIM LINKS e JS PADRAO-->
-        <!--THIS PAGE LINKS-->
-        <!--FIM THIS PAGE LINKS-->
+        <?php
+            require_once "@link-standard-styles.php";
+            require_once "@link-standard-scripts.php";
+        ?>
         <!--THIS PAGE CSS-->
         <style>
             .view-total-desconto{
@@ -209,7 +204,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 display: inline-block;
             }
             .display-produtos-relacionados .lista-relacionados .label-relacionados:hover{
-                background-color: #fff;   
+                background-color: #fff;
             }
             .display-produtos-relacionados .bottom-relacionados .view-total-orcamento-selection{
                 position: absolute;
@@ -230,20 +225,20 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 nomeInputMascaras[0] = "#telefoneCliente";
                 for(var i = 0; i < quantidadeMascaras; i++){
                     var nomeInput = nomeInputMascaras[i];
-                    $(nomeInput).mask("(99) 9999-9999?9").focusout(function (event){  
-                        var target, phone, element;  
-                        target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+                    $(nomeInput).mask("(99) 9999-9999?9").focusout(function (event){
+                        var target, phone, element;
+                        target = (event.currentTarget) ? event.currentTarget : event.srcElement;
                         phone = target.value.replace(/\D/g, '');
                         element = $(target);
-                        element.unmask();  
-                        if(phone.length > 10) {  
+                        element.unmask();
+                        if(phone.length > 10) {
                             element.mask("(99) 99999-999?9");
-                        } else {  
-                            element.mask("(99) 9999-9999?9");  
+                        } else {
+                            element.mask("(99) 9999-9999?9");
                         }
                     });
                 }
-                
+
                 /*PRODUTOS RELACIONADOS*/
                 var botaoProdutosRelacionados = $(".btn-produtos-relacionados");
                 var displayRelacionados = $(".display-produtos-relacionados");
@@ -257,7 +252,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 var buscandoProduto = false;
                 var resetingBackground = false;
                 var lastSearchString = null;
-                
+
                 /*!IMPORTANT FUNCTIONS*/
                 function isJson(str){
                     try{
@@ -415,7 +410,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 }
                 /*END OPEN AND CLOSE*/
                 /*END !IMPORTANT FUNCTIONS*/
-                
+
                 /*MAIN SEARCH FUNCTION*/
                 function buscarProdutos(){
                     buscandoProduto = true;
@@ -438,7 +433,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                         }
                     }
                     resetBackgroundLoading();
-                    if(busca.length > 0 && lastSearchString != busca){               
+                    if(busca.length > 0 && lastSearchString != busca){
                         lastSearchString = busca;
                         $.ajax({
                             type: "POST",
@@ -515,7 +510,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     }
                 }
                 /*END MAIN SEARCH FUNCTION*/
-                
+
                 /*ORCAMENTO FUNCTINALITY*/
                 function setPrecoOrcamento(passedPreco){
                     var viewTotalOrcamento = $(".view-total-orcamento");
@@ -529,7 +524,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     var valorTotalSelection = 0;
                     passedPreco = typeof passedPreco != "undefined" && passedPreco.length > 0 ? passedPreco : false;
                     descontoAtivo = totalDesconto.length > 0 && totalDesconto > 0 ? true : false;
-                    
+
                     function somarValorProdutos(){
                         var totalSoma = 0;
                         $(".label-relacionados").each(function(){
@@ -553,7 +548,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                         });
                         return totalSoma;
                     }
-                    
+
                     if(passedPreco != false && ctrlTotalSelecionados == 0){
                         valorTotal = passedPreco;
                         valorTotalSelection = passedPreco;
@@ -578,12 +573,12 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     ctrlTotalOrcamento.val(valorTotal);
                     ctrlTotalDesconto.val(viewTotalDesconto.val());
                 }
-                
+
                 setInterval(function(){
                     setPrecoOrcamento();
                 }, 300);
                 /*END ORCAMENTO FUNCTINALITY*/
-                
+
                 /*TRIGGERS*/
                 botaoProdutosRelacionados.off().on("click", function(){
                     abrirRelacionados();
@@ -595,9 +590,9 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     fecharRelacionados();
                 });
                 /*END TRIGGERS*/
-                
+
                 /*END PRODUTOS RELACIONADOS*/
-                
+
                 var formCadastra = $(".formulario-cadastro-orcamento");
                 var cadastrando = false;
                 formCadastra.off().on("submit", function(){
@@ -661,63 +656,67 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
     </head>
     <body>
         <?php
-            /*REQUIRE PADRAO*/
-            require_once "header-efectus-web.php";
-            require_once "pew-interatividade.php";
-            /*FIM PADRAO*/
+            // STANDARD REQUIRE
+            require_once "@include-body.php";
+            if(isset($block_level) && $block_level == true){
+                $pew_session->block_level();
+            }
+        
+            // SET TABLES
             $tabela_produtos = $pew_custom_db->tabela_produtos;
         ?>
+        <!--PAGE CONTENT-->
         <h1 class="titulos"><?php echo $page_title; ?><a href="pew-orcamentos.php" class="btn-voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a></h1>
         <section class="conteudo-painel">
             <form method="post" action="pew-grava-orcamento.php" class="formulario-cadastro-orcamento">
-                <div class="label-full">
+                <div class="group clear">
                     <h3 align='left' style="margin: 0px;">Informações do cliente</h3>
-                    <label class="label-half">
-                        <h3 class="input-title" align=left>Nome</h3>
-                        <input type="text" name="nome_cliente" id="nomeCliente" placeholder="Nome" class="input-full">
+                    <label class="label half">
+                        <h3 class="label-title" align=left>Nome</h3>
+                        <input type="text" name="nome_cliente" id="nomeCliente" placeholder="Nome" class="label-input">
                     </label>
-                    <label class="label-half">
-                        <h3 class="input-title" align=left>Telefone</h3>
-                        <input type="text" name="telefone_cliente" id="telefoneCliente" placeholder="(DDD) 99999-9999" class="input-full">
+                    <label class="label half">
+                        <h3 class="label-title" align=left>Telefone</h3>
+                        <input type="text" name="telefone_cliente" id="telefoneCliente" placeholder="(DDD) 99999-9999" class="label-input">
                     </label>
-                    <label class="label-half">
-                        <h3 class="input-title" align=left>E-mail</h3>
-                        <input type="text" name="email_cliente" id="emailCliente" placeholder="email@dominio.com.br" class="input-full">
+                    <label class="label half">
+                        <h3 class="label-title" align=left>E-mail</h3>
+                        <input type="text" name="email_cliente" id="emailCliente" placeholder="email@dominio.com.br" class="label-input">
                     </label>
-                    <label class="label-small">
-                        <h3 class="input-title" align=left>RG</h3>
-                        <input type="text" name="rg_cliente" id="rgCliente" placeholder="RG Cliente" class="input-full">
+                    <label class="label small">
+                        <h3 class="label-title" align=left>RG</h3>
+                        <input type="text" name="rg_cliente" id="rgCliente" placeholder="RG Cliente" class="label-input">
                     </label>
-                    <label class="label-small">
-                        <h3 class="input-title" align=left>CPF</h3>
-                        <input type="text" name="cpf_cliente" id="cpfCliente" placeholder="CPF Cliente" class="input-full">
+                    <label class="label small">
+                        <h3 class="label-title" align=left>CPF</h3>
+                        <input type="text" name="cpf_cliente" id="cpfCliente" placeholder="CPF Cliente" class="label-input">
                     </label>
                     <br style="clear: both;">
                 </div>
-                <div class="label-full">
+                <div class="group clear">
                     <h3 align='left' style="margin: 0px;">Informações de envio</h3>
-                    <label class="label-half">
-                        <h3 class="input-title" align=left>CEP</h3>
-                        <input type="text" name="cep_cliente" id="cepCliente" placeholder="CEP" class="input-full">
+                    <label class="label half">
+                        <h3 class="label-title" align=left>CEP</h3>
+                        <input type="text" name="cep_cliente" id="cepCliente" placeholder="CEP" class="label-input">
                     </label>
-                    <label class="label-small">
-                        <h3 class="input-title" align=left>Número</h3>
-                        <input type="text" name="numero_rua_cliente" id="numeroRuaCliente" placeholder="Número" class="input-full">
+                    <label class="label small">
+                        <h3 class="label-title" align=left>Número</h3>
+                        <input type="text" name="numero_rua_cliente" id="numeroRuaCliente" placeholder="Número" class="label-input">
                     </label>
-                    <label class="label-small">
-                        <h3 class="input-title" align=left>Complemento</h3>
-                        <input type="text" name="complemento_rua_cliente" id="complementoRuaCliente" placeholder="Complemento" class="input-full">
+                    <label class="label small">
+                        <h3 class="label-title" align=left>Complemento</h3>
+                        <input type="text" name="complemento_rua_cliente" id="complementoRuaCliente" placeholder="Complemento" class="label-input">
                     </label>
                 </div>
                 <br style="clear: both;">
                 <br style="clear: both;">
-                <div class="label-small" align=left>
+                <div class="label small">
                     <h3>Produtos para o orçamento:</h3><br>
                     <!--PRODUTOS RELACIONADOS-->
                     <a class="btn-produtos-relacionados">Produtos Selecionados (0)</a>
                     <div class="display-produtos-relacionados">
                         <div class="header-relacionados">
-                            <h3 class="title-relacionados">Lista de produtos ativos</h3>
+                            <h3 class="title-relacionados">Lista de produtos</h3>
                             <!--<h5 class="descricao-relacionados">Selecione os produtos relacionados</h5>-->
                             <input type="search" class="busca-relacionados" name="busca_relacionados" placeholder="Busque categoria, nome, marca, id, ou sku" form="busca_produto">
                             <label title="Listar somente os produtos que já foram selecionados"><input type="checkbox" id="checkOnlyActives"> Somente os selecionados</label>
@@ -745,26 +744,21 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     </div>
                     <!--END PRODUTOS RELACIONADOS-->
                 </div>
-                <div class="label-small" align=left>
-                    <br><br>
-                    <h3 style="margin: 5px;">Desconto: <input type="number" class="view-total-desconto" value="0" max="100">%</h3>
-                    <h3 style="margin: 5px;">Total: R$ <span class="view-total-orcamento">0.00</span></h3>
+                <div class="label small">
+                    <div class="full">
+                        <h3 class='label-title'>Desconto:&nbsp; <input type="number" class="view-total-desconto label-input" value="0" max="100"> %</h3>
+                    </div>
+                    <div class="full">
+                        <h3 class='label-title'>Total: R$ <span class="view-total-orcamento">0.00</span></h3>
+                    </div>
                     <input type="hidden" class="ctrl-total-desconto" name="total_desconto" value="0">
                     <input type="hidden" class="ctrl-total-orcamento" name="total_orcamento" value="0">
                 </div>
-                <div class="label-small">
-                    <br style="clear: both">
-                    <br style="clear: both">
-                    <input type="submit" class="btn-submit" value="Cadastrar">
+                <div class="label small clear">
+                    <input type="submit" class="btn-submit label-input" value="Cadastrar">
                 </div>
-                <br style="clear: both">
+                <br class='clear'>
             </form>
         </section>
     </body>
 </html>
-<?php
-    mysqli_close($conexao);
-}else{
-    header("location: index.php?msg=Área Restrita. É necessário fazer login para continuar.");
-}
-?>

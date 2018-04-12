@@ -20,7 +20,7 @@
         require_once "pew-system-config.php";
         $tabela_categoria_destaque = $pew_custom_db->tabela_categoria_destaque;
         $idCategoriaDestaque = $_POST["id_categoria_destaque"];
-        
+
         $contar = mysqli_query($conexao, "select count(id) as total from $tabela_categoria_destaque where id = '$idCategoriaDestaque'");
         $contagem = mysqli_fetch_assoc($contar);
         if($contagem["total"] > 0){
@@ -30,8 +30,8 @@
             $status = $infoCategoriaVitrine["status"];
             $dataControle = $infoCategoriaVitrine["data_controle"];
             $imagem = $infoCategoriaVitrine["imagem"];
-            $dirImagens = "../imagens/categorias/";
-            
+            $dirImagens = "../imagens/categorias/destaques/";
+
 
 ?>
             <h2 class=titulo-edita>Editar categoria destaque</h2>
@@ -39,9 +39,9 @@
                 <input type="hidden" name="id_categoria_destaque" id="idCategoriaVitrine" value="<?php echo $idCategoriaDestaque;?>">
                 <input type="hidden" name="status" value="<?php echo $status;?>">
                 <input type='hidden' name='imagem_antiga' value="<?php echo $imagem;?>">
-                <div class='label-full'>
-                    <h3 class="input-title">Categoria</h3>
-                    <select name="info_categoria" id="infoCategoria">
+                <div class='label half'>
+                    <h3 class="label-title">Categoria</h3>
+                    <select name="info_categoria" id="infoCategoria" class="label-input">
                     <?php
                         require_once "pew-system-config.php";
                         $tabela_categorias = $pew_db->tabela_categorias;
@@ -55,13 +55,17 @@
                     ?>
                     </select>
                 </div>
-                <div class='label-half'>
-                    <h3 class="input-title">Imagem atual</h3>
-                    <img src="<?php echo $dirImagens.$imagem;?>" class="input-full">
+                <div class='label half'>
+                    <h3 class="label-title">Alterar Imagem da categoria (500px : 400px)</h3>
+                    <input type='file' class='label-input' name='imagem' id='imagem' accept="image/*">
                 </div>
-                <div class='label-half'>
-                    <h3 class="input-title">Status</h3>
-                    <select name="status">
+                <div class='half'>
+                    <h3 class="label-title">Imagem atual</h3>
+                    <img src="<?php echo $dirImagens.$imagem;?>" class="full">
+                </div>
+                <div class='label small'>
+                    <h3 class="label-title">Status</h3>
+                    <select name="status" class="label-input">
                         <?php
                             $possibleStatus = array(0, 1);
                             foreach($possibleStatus as $optionStatus){
@@ -78,16 +82,15 @@
                         ?>
                     </select>
                 </div>
-                <br style="clear: both;">
-                <div class='label-half'>
-                    <h3 class="input-title">Alterar Imagem da categoria (500px : 400px)</h3>
-                    <input type='file' class='input-full' name='imagem' id='imagem' accept="image/*">
+                <div class='label half'>
+                    <div class='label half'>
+                        <input type='button' class='btn-excluir label-input' value='Excluir'>
+                    </div>
+                    <div class='label half'>
+                        <input type='submit' class='btn-submit label-input' value='Atualizar'>
+                    </div>
                 </div>
-                <div class='label-half'>
-                    <input type='button' class='btn-excluir' value='Excluir'>
-                    <input type='submit' class='btn-submit' value='Atualizar'>
-                </div>
-                <br style="clear: both;">
+                <br class="clear">
             </form>
 <?php
         }else{
@@ -144,7 +147,7 @@
                             cadastrando = false;
                         }
                     }
-                });   
+                });
             }
         });
         $(".btn-excluir").off().on("click", function(){
@@ -163,8 +166,8 @@
                         mensagemAlerta(msgSucesso, false, "#259e25", "pew-categoria-destaque.php");
                     }
                 });
-            } 
-            
+            }
+
             mensagemConfirma("Você tem certeza que deseja remover essa categoria?", excluir);
         });
     });

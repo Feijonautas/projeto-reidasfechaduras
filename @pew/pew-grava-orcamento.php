@@ -37,16 +37,16 @@
         $totalOrcamento = floatval($_POST["total_orcamento"]);
         $produtosOrcamento = isset($_POST["produtos_orcamento"]) ? $_POST["produtos_orcamento"] : "";
         /*END POST DATA*/
-        
+
         /*DIR VARS*/
         $dirImagensProdutos = "../imagens/produtos/";
         /*END DIR VARS*/
-        
+
         /*SET TABLES*/
         $tabela_orcamentos = $pew_custom_db->tabela_orcamentos;
         $tabela_usuarios = $pew_db->tabela_usuarios_administrativos;
         /*END SET TABLES*/
-        
+
         /*SESSION VALIDATION*/
         $name_session_user = $pew_session->name_user;
         $name_session_pass = $pew_session->name_pass;
@@ -67,30 +67,30 @@
             die();
         }
         /*END SESSION VALIDATION*/
-        
+
         /*DEFAULT FUNCTIONS*/
         function limpaNumberString($str){
             return preg_replace("/[^0-9]/", "", $str);
         }
         /*END DEFAULT FUNCTIONS*/
-        
+
         /*VALIDACOES E SQL FUNCTIONS*/
         if($nomeCliente != ""){
             echo "<h3 align=center>Gravando dados...</h3>";
-            
+
             $tempoEntrega = 30; //FAZER INTEGRAÇÃO CORREIOS
             $idVendedor = $totalVendedor > 0 ? $infoVendedor["id"] : 0;
             $dataVencimento = date("Y-m-d", strtotime($dataAtual . "+30 days"));
             $statusOrcamento = 0;
-            
+
             /*STANDARD FORMAT CLIENT DATA*/
             $rgCliente = limpaNumberString($rgCliente);
             $cpfCliente = limpaNumberString($cpfCliente);
             $cepCliente = limpaNumberString($cpfCliente);
             $enderecoEnvio = $cepCliente."||".$numeroRuaCliente."||".$complementoRuaCliente;
-            
+
             $refOrcamento = substr(md5($dataAtual.$cpfCliente), 0, 16);
-            
+
             /*MONTAR PRODUTOS SELECIONADOS*/
             if($produtosOrcamento != ""){
                 $montagemInfoTodosProdutos = "";
@@ -103,10 +103,10 @@
             }else{
                 $montagemInfoTodosProdutos = "";
             }
-            
+
             /*INSERE DADOS ORCAMENTO*/
             mysqli_query($conexao, "insert into $tabela_orcamentos (ref_orcamento, nome_cliente, telefone_cliente, email_cliente, rg_cliente, cpf_cliente, endereco_envio, produtos, porcentagem_desconto, preco_total, tempo_entrega, id_vendedor, data_pedido, data_vencimento, data_controle, modify_controle, status_orcamento) values ('$refOrcamento', '$nomeCliente', '$telefoneCliente', '$emailCliente', '$rgCliente', '$cpfCliente', '$enderecoEnvio', '$montagemInfoTodosProdutos', '$totalPorcentagemDesconto', '$totalOrcamento', '$tempoEntrega', '$idVendedor', '$dataAtual', '$dataVencimento', '$dataAtual', '$idVendedor', '$statusOrcamento')");
-            
+
             echo "<script>window.location.href='pew-orcamentos.php?msg=Orçamento cadastrado com sucesso&msgType=success';</script>";
         }else{
             //Erro de validação = Nome do cliente vazio

@@ -1,15 +1,14 @@
 <?php
-session_start();
-require_once "pew-system-config.php";
-$name_session_user = $pew_session->name_user;
-$name_session_pass = $pew_session->name_pass;
-$name_session_nivel = $pew_session->name_nivel;
-$name_session_empresa = $pew_session->name_empresa;
-if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) && isset($_SESSION[$name_session_nivel]) && isset($_SESSION[$name_session_empresa])){
-    $efectus_empresa_administrativo = $_SESSION[$name_session_empresa];
-    $efectus_user_administrativo = $_SESSION[$name_session_user];
-    $efectus_nivel_administrativo = $_SESSION[$name_session_nivel];
-    $navigation_title = "Edita Banner - $efectus_empresa_administrativo";
+    session_start();
+    
+    $thisPageURL = substr($_SERVER["REQUEST_URI"], strpos($_SERVER["REQUEST_URI"], '@pew'));
+    $_POST["next_page"] = str_replace("@pew/", "", $thisPageURL);
+    $_POST["invalid_levels"] = array(2);
+    
+    require_once "@link-important-functions.php";
+    require_once "@valida-sessao.php";
+
+    $navigation_title = "Edita Banner - " . $pew_session->empresa;
     $page_title = "Editar Banner";
 ?>
 <!DOCTYPE html>
@@ -21,12 +20,10 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
         <meta name="description" content="Acesso Restrito. Efectus Web.">
         <meta name="author" content="Efectus Web">
         <title><?php echo $navigation_title; ?></title>
-        <!--LINKS e JS PADRAO-->
-        <link type="image/png" rel="icon" href="imagens/sistema/identidadeVisual/icone-efectus-web.png">
-        <link type="text/css" rel="stylesheet" href="css/estilo.css">
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/standard.js"></script>
-        <!--FIM LINKS e JS PADRAO-->
+        <?php
+            require_once "@link-standard-styles.php";
+            require_once "@link-standard-scripts.php";
+        ?>
         <script>
             $(document).ready(function(){
                 $(".btn-excluir").each(function(){
@@ -45,11 +42,13 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
     </head>
     <body>
     <?php
-        /*REQUIRE PADRAO*/
-        require_once "header-efectus-web.php";
-        require_once "pew-interatividade.php";
-        /*FIM PADRAO*/
+        // STANDARD REQUIRE
+        require_once "@include-body.php";
+        if(isset($block_level) && $block_level == true){
+            $pew_session->block_level();
+        }
     ?>
+    <!--PAGE CONTENT-->
     <h1 class="titulos"><?php echo $page_title; ?><a href="pew-banners.php" class="btn-voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a></h1>
 <?php
     $tabela_banners = $pew_db->tabela_banners;
@@ -70,34 +69,36 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
             <form method="post" action="pew-update-banner.php" enctype="multipart/form-data">
                 <input type="hidden" name="id_banner" value="<?php echo $idBanner;?>">
                 <input type="hidden" name="imagem_antiga" value="<?php echo $imagem;?>">
-                <label class="label-medium">
-                    <h2>Título do Banner</h2>
-                    <input type="text" name="titulo" placeholder="Título" min="3" class="input-full" value="<?php echo $titulo;?>" required>
-                </label>
-                <label class="label-medium">
-                    <h2>Descrição do Banner</h2>
-                    <input type="text" name="descricao" placeholder="Descrição" min="3" class="input-full" value="<?php echo $descricao;?>" required>
-                </label>
-                <label class="label-medium">
-                    <h2>Link de redirecionamento</h2>
-                    <input type="text" name="link" placeholder="www.efectusweb.com.br" class="input-full" value="<?php echo $link;?>" required>
-                </label>
-                <label class="label-full">
-                    <label class="label-half">
-                        <img src="../imagens/banners/<?php echo $imagem;?>" width="100%">
-                    </label>
-                    <label class="label-half">
-                        <h2>Selecione a imagem do banner: (1200px : 450px)</h2>
-                        <input type="file" name="imagem" class="input-full">
-                    </label>
-                </label>
-                <br style="clear: both;">
-                <a href="pew-deleta-banner.php?id_banner=<?php echo $idBanner;?>&acao=deletar" class='btn-excluir'>Excluir Banner</a>
-                <label class="label-full">
-                    <input type="submit" class="btn-submit" value="Atualizar Banner">
-                </label>
-                <br style="claer: both;">
-                <br><br><br><a href='pew-banners.php' class='link-padrao'>Voltar</a>
+                <div class="label medium">
+                    <h2 class='label-title'>Título do Banner</h2>
+                    <input type="text" name="titulo" placeholder="Título" min="3" class="label-input    " value="<?php echo $titulo;?>" required>
+                </div>
+                <div class="label medium">
+                    <h2 class='label-title'>Descrição do Banner</h2>
+                    <input type="text" name="descricao" placeholder="Descrição" min="3" class="label-input  " value="<?php echo $descricao;?>" required>
+                </div>
+                <div class="label medium">
+                    <h2 class='label-title'>Link de redirecionamento</h2>
+                    <input type="text" name="link" placeholder="www.efectusweb.com.br" class="label-input   " value="<?php echo $link;?>" required>
+                </div>
+                <div class="half">
+                    <img src="../imagens/banners/<?php echo $imagem;?>" width="100%">
+                </div>
+                <div class="label half">
+                    <h2 class='label-title'>Selecione a imagem do banner: (1200px : 450px)</h2>
+                    <input type="file" name="imagem" class="label-input ">
+                </div>
+                <div class="group clear">
+                    <div class="label xsmall">
+                        <button type="submit" class="btn-submit label-input">
+                            <i class="far fa-save"></i> Salvar
+                        </button>
+                    </div>
+                    <div class="label xsmall">
+                        <a href="pew-deleta-banner.php?id_banner=<?php echo $idBanner;?>&acao=deletar" class='btn-excluir label-input'><i class="fas fa-trash-alt"></i> Excluir</a>
+                    </div>
+                
+                </div>
             </form>
         </section>
 <?php
@@ -107,10 +108,6 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
     }else{
         echo "<script>window.location.href='pew-banners.php?msg=Selecione um banner para editar';</script>";
     }
-    mysqli_close($conexao);
-}else{
-    header("location: index.php?msg=Área Restrita. É necessário fazer login para continuar.");
-}
 ?>
     </body>
 </html>

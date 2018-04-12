@@ -1,15 +1,14 @@
 <?php
-session_start();
-require_once "pew-system-config.php";
-$name_session_user = $pew_session->name_user;
-$name_session_pass = $pew_session->name_pass;
-$name_session_nivel = $pew_session->name_nivel;
-$name_session_empresa = $pew_session->name_empresa;
-if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) && isset($_SESSION[$name_session_nivel]) && isset($_SESSION[$name_session_empresa])){
-    $efectus_empresa_administrativo = $_SESSION[$name_session_empresa];
-    $efectus_user_administrativo = $_SESSION[$name_session_user];
-    $efectus_nivel_administrativo = $_SESSION[$name_session_nivel];
-    $navigation_title = "Produtos - $efectus_empresa_administrativo";
+    session_start();
+    
+    $thisPageURL = substr($_SERVER["REQUEST_URI"], strpos($_SERVER["REQUEST_URI"], '@pew'));
+    $_POST["next_page"] = str_replace("@pew/", "", $thisPageURL);
+    $_POST["invalid_levels"] = array(1);
+    
+    require_once "@link-important-functions.php";
+    require_once "@valida-sessao.php";
+
+    $navigation_title = "Cadastrar produto - " . $pew_session->empresa;
     $page_title = "Cadastrar produto";
 ?>
 <!DOCTYPE html>
@@ -21,85 +20,42 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
         <meta name="description" content="Acesso Restrito. Efectus Web.">
         <meta name="author" content="Efectus Web">
         <title><?php echo $navigation_title; ?></title>
-        <!--LINKS e JS PADRAO-->
-        <link type="image/png" rel="icon" href="imagens/sistema/identidadeVisual/icone-efectus-web.png">
-        <link type="text/css" rel="stylesheet" href="css/estilo.css">
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/standard.js"></script>
-        <!--FIM LINKS e JS PADRAO-->
-        <!--THIS PAGE LINKS-->
+        <?php
+            require_once "@link-standard-styles.php";
+            require_once "@link-standard-scripts.php";
+        ?>
         <script type="text/javascript" src="js/produtos.js"></script>
-        <script type="text/javascript" src="custom-textarea/ckeditor.js"></script>
-        <!--FIM THIS PAGE LINKS-->
         <script>
-            $(document).ready(function(){
-                CKEDITOR.replace("descricaoLonga");
-                var categoriasSelecionadas = 0;
-                $(".check-categorias").each(function(){
-                    var checkbox = $(this);
-                    var idCategoria = checkbox.val();
-                    checkbox.off().on("change", function(){
-                        var checked = checkbox.prop("checked");
-                        if(checked == true){
-                            categoriasSelecionadas++;
-                            $.ajax({
-                                type: "POST",
-                                url: "pew-busca-subcategorias.php",
-                                data: {id_categoria: idCategoria},
-                                error: function(){
-                                    notificacaoPadrao("Ocorreu um erro ao buscar as subcategorias", "error", 5000);  
-                                },
-                                success: function(subcategorias){
-                                    if(subcategorias != "false"){
-                                        var subcategorias = subcategorias.split("||");
-                                        var quantidade = subcategorias.length;
-                                        var ctrlQuantidade = 0;
-                                        for(var i = 0; i < quantidade; i++){
-                                            var infosub = subcategorias[i].split("##");
-                                            var sub = infosub[0];
-                                            var idSub = infosub[1];
-                                            if(sub != ""){
-                                                $(".opcao-padrao").hide();
-                                                $("#spanSubCategorias").append("<label class='label-full added-subcategorias' data-id-categoria='"+idCategoria+"' style='position: relative; top: -15px;'><input type='checkbox' name='subcategorias[]' value='"+sub+"||"+idCategoria+"' class='checked-subcategoria-"+idSub+"'>"+sub+"<br style='clear: both;'></label>");
-                                                ctrlQuantidade++;
-                                            }
-                                        }
-                                        if(ctrlQuantidade == 0){
-                                            $("#spanSubCategorias option").each(function(){
-                                                $(this).remove();
-                                            });
-                                            $("#spanSubCategorias").append("<option>- Selecione -</option>");
-                                        }
-                                    }
-                                    selecionandoCategoria = false;
-                                }
+            var selecionandoCategoria = false;
+            function checkSubcategorias(idSubcategoria){
+                var startDelay = 200;
+                $(document).ready(function(){
+                    setTimeout(function(){
+                        if(!selecionandoCategoria){
+                            $(".checked-subcategoria-"+idSubcategoria).each(function(){
+                                $(this).prop("checked", true);
                             });
                         }else{
-                            categoriasSelecionadas--;
-                            $("#spanSubCategorias .added-subcategorias").each(function(){
-                                var selectCategoria = $(this).attr("data-id-categoria");
-                                if(selectCategoria == idCategoria){
-                                    $(this).remove();
-                                }
-                                if(categoriasSelecionadas == 0){
-                                    $(".opcao-padrao").show();
-                                }
-                            });
+                            checkSubcategorias(idSubcategoria);
                         }
-                    });
+                    }, startDelay);
                 });
-                
+            }
+            
+            $(document).ready(function(){
+                CKEDITOR.replace("descricaoLonga");
+
                 /*ESPECIFICACOES TECNICAS*/
                 var botaoAdicionarEspecificacao = $(".btn-especificacoes");
                 var selectEspecificacao = $("#selectEspecificacao");
                 var displayEspecificacoes = $(".display-especificacoes");
                 var objTextareaEspecificacao = $("#descricaoEspecificacao");
-                
+
                 function resetEspecificacao(){
                     objTextareaEspecificacao.val("");
                     selectEspecificacao.val("");
                 }
-                
+
                 botaoAdicionarEspecificacao.off().on("click", function(){
                     var selectedEspecificacaoId = selectEspecificacao.val();
                     if(selectedEspecificacaoId != ""){
@@ -116,7 +72,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                                     notificacaoPadrao("Especificação adicionada", "success");
                                     resetEspecificacao();
                                 }else{
-                                    mensagemAlerta("O campo descrição deve ser preenchido", objTextareaEspecificacao);       
+                                    mensagemAlerta("O campo descrição deve ser preenchido", objTextareaEspecificacao);
                                 }
                             }
                         });
@@ -124,7 +80,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                         mensagemAlerta("Selecione uma especificação", selectEspecificacao);
                     }
                 });
-                
+
                 setInterval(function(){
                     displayEspecificacoes.children(".label-especificacao").each(function(){
                         var label = $(this);
@@ -143,10 +99,10 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     });
                 }, 200);
                 /*END ESPECIFICACOES TECNICAS*/
-                
+
                 /*PRODUTOS RELACIONADOS*/
-                var botaoProdutosRelacionados = $(".btn-produtos-relacionados");
-                var displayRelacionados = $(".display-produtos-relacionados");
+                var botaoProdutosRelacionados = $(".btn-relacionados");
+                var displayRelacionados = $(".display-relacionados");
                 var background = $(".background-interatividade");
                 var botaoSalvarRelacionados = $(".btn-salvar-relacionados");
                 var botaoCleanRelacionados = $(".limpar-todos-relacionados");
@@ -157,7 +113,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 var buscandoProduto = false;
                 var resetingBackground = false;
                 var lastSearchString = null;
-                
+
                 /*!IMPORTANT FUNCTIONS*/
                 function isJson(str){
                     try{
@@ -314,7 +270,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 }
                 /*END OPEN AND CLOSE*/
                 /*END !IMPORTANT FUNCTIONS*/
-                
+
                 /*MAIN SEARCH FUNCTION*/
                 function buscarProdutos(){
                     buscandoProduto = true;
@@ -337,7 +293,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                         }
                     }
                     resetBackgroundLoading();
-                    if(busca.length > 0 && lastSearchString != busca){               
+                    if(busca.length > 0 && lastSearchString != busca){
                         lastSearchString = busca;
                         $.ajax({
                             type: "POST",
@@ -348,9 +304,10 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                                     visibility: "hidden",
                                     opacity: "0"
                                 });
-                                notificacaoPadrao("Ocorreu um erro ao busca o produto.");
+                                notificacaoPadrao("Ocorreu um erro ao buscar o produto.");
                             },
                             success: function(resposta){
+                                console.log(resposta);
                                 setTimeout(function(){
                                     buscandoProduto = false;
                                 }, 500);
@@ -414,7 +371,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     }
                 }
                 /*END MAIN SEARCH FUNCTION*/
-                
+
                 /*TRIGGERS*/
                 botaoProdutosRelacionados.off().on("click", function(){
                     abrirRelacionados();
@@ -426,7 +383,311 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     fecharRelacionados();
                 });
                 /*END TRIGGERS*/
+
+                /*END PRODUTOS RELACIONADOS*/
                 
+                 /*PRODUTOS RELACIONADOS*/
+                var botaoProdutosRelacionados = $("#btn-produtos-relacionados");
+                var displayRelacionados = $("#display-produtos-relacionados");
+                var backgroundProdutos = $(".background-interatividade");
+                var botaoSalvarRelacionados = $(".btn-salvar-relacionados");
+                var botaoCleanRelacionados = $(".limpar-todos-relacionados");
+                var barraBusca = $(".busca-relacionados");
+                var checkOnlyActives = $("#checkOnlyActives");
+                var listaRelacionados = $(".lista-relacionados");
+                var msgListaRelacionados = $(".lista-relacionados .lista-relacionados-msg");
+                var buscandoProduto = false;
+                var resetingBackground = false;
+                var lastSearchString = null;
+
+                /*!IMPORTANT FUNCTIONS*/
+                function isJson(str){
+                    try{
+                        JSON.parse(str);
+                    }catch(e){
+                        return false;
+                    }
+                    return true;
+                }
+                function setMessageRelacionados(str){
+                    listaRelacionados.css("padding", "30px 0px 10px 0px");
+                    msgListaRelacionados.children("h4").text(str);
+                    msgListaRelacionados.css({
+                        height: "30px",
+                        lineHeight: "30px",
+                        visibility: "visible",
+                        opacity: "1"
+                    });
+                }
+                function resetMessageRelacionados(){
+                    listaRelacionados.css("padding", "0px 0px 40px 0px");
+                    msgListaRelacionados.children("h4").text("");
+                    msgListaRelacionados.css({
+                        height: "5px",
+                        lineHeight: "5px",
+                        visibility: "hidden",
+                        opacity: "0"
+                    });
+                }
+                function resetAllInputs(){
+                    var onlyActives = checkOnlyActives.prop("checked");
+                    var ctrlViewProduto = 0;
+                    $("#label-produtos-relacionados").each(function(){
+                        var label = $(this);
+                        var input = label.children("input");
+                        if(onlyActives && input.prop("checked") == true){
+                            label.css("display", "inline-block").removeClass("last-search");
+                            ctrlViewProduto++;
+                        }else if(!onlyActives){
+                            label.css("display", "inline-block").removeClass("last-search");
+                            ctrlViewProduto++;
+                        }
+                    });
+                    if(onlyActives){
+                        setMessageRelacionados("Resultados encontrados: "+ctrlViewProduto);
+                    }else{
+                        resetMessageRelacionados();
+                    }
+                }
+                function listLastSearch(){
+                    var onlyActives = checkOnlyActives.prop("checked");
+                    var ctrlQtd = 0;
+                    $("#label-produtos-relacionados").each(function(){
+                        var label = $(this);
+                        var input = label.children("input");
+                        if(onlyActives && label.hasClass("last-search") && input.prop("checked") == true){
+                            label.css("display", "inline-block");
+                            ctrlQtd++;
+                        }else if(!onlyActives && label.hasClass("last-search")){
+                            label.css("display", "inline-block");
+                            ctrlQtd++;
+                        }
+                    });
+                    if(ctrlQtd > 0){
+                        setMessageRelacionados("Exibindo resultados mais aproximados:");
+                    }else{
+                        setMessageRelacionados("Nenhum resultado foi encontrado");
+                        botaoCleanRelacionados.css("visibility", "hidden");
+                    }
+                }
+                function contarProdutosSelecionados(){
+                    var contagem = 0;
+                    $("#label-produtos-relacionados").each(function(){
+                        var label = $(this);
+                        var input = label.children("input");
+                        if(input.prop("checked") == true){
+                            contagem++;
+                        }
+                    });
+                    return contagem;
+                }
+                function clearRelacionados(){
+                    $("#label-produtos-relacionados").each(function(){
+                        var label = $(this);
+                        var input = label.children("input");
+                        if(label.css("display") != "none"){
+                            input.prop("checked", false);
+                        }
+                    });
+                }
+                /*OPEN AND CLOSE*/
+                var produtosAbertos = false;
+                function abrirRelacionados(){
+                    if(!produtosAbertos){
+                        produtosAbertos = true;
+                        backgroundProdutos.css("display", "block");
+                        displayRelacionados.css({
+                            visibility: "visible",
+                            opacity: "1"
+                        });
+                        /*SEARCH TRIGGRES*/
+                        barraBusca.on("keyup", function(){
+                            buscarProdutos();
+                        });
+                        barraBusca.on("search", function(){
+                            buscarProdutos();
+                        });
+                        /*END SEARCH TRIGGRES*/
+                        /*BOTAO SOMENTE SELECIONADOS*/
+                        checkOnlyActives.off().on("change", function(){
+                            var checked = $(this).prop("checked");
+                            var buscaAtiva = barraBusca.val().length > 0 ? true : false;
+                            if(checked && !buscaAtiva){
+                                var ctrlQtd = 0;
+                                $("#label-produtos-relacionados").each(function(){
+                                    var label = $(this);
+                                    var input = label.children("input");
+                                    var selecionado = input.prop("checked");
+                                    if(!selecionado){
+                                        label.css("display", "none");
+                                    }else{
+                                        ctrlQtd++;
+                                    }
+                                });
+                                botaoCleanRelacionados.css("visibility", "visible");
+                                setMessageRelacionados("Resultados encontrados: "+ctrlQtd);
+                            }else if(buscaAtiva){
+                                lastSearchString = null;
+                                buscarProdutos();
+                                if(checked){
+                                    botaoCleanRelacionados.css("visibility", "visible");
+                                }else{
+                                    botaoCleanRelacionados.css("visibility", "hidden");
+                                }
+                            }else{
+                                /*LISTA TODOS OS PRODUTOS*/
+                                resetAllInputs();
+                                botaoCleanRelacionados.css("visibility", "hidden");
+                            }
+                        });
+                        /*END BOTAO SOMENTE SELECIONADOS*/
+                        /*LIMPAR RELACIONADOS*/
+                        botaoCleanRelacionados.off().on("click", function(){
+                            clearRelacionados();
+                        });
+                    }
+                }
+                function fecharRelacionados(){
+                    if(produtosAbertos){
+                        displayRelacionados.css({
+                            visibility: "hidden",
+                            opacity: "0"
+                        });
+                        produtosAbertos = false;
+                        setTimeout(function(){
+                            backgroundProdutos.css("display", "none");
+                        }, 200);
+                        var totalSelecionados = contarProdutosSelecionados();
+                        botaoProdutosRelacionados.text("Produtos Relacionados ("+totalSelecionados+")");
+                    }
+                }
+                /*END OPEN AND CLOSE*/
+                /*END !IMPORTANT FUNCTIONS*/
+
+                /*MAIN SEARCH FUNCTION*/
+                function buscarProdutos(){
+                    buscandoProduto = true;
+                    var busca = barraBusca.val();
+                    var loadingBackground = $(".lista-relacionados .loading-background");
+                    var urlBuscaProdutos = "pew-busca-produtos.php";
+                    onlyActives = checkOnlyActives.prop("checked");
+
+                    function resetBackgroundLoading(){
+                        if(!resetingBackground){
+                            setInterval(function(){
+                                resetingBackground = true;
+                                if(!buscandoProduto){
+                                    loadingBackground.css({
+                                        visibility: "hidden",
+                                        opacity: "0"
+                                    });
+                                }
+                            }, 500);
+                        }
+                    }
+                    resetBackgroundLoading();
+                    if(busca.length > 0 && lastSearchString != busca){
+                        lastSearchString = busca;
+                        $.ajax({
+                            type: "POST",
+                            url: urlBuscaProdutos,
+                            data: {busca: busca},
+                            error: function(){
+                                loadingBackground.css({
+                                    visibility: "hidden",
+                                    opacity: "0"
+                                });
+                                notificacaoPadrao("Ocorreu um erro ao buscar o produto.");
+                            },
+                            success: function(resposta){
+                                setTimeout(function(){
+                                    buscandoProduto = false;
+                                }, 500);
+                                var selectedProdutos = [];
+                                var ctrlVQtdView = 0;
+                                function listarOpcoes(){
+                                    $("#label-produtos-relacionados").each(function(){
+                                        var label = $(this);
+                                        var input = label.children("input");
+                                        var inputIdProduto = input.val();
+                                        var inputChecked = input.prop("checked");
+                                        var arraySearch = selectedProdutos.some(function(id){
+                                            if(onlyActives){
+                                                return id === inputIdProduto && inputChecked == true;
+                                            }else{
+                                                return id === inputIdProduto;
+                                            }
+                                        });
+                                        if(arraySearch == false){
+                                            if(onlyActives){
+                                                label.css("display", "none");
+                                            }else{
+                                                label.css("display", "none").removeClass("last-search");
+                                            }
+                                        }else{
+                                            ctrlVQtdView++;
+                                            label.css("display", "inline-block").addClass("last-search");
+                                        }
+                                    });
+                                    setMessageRelacionados("Resultados encontrados: "+ctrlVQtdView);
+                                    if(ctrlVQtdView == 0){
+                                        listLastSearch();
+                                    }
+                                }
+                                if(resposta != "false" && isJson(resposta) == true){
+                                    var jsonData = JSON.parse(resposta);
+                                    var ctrlQtd = 0;
+                                    jsonData.forEach(function(id_produto){
+                                        selectedProdutos[ctrlQtd] = id_produto;
+                                        ctrlQtd++;
+                                    });
+                                    listarOpcoes();
+                                }else{
+                                    if(onlyActives){
+                                        listarOpcoes();
+                                    }else{
+                                        setMessageRelacionados("Exibindo resultados mais aproximados:");
+                                        listLastSearch();
+                                    }
+                                }
+                            },
+                            beforeSend: function(){
+                                loadingBackground.css({
+                                    visibility: "visible",
+                                    opacity: "1"
+                                });
+                            }
+                        });
+                    }else if(busca.length == 0){
+                        resetAllInputs();
+                    }
+                }
+                /*END MAIN SEARCH FUNCTION*/
+                
+                var triggerAtivado = false;
+                /*TRIGGERS*/
+                if(!triggerAtivado){
+                    botaoProdutosRelacionados.off().on("click", function(){
+                        if(!produtosAbertos){
+                            abrirRelacionados();
+                        }
+                        triggerAtivado = true;
+                    });
+                    botaoSalvarRelacionados.off().on("click", function(){
+                        if(produtosAbertos){
+                            fecharRelacionados();
+                        }
+                        triggerAtivado = true;
+                    });
+                    backgroundProdutos.off().on("click", function(){
+                        if(produtosAbertos){
+                            fecharRelacionados();
+                        }
+                        triggerAtivado = true;
+                    });
+                }
+                /*END TRIGGERS*/
+
                 /*END PRODUTOS RELACIONADOS*/
             });
         </script>
@@ -461,14 +722,14 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 margin: 4px;
             }
             .display-cores .selected:hover{
-                border-radius: 20px;   
+                border-radius: 20px;
             }
             .file-field{
                 height: 140px;
                 line-height: 140px;
             }
             .file-field:hover{
-                line-height: 140px;   
+                line-height: 140px;
             }
             /*ESPECIFICACAO TECNICA*/
             .btn-especificacoes{
@@ -476,6 +737,9 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 border: 1px solid #333;
                 transition: .2s;
                 white-space: nowrap;
+                text-align: center;
+                display: block;
+                width: 100%;
             }
             .btn-especificacoes:hover{
                 background-color: #fff;
@@ -495,16 +759,20 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
             }
             /*END ESPECIFICACAO TECNICA*/
             /*PRODUTOS RELACIONADOS CSS*/
-            .btn-produtos-relacionados{
+            .btn-relacionados{
                 padding: 10px;
                 cursor: pointer;
-                border: 1px solid #333;
+                border: 1px solid #999;
                 transition: .2s;
+                display: block;
+                width: 240px;
+                text-align: center;
+                margin-top: 10px;
             }
-            .btn-produtos-relacionados:hover{
+            .btn-relacionados:hover{
                 background-color: #fff;
             }
-            .display-produtos-relacionados{
+            .display-relacionados{
                 position: fixed;
                 width: 60%;
                 height: 70vh;
@@ -517,7 +785,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 opacity: 0;
                 transition: .3s;
             }
-            .display-produtos-relacionados .header-relacionados{
+            .display-relacionados .header-relacionados{
                 position: relative;
                 width: 100%;
                 height: 10vh;
@@ -529,14 +797,14 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 text-align: center;
                 z-index: 50;
             }
-            .display-produtos-relacionados .header-relacionados .title-relacionados{
+            .display-relacionados .header-relacionados .title-relacionados{
                 width: 26%;
                 height: 10vh;
                 margin: 0px;
                 padding: 0px 2% 0px 2%;
                 float: left;
             }
-            .display-produtos-relacionados .header-relacionados .busca-relacionados{
+            .display-relacionados .header-relacionados .busca-relacionados{
                 width: 38%;
                 height: 5vh;
                 font-size: 14px;
@@ -545,20 +813,20 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 float: left;
                 border: none;
             }
-            .display-produtos-relacionados .header-relacionados label{
+            .display-relacionados .header-relacionados label{
                 width: 26%;
                 height: 10vh;
                 margin: 0px 2% 0px 0px;
                 font-size: 12px;
                 cursor: pointer;
             }
-            .display-produtos-relacionados .header-relacionados label input{
+            .display-relacionados .header-relacionados label input{
                 position: relative;
                 vertical-align: middle;
                 top: -1px;
                 cursor: pointer;
             }
-            .display-produtos-relacionados .bottom-relacionados{
+            .display-relacionados .bottom-relacionados{
                 width: 100%;
                 height: 10vh;
                 background-color: #eee;
@@ -567,16 +835,16 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 border-radius: 0px 0px 6px 6px;
                 border-top: 2px solid #dedede;
             }
-            .display-produtos-relacionados .bottom-relacionados .btn-salvar-relacionados{
+            .display-relacionados .bottom-relacionados .btn-salvar-relacionados{
                 background-color: limegreen;
                 color: #fff;
                 padding: 10px 30px 10px 30px;
                 cursor: pointer;
             }
-            .display-produtos-relacionados .bottom-relacionados .btn-salvar-relacionados:hover{
+            .display-relacionados .bottom-relacionados .btn-salvar-relacionados:hover{
                 background-color: green;
             }
-            .display-produtos-relacionados .lista-relacionados{
+            .display-relacionados .lista-relacionados{
                 position: relative;
                 height: 50vh;
                 overflow-x: auto;
@@ -586,7 +854,7 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 clear: both;
                 z-index: 40;
             }
-            .display-produtos-relacionados .lista-relacionados .loading-background{
+            .display-relacionados .lista-relacionados .loading-background{
                 position: fixed;
                 width: 60%;
                 height: 53vh;
@@ -601,13 +869,13 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 transition: .3s;
                 opacity: 0;
             }
-            .display-produtos-relacionados .lista-relacionados .loading-background .loading-message{
+            .display-relacionados .lista-relacionados .loading-background .loading-message{
                 font-size: 18px;
                 text-align: center;
                 color: #f78a14;
                 margin: 0px;
             }
-            .display-produtos-relacionados .lista-relacionados .lista-relacionados-msg{
+            .display-relacionados .lista-relacionados .lista-relacionados-msg{
                 position: fixed;
                 width: 60%;
                 height: 5px;
@@ -620,11 +888,11 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 border-bottom: 1px solid #dedede;
                 z-index: 40;
             }
-            .display-produtos-relacionados .lista-relacionados .lista-relacionados-msg h4{
+            .display-relacionados .lista-relacionados .lista-relacionados-msg h4{
                 margin: 0px;
                 padding: 0px 1% 5px 1%;
             }
-            .display-produtos-relacionados .lista-relacionados .lista-relacionados-msg .limpar-todos-relacionados{
+            .display-relacionados .lista-relacionados .lista-relacionados-msg .limpar-todos-relacionados{
                 position: absolute;
                 height: 30px;
                 top: 0px;
@@ -635,55 +903,175 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                 text-align: center;
                 visibility: hidden;
             }
-            .display-produtos-relacionados .lista-relacionados .label-relacionados{
+            .display-relacionados .lista-relacionados .label-relacionados{
                 cursor: pointer;
                 width: 98%;
                 padding: 5px 1% 5px 1%;
                 float: none;
                 display: inline-block;
             }
-            .display-produtos-relacionados .lista-relacionados .label-relacionados:hover{
-                background-color: #fff;   
+            .display-relacionados .lista-relacionados .label-relacionados:hover{
+                background-color: #fff;
             }
             /*END PRODUTOS RELACIONADOS CSS*/
         </style>
     </head>
     <body>
         <?php
-            /*REQUIRE PADRAO*/
-            require_once "header-efectus-web.php";
-            require_once "pew-interatividade.php";
-            /*FIM PADRAO*/
-            require_once "pew-system-config.php";
-    
+            // STANDARD REQUIRE
+            require_once "@include-body.php";
+            if(isset($block_level) && $block_level == true){
+                $pew_session->block_level();
+            }
+        
+            require_once "../@classe-produtos.php";
+
             /*SET TABLES*/
-            $tabela_categorias = $pew_db->tabela_categorias;
             $tabela_produtos = $pew_custom_db->tabela_produtos;
+            $tabela_imagens_produtos = $pew_custom_db->tabela_imagens_produtos;
+            $tabela_categorias = $pew_db->tabela_categorias;
+            $tabela_subcategorias = $pew_db->tabela_subcategorias;
+            $tabela_categorias_produtos = $pew_custom_db->tabela_categorias_produtos;
+            $tabela_subcategorias_produtos = $pew_custom_db->tabela_subcategorias_produtos;
+            $tabela_cores = $pew_custom_db->tabela_cores;
             $tabela_marcas = $pew_custom_db->tabela_marcas;
+            $tabela_produtos_relacionados = $pew_custom_db->tabela_produtos_relacionados;
             $tabela_especificacoes = $pew_custom_db->tabela_especificacoes;
+            $tabela_especificacoes_produtos = $pew_custom_db->tabela_especificacoes_produtos;
+            $tabela_departamentos = $pew_custom_db->tabela_departamentos;
+            $tabela_departamentos_produtos = $pew_custom_db->tabela_departamentos_produtos;
             /*END SET TABLES*/
+
+            /*DEFAULT VARS*/
+            $idProduto = isset($_GET["id_produto"]) ? $pew_functions->url_format($_GET["id_produto"]) : 0;
+            $dirImagensProdutos = "../imagens/produtos";
+            /*END DEFAULT VARS*/
+
+            /*SET DADOS PRODUTOS*/
+            $totalProduto = $pew_functions->contar_resultados($tabela_produtos, "id = '$idProduto'");
+            if($totalProduto > 0 || $idProduto == 0){
+                if($idProduto != 0){
+                    $produto = new Produtos();
+                    $produto->montar_produto($idProduto);
+                    $infoProduto = $produto->montar_array();
+                    $skuProduto = $infoProduto["sku"];
+                    $nomeProduto = $infoProduto["nome"];
+                    $precoProduto = $infoProduto["preco"];
+                    $precoProduto = $pew_functions->custom_number_format($precoProduto);
+                    $precoPromocaoProduto = $infoProduto["preco_promocao"];
+                    $precoPromocaoProduto = $pew_functions->custom_number_format($precoPromocaoProduto);
+                    $promocaoAtiva = $infoProduto["promocao_ativa"];
+                    $marcaProduto = $infoProduto["marca"];
+                    $estoqueProduto = $infoProduto["estoque"];
+                    $estoqueBaixoProduto = $infoProduto["estoque_baixo"];
+                    $tempoFabricacaoProduto = $infoProduto["tempo_fabricacao"];
+                    $descricaoCurtaProduto = $infoProduto["descricao_curta"];
+                    $descricaoLongaProduto = $infoProduto["descricao_longa"];
+                    $urlVideoProduto = $infoProduto["url_video"];
+                    $pesoProduto = $infoProduto["peso"];
+                    $comprimentoProduto = $infoProduto["comprimento"];
+                    $larguraProduto = $infoProduto["largura"];
+                    $alturaProduto = $infoProduto["altura"];
+                    $statusProduto = $infoProduto["status"];
+                    $imagensProduto = $infoProduto["imagens"];
+                    $departamentosProduto = $produto->get_departamentos_produto();
+                    $categoriasProduto = $produto->get_categorias_produto();
+                    $subcategoriasProduto = $produto->get_subcategorias_produto();
+                    $especificacoesProduto = $produto->get_especificacoes_produto();
+                    $relacionadosProdutos = $produto->get_relacionados_produto();
+
+                    $selectedDepartamentos = array();
+                    if($departamentosProduto != false){
+                        foreach($departamentosProduto as $infoDepartamento){
+                            $idDepartamento = $infoDepartamento["id"];
+                            $selectedDepartamentos[$idDepartamento] = true;
+                        }
+                    }
+
+                    $selectedCategorias = array();
+                    if($categoriasProduto != false){
+                        foreach($categoriasProduto as $infoCategoria){
+                            $idCategoria = $infoCategoria["id"];
+                            $tituloCategoria = $infoCategoria["titulo"];
+                            $selectedCategorias[$idCategoria] = $tituloCategoria;
+                        }
+                    }
+
+                    $selectedSubcategorias = array();
+                    if($subcategoriasProduto != false){
+                        foreach($subcategoriasProduto as $infoSubcategoria){
+                            $idSubcategoria = $infoSubcategoria["id_subcategoria"];
+                            $idCategoriaMain = $infoSubcategoria["id_categoria"];
+                            $tituloSubcategoria = $infoSubcategoria["titulo"];
+                            $selectedSubcategorias[$idSubcategoria] = $tituloSubcategoria;
+                            echo "<script>$(document).ready(function(){ checkSubcategorias($idSubcategoria); });</script>";
+                        }
+                    }
+
+                    $selectedProdutosRelacionados = array();
+                    $ctrlCoresRelacionadas = 0;
+                    $ctrlRelacionados = 0;
+                    if($relacionadosProdutos != false){
+                        foreach($relacionadosProdutos as $infoRelacionados){
+                            $idEspecificacao = $infoRelacionados["id_relacionado"];
+                            $selectedProdutosRelacionados[$idEspecificacao] = true;
+                            $ctrlRelacionados++;
+                        }
+                    }
+                    /*END SET DADOS PRODUTO*/
+                }else{
+                    $skuProduto = null;
+                    $nomeProduto = null;
+                    $precoProduto = null;
+                    $precoProduto = null;
+                    $precoPromocaoProduto = null;
+                    $precoPromocaoProduto = null;
+                    $promocaoAtiva = null;
+                    $marcaProduto = null;
+                    $estoqueProduto = 1;
+                    $estoqueBaixoProduto = 1;
+                    $tempoFabricacaoProduto = 0;
+                    $descricaoCurtaProduto = null;
+                    $descricaoLongaProduto = null;
+                    $urlVideoProduto = null;
+                    $pesoProduto = null;
+                    $comprimentoProduto = null;
+                    $larguraProduto = null;
+                    $alturaProduto = null;
+                    $statusProduto = 1;
+                    $imagensProduto = null;
+                    $selectedDepartamentos = array();
+                    $selectedCategorias = array();
+                    $selectedSubcategorias = array();
+                    $ctrlRelacionados = 0;
+                    $ctrlCoresRelacionadas = 0;
+                    $selectedProdutosRelacionados = array();
+                }
         ?>
+        <!--PAGE CONTENT-->
         <h1 class="titulos"><?php echo $page_title; ?><a href="pew-produtos.php" class="btn-voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a></h1>
         <form name="busca_produto"><!--ESTA AQUI APENAS PARA NÃO BUGAR QUANDO DER ENTER NO INPUT BUSCA PRODUTO E TAMBÉM PARA FUNCIONAR O TRIGGER DA TECLA ENTER--></form>
         <section class="conteudo-painel">
             <form id="formCadastraProduto" action="pew-grava-produto.php" method="post" enctype="multipart/form-data">
-                <label class="label-half">
-                    <h2 class='input-title'>Nome do Produto</h2>
-                    <input type="text" name="nome" id="nome" placeholder="Produto" class="input-full">
-                </label>
-                <label class="label-half">
-                    <h2 class='input-title'>Marca</h2>
-                    <select name="marca" class="input-full">
+                <!--LINHA 1-->
+                <div class="label medium">
+                    <h2 class='label-title'>Nome do Produto</h2>
+                    <input type="text" name="nome" id="nome" placeholder="Produto" class="label-input" value="<?php echo $nomeProduto;?>">
+                </div>
+                <div class="label xsmall">
+                    <h2 class='label-title'>Marca</h2>
+                    <select name="marca" class="label-input">
                         <option value="">- Selecione -</option>
                         <?php
                             $contarMarcas = mysqli_query($conexao, "select count(id) as total from $tabela_marcas where status = 1");
                             $contagemMarcas = mysqli_fetch_array($contarMarcas);
                             $totalMarcas = $contagemMarcas["total"];
-                            if($totalMarcas > 0){;
+                            if($totalMarcas > 0){
                                 $queryMarcas = mysqli_query($conexao, "select * from $tabela_marcas where status = 1");
                                 while($infoMarcas = mysqli_fetch_array($queryMarcas)){
                                     $nomeMarca = $infoMarcas["marca"];
-                                    echo "<option value='$nomeMarca'>$nomeMarca</option>";
+                                    $selected = $nomeMarca == $marcaProduto ? "selected" : "";
+                                    echo "<option value='$nomeMarca' $selected>$nomeMarca</option>";
                                 }
                             }
                         ?>
@@ -693,106 +1081,189 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                         echo "<h5 style='margin: 0px; margin-top: -6px;'>Nenhum marca cadastrada</h5>";
                     }
                     ?>
-                </label>
-                <br style="clear: both">
-                <label class="label-medium" style="margin-top: 0px;">
-                    <h2 class='input-title'>Estoque</h2>
-                    <input type="number" step="any" name="estoque" id="estoque" placeholder="Quantidade produtos" class="input-full">
-                </label>
-                <label class="label-medium" style="margin-top: 0px;">
-                    <h2 class='input-title'>Notificação estoque baixo</h2>
-                    <input type="number" step="any" name="estoque_baixo" value="1" id="estoque_baixo" placeholder="Quantidade estoque baixo" class="input-full">
-                </label>
-                <label class="label-medium" style="margin-top: 0px;">
-                    <h2 class='input-title'>Tempo de fabricação (dias)</h2>
-                    <input type="number" step="any" name="tempo_fabricacao" id="tempo_fabricacao" value="0" placeholder="Tempo em dias" class="input-full">
-                </label>
-                <label class="label-half">
-                    <h2 class='input-title'>Descrição Curta SEO Google<br>(Recomendado 156 caracteres)</h2>
-                    <textarea placeholder="Descrição do produto" name="descricao_curta" maxlength="180" id="descricaoCurta" class="input-full" rows="3"></textarea>
-                </label>
-                <label class="label-half">
-                    <h2 class='input-title'>Descrição Longa</h2>
-                    <textarea placeholder="Descrição do produto" name="descricao_longa" id="descricaoLonga" class="input-full" rows="5"></textarea>
-                </label>
-                <label class="label-small">
-                    <div class="label-half" style="margin-top: 0px;">
-                        <h2 class='input-title'>Status</h2>
-                        <select name="status" class="input-full">
-                            <option value="1">Ativo</option>
-                            <option value="0">Inativo</option>
-                        </select>
-                    </div>
-                    <div class="label-half" style="margin-top: 0px;">
-                        <h2 class='input-title'>Preço</h2>
-                        <input type="number" step="any" name="preco" id="preco" placeholder="Preço" class="input-full" style="margin-top: 10px;">
-                    </div>
-                </label>
-                <label class="label-small">
-                    <div class="label-half" style="margin-top: 0px;">
-                        <h2 class='input-title'>Status Promoção</h2>
-                        <select name="statusPromocao" class="input-full">
-                            <option value="1">Ativo</option>
-                            <option value="0">Inativo</option>
-                        </select>
-                    </div>
-                    <div class="label-half" style="margin-top: 0px;">
-                        <h2 class='input-title'>Preço Promoção</h2>
-                        <input type="number" step="any" name="precoPromocao" id="precoPromocao" placeholder="Preço Promoção" class="input-full" style="margin-top: 10px;">
-                    </div>
-                </label>
-                <label class="label-small">
-                    <h2 class='input-title'>SKU</h2>
-                    <input type="text" name="sku" id="sku" placeholder="SKU" class="input-full">
-                </label>
-                <label class="label-small" align=right>
-                    <h2 class='input-title'>Categoria</h2>
+                </div>
+                <div class="label xsmall">
+                    <h2 class='label-title'>Estoque</h2>
+                    <input type="number" step="any" name="estoque" id="estoque" class="label-input" value="<?php echo $estoqueProduto;?>">
+                </div>
+                <div class="label xsmall">
+                    <h2 class='label-title'>Estoque baixo</h2>
+                    <input type="number" step="any" name="estoque_baixo" value="<?php echo $estoqueBaixoProduto;?>" id="estoque_baixo" placeholder="Quantidade estoque baixo" class="label-input">
+                </div>
+                <div class="label xsmall">
+                    <h2 class='label-title'>Fabricação (dias)</h2>
+                    <input type="number" step="any" name="tempo_fabricacao" id="tempo_fabricacao" value="<?php echo $tempoFabricacaoProduto;?>" placeholder="Tempo em dias" class="label-input">
+                </div>
+                <!--END LINHA 1-->
+                
+                <!--LINHA 2-->
+                <br class="clear">
+                <div class="label half">
+                    <h2 class='label-title'>Descrição Curta SEO Google<br>(Recomendado 156 caracteres)</h2>
+                    <textarea placeholder="Descrição do produto" name="descricao_curta" maxlength="180" id="descricaoCurta" class="label-textarea" rows="3"><?php echo $descricaoCurtaProduto;?></textarea>
+                </div>
+                <div class="label half">
+                    <h2 class='label-title'>Descrição Longa</h2>
+                    <textarea placeholder="Descrição do produto" name="descricao_longa" id="descricaoLonga" class="label-input" rows="5"><?php echo $descricaoLongaProduto;?></textarea>
+                </div>
+                <!--END LINHA 2-->
+                <br class="clear">
+                <br class="clear">
+                <!--LINHA 3-->
+                <div class="label xsmall">
+                    <h2 class='label-title'>Status</h2>
+                    <select name="status" class="label-input">
+                        <?php
+                            $possibleStatus = array(0, 1);
+                            foreach($possibleStatus as $selectStatus){
+                                $nameStatus = $selectStatus == 1 ? "Ativo" : "Inativo";
+                                $selected = $selectStatus == $statusProduto ? "selected" : "";
+                                echo "<option value='$selectStatus' $selected>$nameStatus</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
+                <div class="label xsmall">
+                    <h2 class='label-title'>Preço</h2>
+                    <input type="number" step="any" name="preco" id="preco" placeholder="Preço" class="label-input" style="margin-top: 10px;" value="<?php echo $precoProduto;?>">
+                </div>
+                <div class="label xsmall">
+                    <h2 class='label-title'>Preço promoção</h2>
+                    <input type="number" step="any" name="preco_promocao" id="precoPromocao" placeholder="Preço promocao" class="label-input" style="margin-top: 10px;" value="<?php echo $precoPromocaoProduto;?>">
+                </div>
+                <div class="label xsmall">
+                    <h2 class='label-title'>Promoção</h2>
+                    <select name="promocao_ativa" class="label-input">
+                        <?php
+                            $possibleStatus = array(0, 1);
+                            foreach($possibleStatus as $selectStatusPromocao){
+                                $nameStatus = $selectStatusPromocao == 1 ? "Ativa" : "Inativa";
+                                $selected = $selectStatusPromocao == $promocaoAtiva ? "selected" : "";
+                                echo "<option value='$selectStatusPromocao' $selected>$nameStatus</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
+                <div class="label xsmall">
+                    <h2 class='label-title'>SKU</h2>
+                    <input type="text" name="sku" id="sku" placeholder="SKU" class="label-input" value="<?php echo $skuProduto;?>">
+                </div>
+                <div class="label xsmall">
+                    <h2 class='label-title'>Cor</h2>
+                    <select name="id_cor" id="idCor" class="label-input">
+                        <option value="">- Selecione -</option>
+                        <?php
+                            $condicaoCores = "status = 1";
+                            $totalCores = $pew_functions->contar_resultados($tabela_cores, $condicaoCores);
+                            if($totalCores > 0){
+                                $queryCores = mysqli_query($conexao, "select * from $tabela_cores order by cor asc");
+                                while($infoCores = mysqli_fetch_array($queryCores)){
+                                    $idCor = $infoCores["id"];
+                                    $tituloCor = $infoCores["cor"];
+                                    echo "<option value='$idCor'>$tituloCor</option>";
+                                }
+                            }
+                        ?>
+                    </select>
                     <?php
-                    $contarCategorias = mysqli_query($conexao, "select count(id) as total_categorias from $tabela_categorias where status = 1");
-                    $contagem = mysqli_fetch_assoc($contarCategorias);
-                    if($contagem["total_categorias"] > 0){
-                        $queryCategorias = mysqli_query($conexao, "select categoria, id from $tabela_categorias where status = 1");
-                        while($categorias = mysqli_fetch_array($queryCategorias)){
-                            $idCategoria = $categorias["id"];
-                            $categoria = $categorias["categoria"];
-                            echo "<label class='label-full'>$categoria<input type='checkbox' value='$idCategoria' class='check-categorias' name='categorias[]'><br style='clear: both;'></label>";
+                        if($totalCores == 0){
+                            echo "<h5 style='margin: 0px; margin-top: -6px;'>Nenhum cor cadastrada</h5>";
                         }
-                    }
-                    if($contagem["total_categorias"] == 0){
-                        echo "<h3 class='msg-inputs'>Nenhuma categoria foi adicionada.</h3>";
-                    }
                     ?>
-                    <br>
-                    <h2 class='input-title'>Subcategoria</h2>
-                    <label class="input-full" name="subcategoria" id="spanSubCategorias">
-                        <label class="label-full opcao-padrao">- Selecione a categoria -</label>
-                        <br style="clear: both;">
-                    </label>
-                </label>
-                <br style="clear: both;">
-                <br style="clear: both;">
-                <div class="label-full">
-                    <h2 align=left>Dimensões (Calculo frete)</h2>
-                    <div class="label-small">
-                        <h2 class="input-title">Peso (kg)</h2>
-                        <input type="number" step="any" name="peso" id="peso" placeholder="Ex: 0.500" class="input-full">
-                    </div>
-                    <div class="label-small">
-                        <h2 class="input-title">Comprimento (cm)</h2>
-                        <input type="number" step="any" name="comprimento" id="comprimento" placeholder="Ex: 20" class="input-full">
-                    </div>
-                    <div class="label-small">
-                        <h2 class="input-title">Largura (cm)</h2>
-                        <input type="number" step="any" name="largura" id="largura" placeholder="Ex: 20" class="input-full">
-                    </div>
-                    <div class="label-small">
-                        <h2 class="input-title">Altura (cm)</h2>
-                        <input type="number" step="any" name="altura" id="altura" placeholder="Ex: 20" class="input-full">
+                </div>
+                <!--END LINHA 3-->
+                <br class="clear">
+                <br class="clear">
+                <!--LINHA 4-->
+                <div class="medium">
+                    <div class="select-categorias">
+                        <h3 class="titulo">Selecione os departamentos</h3>
+                        <ul class="list-categorias">
+                            <?php
+                                $condicaoDepartamentos = "true";
+                                $totalCategorias = $pew_functions->contar_resultados($tabela_departamentos, $condicaoDepartamentos);
+                                if($totalCategorias > 0){
+                                    $queryCategorias = mysqli_query($conexao, "select departamento, id from $tabela_departamentos where $condicaoDepartamentos");
+                                    while($departamentos = mysqli_fetch_array($queryCategorias)){
+                                        $idDepartamento = $departamentos["id"];
+                                        $departamento = $departamentos["departamento"];
+                                        $checkedStatus = isset($selectedDepartamentos[$idDepartamento]) ? true : false;
+                                        $checked = $checkedStatus == true ? "checked" : "";
+                                        echo "<li class='box-categoria'><label><i class='fas fa-folder icone'></i>$departamento<input type='checkbox' value='$idDepartamento' class='check-categorias' name='departamentos[]' $checked></label>";
+                                        echo "</li>";
+                                    }
+                                }else{
+                                    echo "<div class='full'>Nenhuma categoria foi cadastrada</div>";
+                                }
+                            ?>
+                        </ul>
                     </div>
                 </div>
-                <br style="clear: both;">
-                <br style="clear: both;">
-                <div class="label-half" align=right>
+                <div class="medium">
+                    <div class="select-categorias">
+                        <h3 class="titulo">Selecione as categorias e subcategorias</h3>
+                        <ul class="list-categorias">
+                            <?php
+                                $condicaoCategorias = "status  = 1";
+                                $totalCategorias = $pew_functions->contar_resultados($tabela_categorias, $condicaoCategorias);
+                                if($totalCategorias > 0){
+                                    $queryCategorias = mysqli_query($conexao, "select categoria, id from $tabela_categorias where $condicaoCategorias");
+                                    while($categorias = mysqli_fetch_array($queryCategorias)){
+                                        $idCategoria = $categorias["id"];
+                                        $categoria = $categorias["categoria"];
+                                        $condicaoSubcategorias = "status = 1 and id_categoria = '$idCategoria'";
+                                        $totalSubcategorias = $pew_functions->contar_resultados($tabela_subcategorias, $condicaoSubcategorias);
+                                        $checkedStatus = isset($selectedCategorias[$idCategoria]) ? true : false;
+                                        $checkedCategoria = $checkedStatus == true ? "checked" : "";
+                                        $classeSub = $checkedStatus == true ? "list-subcategorias-active" : "";
+                                        $styleSub = $checkedStatus == true ? "style='display: block;'" : "";
+                                        echo "<li class='box-categoria'><label><i class='fas fa-folder icone'></i>$categoria<input type='checkbox' value='$idCategoria' class='check-categorias' name='categorias[]' $checkedCategoria></label>";
+                                        if($totalSubcategorias > 0){
+                                            echo "<ul class='list-subcategorias $classeSub' $styleSub>";
+                                            $querySubcategorias = mysqli_query($conexao, "select subcategoria, id from $tabela_subcategorias where $condicaoSubcategorias");
+                                            while($subcategorias = mysqli_fetch_array($querySubcategorias)){
+                                                $idSubcategoria = $subcategorias["id"];
+                                                $subcategoria = $subcategorias["subcategoria"];
+                                                $checkedSub = isset($selectedSubcategorias[$idSubcategoria]) == true ? "checked" : "";
+                                                echo "<li class='box-subcategoria'><label><i class='fas fa-folder icone'></i> $subcategoria<input type='checkbox' value='$subcategoria||$idSubcategoria' class='check-subcategorias' $checkedSub name='subcategorias[]'></label></li>";
+                                            }
+                                            echo "</ul>";
+                                        }
+                                        echo "</li>";
+                                    }
+                                }else{
+                                    echo "<div class='full'>Nenhuma categoria foi cadastrada</div>";
+                                }
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+                <div class="medium">
+                    <h2 align=left style="margin: 0px;">Dimensões (Calculo frete)</h2>
+                    <div class="label half">
+                        <h2 class="label-title" title="Peso">Peso (kg)</h2>
+                        <input type="number" step="any" name="peso" id="peso" placeholder="Ex: 0.500" class="label-input" value="<?php echo $pesoProduto;?>">
+                    </div>
+                    <div class="label half">
+                        <h2 class="label-title" title="Comprimento">Comp. (cm)</h2>
+                        <input type="number" step="any" name="comprimento" id="comprimento" placeholder="Ex: 20" class="label-input" value="<?php echo $comprimentoProduto;?>">
+                    </div>
+                    <div class="label half">
+                        <h2 class="label-title" title="Largura">Largura (cm)</h2>
+                        <input type="number" step="any" name="largura" id="largura" placeholder="Ex: 20" class="label-input" value="<?php echo $larguraProduto;?>">
+                    </div>
+                    <div class="label half">
+                        <h2 class="label-title" title="Altura">Altura (cm)</h2>
+                        <input type="number" step="any" name="altura" id="altura" placeholder="Ex: 20" class="label-input" value="<?php echo $alturaProduto;?>">
+                    </div>
+                </div>
+                <!--END LINHA 4-->
+                <br class="clear">
+                <br class="clear">
+                <br class="clear">
+                <br class="clear">
+                <!--LINHA 5-->
+                <div class="half" align=right>
                     <h2 align=right>Especificações técnicas</h2>
                     <?php
                         $contarEspec = mysqli_query($conexao, "select count(id) as total from $tabela_especificacoes where status = 1");
@@ -800,60 +1271,83 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                         $totalEspec = $contagem["total"];
                         if($totalEspec > 0){
                             $queryEspecificacoes = mysqli_query($conexao, "select * from $tabela_especificacoes where status = 1 order by titulo asc");
-                            echo "<select id='selectEspecificacao' class='input-medium'>";
+                            echo "<div class='medium'>";
+                            echo "<select id='selectEspecificacao' class='label-input'>";
                                 echo "<option value=''>- Selecione -</option>";
-                            while($infoEspecificacao = mysqli_fetch_array($queryEspecificacoes)){
-                                $tituloEspecificacao = $infoEspecificacao["titulo"];
-                                $idEspecificacao = $infoEspecificacao["id"];
-                                echo "<option value='$idEspecificacao'>$tituloEspecificacao</option>";
-                            }
+                                while($infoEspecificacao = mysqli_fetch_array($queryEspecificacoes)){
+                                    $tituloEspecificacao = $infoEspecificacao["titulo"];
+                                    $idEspecificacao = $infoEspecificacao["id"];
+                                    echo "<option value='$idEspecificacao'>$tituloEspecificacao</option>";
+                                }
                             echo "</select>";
-                            echo "<input type='text' id='descricaoEspecificacao' class='input-medium' placeholder='Descrição da especificação' form='addEspecificacao'>";
-                            echo "<a class='btn-especificacoes input-medium'>Adicionar especificação</a>";
+                            echo "</div>";
+                            echo "<div class='medium'>";
+                            echo "<input type='text' id='descricaoEspecificacao' class='label-input' placeholder='Descrição' form='addEspecificacao'>";
+                            echo "</div>";
+                            echo "<div class='medium'>";
+                            echo "<a class='btn-especificacoes label-input'>Adicionar</a>";
+                            echo "</div>";
                         }else{
                             echo "<h4>Nenhuma especificação foi cadastrada.</h4>";
                         }
                     ?>
                 </div>
-                <div class="label-half" align=left>
-                    <br><h2 class="input-title" align=left>Especificações adicionadas:</h2>
-                    <div class="display-especificacoes"><!--ESPECIFICACOES ADICIONADAS--></div>
+                <div class="label half" align=left>
+                    <h2 class="label-title" align=left style="position: relative; top: 25px; margin-bottom: 25px;">Especificações adicionadas:</h2>
+                    <div class="display-especificacoes">
+                        <!--ESPECIFICACOES ADICIONADAS-->
+                        <?php
+                            $totalEspecificacoes = isset($especificacoesProduto) && is_array($especificacoesProduto) ? count($especificacoesProduto) : 0;
+                            if($totalEspecificacoes > 0 && $especificacoesProduto != null){
+                                foreach($especificacoesProduto as $infoEspecificacao){
+                                    $idEspec = $infoEspecificacao["id"];
+                                    $tituloEspec = $infoEspecificacao["titulo"];
+                                    $descricaoEspec = $infoEspecificacao["descricao"];
+                                    $valueInput = $idEspec."|-|".$descricaoEspec;
+                                    echo "<label class='label-especificacao'><b>$tituloEspec: </b> <input type='text' class='input-especificacao' value='$descricaoEspec'><input type='hidden' class='input-ctrl-especificacao' name='especicacao_produto[]' value='$valueInput' pew-id-especificacao='$idEspec'> <a class='btn-excluir-especificacao' title='Excluir especificação'><i class='fa fa-times' aria-hidden='true'></i></a></label>";
+                                }
+                            }
+                        ?>
+                    </div>
                 </div>
-                <br style="clear: both;">
-                <br style="clear: both;">
-                <br style="clear: both;">
-                <div class="label-full">
-                    <h2 class="input-title">Imagens do produto: (900px : 900px)</h2>
-                    <label class="file-field label-small" id="imagem1">
-                        <div class="view"><i class="fa fa-plus" aria-hidden="true"></i></div>
-                        <input type="file" name="imagem[]" id="imagemPrincipal" class="input-full" accept="image/*">
-                        <div class="legenda">Selecione o arquivo</div>
-                    </label>
-                    <label class="file-field label-small" id="imagem2">
-                        <div class="view"><i class="fa fa-plus" aria-hidden="true"></i></div>
-                        <input type="file" name="imagem[]" id="imagem2" class="input-full" accept="image/*">
-                        <div class="legenda">Selecione o arquivo</div>
-                    </label>
-                    <label class="file-field label-small" id="imagem3">
-                        <div class="view"><i class="fa fa-plus" aria-hidden="true"></i></div>
-                        <input type="file" name="imagem[]" id="imagem3" class="input-full" accept="image/*">
-                        <div class="legenda">Selecione o arquivo</div>
-                    </label>
-                    <label class="file-field label-small" id="imagem4">
-                        <div class="view"><i class="fa fa-plus" aria-hidden="true"></i></div>
-                        <input type="file" name="imagem[]" id="imagem4" class="input-full" accept="image/*">
-                        <div class="legenda">Selecione o arquivo</div>
-                    </label>
+                <!--END LINHA 5-->
+                <br class="clear">
+                <br class="clear">
+                <br class="clear">
+                <br class="clear">
+                
+                <div class="label full">
+                    <h2 class="label-title">Imagens do produto: (900px : 900px) OBRIGATÓRIO</h2>
+                    <?php
+                        $contarImagens = mysqli_query($conexao, "select count(id) as total_imagens from $tabela_imagens_produtos where id_produto = '$idProduto'");
+                        $contagem = mysqli_fetch_assoc($contarImagens);
+                        $maxImagens = 4;
+                        $selectedImagens = 0;
+                        for($i = $selectedImagens + 1; $i <= $maxImagens; $i++){
+                            echo "<div class='file-field small' id='imagem$i'>";
+                            echo "<div class='view'><i class='fa fa-plus' aria-hidden='true'></i></div>";
+                            echo "<input type='file' name='imagem$i' accept='image/*'>";
+                            echo "<div class='legenda'>Selecione o arquivo</div>";
+                            echo "</div>";
+                        }
+                        echo "<input type='hidden' name='maximo_imagens' value='$maxImagens'>";
+                    ?>
                 </div>
+                <!--END LINHA 6-->
                 <br style="clear: both;">
                 <br style="clear: both;">
                 <br style="clear: both;">
                 <br style="clear: both;">
-                <div class="label-full" align=left>
+                <!--LINHA 7-->
+                <div class="label half" align="left">
+                    <h3 class="label-title">Iframe Vídeo</h3>
+                    <input type="text" class="label-input" name="url_video" placeholder="<iframe></iframe>" value="<?php echo $urlVideoProduto; ?>">
+                </div>
+                <div class="small" align=left>
                     <!--PRODUTOS RELACIONADOS-->
-                    <h3 align=left>Produtos Relacionados</h3>
-                    <a class="btn-produtos-relacionados">Produtos Selecionados (0)</a>
-                    <div class="display-produtos-relacionados">
+                    <h3 class="label-title">Produtos Relacionados</h3>
+                    <a class="btn-relacionados" id="btn-produtos-relacionados">Produtos Selecionados <?php echo "(".$ctrlRelacionados.")";?></a>
+                    <div class="display-relacionados" id="display-produtos-relacionados">
                         <div class="header-relacionados">
                             <h3 class="title-relacionados">Produtos relacionados</h3>
                             <!--<h5 class="descricao-relacionados">Selecione os produtos relacionados</h5>-->
@@ -866,11 +1360,23 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                             </div>
                             <div class="lista-relacionados-msg"><h4>Exibindo todos os produtos:</h4><a class="link-padrao limpar-todos-relacionados" title="Limpar todos os produtos listados abaixo e que foram selecionados">Limpar todos</a></div>
                         <?php
-                            $queryAllProdutos = mysqli_query($conexao, "select id, nome from $tabela_produtos where status = 1 order by nome asc");
-                            while($infoRelacionados = mysqli_fetch_array($queryAllProdutos)){
-                                $idProdutoRelacionado = $infoRelacionados["id"];
-                                $nomeProdutoRelacionado = $infoRelacionados["nome"];
-                                echo "<label class='label-relacionados'><input type='checkbox' name='produtos_relacionados[]' value='$idProdutoRelacionado'> $nomeProdutoRelacionado</label>";
+                            $condicaoRelacionados = "id != '$idProduto' and status = 1";
+                            $totalRelacionados = $pew_functions->contar_resultados($tabela_produtos, $condicaoRelacionados);
+                            if($totalRelacionados > 0){
+                                $queryAllProdutos = mysqli_query($conexao, "select id, nome from $tabela_produtos where $condicaoRelacionados order by nome asc");
+                                while($infoRelacionados = mysqli_fetch_array($queryAllProdutos)){
+                                    $idProdutoRelacionado = $infoRelacionados["id"];
+                                    $nomeProdutoRelacionado = $infoRelacionados["nome"];
+                                    $checked = "";
+                                    foreach($selectedProdutosRelacionados as $prodRelacionado){
+                                        if($idProdutoRelacionado == $prodRelacionado){
+                                            $checked = "checked";
+                                        }
+                                    }
+                                    echo "<label class='label-relacionados' id='label-produtos-relacionados'><input type='checkbox' name='produtos_relacionados[]' value='$idProdutoRelacionado' $checked> $nomeProdutoRelacionado</label>";
+                                }
+                            }else{
+                                echo "<h4 class='full'>Nenhum produto encontrado</h4>";
                             }
                         ?>
                         </div>
@@ -880,14 +1386,60 @@ if(isset($_SESSION[$name_session_user]) && isset($_SESSION[$name_session_pass]) 
                     </div>
                     <!--END PRODUTOS RELACIONADOS-->
                 </div>
-                <br style="clear: both;">
-                <input type="submit" class="btn-submit" value="Cadastrar Produto">
+                <script type="text/javascript" src="asas.js"></script>
+                <div class="small" align=left>
+                    <!--PRODUTOS RELACIONADOS-->
+                    <h3 class="label-title">Produtos com Cores Relacionadas</h3>
+                    <a class="btn-relacionados" id="btn-cores-relacionadas">Produtos Selecionados <?php echo "(".$ctrlCoresRelacionadas.")";?></a>
+                    <div class="display-relacionados" id="display-cores-relacionadas">
+                        <div class="header-relacionados">
+                            <h3 class="title-relacionados">Cores relacionadas</h3>
+                            <!--<h5 class="descricao-relacionados">Selecione os produtos relacionados</h5>-->
+                            <input type="search" class="busca-relacionados" id="busca-relacionados" name="busca_relacionados" placeholder="Busque categoria, nome, marca, id, ou sku" form="busca_produto">
+                            <label title="Listar somente os produtos que já foram selecionados"><input type="checkbox" id="checkCoresOnlyActives"> Somente os selecionados</label>
+                        </div>
+                        <div class="lista-relacionados" id="lista-relacionados">
+                            <div class="loading-background">
+                                <h4 class="loading-message"><i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i></h4>
+                            </div>
+                            <div class="lista-relacionados-msg" id="lista-relacionados-msg"><h4>Exibindo todos os produtos:</h4><a class="link-padrao limpar-todos-relacionados" title="Limpar todos os produtos listados abaixo e que foram selecionados" id="limpar-todos-relacionados">Limpar todos</a></div>
+                        <?php
+                            $condicaoRelacionados = "id != '$idProduto' and status = 1";
+                            $totalRelacionados = $pew_functions->contar_resultados($tabela_produtos, $condicaoRelacionados);
+                            if($totalRelacionados > 0){
+                                $queryAllProdutos = mysqli_query($conexao, "select id, nome from $tabela_produtos where $condicaoRelacionados order by nome asc");
+                                while($infoRelacionados = mysqli_fetch_array($queryAllProdutos)){
+                                    $idProdutoRelacionado = $infoRelacionados["id"];
+                                    $nomeProdutoRelacionado = $infoRelacionados["nome"];
+                                    $checked = "";
+                                    echo "<label class='label-relacionados label-cores-relacionadas'><input type='checkbox' name='cores_relacionadas[]' value='$idProdutoRelacionado' $checked> $nomeProdutoRelacionado</label>";
+                                }
+                            }else{
+                                echo "<h4 class='full'>Nenhum produto encontrado</h4>";
+                            }
+                        ?>
+                        </div>
+                        <div class="bottom-relacionados">
+                            <a id="btn-salvar-relacionados" class="btn-salvar-relacionados">Salvar</a>
+                        </div>
+                    </div>
+                    <!--END PRODUTOS RELACIONADOS-->
+                </div>
+                <!--END LINHA 7-->
+                <br class="clear">
+                <br class="clear">
+                <br class="clear">
+                <br class="clear">
+                <br class="clear">
+                <div class="full clear">
+                    <input type="submit" class="btn-submit" value="Cadastrar Produto">
+                </div>
             </form>
         </section>
     </body>
 </html>
 <?php
-}else{
-    header("location: index.php?msg=Área Restrita. É necessário fazer login para continuar.");
-}
+            }else{
+                echo "<h3 align='center'>Nenhum produto foi encontrado. <a href='pew-produtos.php' class='link-padrao'>Voltar.</a></h3>";
+            }
 ?>
