@@ -34,7 +34,7 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        background-color: #fff;
+        background-color: #002586;
         border-bottom: 1px solid #dedede;
         z-index: 80;
     }
@@ -44,11 +44,12 @@
         -o-transition: .2s;
         transition: .2s;
         cursor: pointer;
-        color: #666;
+        color: #fff;
     }
     .header-principal .nav-header .top-bar .link-padrao:hover{
-        color: #111;
-        border-color: #111;
+        font-weight: bold;
+        color: #002586;
+        border-color: #002586;
     }
     .header-principal .nav-header .top-bar .header-cart{
         position: relative;
@@ -64,6 +65,7 @@
         justify-content: flex-end;
     }
     .header-principal .nav-header .top-bar .header-cart .cart-button{
+        color: #fff;
         position: relative;
         font-size: 26px;
         line-height: 50px;
@@ -71,7 +73,7 @@
         width: 23px;
         padding: 0px 10px 0px 10px;
         height: 0px;
-        background-color: #f4f4f4;
+        background-color: #002586;
         outline: none;
         -webkit-transition: .2s;
         -o-transition: .2s;
@@ -80,7 +82,7 @@
     }
     .header-principal .nav-header .top-bar .header-cart:hover .cart-button{
         height: 50px;
-        color: #444;
+        color: #f4f4f4;
         pointer-events: none;
     }
     .header-principal .nav-header .top-bar .header-cart .cart-display{
@@ -290,8 +292,8 @@
         position: relative;
         width: 100%;
         margin-top: 50px;
-        height: 100px;
-        border-bottom: 1px solid #333;
+        height: 150px;
+        border-bottom: 1px solid #002586;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -362,7 +364,7 @@
         text-align: center;
     }
     .header-principal .nav-header .top-nav .logo-header img{
-        width: 45%;
+        width: 50%;
         -webkit-transition: .2s;
         -o-transition: .2s;
         transition: .2s;
@@ -445,7 +447,7 @@
         font-size: 14px;
     }
     .display-links::-webkit-scrollbar-button:hover{
-        background-color: #AAA;
+        background-color: #eee;
     }
     .display-links::-webkit-scrollbar-thumb{
         background-color: #ccc;
@@ -585,7 +587,7 @@
         font-weight: bold;
     }
     .header-principal .nav-header .display-links .sub-menu li:hover .sub-link{
-        background-color: #303030;
+        background-color: #002686;
         color: #fff;
         font-weight: bold;
     }
@@ -844,7 +846,7 @@
 </style>
 <header class="header-principal">
     <?php
-        $dirLogoPrincipal = "imagens/identidadeVisual/logo-bolsa-em-couro.png";
+        $dirLogoPrincipal = "imagens/identidadeVisual/logo-rei-das-fechaduras.png";
     ?>
     <nav class="nav-header">
         <div class="top-bar">
@@ -883,9 +885,9 @@
                 }
             ?>
             <div class="header-cart">
-                <div class="cart-button"><i class="fas fa-shopping-bag"></i></div>
+                <div class="cart-button"><i class="fas fa-shopping-cart"></i></div>
                 <div class="cart-display">
-                    <h4 class="cart-title">Sua Bolsa</h4>
+                    <h4 class="cart-title">Seu Carrinho</h4>
                     <div class="display-itens">
                         <?php
                             require_once "@classe-carrinho-compras.php";
@@ -910,7 +912,7 @@
                                     echo "</div>";
                                 }
                             }else{
-                                echo "<div align=center>Bolsa vazia</div>";
+                                echo "<div align=center>Carrinho vazio</div>";
                             }
                         ?>
                     </div>
@@ -929,7 +931,7 @@
                     <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
-            <div class="logo-header"><a href="index.php"><img src="<?php echo $dirLogoPrincipal;?>" alt="Logo - Bolsas em Couro by Maidi Grey" title="Página Inicial - Bolsas em Couro"></a></div>
+            <div class="logo-header"><a href="index.php"><img src="<?php echo $dirLogoPrincipal;?>" alt="Logo - Rei das Fechaduras" title="Página Inicial - Rei das Fechaduras"></a></div>
             <div class="social-media-field">
                 <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
@@ -1167,7 +1169,7 @@
             echo "<div class='botao-nav-mobile'><i class='fas fa-bars'></i></div>";
             echo "<div class='nav-background'></div>";
             echo "<ul class='display-links'>";
-            echo "<li class='logo-menu-mobile'><img src='$dirLogoPrincipal'><div class='btn-voltar-menu' alt='Logo - Bolsas em Couro by Maidi Grey'><i class='fas fa-angle-double-left'></i></div></li>";
+            echo "<li class='logo-menu-mobile'><img src='$dirLogoPrincipal'><div class='btn-voltar-menu' alt='Logo - Rei das Fechaduras'><i class='fas fa-angle-double-left'></i></div></li>";
                 foreach($link_nav as $link){
                     $link->listar_link();
                 }

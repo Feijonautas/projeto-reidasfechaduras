@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $nomeEmpresa = "Bolsas em Couro";
+    $nomeEmpresa = "Rei das Fechaduras";
     $descricaoPagina = "DESCRIÇÃO MODELO ATUALIZAR...";
     $tituloPagina = "Formas de pagamento - $nomeEmpresa";
 ?>

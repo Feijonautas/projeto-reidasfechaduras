@@ -33,12 +33,7 @@
         
         // REQUIRES
         require_once "@classe-minha-conta.php";
-        require_once "@pew/pew-system-config.php";
         // END REQUIRES
-
-        // SET TABLES
-        $tabela_minha_conta = $pew_custom_db->tabela_minha_conta;
-        // END SET TABLES
         
         $enderecos = array();
         $enderecos[0] = array();

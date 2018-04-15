@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $nomeEmpresa = "Bolsas em Couro";
+    $nomeEmpresa = "Rei das Fechaduras";
     $descricaoPagina = "DESCRIÇÃO MODELO ATUALIZAR...";
     $tituloPagina = "Titulo da dica - $nomeEmpresa";
 ?>
@@ -38,8 +38,9 @@
                 position: absolute;
                 bottom: 5vw;
                 left: 10vw;
-                color: #fff;
-                font-size: 1vw;
+                color: #111;
+                margin: 0 auto;
+                font-size: 15px;
             }
             .main-content .box .breadcrumb a{
                 color: inherit;

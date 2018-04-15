@@ -72,6 +72,7 @@
                 $this->enderecos = $infoEndereco;
                 $this->quantidade_enderecos = count($infoEndereco);
                 $this->minha_conta_montada = true;
+                return true;
             }else{
                 $this->minha_conta_montada = false;
                 return false;
@@ -186,14 +187,46 @@
             $tabela_minha_conta = $this->global_vars["tabela_minha_conta"];
             $alreadySubscribed = $this->pew_functions->contar_resultados($tabela_minha_conta, "email = '".$this->email."' or cpf = '".$this->cpf."'");
             if($alreadySubscribed == 0){
-                $this->senha = md5($this->senha);
-                mysqli_query($this->conexao(), "insert into $tabela_minha_conta (usuario, email, senha, celular, telefone, cpf, data_nascimento, sexo, data_cadastro, data_controle, status) values ('".$this->usuario."', '".$this->email."', '".$this->senha."', '".$this->celular."', '".$this->telefone."', '".$this->cpf."', '".$this->data_nascimento."', '".$this->sexo."', '".$this->data_cadastro."', '".$this->data_controle."', 1)");
+                mysqli_query($this->conexao(), "insert into $tabela_minha_conta (usuario, email, senha, celular, telefone, cpf, data_nascimento, sexo, data_cadastro, data_controle, status) values ('".$this->usuario."', '".$this->email."', '".$this->senha."', '".$this->celular."', '".$this->telefone."', '".$this->cpf."', '".$this->data_nascimento."', '".$this->sexo."', '".$this->data_cadastro."', '".$this->data_controle."', 0)");
                 $selectID = mysqli_query($this->conexao(), "select last_insert_id()");
                 $selectedID = mysqli_fetch_assoc($selectID);
                 $selectedID = $selectedID["last_insert_id()"];
+                
+                $this->verify_session_start();
+                
+                $email = $this->email;
+                $senha = $this->senha;
+                $_SESSION["minha_conta"] = array();
+                $_SESSION["minha_conta"]["email"] = md5($email);
+                $_SESSION["minha_conta"]["senha"] = $senha;
+                
                 return $selectedID;
             }else{
                 return false;
+            }
+        }
+        
+        public function update_conta($idConta, $nome, $email, $senha, $celular, $telefone, $cpf, $sexo, $data_nascimento){
+            $tabela_minha_conta = $this->global_vars["tabela_minha_conta"];
+            if($this->montar_minha_conta($idConta) == true){
+                
+                $infoConta = $this->montar_array();
+                
+                $dataAtual = date("Y-m-d h:i:s");
+                
+                $email = $email != null && strlen($email) > 0 ? $email : $infoConta["email"];
+                $senha = $senha != null && strlen($senha) > 5 ? $senha : $infoConta["senha"]; // Já em md5
+                
+                $this->verify_session_start();
+                $_SESSION["minha_conta"] = array();
+                $_SESSION["minha_conta"]["senha"] = $senha;
+                $_SESSION["minha_conta"]["email"] = md5($email);
+                
+                mysqli_query($this->conexao(), "update $tabela_minha_conta set usuario = '$nome', email = '$email', senha = '$senha', celular = '$celular', telefone = '$telefone', cpf = '$cpf', data_nascimento = '$data_nascimento', sexo = '$sexo', data_controle = '$dataAtual' where id = '$idConta'");
+                
+                echo  "true";
+            }else{
+                echo "false";
             }
         }
         
@@ -241,6 +274,28 @@
             }
         }
         
+        function confirmar_conta($idConta){
+            $tabela_minha_conta = $this->global_vars["tabela_minha_conta"];
+            
+            $total = $this->pew_functions->contar_resultados($tabela_minha_conta, "id = '$idConta'");
+            
+            $totalConfirmed = $this->pew_functions->contar_resultados($tabela_minha_conta, "id = '$idConta' and status =  1");
+            
+            if($total > 0){
+                $return = "true";
+                
+                if($totalConfirmed == 0){
+                    mysqli_query($this->conexao(), "update $tabela_minha_conta set status = 1 where id = '$idConta'");
+                }else{
+                    $return = "already";
+                }
+                
+                return $return;
+            }else{
+                return false;
+            }
+        }
+        
         function verify_session_start(){
             if(!isset($_SESSION)){
                 session_start();
@@ -270,6 +325,7 @@
                 $return = $total > 0 ? true : false;
                 return $return;
             }else{
+                unset($_SESSION["minha_conta"]);
                 return false;
             }
         }
@@ -279,6 +335,104 @@
             if(isset($_SESSION["minha_conta"])){
                 unset($_SESSION["minha_conta"]); // Caso já houvesse alguma sessão iniciada
             }
+        }
+    }
+
+
+    if(isset($_POST["acao_conta"])){
+        require_once "@pew/pew-system-config.php";
+        
+        $acao = $_POST["acao_conta"];
+        
+        $cls_conta = new MinhaConta();
+        $cls_conta->verify_session_start();
+        
+        if($acao == "update_conta" && isset($_SESSION["minha_conta"])){
+            $emailSessao = $_SESSION["minha_conta"]["email"];
+            $senhaSessao = $_SESSION["minha_conta"]["senha"];
+            
+            if($cls_conta->auth($emailSessao, $senhaSessao)){
+                
+                $post_fields = array("nome", "email", "senha_nova", "celular", "telefone", "cpf", "data_nascimento");
+                $invalid_fields = array();
+
+                $validar = true;
+                $i = 0;
+                foreach($post_fields as $post_name){
+                    if(!isset($_POST[$post_name])) $validar = false; $invalid_fields[$i] = $post_name; $i++;
+                }
+
+                if($validar){
+                
+                    $senhaAtual = $_POST["senha_atual"] != null ? md5($_POST["senha_atual"]) : null;
+                    
+                    if($senhaAtual != null){
+                        $idConta = $cls_conta->query_minha_conta("md5(email) = '$emailSessao' and senha = '$senhaAtual'");
+                    }else{
+                        $idConta = $cls_conta->query_minha_conta("md5(email) = '$emailSessao' and senha = '$senhaSessao'");
+                    }
+                    
+                    
+                    if($idConta != false){
+                        $novaSenha = $_POST["senha_nova"] != null ? md5($_POST["senha_nova"]) : null;
+                        $nome = addslashes($_POST["nome"]);
+                        $email = addslashes($_POST["email"]);
+                        $celular = addslashes($_POST["celular"]);
+                        $telefone = addslashes($_POST["telefone"]);
+                        $cpf = addslashes($_POST["cpf"]);
+                        $cpf = str_replace(".", "", $cpf);
+                        $dataNascimento = addslashes($_POST["data_nascimento"]);
+                        $sexo = addslashes($_POST["sexo"]);
+                        
+                        if($cls_conta->query_minha_conta("email = '$email' and id != '$idConta'") == false){
+                            // Se não houver outros cadastros com o email informado
+                            $cls_conta->update_conta($idConta, $nome, $email, $novaSenha, $celular, $telefone, $cpf, $sexo, $dataNascimento);
+                        }else{
+                            echo "false";
+                        }
+
+                    }else{
+                        echo "false";
+                    }
+                    
+                    
+                }
+                
+            }else{
+                echo "false";
+            }
+        }else if($acao == "update_endereco"){
+            $idConta = isset($_POST["id_conta"]) ? $_POST["id_conta"] : 0;
+            
+            if($idConta > 0){
+                $tabela_enderecos = $pew_custom_db->tabela_enderecos;
+                
+                $idEndereco = isset($_POST["id_endereco"]) ? $_POST["id_endereco"] : 0; 
+                
+                $total = $pew_functions->contar_resultados($tabela_enderecos, "id = '$idEndereco' and id_relacionado = '$idConta'");
+                
+                if($total > 0){
+                    $cep = str_replace("-", "", $_POST["cep"]);
+                    $rua = $_POST["rua"];
+                    $numero = $_POST["numero"];
+                    $complemento = $_POST["complemento"];
+                    $bairro = $_POST["bairro"];
+                    $estado = $_POST["estado"];
+                    $cidade = $_POST["cidade"];
+                    
+                    $cls_endereco = new Enderecos();
+                    $updateEndereco = $cls_endereco->update_endereco($idEndereco, $idConta, "cliente", $cep, $rua, $numero, $complemento, $bairro, $estado, $cidade);
+                    
+                    if($updateEndereco){
+                        echo "true";
+                    }else{
+                        echo "false";
+                    }
+                }
+            }
+            
+        }else{
+            echo "false";
         }
     }
 ?>

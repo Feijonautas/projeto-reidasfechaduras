@@ -183,21 +183,21 @@
     font-size: 24px;
     padding: 10px 0px 10px 0px;
     line-height: 24px;
-    color: #333;
+    color: #353535;
 }
 .vitrine-categorias .alter-spacing{
     width: 100%;
     height: 100px;
 }
 .vitrine-categorias .box-categoria{
-    width: 32%;
+    width: 30%;
     margin: 0px .5% 0px .5%;
 }
 .vitrine-categorias .box-categoria:hover{
     opacity: .9;   
 }
 .vitrine-categorias .box-categoria-dupla{
-    width: 33%;
+    width: 31%;
     margin: 0px .5% 0px .5%;
 }
 .vitrine-categorias .box-categoria-dupla .box{
@@ -211,25 +211,44 @@
     margin: 0px 0px 20px 0px;
     cursor: pointer;
 }
+.vitrine-categorias .informacoes{
+    width: 100%;
+    background-color: #fafafa;
+    text-align: center;
+    position: relative;
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
+}
+.vitrine-categorias .informacoes .titulo{
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 150px;
+    background-color: #ffb700;
+    color: #fff;
+    font-size: 110%;
+    position: absolute;
+}
 .vitrine-categorias .call-to-action{
     display: block;
     width: 100px;
     text-decoration: none;
     text-align: center;
-    background-color: #fff;
+    background-color: #ffb700;
     font-size: 14px;
     margin: 0 auto;
     height: 25px;
     line-height: 25px;
-    color: #333;
-    border: 1px solid #333;
+    color: #fff;
+    border: 1px solid #fff;
     font-weight: bold;
     transition: .2s;
 
 }
 .vitrine-categorias .call-to-action:hover{
-    background-color: #333;
-    color: #fff;
+    background-color: #002686;
+    color: #ffb700;
     font-size: 16px;
 }
 @media screen and (max-width: 980px){

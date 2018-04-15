@@ -241,31 +241,31 @@
 <div class="section-login">
     <div class="display-login">
         <h3 class="titulo">ENTRE COM SUA CONTA</h3>
-        <h5 class="descricao-cadastre">
+        <article class="descricao-cadastre">
             <p>
                 É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação.
             </p>
-        </h5>
+        </article>
         <div class="display-confirmacao"></div>
         <div class="display-formularios">
                 <div class="background-loading">
                     <i class="fas fa-spinner fa-spin icone-loading"></i>
                 </div>
             <form class="formulario-login" name="formulario_login" id="formularioLogin">
-                <div class="label-full">
+                <div class="full">
                     <h3 class="input-title">E-mail</h3>
                     <input type="text" name="email" id="emailLogin" autocomplete="off">
                     <h6 class="msg-input"></h6>
                 </div>
-                <div class="label-full">
+                <div class="full">
                     <h3 class="input-title">Senha</h3>
                     <input type="password" name="senha" id="senhaLogin">
                     <h6 class="msg-input"></h6>
                 </div>
-                <div class="label-full label-submit">
+                <div class="full submit">
                     <button class="botao-submit" type="submit" id="botaoSubmit">ENTRAR <i class="fas fa-unlock-alt icone"></i></button>
                 </div>
-                <div class="label-full">
+                <div class="full">
                     <a href="esqueci-minha-senha.php" class="link-padrao" target="_blank">Esqueci minha senha</a><br>
                     <h6>Não tem conta? Então <a class='link-padrao' id="botaoAlternaCadastre">cadastre-se</a></h6>
                 </div>
@@ -340,6 +340,7 @@
             var erroEmail = "email_incorreto";
             var erroSenha = "senha_incorreta";
             var erroConfirmacaoPendente = "confirmar_email";
+            var erroSenhaEmail = "senha_email_incorretos";
             
             function setInputMessages(fields){
                 fields.forEach(function(field){
@@ -379,6 +380,19 @@
                             break;
                         case erroConfirmacaoPendente:
                             var msg = "Seu e-mail ainda não foi validado. Favor verificar em sua caixa de e-mails o link de validação.";
+                            objEmail.addClass("wrong-input");
+                            objEmail.next(".msg-input").html(msg).css({
+                                visibility: "visible",
+                                opacity: "1"
+                            });
+                            break;
+                        case erroSenhaEmail:
+                            var msg = "E-mail ou senha incorretos";
+                            objSenha.addClass("wrong-input");
+                            objSenha.next(".msg-input").html(msg).css({
+                                visibility: "visible",
+                                opacity: "1"
+                            });
                             objEmail.addClass("wrong-input");
                             objEmail.next(".msg-input").html(msg).css({
                                 visibility: "visible",
@@ -495,6 +509,9 @@
                                 ctrlIncorretos++;
                             }else if(resposta == erroConfirmacaoPendente){
                                 incorretos[ctrlIncorretos] = erroConfirmacaoPendente;
+                                ctrlIncorretos++;
+                            }else if(resposta == erroSenhaEmail){
+                                incorretos[ctrlIncorretos] = erroSenhaEmail;
                                 ctrlIncorretos++;
                             }
                             ctrlValidations++;

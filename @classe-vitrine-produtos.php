@@ -162,23 +162,50 @@
                         echo "<div class='titulo-vitrine'>".$this->titulo_vitrine."</div>";
                     }
                 
-                    function listar_categoria($img, $ref, $type){
+                    function listar_categoria($titulo, $desc, $img, $ref, $type){
                         $dirImagens = "imagens/categorias/destaques";
                         $urlRedirect = "loja.php?categoria=$ref";
                         switch($type){
                             case "normal":
-                                echo "<div class='box-categoria'><a href='$urlRedirect'><img src='$dirImagens/$img'></a><a href='$urlRedirect' class='call-to-action'>CONFIRA</a></div>";
+                                echo "<div class='box-categoria'>";
+                                    echo "<div class='informacoes'>";
+                                    echo "<a href='$urlRedirect'><img src='$dirImagens/$img'></a>";
+                                    echo "<h2 class='titulo'>$titulo</h2>";
+                                    echo "<h3 class='descricao'>$desc</h3>";
+                                    echo "<a href='$urlRedirect' class='call-to-action'>CONFIRA</a>";
+                                    echo "</div>";
+                                echo "</div>";
                                 break;
                             case "normal_alter":
                                 echo "<span class='alter-spacing'></span>";
-                                echo "<div class='box-categoria'><a href='$urlRedirect'><img src='$dirImagens/$img'></a><a href='$urlRedirect' class='call-to-action'>CONFIRA</a></div>";
+                                    echo "<div class='box-categoria'>";
+                                    echo "<div class='informacoes'>";
+                                    echo "<a href='$urlRedirect'><img src='$dirImagens/$img'></a>";
+                                    echo "<h2 class='titulo'>$titulo</h2>";
+                                    echo "<h3 class='descricao'>$desc</h3>";
+                                    echo "<a href='$urlRedirect' class='call-to-action'>CONFIRA</a>";
+                                    echo "</div>";
+                                echo "</div>";
                                 break;
                             case "double_1":
                                 echo "<div class='box-categoria-dupla'>";
-                                echo "<div class='box'><a href='$urlRedirect'><img src='$dirImagens/$img'></a><a href='$urlRedirect' class='call-to-action'>CONFIRA</a></div>";
+                                echo "<div class='box'>";
+                                    echo "<div class='informacoes'>";
+                                    echo "<a href='$urlRedirect'><img src='$dirImagens/$img'></a>";
+                                    echo "<h2 class='titulo'>$titulo</h2>";
+                                    echo "<h3 class='descricao'>$desc</h3>";
+                                    echo "<a href='$urlRedirect' class='call-to-action'>CONFIRA</a>";
+                                    echo "</div>";
+                                echo "</div>";
                                 break;
                             case "double_2":
-                                echo "<div class='box'><a href='$urlRedirect'><img src='$dirImagens/$img'></a><a href='$urlRedirect' class='call-to-action'>CONFIRA</a></div>";
+                                echo "<div class='box'>";
+                                    echo "<div class='informacoes'>";
+                                    echo "<a href='$urlRedirect'><img src='$dirImagens/$img'></a>";
+                                    echo "<h2 class='titulo'>$titulo</h2>";
+                                    echo "<h3 class='descricao'>$desc</h3>";
+                                    echo "<a href='$urlRedirect' class='call-to-action'>CONFIRA</a></div>";
+                                    echo "</div>";
                                 echo "</div>";
                                 break;
                         }
@@ -191,10 +218,11 @@
                         $condicaoCat = "id = '$idCategoriaMain'";
                         $totalCat = $this->pew_functions->contar_resultados($tabela_categorias, $condicaoCat);
                         if($totalCat > 0){
-                            $queryInfoCategoria = mysqli_query($this->conexao(), "select categoria, ref from $tabela_categorias where $condicaoCat");
+                            $queryInfoCategoria = mysqli_query($this->conexao(), "select categoria, ref, descricao from $tabela_categorias where $condicaoCat");
                             $infoCategoria = mysqli_fetch_array($queryInfoCategoria);
                             $tituloCat = $infoCategoria["categoria"];
                             $refCat = $infoCategoria["ref"];
+                            $descricaoCat = $infoCategoria["descricao"];
                             $refDouble = $totalMain < $limitCategorias ? "normal" : "double_$ctrlCategorias";
                             $refNormal = $totalMain < $limitCategorias && $ctrlCategorias == 0 ? "normal_alter" : "normal";
                             switch($ctrlCategorias){
@@ -207,7 +235,7 @@
                                 default:
                                     $type = $refNormal;
                             }
-                            listar_categoria($imagemCatDestaque, $refCat, $type);
+                            listar_categoria($tituloCat, $descricaoCat, $imagemCatDestaque, $refCat, $type);
                             $ctrlCategorias++;
                         }
                     }

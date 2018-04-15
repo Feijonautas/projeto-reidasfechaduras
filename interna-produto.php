@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $nomeEmpresa = "Bolsas em Couro";
+    $nomeEmpresa = "Rei das Fechaduras";
     $descricaoPagina = "DESCRIÇÃO MODELO ATUALIZAR...";
     $tituloPagina = "MUDAR TITULO - $nomeEmpresa";
 ?>
@@ -521,6 +521,7 @@
 
             /*INFO PRODUTO*/
             $nomeProduto = $infoProduto["nome"];
+            $descricaoProduto = $infoProduto["descricao_longa"];
             $precoProduto = $infoProduto["preco"];
             $precoPromocaoProduto = $infoProduto["preco_promocao"];
             $promocaoAtiva = $infoProduto["promocao_ativa"] == 1 && $precoPromocaoProduto > 0 && $precoPromocaoProduto < $precoProduto ? true : false;
@@ -659,6 +660,191 @@
                 $vitrineProdutos[0] = new VitrineProdutos("carrossel", 15, "COMPRE JUNTO COM DESCONTO");
                 $vitrineProdutos[0]->montar_vitrine();
             ?>
+        </section>
+        <section class="section-especificacao">
+            <style>
+                .section-especificacao .display-paineis{
+                    position: relative;
+                    width: 50%;
+                    height: 55vh;
+                    margin: 0 auto;
+                    margin-top: 40px;
+                    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+                    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+                    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+                    transition: .2s;
+                    align-items: center;
+                    overflow: hidden;
+                    overflow-y: auto;
+                }
+                .display-paineis::-webkit-scrollbar-button:hover{
+                    background-color: #AAA;
+                }
+                .display-paineis::-webkit-scrollbar-thumb{
+                    background-color: #ccc;
+                }
+                .display-paineis::-webkit-scrollbar-thumb:hover{
+                    background-color: #999;
+                }
+                .display-paineis::-webkit-scrollbar-track{
+                    background-color: #efefef;
+                }
+                .display-paineis::-webkit-scrollbar-track:hover{
+                    background-color: #efefef;
+                }
+                .display-paineis::-webkit-scrollbar{
+                    width: 3px;
+                    height: 3px;
+                }
+                .section-especificacao .display-paineis .descricao{
+                    text-align: justify;
+                    color: #6d6d6d;
+                }
+                .section-especificacao .display-paineis table{
+                    margin: 0 auto;
+                }
+                .section-especificacao .display-paineis thead{
+                    text-align: center;
+                }
+                .section-especificacao .display-paineis td{
+                    padding: 0px 20px;
+                }
+                .section-especificacao .display-paineis .background-loading{
+                    position: absolute;
+                    width: 100%;
+                    height: 55vh;
+                    background-color: rgba(255, 255, 255, .5);
+                    top: 0px;
+                    margin: 0px;
+                    opacity: 0;
+                    transition: .3s;
+                    visibility: hidden;
+                    z-index: 80;
+                    text-align: center;
+                    display: flex;
+                    overflow: hidden;
+                }
+                .section-especificacao .display-paineis .background-loading .icone-loading{
+                    position: absolute;
+                    font-size: 46px;
+                    color: #6abd45;
+                    top: 20vh;
+                    align-self: center;
+                    width: 100%;
+                }
+                .section-especificacao .display-paineis .display-buttons{
+                    position: sticky;
+                    width: 100%;
+                    top: 0px;
+                    left: 0px;
+                    margin-top: 0px;
+                    display: flex;
+                    z-index: 80;
+                }
+                .section-especificacao .display-paineis .top-buttons{
+                    height: 5vh;
+                    background-color: #fff;
+                    border: none;
+                    cursor: pointer;
+                    outline: none;
+                    width: 50%;
+                    color: #999;
+                    border-bottom: 2px solid #f6f6f6;
+                }
+                .section-especificacao .display-paineis .top-buttons:hover{
+                    background-color: #f1f1f1;
+                }
+                .section-especificacao .display-paineis .selected-button{   
+                    border-bottom: 2px solid #ffb700;
+                    color: #ffb700;
+                }
+                .section-especificacao .display-paineis .painel{
+                    position: absolute;
+                    width: calc(100% - 80px);
+                    height: calc(50vh - 80px);
+                    padding: 40px;
+                    z-index: 50;
+                    text-align: left;
+                    top: 100%;
+                    left: 0;
+                    transition: .5s;
+                    background-color: #fff;
+                    opacity: 0;
+                    visibility: hidden;
+                    display: none;
+                    transition: 1s all, display 0s;
+                }
+                .section-especificacao .display-paineis .painel-active{
+                    position: relative;
+                    opacity: 1;
+                    top: 0px;
+                    left: 0px;
+                    display: block;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            </style>
+            <script>
+                $(document).ready(function(){
+                    var displayPaineis = $(".display-paineis");
+                    var botoes = $(".top-buttons");
+                    var paineis = displayPaineis.children(".painel");
+                    var botaoAtualizar = $("#botaoAtualizarConta");
+                    var backgroundLoading = $(".section-produto .background-loading");
+
+                    function mudarPainel(obj){
+                        paineis.each(function(){
+                            $(this).removeClass("painel-active");
+                        });
+                        obj.addClass("painel-active");
+                    }
+
+                    botoes.each(function(){
+                        var botao = $(this);
+                        var idBotao = botao.prop("id");
+                        var objPainel = $("#display"+idBotao);
+                        botao.off().on("click", function(){
+                            botoes.each(function(){
+                                $(this).removeClass("selected-button"); 
+                            });
+                            botao.addClass("selected-button");
+                            mudarPainel(objPainel); 
+                        });
+                    });
+                });
+            </script>
+            <div class="display-paineis">
+                <div class="display-buttons">
+                    <button class="top-buttons selected-button" id="Painel1"><i class="fas fa-shopping-cart"></i> DETALHES</button>
+                    <button class="top-buttons" id="Painel2"><i class="far fa-address-card"></i> INFORMAÇÕES TÉNICAS</button>
+                </div>
+                <div class="painel painel-active" id="displayPainel1">
+                     <?php
+                        echo "<article class='descricao'>{$descricaoProduto}</article>";
+                    ?>
+                </div>
+                <div class="painel" id="displayPainel2">
+                    <?php
+                        $infoEspecificacoesTecnicas = $produto->get_especificacoes_produto();
+                        if(is_array($infoEspecificacoesTecnicas) and count($infoEspecificacoesTecnicas) > 0){
+                            echo "<table>";
+                            echo "<thead>";
+                            echo "<th>Titulo</th>";
+                            echo "<th>Descricao</th>";
+                            echo "</thead>";
+                            foreach($infoEspecificacoesTecnicas as $id => $info){
+                                $titulo = $info["titulo"];
+                                $decricao = $info["descricao"];
+                                echo "<tr>";
+                                echo "<td>$titulo</td>";
+                                echo "<td>$decricao</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        }
+                    ?>
+                </div>
+            </div>
         </section>
         <?php
         }else{
