@@ -300,19 +300,19 @@
             .section-cadastra .display-formularios .top-buttons{
                 font-size: 10px;   
             }
-            .section-cadastra .display-formularios .label-half{
+            .section-cadastra .display-formularios .half{
                 width: calc(100% - 30px);
                 margin: 5px 15px 5px 15px;
             }
-            .section-cadastra .display-formularios .label-medium{
+            .section-cadastra .display-formularios .medium{
                 width: calc(100% - 30px);
                 margin: 5px 15px 5px 15px;
             }
-            .section-cadastra .display-formularios .label-small{
+            .section-cadastra .display-formularios .small{
                 width: calc(100% - 30px);
                 margin: 5px 15px 5px 15px; 
             }
-            .section-cadastra .display-formularios .label-xsmall{
+            .section-cadastra .display-formularios .xsmall{
                 width: calc((100%/2) - 30px);
                 margin: 5px 15px 5px 15px;   
             }
@@ -342,42 +342,42 @@
                     <i class="fas fa-spinner fa-spin icone-loading"></i>
                 </div>
                 <div class="displays display-info-contato">
-                    <div class="label-half">
+                    <div class="half">
                         <h4 class="input-title">Nome Completo</h4>
                         <input type="text" placeholder="Nome Completo" name="nome" id="nome">
                         <h6 class="msg-input"></h6>
                     </div>
-                    <div class="label-half">
+                    <div class="half">
                         <h4 class="input-title">E-mail</h4>
                         <input type="text" placeholder="contato@bolsasemcouro.com.br" name="email" id="email">
                         <h6 class="msg-input"></h6>
                     </div>
-                    <div class="label-small">
+                    <div class="small">
                         <h4 class="input-title">Senha</h4>
                         <input type="password" placeholder="Senha" name="senha" id="senha">
                         <h6 class="msg-input"></h6>
                     </div>
-                    <div class="label-small">
+                    <div class="small">
                         <h4 class="input-title">Confirmar Senha</h4>
                         <input type="password" placeholder="Senha" name="confirma_senha" id="confirmaSenha">
                         <h6 class="msg-input"></h6>
                     </div>
-                    <div class="label-small">
+                    <div class="small">
                         <h4 class="input-title">Celular</h4>
                         <input type="text" placeholder="(41) 9999-9999" name="celular" id="celular" class="mascara-numero">
                         <h6 class="msg-input"></h6>
                     </div>
-                    <div class="label-small">
-                        <h4 class="input-title">Telefone</h4>
+                    <div class="small">
+                        <h4 class="input-title">Telefone (opcional)</h4>
                         <input type="text" placeholder="(41) 3030-3030" name="telefone" id="telefone" class="mascara-numero">
                         <h6 class="msg-input"></h6>
                     </div>
-                    <div class="label-small">
+                    <div class="small">
                         <h4 class="input-title">CPF</h4>
                         <input type="text" placeholder="000.000.000.00" name="cpf" id="cpf" class="mascara-cpf">
                         <h6 class="msg-input"></h6>
                     </div>
-                    <div class="label-small">
+                    <div class="small">
                         <h4 class="input-title">SEXO</h4>
                         <select name="sexo" id="sexo">
                             <option value="">- Selecione -</option>
@@ -386,55 +386,55 @@
                         </select>
                         <h6 class="msg-input msg-input-sexo"></h6>
                     </div>
-                    <div class="label-small">
+                    <div class="small">
                         <h4 class="input-title">Data de nascimento</h4>
                         <input type="date" name="data_nascimento" id="dataNascimento">
                         <h6 class="msg-input"></h6>
                     </div>
-                    <div class="label-small">
+                    <div class="small">
                         <button class="botao-continuar" type="button">CONTINUAR <i class="fas fa-chevron-right icone"></i></button>
                     </div>
                     <br style="clear: both">
                 </div>
                 <div class="displays display-info-enderecos">
-                    <div class="label-small">
+                    <div class="small">
                         <h4 class="input-title">CEP</h4>
                         <input type="text" placeholder="00000-000" name="cep" id="cep" tabindex="1" class="mascara-cep">
                         <h6 class="msg-input"></h6>
                     </div>
-                    <div class="label-xlarge">
+                    <div class="xlarge">
                         <h4 class="input-title">Rua</h4>
                         <input type="text" placeholder="Rua" name="rua" id="rua" class="input-nochange" readonly>
                         <h6 class="msg-input"></h6>
                     </div>
                     <br style="clear: both">
-                    <div class="label-xsmall">
+                    <div class="xsmall">
                         <h4 class="input-title">Número</h4>
                         <input type="text" placeholder="Numero" name="numero" id="numero" tabindex="2">
                         <h6 class="msg-input"></h6>
                     </div>
-                    <div class="label-medium">
+                    <div class="medium">
                         <h4 class="input-title">Complemento</h4>
                         <input type="text" placeholder="Complemento" name="complemento" id="complemento" tabindex="3">
                         <h6 class="msg-input"></h6>
                     </div>
-                    <div class="label-xsmall">
+                    <div class="xsmall">
                         <h4 class="input-title">Bairro</h4>
                         <input type="text" placeholder="Bairro" name="bairro" id="bairro" class="input-nochange" readonly>
                     </div>
-                    <div class="label-xsmall">
+                    <div class="xsmall">
                         <h4 class="input-title">Estado</h4>
                         <input type="text" placeholder="Estado" name="estado" id="estado" class="input-nochange" readonly>
                     </div>
-                    <div class="label-xsmall">
+                    <div class="xsmall">
                         <h4 class="input-title">Cidade</h4>
                         <input type="text" placeholder="Cidade" name="cidade" id="cidade" class="input-nochange" readonly>
                     </div>
-                    <div class="label-medium checkbox-label">
+                    <div class="medium checkbox-label">
                         <input type="checkbox" class="checkbox" id="termos" checked> Aceito os <a href="termos-e-condicoes.php" target="_blank">termos e condições</a>
                         <h6 class="msg-input-checkbox"></h6>
                     </div>
-                    <div class="label-full">
+                    <div class="full">
                         <button class="botao-continuar" type="button">FINALIZAR <i class="fas fa-check icone"></i></button>
                     </div>
                 </div>
@@ -478,25 +478,6 @@
         input_mask(".mascara-cpf", "999.999.999.99");
         input_mask(".mascara-cep", "99999-999");
         /*END SET MASCARAS*/
-        
-        /*BUSCA ENDERECO*/
-        $("#cep").off().on("blur", function(){
-            var cep = $(this).val();
-            var objRua = $("#rua");
-            var objBairro = $("#bairro");
-            var objEstado = $("#estado");
-            var objCidade = $("#cidade");
-            if(cep.length == 9){
-                var cepF = cep.replace("-", "");
-                buscarCEP(cepF, objRua, objEstado, objCidade, objBairro);
-            }else{
-                objRua.val("");
-                objBairro.val("");
-                objEstado.val("");
-                objCidade.val("");
-            }
-        });
-        /*BUSCA ENDERECO*/
         
         /*SET PASSOS*/
         var displayPassos = [];
@@ -564,12 +545,16 @@
         }
         
         function mensagemConfirmaEmail(email){
-            var mensagem = "Foi enviando um e-mail para <b>" + email + "</b>  com um <b>link de confirmação</b>.<br><br>Clique no link para ativar sua conta e começar a aproveitar as ofertas e promoções da nossa loja!";
+            /*var mensagem = "Foi enviando um e-mail para <b>" + email + "</b>  com um <b>link de confirmação</b>.<br><br>Clique no link para ativar sua conta e começar a aproveitar as ofertas e promoções da nossa loja!<br><br><a href='javascript:window.location.reload()' class='link-padrao'>Recarregar página</a>";
             displayFormularios.hide();
             displayConfirmacao.html(mensagem).css({
                 display: "block",
                 opacity: "1"
-            });
+            });*/
+            mensagemAlerta("Cadastro feito com sucesso!", false, "limegreen");
+            setTimeout(function(){
+                window.location.reload();
+            }, 400);
         }
         
         /*END DEFAULT FUNCTIONS*/
@@ -1048,6 +1033,7 @@
                                 var formData = new FormData(formularioCadastraConta.get(0));
                                 var msgErro = "Desculpe, ocorreu um erro ao enviar os dados. Recarregue a página e tente novamente";
                                 var msgSucesso = "Seu cadastro foi feito com sucesso!";
+                                
                                 $.ajax({
                                     type: "POST",
                                     data: formData,

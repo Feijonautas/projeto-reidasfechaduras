@@ -156,7 +156,7 @@
             }
         }else if($acao == "get_header_carrinho"){
             require_once "@classe-system-functions.php";
-            echo "<h4 class='cart-title'>Sua Bolsa</h4>";
+            echo "<h4 class='cart-title'>Seu carrinho</h4>";
                 echo "<div class='display-itens'>";
                 $cls_carrinho = new Carrinho();
                 $carrinho = $cls_carrinho->get_carrinho();

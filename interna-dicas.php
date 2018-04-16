@@ -38,9 +38,8 @@
                 position: absolute;
                 bottom: 5vw;
                 left: 10vw;
-                color: #111;
-                margin: 0 auto;
-                font-size: 15px;
+                color: #344;
+                font-size: 1vw;
             }
             .main-content .box .breadcrumb a{
                 color: inherit;

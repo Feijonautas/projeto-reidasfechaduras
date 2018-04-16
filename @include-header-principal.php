@@ -37,6 +37,7 @@
         background-color: #002586;
         border-bottom: 1px solid #dedede;
         z-index: 80;
+        color: #fff;
     }
     .header-principal .nav-header .top-bar .link-padrao{
         margin: 0px 10px 0px 10px;
@@ -47,9 +48,8 @@
         color: #fff;
     }
     .header-principal .nav-header .top-bar .link-padrao:hover{
-        font-weight: bold;
-        color: #002586;
-        border-color: #002586;
+        color: #ffaf00;
+        border-color: #111;
     }
     .header-principal .nav-header .top-bar .header-cart{
         position: relative;
@@ -64,8 +64,30 @@
         -ms-flex-pack: end;
         justify-content: flex-end;
     }
+    .header-principal .nav-header .top-bar .header-cart .view-quantidade-carrinho{
+        width: 20px;   
+        height: 20px;   
+        line-height: 20px;
+        color: #111;
+        background-color: #11f848;
+        position: absolute;
+        border-radius: 50%;
+        bottom: 10px;
+        right: 5px;
+        z-index: 300;
+        transition: .4s;
+        opacity: 0;
+        text-align: center;
+        font-weight: bold;
+        font-size: 10px;
+    }
+    .header-principal .nav-header .top-bar .header-cart .show-quantidade-carrinho{
+        opacity: 1;
+        width: 15px;   
+        height: 15px;
+        line-height: 15px;
+    }
     .header-principal .nav-header .top-bar .header-cart .cart-button{
-        color: #fff;
         position: relative;
         font-size: 26px;
         line-height: 50px;
@@ -73,7 +95,7 @@
         width: 23px;
         padding: 0px 10px 0px 10px;
         height: 0px;
-        background-color: #002586;
+        background-color: #f4f4f4;
         outline: none;
         -webkit-transition: .2s;
         -o-transition: .2s;
@@ -82,7 +104,7 @@
     }
     .header-principal .nav-header .top-bar .header-cart:hover .cart-button{
         height: 50px;
-        color: #f4f4f4;
+        color: #444;
         pointer-events: none;
     }
     .header-principal .nav-header .top-bar .header-cart .cart-display{
@@ -94,6 +116,7 @@
         right: 0px;
         z-index: 200;
         background-color: #f4f4f4;
+        color: #333;
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
@@ -272,13 +295,13 @@
         transition: .3s;
     }
     .header-principal .nav-header .top-bar .display-header-conta .box-header-conta li{
-        padding: 15px;
         margin: 0px;
         line-height: 15px;
         text-align: left;
         cursor: pointer;
     }
     .header-principal .nav-header .top-bar .display-header-conta .box-header-conta li a{
+        padding: 15px;
         color: #666;
         text-decoration: none;
         display: block;
@@ -291,9 +314,9 @@
     .header-principal .nav-header .top-nav{
         position: relative;
         width: 100%;
-        margin-top: 50px;
-        height: 150px;
-        border-bottom: 1px solid #002586;
+        margin-top: 60px;
+        height: 100px;
+        border-bottom: 1px solid #333;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -364,7 +387,7 @@
         text-align: center;
     }
     .header-principal .nav-header .top-nav .logo-header img{
-        width: 50%;
+        width: 45%;
         -webkit-transition: .2s;
         -o-transition: .2s;
         transition: .2s;
@@ -389,8 +412,9 @@
         position: relative;
         width: 30px;
         height: 30px;
-        text-align: center;
-        line-height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 18px;
         margin: 10px;
         color: #fff;
@@ -447,7 +471,7 @@
         font-size: 14px;
     }
     .display-links::-webkit-scrollbar-button:hover{
-        background-color: #eee;
+        background-color: #AAA;
     }
     .display-links::-webkit-scrollbar-thumb{
         background-color: #ccc;
@@ -587,7 +611,7 @@
         font-weight: bold;
     }
     .header-principal .nav-header .display-links .sub-menu li:hover .sub-link{
-        background-color: #002686;
+        background-color: #303030;
         color: #fff;
         font-weight: bold;
     }
@@ -872,7 +896,7 @@
                         echo "<div class='display-header-conta'>";
                             echo "<a class='link-padrao botao-minha-conta'><i class='far fa-user'></i> Olá, $splitNome[0]</a>";
                             echo "<ul class='box-header-conta'>";
-                                echo "<li class='link-conta'><a href=''>Minha conta</a></li>";
+                                echo "<li class='link-conta'><a class='btn-open-minha-conta'>Minha conta</a></li>";
                                 echo "<li class='link-conta'><a href='deslogar-conta.php'>Sair</a></li>";
                             echo "</ul>";
                         echo "</div>";
@@ -885,9 +909,10 @@
                 }
             ?>
             <div class="header-cart">
+                <div class="view-quantidade-carrinho"></div>
                 <div class="cart-button"><i class="fas fa-shopping-cart"></i></div>
                 <div class="cart-display">
-                    <h4 class="cart-title">Seu Carrinho</h4>
+                    <h4 class="cart-title">Seu carrinho</h4>
                     <div class="display-itens">
                         <?php
                             require_once "@classe-carrinho-compras.php";
@@ -912,7 +937,7 @@
                                     echo "</div>";
                                 }
                             }else{
-                                echo "<div align=center>Carrinho vazio</div>";
+                                echo "<div align=center>Bolsa vazia</div>";
                             }
                         ?>
                     </div>
@@ -931,7 +956,7 @@
                     <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
-            <div class="logo-header"><a href="index.php"><img src="<?php echo $dirLogoPrincipal;?>" alt="Logo - Rei das Fechaduras" title="Página Inicial - Rei das Fechaduras"></a></div>
+            <div class="logo-header"><a href="index.php"><img src="<?php echo $dirLogoPrincipal;?>" alt="Logo - Bolsas em Couro by Maidi Grey" title="Página Inicial - Bolsas em Couro"></a></div>
             <div class="social-media-field">
                 <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
@@ -1169,7 +1194,7 @@
             echo "<div class='botao-nav-mobile'><i class='fas fa-bars'></i></div>";
             echo "<div class='nav-background'></div>";
             echo "<ul class='display-links'>";
-            echo "<li class='logo-menu-mobile'><img src='$dirLogoPrincipal'><div class='btn-voltar-menu' alt='Logo - Rei das Fechaduras'><i class='fas fa-angle-double-left'></i></div></li>";
+            echo "<li class='logo-menu-mobile'><img src='$dirLogoPrincipal'><div class='btn-voltar-menu' alt='Logo - Bolsas em Couro by Maidi Grey'><i class='fas fa-angle-double-left'></i></div></li>";
                 foreach($link_nav as $link){
                     $link->listar_link();
                 }
@@ -1258,10 +1283,14 @@
                 if(botaoNavMobile.hasClass("active-botao")){
                     botaoNavMobile.removeClass("active-botao");
                 }
-                if(navHeader.hasClass("nav-header-mobile")){
+                $(".link-principal").css("transition", ".4s");
+                $(".display-links .sub-menu").css("transition", ".2s");
+                 if(navHeader.hasClass("nav-header-mobile")){
+                    $(".display-links .sub-menu").css("transition", "0s");
+                    $(".link-principal").css("transition", "0s");
                     navHeader.removeClass("nav-header-mobile");
                     topNav.css("margin-bottom", "0px");
-                }
+                 }
             }
         }
         if(screen.width > 720){
@@ -1277,7 +1306,8 @@
 <?php
     if(isset($_SESSION["minha_conta"])){
         require_once "@include-minha-conta.php";
+    }else{
+        require_once "@include-cadastra-conta.php";
+        require_once "@include-login.php";
     }
-    require_once "@include-cadastra-conta.php";
-    require_once "@include-login.php";
 ?>

@@ -1,8 +1,45 @@
 <?php
     session_start();
     $nomeEmpresa = "Rei das Fechaduras";
-    $descricaoPagina = "DESCRIÇÃO MODELO ATUALIZAR...";
-    $tituloPagina = "MUDAR TITULO - $nomeEmpresa";
+    
+    require_once "@classe-system-functions.php";
+    require_once "@classe-produtos.php";
+
+    /*SET TABLES*/
+    $tabela_produtos = $pew_custom_db->tabela_produtos;
+    $tabela_produtos_relacionados = $pew_custom_db->tabela_produtos_relacionados;
+    /*END SET TABLES*/
+
+    /*DEFAULT VARS*/
+    $dirImagensProduto = "imagens/produtos";
+    /*END DEFAULT VARS*/
+
+    $idProduto = isset($_GET["id_produto"]) ? (int)$_GET["id_produto"] : 0;
+    $totalProduto = $pew_functions->contar_resultados($tabela_produtos, "id = '$idProduto'");
+    $produto = new Produtos();
+    $produto->montar_produto($idProduto);
+    $infoProduto = $produto->montar_array();
+
+    if($totalProduto > 0){
+        $tituloPagina = $infoProduto["nome"] . " - $nomeEmpresa";
+        $descricaoPagina = $infoProduto["descricao_curta"];
+    }else{
+        $infoProduto = null;
+    }
+    
+    $infoDepartamentos = $produto->get_departamentos_produto();
+    $totalDepartamentos = is_array($infoDepartamentos) ? count($infoDepartamentos) : 0;
+    if($totalDepartamentos){
+        $breadCrumbDepartamento = ucwords(strtolower($infoDepartamentos[0]["titulo"]));
+        $breadCrumbRefDepartamento = $infoDepartamentos[0]["ref"];
+    }
+
+    $infoCategorias = $produto->get_categorias_produto();
+    $totalCategorias = is_array($infoCategorias) ? count($infoCategorias) : 0;
+    if($totalCategorias){
+        $breadCrumbCategoria = ucwords(strtolower($infoCategorias[0]["titulo"]));
+        $breadCrumbRefCategoria = $infoCategorias[0]["ref"];
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -193,12 +230,18 @@
                 height: 5px;
             }
             .section-produto .display-info-produto .display-cores .box-cor{
-                width: 35px;
-                height: 35px;
-                flex: 0 0 35px;
+                width: 30px;
+                height: 30px;
+                flex: 0 0 30px;
                 background-color: #eee;
                 margin: 0px 0px 0px 10px;
                 border-radius: 50%;
+            }
+            .section-produto .display-info-produto .display-cores .box-cor:hover{
+                opacity: .7;   
+            }
+            .section-produto .display-info-produto .display-cores .box-cor img{
+                width: 100%;   
             }
             .section-produto .display-info-produto .display-comprar{
                 display: flex;
@@ -224,8 +267,8 @@
                 border: none;
                 color: #fff;
                 background-color: #408122;
-                font-size: 24px;
-                width: 170px;
+                font-size: 16px;
+                width: 230px;
                 height: 40px;
                 transition: .2s;
                 cursor: pointer;
@@ -492,8 +535,8 @@
         <!--REQUIRES PADRAO-->
         <?php
             require_once "@link-body-scripts.php";
-            require_once "@classe-system-functions.php";
-            require_once "@classe-produtos.php";
+            /*require_once "@classe-system-functions.php";
+            require_once "@classe-produtos.php";*/
             require_once "@classe-vitrine-produtos.php";
             require_once "@include-header-principal.php";
             require_once "@include-interatividade.php";
@@ -501,27 +544,12 @@
         <!--THIS PAGE CONTENT-->
         <div class="main-content">
             <?php
-            /*SET TABLES*/
-            $tabela_produtos = $pew_custom_db->tabela_produtos;
-            $tabela_produtos_relacionados = $pew_custom_db->tabela_produtos_relacionados;
-            /*END SET TABLES*/
 
-            /*DEFAULT VARS*/
-            $dirImagensProduto = "imagens/produtos";
-            /*END DEFAULT VARS*/
+            if($infoProduto != null){
 
-            $idProduto = isset($_GET["id_produto"]) ? (int)$_GET["id_produto"] : 0;
-            $totalProduto = $pew_functions->contar_resultados($tabela_produtos, "id = '$idProduto'");
-
-            if($totalProduto > 0){
-
-            $produto = new Produtos();
-            $produto->montar_produto($idProduto);
-            $infoProduto = $produto->montar_array();
 
             /*INFO PRODUTO*/
             $nomeProduto = $infoProduto["nome"];
-            $descricaoProduto = $infoProduto["descricao_longa"];
             $precoProduto = $infoProduto["preco"];
             $precoPromocaoProduto = $infoProduto["preco_promocao"];
             $promocaoAtiva = $infoProduto["promocao_ativa"] == 1 && $precoPromocaoProduto > 0 && $precoPromocaoProduto < $precoProduto ? true : false;
@@ -532,6 +560,8 @@
             $estoqueProduto = $infoProduto["estoque"];
             $imagensProduto = $infoProduto["imagens"];
             $urlVideo = $infoProduto["url_video"];
+                
+            $descricaoProduto = $infoProduto["descricao_longa"];
             /*INFO PRODUTO*/
                 
             /*FRETE VARS*/
@@ -545,9 +575,9 @@
             /*HTML VIEW*/
             $viewPriceField = null;
             if($promocaoAtiva){
-                $viewPriceField = "<h3 class='preco-produto'>De <span class='promo-price'>R$".number_format($precoProduto, 2, ",", ".")."</span> por <span class='final-price'>R$".number_format($precoPromocaoProduto, 2, ",", ".")."</span></h3>";
+                $viewPriceField = "<h3 class='preco-produto'>De <span class='promo-price'>R$".number_format($precoProduto, 2, ",", ".")."</span> por <span class='final-price'>R$".number_format($precoFinal, 2, ",", ".")."</span></h3>";
             }else{
-                $viewPriceField = "<h3 class='preco-produto'><span class='final-price'>R$".number_format($precoPromocaoProduto, 2, ",", ".")."</span></h3>";
+                $viewPriceField = "<h3 class='preco-produto'><span class='final-price'>R$".number_format($precoFinal, 2, ",", ".")."</span></h3>";
             }
 
             $viewParcelasField = null;
@@ -559,11 +589,11 @@
 
             $viewDisponibilidadadeField = $estoqueProduto == 0 ? "<div class='view-disponibilidade indisponivel'><span class='icone-disponibilidade'><i class='fas fa-times'></i></span> SEM ESTOQUE</div>" : "<div class='view-disponibilidade disponivel'><span class='icone-disponibilidade'><i class='fas fa-check'></i></span> EM ESTOQUE</div>";
 
-            $viewBotaoComprar = $estoqueProduto == 0 ? "<button class='botao-comprar sem-estoque'>COMPRAR</button>" : "<input type='number' class='quantidade-produto' value=1 placeholder='Qtd'><button  class='botao-comprar' id='addProdutoCarrinho' carrinho-id-produto='$idProduto'>COMPRAR</button>";
+            $viewBotaoComprar = $estoqueProduto == 0 ? "<button class='botao-comprar sem-estoque'>COMPRAR</button>" : "<input type='number' class='quantidade-produto' value=1 placeholder='Qtd'><button  class='botao-comprar' id='addProdutoCarrinho' carrinho-id-produto='$idProduto'>ADCIONAR AO CARRINHO</button>";
             /*END HTML VIEW*/
                 
             $iconArrow = "<i class='fas fa-angle-right icon'></i>";
-            $navigationTree = "<div class='navigation-tree'><a href='index.php'>Página inicial</a> $iconArrow <a href='#'>Departamento</a> $iconArrow <a href='#'>$nomeProduto</a></a></div>";
+            $navigationTree = "<div class='navigation-tree'><a href='index.php'>Página inicial</a> $iconArrow <a href='loja.php?departamento=$breadCrumbRefDepartamento'>$breadCrumbDepartamento</a> $iconArrow <a href='loja.php?departamento=$breadCrumbRefDepartamento&categoria=$breadCrumbRefCategoria'>$breadCrumbCategoria</a> $iconArrow <a href='#'>$nomeProduto</a></div>";
             echo $navigationTree;
                 
             ?>
@@ -608,6 +638,7 @@
                         echo $viewParcelasField;
                         echo $viewDisponibilidadadeField;
                     ?>
+                    <h6 style="margin: 25px 0px -15px 0px; font-weight: normal;">Outras cores</h6>
                     <div class="display-cores">
                         <?php
                             $infoCoresRelacionadas = $produto->get_cores_relacionadas();
@@ -661,172 +692,173 @@
                 $vitrineProdutos[0]->montar_vitrine();
             ?>
         </section>
-        <section class="section-especificacao">
-            <style>
-                .section-especificacao .display-paineis{
-                    position: relative;
-                    width: 50%;
-                    height: 55vh;
-                    margin: 0 auto;
-                    margin-top: 40px;
-                    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
-                    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
-                    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
-                    transition: .2s;
-                    align-items: center;
-                    overflow: hidden;
-                    overflow-y: auto;
-                }
-                .display-paineis::-webkit-scrollbar-button:hover{
-                    background-color: #AAA;
-                }
-                .display-paineis::-webkit-scrollbar-thumb{
-                    background-color: #ccc;
-                }
-                .display-paineis::-webkit-scrollbar-thumb:hover{
-                    background-color: #999;
-                }
-                .display-paineis::-webkit-scrollbar-track{
-                    background-color: #efefef;
-                }
-                .display-paineis::-webkit-scrollbar-track:hover{
-                    background-color: #efefef;
-                }
-                .display-paineis::-webkit-scrollbar{
-                    width: 3px;
-                    height: 3px;
-                }
-                .section-especificacao .display-paineis .descricao{
-                    text-align: justify;
-                    color: #6d6d6d;
-                }
-                .section-especificacao .display-paineis table{
-                    margin: 0 auto;
-                }
-                .section-especificacao .display-paineis thead{
-                    text-align: center;
-                }
-                .section-especificacao .display-paineis td{
-                    padding: 0px 20px;
-                }
-                .section-especificacao .display-paineis .background-loading{
-                    position: absolute;
-                    width: 100%;
-                    height: 55vh;
-                    background-color: rgba(255, 255, 255, .5);
-                    top: 0px;
-                    margin: 0px;
-                    opacity: 0;
-                    transition: .3s;
-                    visibility: hidden;
-                    z-index: 80;
-                    text-align: center;
-                    display: flex;
-                    overflow: hidden;
-                }
-                .section-especificacao .display-paineis .background-loading .icone-loading{
-                    position: absolute;
-                    font-size: 46px;
-                    color: #6abd45;
-                    top: 20vh;
-                    align-self: center;
-                    width: 100%;
-                }
-                .section-especificacao .display-paineis .display-buttons{
-                    position: sticky;
-                    width: 100%;
-                    top: 0px;
-                    left: 0px;
-                    margin-top: 0px;
-                    display: flex;
-                    z-index: 80;
-                }
-                .section-especificacao .display-paineis .top-buttons{
-                    height: 5vh;
-                    background-color: #fff;
-                    border: none;
-                    cursor: pointer;
-                    outline: none;
-                    width: 50%;
-                    color: #999;
-                    border-bottom: 2px solid #f6f6f6;
-                }
-                .section-especificacao .display-paineis .top-buttons:hover{
-                    background-color: #f1f1f1;
-                }
-                .section-especificacao .display-paineis .selected-button{   
-                    border-bottom: 2px solid #ffb700;
-                    color: #ffb700;
-                }
-                .section-especificacao .display-paineis .painel{
-                    position: absolute;
-                    width: calc(100% - 80px);
-                    height: calc(50vh - 80px);
-                    padding: 40px;
-                    z-index: 50;
-                    text-align: left;
-                    top: 100%;
-                    left: 0;
-                    transition: .5s;
-                    background-color: #fff;
-                    opacity: 0;
-                    visibility: hidden;
-                    display: none;
-                    transition: 1s all, display 0s;
-                }
-                .section-especificacao .display-paineis .painel-active{
-                    position: relative;
-                    opacity: 1;
-                    top: 0px;
-                    left: 0px;
-                    display: block;
-                    visibility: visible;
-                    opacity: 1;
-                }
-            </style>
-            <script>
-                $(document).ready(function(){
-                    var displayPaineis = $(".display-paineis");
-                    var botoes = $(".top-buttons");
-                    var paineis = displayPaineis.children(".painel");
-                    var botaoAtualizar = $("#botaoAtualizarConta");
-                    var backgroundLoading = $(".section-produto .background-loading");
+        <style>
+            .section-bottom{
+                margin-bottom: 40px;   
+            }
+            .section-bottom .display-paineis{
+                position: relative;
+                width: 90%;
+                height: 55vh;
+                margin: 0 auto;
+                margin-top: 40px;
+                -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+                -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+                box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+                transition: .2s;
+                align-items: center;
+                overflow: hidden;
+                overflow-y: auto;
+            }
+            .display-paineis::-webkit-scrollbar-button:hover{
+                background-color: #AAA;
+            }
+            .display-paineis::-webkit-scrollbar-thumb{
+                background-color: #ccc;
+            }
+            .display-paineis::-webkit-scrollbar-thumb:hover{
+                background-color: #999;
+            }
+            .display-paineis::-webkit-scrollbar-track{
+                background-color: #efefef;
+            }
+            .display-paineis::-webkit-scrollbar-track:hover{
+                background-color: #efefef;
+            }
+            .display-paineis::-webkit-scrollbar{
+                width: 3px;
+                height: 3px;
+            }
+            .section-bottom .display-paineis .descricao{
+                text-align: justify;
+                color: #6d6d6d;
+            }
+            .section-bottom .display-paineis table{
+                margin: 0 auto;
+            }
+            .section-bottom .display-paineis thead{
+                text-align: center;
+            }
+            .section-bottom .display-paineis td{
+                padding: 0px 20px;
+            }
+            .section-bottom .display-paineis .background-loading{
+                position: absolute;
+                width: 100%;
+                height: 55vh;
+                background-color: rgba(255, 255, 255, .5);
+                top: 0px;
+                margin: 0px;
+                opacity: 0;
+                transition: .3s;
+                visibility: hidden;
+                z-index: 80;
+                text-align: center;
+                display: flex;
+                overflow: hidden;
+            }
+            .section-bottom .display-paineis .background-loading .icone-loading{
+                position: absolute;
+                font-size: 46px;
+                color: #6abd45;
+                top: 20vh;
+                align-self: center;
+                width: 100%;
+            }
+            .section-bottom .display-paineis .display-buttons{
+                position: sticky;
+                width: 100%;
+                top: 0px;
+                left: 0px;
+                margin-top: 0px;
+                display: flex;
+                z-index: 80;
+            }
+            .section-bottom .display-paineis .top-buttons{
+                height: 5vh;
+                background-color: #fff;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                width: 50%;
+                color: #999;
+                border-bottom: 2px solid #f6f6f6;
+            }
+            .section-bottom .display-paineis .top-buttons:hover{
+                background-color: #f1f1f1;
+            }
+            .section-bottom .display-paineis .selected-button{   
+                border-bottom: 2px solid green;
+                color: green;
+            }
+            .section-bottom .display-paineis .painel{
+                position: absolute;
+                width: calc(100% - 80px);
+                height: calc(50vh - 80px);
+                padding: 40px;
+                z-index: 50;
+                text-align: left;
+                top: 100%;
+                left: 0;
+                transition: .5s;
+                background-color: #fff;
+                opacity: 0;
+                visibility: hidden;
+                display: none;
+                transition: 1s all, display 0s;
+            }
+            .section-bottom .display-paineis .painel-active{
+                position: relative;
+                opacity: 1;
+                top: 0px;
+                left: 0px;
+                display: block;
+                visibility: visible;
+                opacity: 1;
+            }
+        </style>
+        <script>
+            $(document).ready(function(){
+                var displayPaineis = $(".section-bottom .display-paineis");
+                var botoes = $(".section-bottom .top-buttons");
+                var paineis = displayPaineis.children(".painel");
 
-                    function mudarPainel(obj){
-                        paineis.each(function(){
-                            $(this).removeClass("painel-active");
-                        });
-                        obj.addClass("painel-active");
-                    }
+                function mudarPainel(obj){
+                    paineis.each(function(){
+                        $(this).removeClass("painel-active");
+                    });
+                    obj.addClass("painel-active");
+                }
 
-                    botoes.each(function(){
-                        var botao = $(this);
-                        var idBotao = botao.prop("id");
-                        var objPainel = $("#display"+idBotao);
-                        botao.off().on("click", function(){
-                            botoes.each(function(){
-                                $(this).removeClass("selected-button"); 
-                            });
-                            botao.addClass("selected-button");
-                            mudarPainel(objPainel); 
+                botoes.each(function(){
+                    var botao = $(this);
+                    var idBotao = botao.prop("id");
+                    var objPainel = $("#infoProduto"+idBotao);
+                    botao.off().on("click", function(){
+                        botoes.each(function(){
+                            $(this).removeClass("selected-button"); 
                         });
+                        botao.addClass("selected-button");
+                        mudarPainel(objPainel); 
                     });
                 });
-            </script>
+            });
+        </script>
+        <section class="section-bottom">
             <div class="display-paineis">
                 <div class="display-buttons">
-                    <button class="top-buttons selected-button" id="Painel1"><i class="fas fa-shopping-cart"></i> DETALHES</button>
-                    <button class="top-buttons" id="Painel2"><i class="far fa-address-card"></i> INFORMAÇÕES TÉNICAS</button>
+                    <button class="top-buttons selected-button" id="Div1"><i class="far fa-file-alt"></i> DETALHES</button>
+                    <button class="top-buttons" id="Div2"><i class="far fa-list-alt"></i> INFORMAÇÕES TÉNICAS</button>
                 </div>
-                <div class="painel painel-active" id="displayPainel1">
+                <div class="painel painel-active" id="infoProdutoDiv1">
                      <?php
-                        echo "<article class='descricao'>{$descricaoProduto}</article>";
+                        echo "<article class='descricao'>$descricaoProduto</article>";
                     ?>
                 </div>
-                <div class="painel" id="displayPainel2">
+                <div class="painel" id="infoProdutoDiv2">
                     <?php
                         $infoEspecificacoesTecnicas = $produto->get_especificacoes_produto();
-                        if(is_array($infoEspecificacoesTecnicas) and count($infoEspecificacoesTecnicas) > 0){
+                        if(is_array($infoEspecificacoesTecnicas) && count($infoEspecificacoesTecnicas) > 0){
                             echo "<table>";
                             echo "<thead>";
                             echo "<th>Titulo</th>";
@@ -841,6 +873,8 @@
                                 echo "</tr>";
                             }
                             echo "</table>";
+                        }else{
+                            echo "Nenhuma especificação foi encontrada";
                         }
                     ?>
                 </div>

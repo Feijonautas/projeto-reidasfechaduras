@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $nomeEmpresa = "Rei das Fechaduras";
+    $nomeEmpresa = "Bolsas em Couro";
     $descricaoPagina = "DESCRIÇÃO MODELO ATUALIZAR...";
     $tituloPagina = "Quem somos - $nomeEmpresa";
 ?>

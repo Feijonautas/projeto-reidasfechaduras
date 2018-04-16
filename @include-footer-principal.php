@@ -4,7 +4,7 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        background-color: #f7f7f7;
+        background-color: #e2e2e2;
         font-size: 16px;
         flex-flow: row wrap;
         overflow: hidden;
@@ -15,6 +15,7 @@
         padding: 50px 0px 50px 0px;
     }
     .footer-principal .newsletter .titulo{
+        color: #002586;
         margin: 0px 0px 5px 0px;
         font-size: 16px;
         text-align: center;
@@ -47,9 +48,10 @@
         background-color: #333;
         border: none;
         color: #fff;
+        transition: .2s;
     }
     .footer-principal .newsletter .form-newsletter .btn-submit:hover{
-        background-color: #111;
+        background-color: #ffb700;
         cursor: pointer;
     }
     .footer-principal .display-links{
@@ -302,15 +304,10 @@
 
         $link_footer = null;
         $link_footer[0] = new FooterLinks("PÁGINA INICIAL", "index.php");
-        $link_footer[1] = new FooterLinks("FECHADURAS", "loja.php?departamento=#");
-        $link_footer[1]->add_sublink(1, "CATEGORIA 1", "loja.php?departamento=#&categoria=#");
-        $link_footer[1]->add_sublink(2, "CATEGORIA 2", "loja.php?departamento=#&categoria=#");
-        $link_footer[1]->add_sub_sublink(1, "SUBCATEGORIA 1", "loja.php?departamento=#&categoria=#&subcategoria=#");
-        $link_footer[1]->add_sub_sublink(1, "SUBCATEGORIA 2", "loja.php?departamento=#&categoria=#&subcategoria=#");
-        $link_footer[2] = new FooterLinks("FERRAGENS E ACESSÓRIOS", "loja.php?departamento=#");
-        $link_footer[3] = new FooterLinks("SEGURANÇA", "loja.php?departamento=#");
-        $link_footer[4] = new FooterLinks("DOBRADIÇAS", "loja.php?departamento=#");
-        $link_footer[5] = new FooterLinks("CADEADOS ", "loja.php?departamento=#");
+        $link_footer[1] = new FooterLinks("FECHADURAS", "loja.php?categoria=fechaduras");
+        $link_footer[2] = new FooterLinks("SEGURANCA", "loja.php?categoria=seguranca");
+        $link_footer[3] = new FooterLinks("DOBRADIÇAS", "loja.php?categoria=dobradicas");
+        $link_footer[4] = new FooterLinks("CADEADOS", "loja.php?categoria=cadeados");
         $link_footer[6] = new FooterLinks("DICAS", "dicas.php");
 
         $quantidadeLinks = count($link_footer);

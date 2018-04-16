@@ -1,17 +1,16 @@
 <?php
     $post_fields = array("titulo", "subtitulo", "status", "descricao_curta", "descricao_longa", "url_video");
     $file_fields = array("imagem", "thumbnail");
-    $invalid_fields = array();
+    $invalid_fileds = array();
     $gravar = true;
     $i = 0;
-    
-    print_r($_POST);
+
     foreach($post_fields as $post_name){
         /*Validação se todos campos foram enviados*/
         if(!isset($_POST[$post_name])){
             $gravar = false;
             $i++;
-            $invalid_fields[$i] = $post_name;
+            $invalid_fileds[$i] = $post_name;
         }
     }
     foreach($file_fields as $file_name){
@@ -19,7 +18,7 @@
         if(!isset($_FILES[$file_name])){
             $gravar = false;
             $i++;
-            $invalid_fields[$i] = $file_name;
+            $invalid_fileds[$i] = $file_name;
         }
     }
 
@@ -36,7 +35,7 @@
         $descricaoLonga = $_POST["descricao_longa"];
         $imagem = $_FILES["imagem"]["name"];
         $thumb = $_FILES["thumbnail"]["name"];
-        $video = addslashes($_POST["url_video"]);
+        $video = $_POST["url_video"];
         
         $refDicas = $pew_functions->url_format($titulo);
         $status = (int)$_POST["status"] == 1 ? 1 : 0;
@@ -58,8 +57,9 @@
             move_uploaded_file($_FILES["thumbnail"]["tmp_name"], $dirImagens.$thumb);
         }
 
-        mysqli_query($conexao, "update $tabela_dica set id = '$id', titulo = '$titulo', subtitulo = '$subtitulo', ref = '$refDicas', descricao_curta = '$descricaoCurta', descricao_longa = '$descricaoLonga', imagem = '$imagem', thumb = '$thumb', video = '$video', data_controle = '$data', status = '$status' where id = '$id'");
-        //header("location: pew-dicas.php");
+        mysqli_query($conexao, "update $tabela_dica set id = '$id', titulo = '$titulo', subtitulo = '$subtitulo', ref = '$refDicas', descricao_curta = '$descricaoCurta', descricao_longa = '$descricaoLonga', imagem = '$nomeImagem', thumb = '$thumb', video = '$video', data_controle = '$data', status = '$status' where id = '$id'");
+        
+        header("location: pew-dicas.php");
         echo "true";
     }else{
         echo "false";

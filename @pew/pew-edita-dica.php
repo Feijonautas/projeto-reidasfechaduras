@@ -76,7 +76,7 @@
         <!--PAGE CONTENT-->
         <h1 class="titulos"><?php echo $page_title; ?><a href="pew-dicas.php" class="btn-voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</a></h1>
         <section class="conteudo-painel">
-            <form method="POST" action="pew-update-dica.php" enctype="multipart/form-data">
+            <form method="post" action="pew-update-dica.php" enctype="multipart/form-data">
                 <!--LINHA 1-->
                 <div class="label medium">
                     <h2 class='label-title'>Titulo</h2>
@@ -113,7 +113,7 @@
                 </div>
                 <div class="label medium" align="left">
                     <h3 class="label-title">Iframe Vídeo</h3>
-                    <textarea class="label-input" name="url_video"><?php echo $video;?></textarea>
+                    <input type="text" class="label-input" name="url_video" value="<?php echo $video;?>" placeholder="<iframe></iframe>">
                 </div>
                 
                 <br class="clear">
