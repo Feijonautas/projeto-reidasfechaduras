@@ -45,7 +45,7 @@
     .footer-principal .newsletter .form-newsletter .btn-submit{
         width: 80px;
         height: 25px;
-        background-color: #333;
+        background-color: #002586;
         border: none;
         color: #fff;
         transition: .2s;
@@ -85,7 +85,7 @@
         transition: .3s;
     }
     .footer-principal .display-links .footer-links .first-li .link-principal:hover{
-        border-color: #333;
+        border-color: #002586;
     }
     .footer-principal .display-links .footer-links .first-li .sub-menu{
         margin: 0px;
@@ -103,8 +103,8 @@
         margin: 0px 0px 5px 0px;
     }
     .footer-principal .display-links .footer-links .first-li .sub-menu li .sub-link:hover{
-        border-color: #333;
-        text-decoration: underline;
+		text-decoration: underline;
+		text-decoration-color: #002586;
     }
     .footer-principal .display-links .footer-links .first-li .sub-menu .social-media a{
         display: inline-block;
