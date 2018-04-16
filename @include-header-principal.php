@@ -9,6 +9,7 @@
         -ms-flex-pack: center;
         justify-content: center;
         margin-bottom: 20px;
+        z-index: 100;
     }
     .header-principal .nav-header{
         position: relative;
@@ -34,10 +35,9 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        background-color: #002586;
+        background-color: #fff;
         border-bottom: 1px solid #dedede;
         z-index: 80;
-        color: #fff;
     }
     .header-principal .nav-header .top-bar .link-padrao{
         margin: 0px 10px 0px 10px;
@@ -45,10 +45,10 @@
         -o-transition: .2s;
         transition: .2s;
         cursor: pointer;
-        color: #fff;
+        color: #666;
     }
     .header-principal .nav-header .top-bar .link-padrao:hover{
-        color: #ffaf00;
+        color: #111;
         border-color: #111;
     }
     .header-principal .nav-header .top-bar .header-cart{
@@ -116,7 +116,6 @@
         right: 0px;
         z-index: 200;
         background-color: #f4f4f4;
-        color: #333;
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
@@ -937,13 +936,13 @@
                                     echo "</div>";
                                 }
                             }else{
-                                echo "<div align=center>Bolsa vazia</div>";
+                                echo "<div align=center>Carrinho vazio</div>";
                             }
                         ?>
                     </div>
                     <div class="cart-bottom">
                         <span class="total-price">TOTAL: <span class="price-view">R$ <?php echo $pew_functions->custom_number_format($totalCarrinho); ?></span></span><br>
-                        <a href="finalizar-compra.php" class="finalize-button">Finalizar compra</a>
+                        <a href="finalizar-compra.php" class="finalize-button">Enviar orçamento</a>
                     </div>
                 </div>
                 <div class="cart-background"></div>
@@ -956,7 +955,7 @@
                     <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
-            <div class="logo-header"><a href="index.php"><img src="<?php echo $dirLogoPrincipal;?>" alt="Logo - Bolsas em Couro by Maidi Grey" title="Página Inicial - Bolsas em Couro"></a></div>
+            <div class="logo-header"><a href="index.php"><img src="<?php echo $dirLogoPrincipal;?>" alt="Logo - Rei das Fechaduras" title="Página Inicial - Rei das Fechaduras"></a></div>
             <div class="social-media-field">
                 <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
@@ -1194,7 +1193,7 @@
             echo "<div class='botao-nav-mobile'><i class='fas fa-bars'></i></div>";
             echo "<div class='nav-background'></div>";
             echo "<ul class='display-links'>";
-            echo "<li class='logo-menu-mobile'><img src='$dirLogoPrincipal'><div class='btn-voltar-menu' alt='Logo - Bolsas em Couro by Maidi Grey'><i class='fas fa-angle-double-left'></i></div></li>";
+            echo "<li class='logo-menu-mobile'><img src='$dirLogoPrincipal'><div class='btn-voltar-menu' alt='Logo - Rei das Fechaduras'><i class='fas fa-angle-double-left'></i></div></li>";
                 foreach($link_nav as $link){
                     $link->listar_link();
                 }
@@ -1285,12 +1284,12 @@
                 }
                 $(".link-principal").css("transition", ".4s");
                 $(".display-links .sub-menu").css("transition", ".2s");
-                 if(navHeader.hasClass("nav-header-mobile")){
+                if(navHeader.hasClass("nav-header-mobile")){
                     $(".display-links .sub-menu").css("transition", "0s");
                     $(".link-principal").css("transition", "0s");
                     navHeader.removeClass("nav-header-mobile");
                     topNav.css("margin-bottom", "0px");
-                 }
+                }
             }
         }
         if(screen.width > 720){

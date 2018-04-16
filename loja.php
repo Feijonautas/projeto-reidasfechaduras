@@ -157,6 +157,7 @@
                     }
                 }else{
                     $selectedSubcategoria = $cls_produtos->search_subcategorias_produtos("ref = '$getSubcategoria'");
+                    
                     foreach($selectedSubcategoria as $idProduto){
                         $selectedFinal[$ctrlSelectedFinal] = $idProduto;
                         $ctrlSelectedFinal++;
@@ -216,14 +217,12 @@
                 }
             }
             
-            //print_r($selectedProdutos); // Produtos que foram filtrados
-            
             
             $iconArrow = "<i class='fas fa-angle-right icon'></i>"; 
             $navigationTree = "<div class='navigation-tree'><a href='index.php'>Página inicial</a> $iconArrow <a href='#'>Feminino</a></a></div>";
             
             $vitrineProdutos[0] = new VitrineProdutos("standard", 20, "<h1>$tituloVitrine</h1>", "$descricaoVitrine");
-            $vitrineProdutos[0]->montar_vitrine($selectedProdutos);
+            $vitrineProdutos[0]->montar_vitrine($selectedFinal);
         ?>
         </div>
         <!--END THIS PAGE CONTENT-->

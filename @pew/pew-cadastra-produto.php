@@ -432,7 +432,7 @@
                 function resetAllInputs(){
                     var onlyActives = checkOnlyActives.prop("checked");
                     var ctrlViewProduto = 0;
-                    $("#label-produtos-relacionados").each(function(){
+                    $(".label-produtos-relacionados").each(function(){
                         var label = $(this);
                         var input = label.children("input");
                         if(onlyActives && input.prop("checked") == true){
@@ -452,7 +452,7 @@
                 function listLastSearch(){
                     var onlyActives = checkOnlyActives.prop("checked");
                     var ctrlQtd = 0;
-                    $("#label-produtos-relacionados").each(function(){
+                    $(".label-produtos-relacionados").each(function(){
                         var label = $(this);
                         var input = label.children("input");
                         if(onlyActives && label.hasClass("last-search") && input.prop("checked") == true){
@@ -472,7 +472,7 @@
                 }
                 function contarProdutosSelecionados(){
                     var contagem = 0;
-                    $("#label-produtos-relacionados").each(function(){
+                    $(".label-produtos-relacionados").each(function(){
                         var label = $(this);
                         var input = label.children("input");
                         if(input.prop("checked") == true){
@@ -482,7 +482,7 @@
                     return contagem;
                 }
                 function clearRelacionados(){
-                    $("#label-produtos-relacionados").each(function(){
+                    $(".label-produtos-relacionados").each(function(){
                         var label = $(this);
                         var input = label.children("input");
                         if(label.css("display") != "none"){
@@ -514,7 +514,7 @@
                             var buscaAtiva = barraBusca.val().length > 0 ? true : false;
                             if(checked && !buscaAtiva){
                                 var ctrlQtd = 0;
-                                $("#label-produtos-relacionados").each(function(){
+                                $(".label-produtos-relacionados").each(function(){
                                     var label = $(this);
                                     var input = label.children("input");
                                     var selecionado = input.prop("checked");
@@ -606,7 +606,7 @@
                                 var selectedProdutos = [];
                                 var ctrlVQtdView = 0;
                                 function listarOpcoes(){
-                                    $("#label-produtos-relacionados").each(function(){
+                                    $(".label-produtos-relacionados").each(function(){
                                         var label = $(this);
                                         var input = label.children("input");
                                         var inputIdProduto = input.val();
@@ -960,6 +960,8 @@
                     $precoProduto = $pew_functions->custom_number_format($precoProduto);
                     $precoPromocaoProduto = $infoProduto["preco_promocao"];
                     $precoPromocaoProduto = $pew_functions->custom_number_format($precoPromocaoProduto);
+                    $descontoRelacionado = $infoProduto["desconto_relacionado"];
+                    $descontoRelacionado = $pew_functions->custom_number_format($descontoRelacionado);
                     $promocaoAtiva = $infoProduto["promocao_ativa"];
                     $marcaProduto = $infoProduto["marca"];
                     $estoqueProduto = $infoProduto["estoque"];
@@ -1025,7 +1027,7 @@
                     $precoProduto = null;
                     $precoProduto = null;
                     $precoPromocaoProduto = null;
-                    $precoPromocaoProduto = null;
+                    $descontoRelacionado = null;
                     $promocaoAtiva = null;
                     $marcaProduto = null;
                     $estoqueProduto = 1;
@@ -1220,12 +1222,13 @@
                                         echo "<li class='box-categoria'><label><i class='fas fa-folder icone'></i>$categoria<input type='checkbox' value='$idCategoria' class='check-categorias' name='categorias[]' $checkedCategoria></label>";
                                         if($totalSubcategorias > 0){
                                             echo "<ul class='list-subcategorias $classeSub' $styleSub>";
-                                            $querySubcategorias = mysqli_query($conexao, "select subcategoria, id from $tabela_subcategorias where $condicaoSubcategorias");
+                                            $querySubcategorias = mysqli_query($conexao, "select subcategoria, id, ref from $tabela_subcategorias where $condicaoSubcategorias");
                                             while($subcategorias = mysqli_fetch_array($querySubcategorias)){
                                                 $idSubcategoria = $subcategorias["id"];
                                                 $subcategoria = $subcategorias["subcategoria"];
+                                                $refSubcategoria = $subcategorias["ref"];
                                                 $checkedSub = isset($selectedSubcategorias[$idSubcategoria]) == true ? "checked" : "";
-                                                echo "<li class='box-subcategoria'><label><i class='fas fa-folder icone'></i> $subcategoria<input type='checkbox' value='$subcategoria||$idSubcategoria' class='check-subcategorias' $checkedSub name='subcategorias[]'></label></li>";
+                                                echo "<li class='box-subcategoria'><label><i class='fas fa-folder icone'></i> $subcategoria<input type='checkbox' value='$refSubcategoria||$idCategoria' class='check-subcategorias' $checkedSub name='subcategorias[]'></label></li>";
                                             }
                                             echo "</ul>";
                                         }
@@ -1345,8 +1348,12 @@
                 </div>
                 <div class="small" align=left>
                     <!--PRODUTOS RELACIONADOS-->
+                    <div class="label medium">
+                        <h2 class='label-title'>% Desconto</h2>
+                        <input type="number" step="any" name="desconto_relacionado" id="descontoRelacionado" placeholder="30%" class="label-input" value="<?php echo $descontoRelacionado;?>">
+                    </div>
                     <h3 class="label-title">Produtos Relacionados</h3>
-                    <a class="btn-relacionados" id="btn-produtos-relacionados">Produtos Selecionados <?php echo "(".$ctrlRelacionados.")";?></a>
+                    <a class="btn-relacionados" id="btn-produtos-relacionados" style="float: left;">Produtos Selecionados <?php echo "(".$ctrlRelacionados.")";?></a>
                     <div class="display-relacionados" id="display-produtos-relacionados">
                         <div class="header-relacionados">
                             <h3 class="title-relacionados">Produtos relacionados</h3>
@@ -1373,7 +1380,7 @@
                                             $checked = "checked";
                                         }
                                     }
-                                    echo "<label class='label-relacionados' id='label-produtos-relacionados'><input type='checkbox' name='produtos_relacionados[]' value='$idProdutoRelacionado' $checked> $nomeProdutoRelacionado</label>";
+                                    echo "<label class='label-relacionados label-produtos-relacionados'><input type='checkbox' name='produtos_relacionados[]' value='$idProdutoRelacionado' $checked> $nomeProdutoRelacionado</label>";
                                 }
                             }else{
                                 echo "<h4 class='full'>Nenhum produto encontrado</h4>";
@@ -1386,7 +1393,7 @@
                     </div>
                     <!--END PRODUTOS RELACIONADOS-->
                 </div>
-                <script type="text/javascript" src="asas.js"></script>
+                <script type="text/javascript" src="js/include-cores-relacionadas.js"></script>
                 <div class="small" align=left>
                     <!--PRODUTOS RELACIONADOS-->
                     <h3 class="label-title">Produtos com Cores Relacionadas</h3>
