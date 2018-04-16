@@ -1,5 +1,5 @@
 <?php
-    $post_fields = array("id_produto", "sku", "nome", "marca", "id_cor", "preco", "preco_promocao", "promocao_ativa", "estoque", "estoque_baixo", "tempo_fabricacao", "descricao_curta", "descricao_longa", "url_video", "peso", "comprimento", "largura", "altura", "status");
+    $post_fields = array("id_produto", "sku", "nome", "marca", "id_cor", "preco", "preco_promocao", "promocao_ativa", "desconto_relacionado","estoque", "estoque_baixo", "tempo_fabricacao", "descricao_curta", "descricao_longa", "url_video", "peso", "comprimento", "largura", "altura", "status");
     $file_fields = array();
     $invalid_fields = array();
     $gravar = true;
@@ -35,6 +35,8 @@
         $precoProduto = $pew_functions->custom_number_format($precoProduto);
         $precoPromocaoProduto = $_POST["preco_promocao"];
         $precoPromocaoProduto = $pew_functions->custom_number_format($precoPromocaoProduto);
+        $descontoRelacionado = isset($_POST["desconto_relacionado"]) && $_POST["desconto_relacionado"] ? $_POST["desconto_relacionado"] : 0;
+        $descontoRelacionado = $pew_functions->custom_number_format($descontoRelacionado);
         $promocaoAtiva = intval($_POST["promocao_ativa"]) == 1 ? 1 : 0;
         $estoqueProduto = (int)$_POST["estoque"] != "" ? (int)$_POST["estoque"] : 0;
         $estoqueBaixoProduto = (int)$_POST["estoque_baixo"] != "" ? (int)$_POST["estoque_baixo"] : 1;
@@ -87,7 +89,7 @@
             $condicaoCor = "id = '$idCor'";
             $idCor = $pew_functions->contar_resultados($tabela_cores, $condicaoCor) > 0 ? $idCor : null;
             
-            mysqli_query($conexao, "update $tabela_produtos set sku = '$skuProduto', nome = '$nomeProduto', marca = '$marcaProduto', id_cor = '$idCor', preco = '$precoProduto', preco_promocao = '$precoPromocaoProduto', promocao_ativa = '$promocaoAtiva', estoque = '$estoqueProduto', estoque_baixo = '$estoqueBaixoProduto', tempo_fabricacao = '$tempoFabricacaoProduto', descricao_curta = '$descricaoCurtaProduto', descricao_longa = '$descricaoLongaProduto', url_video = '$urlVideoProduto', peso = '$pesoProduto', comprimento = '$comprimentoProduto', largura = '$larguraProduto', altura = '$alturaProduto', data = '$dataAtual', status = '$statusProduto' where id = '$idProduto'");
+            mysqli_query($conexao, "update $tabela_produtos set sku = '$skuProduto', nome = '$nomeProduto', marca = '$marcaProduto', id_cor = '$idCor', preco = '$precoProduto', preco_promocao = '$precoPromocaoProduto', promocao_ativa = '$promocaoAtiva', desconto_relacionado = '$descontoRelacionado', estoque = '$estoqueProduto', estoque_baixo = '$estoqueBaixoProduto', tempo_fabricacao = '$tempoFabricacaoProduto', descricao_curta = '$descricaoCurtaProduto', descricao_longa = '$descricaoLongaProduto', url_video = '$urlVideoProduto', peso = '$pesoProduto', comprimento = '$comprimentoProduto', largura = '$larguraProduto', altura = '$alturaProduto', data = '$dataAtual', status = '$statusProduto' where id = '$idProduto'");
 
             /*ATUALIZA DEPARTAMENTOS*/
             if($departamentosProduto != ""){
@@ -118,7 +120,7 @@
                     $contarCategoria = mysqli_query($conexao, "select count(id) as total_categorias from $tabela_categorias_produtos where id_categoria = '$idCategoria' and id_produto = '$idProduto'");
                     $contagem = mysqli_fetch_assoc($contarCategoria);
                     if($contagem["total_categorias"] == 0){
-                        mysqli_query($conexao, "insert into $tabela_categorias_produtos (id_produto, id_categoria, titulo_categoria) values ('$idProduto', '$idCategoria', '$tituloCategoria')");
+                        mysqli_query($conexao, "insert into $tabela_categorias_produtos (id_produto, id_categoria) values ('$idProduto', '$idCategoria')");
                     }
                 }
             }else{
@@ -128,33 +130,23 @@
 
             /*ATUALIZA SUBCATEGORIAS DO PRODUTO*/
             if($subcategoriasProduto != ""){
-                $querySubcategoriasAtuais = mysqli_query($conexao, "select id_subcategoria, titulo_subcategoria from $tabela_subcategorias_produtos where id_produto = '$idProduto'");
-                while($subcategoriasA = mysqli_fetch_array($querySubcategoriasAtuais)){
-                    $idSubcat = $subcategoriasA["id_subcategoria"];
-                    $tituloSubcat = $subcategoriasA["titulo_subcategoria"];
-                    $removeSubcategoria = true;
-                    foreach($subcategoriasProduto as $infoSubcategoria){
-                        $info = explode("||", $infoSubcategoria);
-                        $tituloCheckedSub = $info[0];
-                        if($tituloCheckedSub == $tituloSubcat){
-                            $removeSubcategoria = false;
-                        }
-                    }
-                    if($removeSubcategoria){/*Se o POST não foi enviado, desvincular categoria com produto*/
-                        mysqli_query($conexao, "delete from $tabela_subcategorias_produtos where id_produto = '$idProduto' and id_subcategoria = '$idSubcat'");
-                    }
-                }
+                
+                mysqli_query($conexao, "delete from $tabela_subcategorias_produtos where id_produto = '$idProduto'");
+                
                 foreach($subcategoriasProduto as $infoSubcategoria){
                     $info = explode("||", $infoSubcategoria);
-                    $tituloSubcategoria = $info[0];
+                    $refSubcategoria = $info[0];
                     $idCategoriaPrincipal = $info[1];
-                    $querySubcategoria = mysqli_query($conexao, "select id from $tabela_subcategorias where subcategoria = '$tituloSubcategoria'");
+                    
+                    $querySubcategoria = mysqli_query($conexao, "select id from $tabela_subcategorias where ref = '$refSubcategoria'");
                     $arraySubcategoria = mysqli_fetch_array($querySubcategoria);
                     $idSubcategoria = $arraySubcategoria["id"];
+                    
                     $contarSubcategoria = mysqli_query($conexao, "select count(id) as total_subcategorias from $tabela_subcategorias_produtos where id_subcategoria = '$idSubcategoria' and id_produto = '$idProduto'");
                     $contagem = mysqli_fetch_assoc($contarSubcategoria);
+                    
                     if($contagem["total_subcategorias"] == 0){
-                        mysqli_query($conexao, "insert into $tabela_subcategorias_produtos (id_produto, id_categoria, id_subcategoria, titulo_subcategoria) values ('$idProduto', '$idCategoriaPrincipal', '$idSubcategoria', '$tituloSubcategoria')");
+                        mysqli_query($conexao, "insert into $tabela_subcategorias_produtos (id_produto, id_categoria, id_subcategoria) values ('$idProduto', '$idCategoriaPrincipal', '$idSubcategoria')");
                     }
                 }
             }else{

@@ -1,5 +1,5 @@
 <?php
-    $post_fields = array("sku", "nome", "marca", "id_cor", "preco", "preco_promocao", "promocao_ativa", "estoque", "estoque_baixo", "tempo_fabricacao", "descricao_curta", "descricao_longa", "url_video", "peso", "comprimento", "largura", "altura", "status");
+    $post_fields = array("sku", "nome", "marca", "id_cor", "preco", "preco_promocao", "promocao_ativa", "desconto_relacionado", "estoque", "estoque_baixo", "tempo_fabricacao", "descricao_curta", "descricao_longa", "url_video", "peso", "comprimento", "largura", "altura", "status");
     $file_fields = array();
     $invalid_fields = array();
     $gravar = true;
@@ -35,6 +35,8 @@
         $precoPromocaoProduto = $_POST["preco_promocao"];
         $precoPromocaoProduto = $pew_functions->custom_number_format($precoPromocaoProduto);
         $promocaoAtiva = intval($_POST["promocao_ativa"]) == 1 ? 1 : 0;
+        $descontoRelacionado = isset($_POST["desconto_relacionado"]) && $_POST["desconto_relacionado"] ? $_POST["desconto_relacionado"] : 0;
+        $descontoRelacionado = $pew_functions->custom_number_format($descontoRelacionado);
         $estoqueProduto = (int)($_POST["estoque"]) != "" ? (int)$_POST["estoque"] : 0;
         $estoqueBaixoProduto = (int)($_POST["estoque_baixo"]) != "" ? (int)$_POST["estoque_baixo"] : 1;
         $tempoFabricacaoProduto = (int)$_POST["tempo_fabricacao"];
@@ -85,7 +87,7 @@
             $idCor = $pew_functions->contar_resultados($tabela_cores, $condicaoCor) > 0 ? $idCor : null;
             
             /*INSERE DADOS PRODUTO*/
-            mysqli_query($conexao, "insert into $tabela_produtos (sku, nome, marca, id_cor, preco, preco_promocao, promocao_ativa, estoque, estoque_baixo, tempo_fabricacao, descricao_curta, descricao_longa, url_video, peso, comprimento, largura, altura, data, status) values ('$skuProduto', '$nomeProduto', '$marcaProduto', '$idCor', '$precoProduto', '$precoPromocaoProduto', '$promocaoAtiva', '$estoqueProduto', '$estoqueBaixoProduto', '$tempoFabricacaoProduto', '$descricaoCurtaProduto', '$descricaoLongaProduto', '$urlVideoProduto', '$pesoProduto', '$comprimentoProduto', '$larguraProduto', '$alturaProduto', '$dataAtual', '$statusProduto')");
+            mysqli_query($conexao, "insert into $tabela_produtos (sku, nome, marca, id_cor, preco, preco_promocao, promocao_ativa, desconto_relacionado, estoque, estoque_baixo, tempo_fabricacao, descricao_curta, descricao_longa, url_video, peso, comprimento, largura, altura, data, status) values ('$skuProduto', '$nomeProduto', '$marcaProduto', '$idCor', '$precoProduto', '$precoPromocaoProduto', '$promocaoAtiva', '$descontoRelacionado', '$estoqueProduto', '$estoqueBaixoProduto', '$tempoFabricacaoProduto', '$descricaoCurtaProduto', '$descricaoLongaProduto', '$urlVideoProduto', '$pesoProduto', '$comprimentoProduto', '$larguraProduto', '$alturaProduto', '$dataAtual', '$statusProduto')");
 
             /*PEGA ID PRODUTO INSERIDO*/
             $queryID = mysqli_query($conexao, "select last_insert_id()");
@@ -101,22 +103,19 @@
             /*INSERE CATEGORIAS*/
             if($categoriasProduto != ""){
                 foreach($categoriasProduto as $idCategoria){
-                    $queryCategoria = mysqli_query($conexao, "select categoria from $tabela_categorias where id = '$idCategoria'");
-                    $arrayCategoria = mysqli_fetch_array($queryCategoria);
-                    $tituloCategoria = addslashes($arrayCategoria["categoria"]);
-                    mysqli_query($conexao, "insert into $tabela_categorias_produtos (id_produto, id_categoria, titulo_categoria) values ('$idProduto', '$idCategoria', '$tituloCategoria')");
+                    mysqli_query($conexao, "insert into $tabela_categorias_produtos (id_produto, id_categoria) values ('$idProduto', '$idCategoria')");
                 }
             }
             /*INSERE SUBCATEGORIAS*/
             if($subcategoriasProduto != ""){
                 foreach($subcategoriasProduto as $infoSubcategoria){
                     $info = explode("||", $infoSubcategoria);
-                    $tituloSubcategoria = addslashes($info[0]);
+                    $refSubcategoria = addslashes($info[0]);
                     $idCategoriaPrincipal = $info[1];
-                    $querySubcategoria = mysqli_query($conexao, "select id from $tabela_subcategorias where subcategoria = '$tituloSubcategoria'");
+                    $querySubcategoria = mysqli_query($conexao, "select id from $tabela_subcategorias where ref = '$refSubcategoria'");
                     $arraySubcategoria = mysqli_fetch_array($querySubcategoria);
                     $idSubcategoria = $arraySubcategoria["id"];
-                    mysqli_query($conexao, "insert into $tabela_subcategorias_produtos (id_produto, id_categoria, id_subcategoria, titulo_subcategoria) values ('$idProduto', '$idCategoriaPrincipal', '$idSubcategoria', '$tituloSubcategoria')");
+                    mysqli_query($conexao, "insert into $tabela_subcategorias_produtos (id_produto, id_categoria, id_subcategoria) values ('$idProduto', '$idCategoriaPrincipal', '$idSubcategoria')");
                 }
             }
             /*INSERE ESPECIFICAÇÕES PRODUTO*/

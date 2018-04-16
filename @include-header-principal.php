@@ -9,6 +9,7 @@
         -ms-flex-pack: center;
         justify-content: center;
         margin-bottom: 20px;
+        z-index: 100;
     }
     .header-principal .nav-header{
         position: relative;
@@ -34,10 +35,9 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        background-color: #002586;
+        background-color: #fff;
         border-bottom: 1px solid #dedede;
         z-index: 80;
-        color: #fff;
     }
     .header-principal .nav-header .top-bar .link-padrao{
         margin: 0px 10px 0px 10px;
@@ -45,10 +45,10 @@
         -o-transition: .2s;
         transition: .2s;
         cursor: pointer;
-        color: #fff;
+        color: #666;
     }
     .header-principal .nav-header .top-bar .link-padrao:hover{
-        color: #ffaf00;
+        color: #111;
         border-color: #111;
     }
     .header-principal .nav-header .top-bar .header-cart{
@@ -116,7 +116,6 @@
         right: 0px;
         z-index: 200;
         background-color: #f4f4f4;
-        color: #333;
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
@@ -910,9 +909,9 @@
             ?>
             <div class="header-cart">
                 <div class="view-quantidade-carrinho"></div>
-                <div class="cart-button"><i class="fas fa-shopping-cart"></i></div>
+                <div class="cart-button"><i class="fas fa-shopping-bag"></i></div>
                 <div class="cart-display">
-                    <h4 class="cart-title">Seu carrinho</h4>
+                    <h4 class="cart-title">Sua Bolsa</h4>
                     <div class="display-itens">
                         <?php
                             require_once "@classe-carrinho-compras.php";
@@ -1285,12 +1284,12 @@
                 }
                 $(".link-principal").css("transition", ".4s");
                 $(".display-links .sub-menu").css("transition", ".2s");
-                 if(navHeader.hasClass("nav-header-mobile")){
+                if(navHeader.hasClass("nav-header-mobile")){
                     $(".display-links .sub-menu").css("transition", "0s");
                     $(".link-principal").css("transition", "0s");
                     navHeader.removeClass("nav-header-mobile");
                     topNav.css("margin-bottom", "0px");
-                 }
+                }
             }
         }
         if(screen.width > 720){

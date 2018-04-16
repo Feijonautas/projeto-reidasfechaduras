@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Abr-2018 às 11:40
+-- Generation Time: 16-Abr-2018 às 15:53
 -- Versão do servidor: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -92,11 +92,11 @@ CREATE TABLE `pew_categorias` (
 --
 
 INSERT INTO `pew_categorias` (`id`, `categoria`, `descricao`, `ref`, `data_controle`, `status`) VALUES
-(27, 'Fechaduras', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fechaduras', '2018-04-16 11:34:13', 1),
-(28, 'Ferragens e acessÃ³rios', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'ferragens-e-acessorios', '2018-04-16 11:34:16', 1),
-(30, 'SeguranÃ§a', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'seguranca', '2018-04-16 11:34:19', 1),
-(31, 'DobradiÃ§as', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'dobradicas', '2018-04-16 11:34:07', 1),
-(32, 'Cadeados', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'cadeados', '2018-04-16 11:34:10', 1);
+(27, 'Fechaduras', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'fechaduras', '2018-04-16 03:48:13', 1),
+(28, 'Ferragens e acessÃ³rios', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'ferragens-e-acessorios', '2018-04-16 03:48:19', 1),
+(30, 'SeguranÃ§a', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'seguranca', '2018-04-16 03:48:23', 1),
+(31, 'DobradiÃ§as', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'dobradicas', '2018-04-16 03:48:09', 1),
+(32, 'Cadeados', 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'cadeados', '2018-04-16 03:47:49', 1);
 
 -- --------------------------------------------------------
 
@@ -116,43 +116,7 @@ CREATE TABLE `pew_categorias_produtos` (
 --
 
 INSERT INTO `pew_categorias_produtos` (`id`, `id_produto`, `id_categoria`, `titulo_categoria`) VALUES
-(14, 7, 13, 'Malas para viagem'),
-(16, 9, 12, 'Mochilas masculinas'),
-(17, 5, 15, 'Linha exclusiva'),
-(162, 1572, 30, 'SeguranÃ§a'),
-(163, 1569, 27, 'Fechaduras'),
-(164, 1571, 30, 'SeguranÃ§a'),
-(165, 1566, 27, 'Fechaduras'),
-(166, 1568, 27, 'Fechaduras'),
-(167, 1567, 27, 'Fechaduras'),
-(168, 1284, 27, 'Fechaduras'),
-(169, 1284, 30, 'SeguranÃ§a'),
-(170, 1234, 27, 'Fechaduras'),
-(171, 1573, 29, 'Molas para portas'),
-(178, 1575, 27, 'Fechaduras'),
-(179, 1576, 27, 'Fechaduras'),
-(180, 1577, 27, 'Fechaduras'),
-(181, 1430, 27, 'Fechaduras'),
-(182, 1276, 27, 'Fechaduras'),
-(183, 1416, 29, 'Molas para portas'),
-(184, 1578, 27, 'Fechaduras'),
-(185, 1579, 27, 'Fechaduras'),
-(186, 1231, 27, 'Fechaduras'),
-(187, 1258, 29, 'Molas para portas'),
-(188, 1390, 29, 'Molas para portas'),
-(189, 1479, 29, 'Molas para portas'),
-(190, 1414, 27, 'Fechaduras'),
-(191, 1414, 29, 'Molas para portas'),
-(192, 1304, 29, 'Molas para portas'),
-(193, 1219, 30, 'SeguranÃ§a'),
-(194, 1260, 30, 'SeguranÃ§a'),
-(196, 1487, 30, 'SeguranÃ§a'),
-(197, 1486, 30, 'SeguranÃ§a'),
-(198, 1483, 30, 'SeguranÃ§a'),
-(199, 1485, 30, 'SeguranÃ§a'),
-(206, 1298, 30, 'SeguranÃ§a'),
-(207, 1305, 30, 'SeguranÃ§a'),
-(209, 1580, 30, 'SeguranÃ§a');
+(1, 1579, 27, 'Fechaduras');
 
 -- --------------------------------------------------------
 
@@ -405,16 +369,7 @@ CREATE TABLE `pew_departamentos_produtos` (
 --
 
 INSERT INTO `pew_departamentos_produtos` (`id`, `id_produto`, `id_departamento`) VALUES
-(174, 10, 13),
-(206, 9, 13),
-(90, 8, 14),
-(175, 11, 13),
-(213, 12, 16),
-(225, 5, 12),
-(224, 5, 15),
-(223, 5, 14),
-(222, 5, 13),
-(0, 1580, 16);
+(0, 1579, 16);
 
 -- --------------------------------------------------------
 
@@ -549,7 +504,8 @@ INSERT INTO `pew_especificacoes_produtos` (`id`, `id_especificacao`, `id_produto
 (193, 10, 1298, 'atÃ© 950 mm '),
 (194, 24, 1298, 'AtÃ© 2,50m'),
 (195, 23, 1298, '5 cm'),
-(216, 12, 1580, '20');
+(216, 12, 1580, '20'),
+(221, 20, 1579, 'sim');
 
 -- --------------------------------------------------------
 
@@ -1023,24 +979,6 @@ CREATE TABLE `pew_links_menu` (
 --
 
 INSERT INTO `pew_links_menu` (`id`, `id_departamento`, `id_categoria`) VALUES
-(25, 10, 5),
-(26, 10, 9),
-(27, 11, 8),
-(28, 6, 8),
-(29, 6, 9),
-(30, 7, 5),
-(31, 7, 6),
-(32, 8, 5),
-(33, 8, 6),
-(39, 15, 5),
-(40, 15, 6),
-(48, 17, 6),
-(49, 17, 8),
-(53, 14, 8),
-(54, 14, 9),
-(59, 12, 5),
-(60, 12, 9),
-(61, 13, 15),
 (0, 16, 27),
 (0, 16, 28),
 (0, 16, 30),
@@ -1673,7 +1611,7 @@ INSERT INTO `pew_produtos` (`id`, `sku`, `nome`, `preco`, `preco_promocao`, `pro
 (1576, 'FE9083004700', 'Fechadura Digital Intelbras FR200 Senha ou CartÃ£o', '717', '', 0, 'Intelbras', 0, 5, 1, 0, 'Fechadura Digital Itelbras FR200 Senha ou CartÃ£o de Proximidade RFID. Teclado Touch Screen. Ideal para Casa de Praia pois nÃ£o necessita chave ', '<p>Esque&ccedil;a as chaves!<br />Seguindo a tend&ecirc;ncia digital, a FR 201 facilita a vida de seus<br />clientes. Possui teclado touch screen de 12 teclas e<br />comunica&ccedil;&atilde;o RFID.<br />&Eacute; poss&iacute;vel cadastrar at&eacute; 4 senhas e 100 chaveiros de<br />proximidade.</p><p>A FR 201 &eacute; utilizada para controle de acesso de resid&ecirc;ncias,<br />apartamentos e escrit&oacute;rios.<br />Sua aplica&ccedil;&atilde;o vers&aacute;til possibilita a instala&ccedil;&atilde;o com puxadores<br />de diversos tamanhos, al&eacute;m de proporcionar a combina&ccedil;&atilde;o<br />perfeita com seu design diferenciado.</p>', '', '3', '25', '10', '30', '2018-03-14 12:29:24', 0, 1),
 (1577, 'FE9053003500', 'Fechadura Digital Intelbras FR320 Senha ou CartÃ£o', '1190.00', '', 0, 'Intelbras', 0, 5, 1, 1, 'Fechadura Digital Intelbras FR320 Senha ou CartÃ£o de Proximidade. NÃ£o necessita de chave, ideal para Casa de Praia, Campo ou Cidade', '<p>Fechadura Digital Intelbras FR320 Senha ou Cart&atilde;o n&atilde;o sendo necess&aacute;rio o uso de chaves proporcionando maior comodidade aos usu&aacute;rios. Fechamento autom&aacute;tico e Alarme. Substitui as Fechaduras Tradicionais sem necessitar trocar a porta.</p>', '', '4', '33', '10', '30', '2018-03-14 05:21:02', 0, 1),
 (1578, 'FE4760018700', 'FECHADURA BIOMETRICA EMBUTIR  YDF 40', '2590.00', '', 0, 'Yale', 0, 2, 1, 0, 'Fechadura Biometrica de Embutir Yale YDF 40 com Abertura por ImpressÃ£o Digital e Senha com Fechamento Manual e AutomÃ¡tico', '<p><strong>YDF 40</strong></p><p>&bull; Abertura por impress&atilde;o digital e senha;</p><p>&bull; Cadastro de at&eacute; 30 senhas;</p><p>&bull; Cadastro de at&eacute; 20 impress&otilde;es digitais;</p><p>&bull; Alarme de intrus&atilde;o e sensor de calor;</p><p>&bull; Fechamento manual e autom&aacute;tico;</p><p>&bull; Senha de acesso tempor&aacute;rio;</p><p>&bull; Guia de voz multil&iacute;ngua;</p><p>&bull; Tranqueta para sa&iacute;da de emerg&ecirc;ncia;</p><p>&bull; Espessura de porta: 35mm a 57mm;</p>', '', '5', '30', '20', '20', '2018-03-16 03:44:47', 0, 1),
-(1579, 'FE9063006600', 'FECHADURA BIOMETRICA EMBUTIR  YMF 40 SENHA E CHAVE', '2970.00', '', 0, 'Yale', 0, 2, 1, 0, 'Fechadura BiomÃ©trica de Embutir Yale YMF 40 Senha e Chave. Abertura por impressÃ£o digital, senha e chave.Alarme anti-vandalismo', '<p><strong>YMF 40</strong></p><p>&bull; Abertura por impress&atilde;o digital, senha e chave;</p><p>&bull; Registro de at&eacute; 30 senhas;</p><p>&bull; Registro de at&eacute; 20 impress&otilde;es digitais;</p><p>&bull; Entrada externa para bateria de emerg&ecirc;ncia;</p><p>&bull; Fechamento manual e autom&aacute;tico;</p><p>&bull; Tranqueta para sa&iacute;da de emerg&ecirc;ncia;</p><p>&bull; Alarme anti-vandalismo;</p><p>&bull; Guia de voz em 4 idiomas.</p>', '', '5', '40', '25', '20', '2018-03-16 03:51:02', 0, 1),
+(1579, 'FE9063006600', 'FECHADURA BIOMETRICA EMBUTIR  YMF 40 SENHA E CHAVE', '2970.00', '0.0', 0, 'Yale', 0, 2, 1, 1, 'Fechadura BiomÃ©trica de Embutir Yale YMF 40 Senha e Chave. Abertura por impressÃ£o digital, senha e chave.Alarme anti-vandalismo', '<p><strong>YMF 40</strong></p><p>&bull; Abertura por impress&atilde;o digital, senha e chave;</p><p>&bull; Registro de at&eacute; 30 senhas;</p><p>&bull; Registro de at&eacute; 20 impress&otilde;es digitais;</p><p>&bull; Entrada externa para bateria de emerg&ecirc;ncia;</p><p>&bull; Fechamento manual e autom&aacute;tico;</p><p>&bull; Tranqueta para sa&iacute;da de emerg&ecirc;ncia;</p><p>&bull; Alarme anti-vandalismo;</p><p>&bull; Guia de voz em 4 idiomas.</p>', '', '5', '40', '25', '20', '2018-04-16 03:52:15', 0, 1),
 (1580, 'SKU99999999', 'Este produto estÃ¡ sendo testado', '150.00', '100.00', 1, '3M', 0, 10, 10, 10, 'Este produto estÃ¡ em fase de testes Este produto estÃ¡ em fase de testes', '<p>Este produto est&aacute; em fase de testes&nbsp;Este produto est&aacute; em fase de testes&nbsp;Este produto est&aacute; em fase de testes&nbsp;Este produto est&aacute; em fase de testes&nbsp;Este produto est&aacute; em fase de testes&nbsp;Este produto est&aacute; em fase de testes&nbsp;Este produto est&aacute; em fase de testes</p>', '', '1', '20', '20', '20', '2018-04-16 11:12:59', 0, 1);
 
 -- --------------------------------------------------------
@@ -1730,11 +1668,11 @@ CREATE TABLE `pew_subcategorias` (
 --
 
 INSERT INTO `pew_subcategorias` (`id`, `subcategoria`, `id_categoria`, `descricao`, `ref`, `data_controle`, `status`) VALUES
-(1, 'Residenciais', '27', '', 'residenciais', '2018-01-10 02:58:58', 1),
-(2, 'Cofres', '30', '', 'cofres', '2018-03-20 02:58:23', 1),
-(3, 'Barra AntipÃ¢nico', '30', '', 'barra-antipanico', '2018-03-20 03:29:20', 1),
-(4, 'Fechaduras de seguranÃ§a', '30', '', 'fechaduras-de-seguranÃ§a', '2018-03-20 03:29:46', 1),
-(5, 'CÃ¢meras', '30', '', 'cameras-1', '2018-04-16 11:11:34', 1);
+(1, 'Residenciais', '27', '', 'residenciais', '2018-04-16 03:48:16', 1),
+(2, 'Cofres', '30', '', 'cofres', '2018-04-16 03:49:20', 1),
+(3, 'Barra AntipÃ¢nico', '30', '', 'barra-antipanico', '2018-04-16 03:49:14', 1),
+(4, 'Fechaduras de seguranÃ§a', '30', '', 'fechaduras-de-seguranca', '2018-04-16 03:49:25', 1),
+(5, 'CÃ¢meras', '30', '', 'cameras', '2018-04-16 03:49:17', 1);
 
 -- --------------------------------------------------------
 
@@ -1749,27 +1687,6 @@ CREATE TABLE `pew_subcategorias_produtos` (
   `id_subcategoria` int(11) NOT NULL,
   `titulo_subcategoria` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `pew_subcategorias_produtos`
---
-
-INSERT INTO `pew_subcategorias_produtos` (`id`, `id_produto`, `id_categoria`, `id_subcategoria`, `titulo_subcategoria`) VALUES
-(1, 1234, 27, 1, 'Residenciais'),
-(3, 1575, 27, 1, 'Residenciais'),
-(4, 1576, 27, 1, 'Residenciais'),
-(5, 1577, 27, 1, 'Residenciais'),
-(6, 1430, 27, 1, 'Residenciais'),
-(7, 1276, 27, 1, 'Residenciais'),
-(8, 1578, 27, 1, 'Residenciais'),
-(9, 1579, 27, 1, 'Residenciais'),
-(10, 1231, 27, 1, 'Residenciais'),
-(11, 1219, 30, 2, 'Cofres'),
-(12, 1260, 30, 2, 'Cofres'),
-(20, 1580, 2, 2, 'Cofres'),
-(21, 1580, 3, 3, 'Barra AntipÃ¢nico'),
-(22, 1580, 4, 4, 'Fechaduras de seguranÃ§a'),
-(23, 1580, 5, 5, 'CÃ¢meras');
 
 -- --------------------------------------------------------
 
@@ -1791,8 +1708,7 @@ CREATE TABLE `pew_usuarios_administrativos` (
 --
 
 INSERT INTO `pew_usuarios_administrativos` (`id`, `empresa`, `usuario`, `senha`, `email`, `nivel`) VALUES
-(2, 'Rei das Fechaduras', 'reidasfechaduras', '040784331312d994660de8a8021d1d52', 'contato@reidasfechaduras.com.br', 3),
-(3, '', 'carlos', '4290274b76bc920ab3d3d24044b5ac19', 'reicompras@mps.com.br', 3);
+(2, 'Rei das Fechaduras', 'reidasfechaduras', '040784331312d994660de8a8021d1d52', 'contato@reidasfechaduras.com.br', 3);
 
 --
 -- Indexes for dumped tables
@@ -1962,7 +1878,7 @@ ALTER TABLE `pew_categorias`
 -- AUTO_INCREMENT for table `pew_categorias_produtos`
 --
 ALTER TABLE `pew_categorias_produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=210;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pew_categorias_vitrine`
@@ -2010,7 +1926,7 @@ ALTER TABLE `pew_dicas`
 -- AUTO_INCREMENT for table `pew_especificacoes_produtos`
 --
 ALTER TABLE `pew_especificacoes_produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=220;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222;
 
 --
 -- AUTO_INCREMENT for table `pew_especificacoes_tecnicas`
@@ -2070,7 +1986,7 @@ ALTER TABLE `pew_subcategorias`
 -- AUTO_INCREMENT for table `pew_subcategorias_produtos`
 --
 ALTER TABLE `pew_subcategorias_produtos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pew_usuarios_administrativos`
