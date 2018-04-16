@@ -36,7 +36,7 @@
                     global $conexao, $tabela_cores, $functions;
                     
                     /*STANDARD VARS*/
-                    $nomeLoja = "BOLSAS EM COURO";
+                    $nomeLoja = "Rei das Fechaduras";
                     $dirImagensProdutos = "imagens/produtos";
                     /*END STANDARD VARS*/
 
@@ -75,7 +75,7 @@
                         echo "<a href='$urlProduto'><img src='$dirImagensProdutos/$srcImagem' title='$nome' alt='$nome - $nomeLoja'></a>";
                         echo "<a href='$urlProduto' class='title-link'><h3 class='titulo-produto' title='$nome'>$nomeEllipses</h3></a>";
                         echo "<h4 class='preco-produto'>$priceField ou <span class='view-parcelas'>$txtParcelas R$". number_format($precoParcela, 2, ",", ".") ."</span></h4>";
-                        echo "<a href='$urlProduto' class='call-to-action'>COMPRAR</a>";
+                        echo "<a href='$urlProduto' class='call-to-action'>SOLICITAR</a>";
                         echo "<div class='display-cores'>";
                             if(is_array($infoCoresRelacionadas) and count($infoCoresRelacionadas) > 0){
                                 foreach($infoCoresRelacionadas as $id => $info){
@@ -252,7 +252,7 @@
                 function listar_produto($idProduto){
                     global $conexao, $tabela_cores, $functions;
                     /*STANDARD VARS*/
-                    $nomeLoja = "BOLSAS EM COURO";
+                    $nomeLoja = "Rei das Fechaduras";
                     $dirImagensProdutos = "imagens/produtos";
                     /*END STANDARD VARS*/
 
@@ -290,7 +290,7 @@
                         echo "<a href='$urlProduto'><img src='$dirImagensProdutos/$srcImagem' title='$nome' alt='$nome - $nomeLoja'></a>";
                         echo "<a href='$urlProduto' class='title-link'><h3 class='titulo-produto' title='$nome'>$nomeEllipses</h3></a>";
                         echo "<h4 class='preco-produto'>$priceField ou <span class='view-parcelas'>$txtParcelas R$". number_format($precoParcela, 2, ",", ".") ."</span></h4>";
-                        echo "<a href='$urlProduto' class='call-to-action'>COMPRAR</a>";
+                        echo "<a href='$urlProduto' class='call-to-action'>SOLICITAR</a>";
                         echo "<div class='display-cores'>";
                             if(is_array($infoCoresRelacionadas) and count($infoCoresRelacionadas) > 0){
                                 foreach($infoCoresRelacionadas as $id => $info){

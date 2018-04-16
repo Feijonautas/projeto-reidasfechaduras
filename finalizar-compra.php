@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $nomeEmpresa = "Bolsas em Couro";
+    $nomeEmpresa = "Rei das Fechaduras";
     $descricaoPagina = "DESCRIÇÃO MODELO ATUALIZAR...";
     $tituloPagina = "Finalizar compra - $nomeEmpresa";
 ?>
@@ -218,7 +218,7 @@
             .botao-salvar:hover{
                 background-color: #777;   
             }
-        </style>
+        </style>    
         <!--END PAGE CSS-->
         <!--PAGE JS-->
         <script>

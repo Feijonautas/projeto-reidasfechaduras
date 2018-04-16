@@ -909,9 +909,9 @@
             ?>
             <div class="header-cart">
                 <div class="view-quantidade-carrinho"></div>
-                <div class="cart-button"><i class="fas fa-shopping-bag"></i></div>
+                <div class="cart-button"><i class="fas fa-shopping-cart"></i></div>
                 <div class="cart-display">
-                    <h4 class="cart-title">Sua Bolsa</h4>
+                    <h4 class="cart-title">Seu carrinho</h4>
                     <div class="display-itens">
                         <?php
                             require_once "@classe-carrinho-compras.php";
@@ -936,13 +936,13 @@
                                     echo "</div>";
                                 }
                             }else{
-                                echo "<div align=center>Bolsa vazia</div>";
+                                echo "<div align=center>Carrinho vazio</div>";
                             }
                         ?>
                     </div>
                     <div class="cart-bottom">
                         <span class="total-price">TOTAL: <span class="price-view">R$ <?php echo $pew_functions->custom_number_format($totalCarrinho); ?></span></span><br>
-                        <a href="finalizar-compra.php" class="finalize-button">Finalizar compra</a>
+                        <a href="finalizar-compra.php" class="finalize-button">Enviar orçamento</a>
                     </div>
                 </div>
                 <div class="cart-background"></div>
@@ -955,7 +955,7 @@
                     <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
-            <div class="logo-header"><a href="index.php"><img src="<?php echo $dirLogoPrincipal;?>" alt="Logo - Bolsas em Couro by Maidi Grey" title="Página Inicial - Bolsas em Couro"></a></div>
+            <div class="logo-header"><a href="index.php"><img src="<?php echo $dirLogoPrincipal;?>" alt="Logo - Rei das Fechaduras" title="Página Inicial - Rei das Fechaduras"></a></div>
             <div class="social-media-field">
                 <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
@@ -1193,7 +1193,7 @@
             echo "<div class='botao-nav-mobile'><i class='fas fa-bars'></i></div>";
             echo "<div class='nav-background'></div>";
             echo "<ul class='display-links'>";
-            echo "<li class='logo-menu-mobile'><img src='$dirLogoPrincipal'><div class='btn-voltar-menu' alt='Logo - Bolsas em Couro by Maidi Grey'><i class='fas fa-angle-double-left'></i></div></li>";
+            echo "<li class='logo-menu-mobile'><img src='$dirLogoPrincipal'><div class='btn-voltar-menu' alt='Logo - Rei das Fechaduras'><i class='fas fa-angle-double-left'></i></div></li>";
                 foreach($link_nav as $link){
                     $link->listar_link();
                 }

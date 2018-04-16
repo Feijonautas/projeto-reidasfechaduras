@@ -225,7 +225,7 @@
             }
         }else if($acao == "get_header_carrinho"){
             require_once "@classe-system-functions.php";
-            echo "<h4 class='cart-title'>Sua Bolsa</h4>";
+            echo "<h4 class='cart-title'>Seu carrinho</h4>";
                 echo "<div class='display-itens'>";
                 $cls_carrinho = new Carrinho();
                 $carrinho = $cls_carrinho->get_carrinho();
@@ -248,12 +248,12 @@
                         echo "</div>";
                     }
                 }else{
-                    echo "<div align=center>Bolsa vazia</div>";
+                    echo "<div align=center>Carrinho vazio</div>";
                 }
                 echo "</div>";
                 echo "<div class='cart-bottom'>";
                     echo "<span class='total-price'>TOTAL: <span class='price-view'>R$ {$pew_functions->custom_number_format($totalCarrinho)}</span></span><br>";
-                    echo "<a href='finalizar-compra.php' class='finalize-button'>Finalizar compra</a>";
+                    echo "<a href='finalizar-compra.php' class='finalize-button'>Enviar orçamento</a>";
                 echo "</div>";
         }else if($acao == "remover_produto"){
             $idProduto = isset($_POST["id_produto"]) ? (int)$_POST["id_produto"] : 0;
