@@ -550,6 +550,7 @@
             /*INFO PRODUTO*/
             $nomeProduto = $infoProduto["nome"];
             $precoProduto = $infoProduto["preco"];
+            $precoAtivo = $infoProduto["preco_ativo"] == 1 ? true : false;
             $precoPromocaoProduto = $infoProduto["preco_promocao"];
             $promocaoAtiva = $infoProduto["promocao_ativa"] == 1 && $precoPromocaoProduto > 0 && $precoPromocaoProduto < $precoProduto ? true : false;
             $precoFinal = $promocaoAtiva == true ? $precoPromocaoProduto : $precoProduto;
@@ -634,9 +635,11 @@
                 <div class="display-info-produto">
                     <h1 class="titulo-produto"><?php echo $nomeProduto; ?></h1>
                     <?php
+                    if($precoAtivo){
                         echo $viewPriceField;
                         echo $viewParcelasField;
-                        echo $viewDisponibilidadadeField;
+                    }
+                    echo $viewDisponibilidadadeField;
                     ?>
                     <h6 style="margin: 25px 0px -15px 0px; font-weight: normal;">Outras cores</h6>
                     <div class="display-cores">
@@ -666,7 +669,11 @@
                         ?>
                     </div>
                     <div class="display-comprar">
-                        <?php echo $viewBotaoComprar; ?>
+                        <?php
+                            if($precoAtivo){
+                                echo $viewBotaoComprar;
+                            }
+                        ?>
                     </div>
                     <div class="calculo-frete">
                         <h5 class="titulo-frete">CALCULAR FRETE</h5>

@@ -7,6 +7,7 @@
         private $nome;
         private $preco;
         private $preco_promocao;
+        private $preco_ativo;
         private $promocao_ativa;
         private $desconto_relacionado;
         private $marca;
@@ -163,6 +164,7 @@
                 $this->nome = $info["nome"];
                 $this->preco = $this->pew_functions->custom_number_format($info["preco"]);
                 $this->preco_promocao = $this->pew_functions->custom_number_format($info["preco_promocao"]);
+                $this->preco_ativo = $this->pew_functions->custom_number_format($info["preco_ativo"]);
                 $this->promocao_ativa = $this->pew_functions->custom_number_format($info["promocao_ativa"]);
                 $this->desconto_relacionado = $this->pew_functions->custom_number_format($info["desconto_relacionado"]);
                 $this->marca = $info["marca"];
@@ -208,6 +210,9 @@
         }
         public function get_preco_produto(){
             return $this->preco;
+        }
+        public function get_preco_ativo(){
+            return $this->preco_ativo;
         }
         public function get_preco_promocao_produto(){
             return $this->preco_promocao;
@@ -458,6 +463,7 @@
                 $infoProduto["nome"] = $this->get_nome_produto();
                 $infoProduto["preco"] = $this->get_preco_produto();
                 $infoProduto["preco_promocao"] = $this->get_preco_promocao_produto();
+                $infoProduto["preco_ativo"] = $this->get_preco_ativo();
                 $infoProduto["promocao_ativa"] = $this->get_promocao_ativa();
                 $infoProduto["desconto_relacionado"] = $this->get_desconto_relacionado();
                 $infoProduto["marca"] = $this->get_marca_produto();

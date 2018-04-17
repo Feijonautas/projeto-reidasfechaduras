@@ -36,7 +36,7 @@
                 margin: 0 auto;
                 margin-bottom: -150px;
                 min-height: 300px;
-                background-color: #111;
+                background-color: #fff;
                 overflow: hidden;
             }
 			.main-content .display-cont{
