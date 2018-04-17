@@ -132,15 +132,14 @@
                     $selectedDepartamento = $cls_produtos->search_departamentos_produtos("ref = '$getDepartamento'");
                     $selectedCategoria = $cls_produtos->search_categorias_produtos("ref = '$getCategoria'");
                     $selectedSubcategoria = $cls_produtos->search_subcategorias_produtos("ref = '$getSubcategoria'");
-                    
                     foreach($selectedCategoria as $idProduto){
-                        if(array_search($idProduto, $selectedDepartamento) >= 0 && array_search($idProduto, $selectedDepartamento) != null){
+                        if(array_search($idProduto, $selectedDepartamento) >= 0 || array_search($idProduto, $selectedDepartamento) != null){
                             $selected[$ctrlSelected] = $idProduto;
                             $ctrlSelected++;
                         }
                     }
                     foreach($selectedSubcategoria as $idProduto){
-                        if(array_search($idProduto, $selected) >= 0 && array_search($idProduto, $selected) != null){
+                        if(array_search($idProduto, $selected) >= 0 || array_search($idProduto, $selected) != null){
                             $selectedFinal[$ctrlSelectedFinal] = $idProduto;
                             $ctrlSelectedFinal++;
                         }
@@ -150,7 +149,7 @@
                     $selectedSubcategoria = $cls_produtos->search_subcategorias_produtos("ref = '$getSubcategoria'");
                     
                     foreach($selectedSubcategoria as $idProduto){
-                        if(array_search($idProduto, $selectedCategoria) >= 0 && array_search($idProduto, $selectedCategoria) != null){
+                        if(array_search($idProduto, $selectedCategoria) >= 0 || array_search($idProduto, $selectedCategoria) != null){
                             $selectedFinal[$ctrlSelectedFinal] = $idProduto;
                             $ctrlSelectedFinal++;
                         }
@@ -177,9 +176,13 @@
                 if($buscarDepartamento && $buscarCategoria){
                     $selectedDepartamento = $cls_produtos->search_departamentos_produtos("ref = '$getDepartamento'");
                     $selectedCategoria = $cls_produtos->search_categorias_produtos("ref = '$getCategoria'");
-                    
+                    /*VERIFICAR LÓGICA DO ARRAY SEARCH*/
+/*                    echo "<pre>";
+                    print_r($selectedDepartamento);
+                    print_r($selectedCategoria);
+                    echo "</pre>";*/
                     foreach($selectedCategoria as $idProduto){
-                        if(array_search($idProduto, $selectedDepartamento) >= 0 && array_search($idProduto, $selectedDepartamento) != null){
+                        if(array_search($idProduto, $selectedDepartamento) >= 0 || array_search($idProduto, $selectedDepartamento) != null){
                             $selectedFinal[$ctrlSelectedFinal] = $idProduto;
                             $ctrlSelectedFinal++;
                         }
@@ -217,12 +220,14 @@
                 }
             }
             
+            //print_r($selectedProdutos); // Produtos que foram filtrados
+            
             
             $iconArrow = "<i class='fas fa-angle-right icon'></i>"; 
             $navigationTree = "<div class='navigation-tree'><a href='index.php'>Página inicial</a> $iconArrow <a href='#'>Feminino</a></a></div>";
             
             $vitrineProdutos[0] = new VitrineProdutos("standard", 20, "<h1>$tituloVitrine</h1>", "$descricaoVitrine");
-            $vitrineProdutos[0]->montar_vitrine($selectedFinal);
+            $vitrineProdutos[0]->montar_vitrine($selectedProdutos);
         ?>
         </div>
         <!--END THIS PAGE CONTENT-->

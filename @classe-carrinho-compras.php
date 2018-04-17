@@ -253,7 +253,7 @@
                 echo "</div>";
                 echo "<div class='cart-bottom'>";
                     echo "<span class='total-price'>TOTAL: <span class='price-view'>R$ {$pew_functions->custom_number_format($totalCarrinho)}</span></span><br>";
-                    echo "<a href='finalizar-compra.php' class='finalize-button'>Enviar orçamento</a>";
+                    echo "<a href='finalizar-compra.php' class='finalize-button'>SOLICITAR ORÇAMENTO</a>";
                 echo "</div>";
         }else if($acao == "remover_produto"){
             $idProduto = isset($_POST["id_produto"]) ? (int)$_POST["id_produto"] : 0;

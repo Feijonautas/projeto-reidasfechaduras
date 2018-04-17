@@ -38,8 +38,8 @@
                 position: absolute;
                 bottom: 5vw;
                 left: 10vw;
-                color: #344;
-                font-size: 1vw;
+                color: #111;
+                font-size: 0.8vw;
             }
             .main-content .box .breadcrumb a{
                 color: inherit;

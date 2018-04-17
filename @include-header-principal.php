@@ -909,7 +909,7 @@
             ?>
             <div class="header-cart">
                 <div class="view-quantidade-carrinho"></div>
-                <div class="cart-button"><i class="fas fa-shopping-cart"></i></div>
+                <div class="cart-button"><i class="fas fa-shopping-bag"></i></div>
                 <div class="cart-display">
                     <h4 class="cart-title">Seu carrinho</h4>
                     <div class="display-itens">
@@ -942,7 +942,7 @@
                     </div>
                     <div class="cart-bottom">
                         <span class="total-price">TOTAL: <span class="price-view">R$ <?php echo $pew_functions->custom_number_format($totalCarrinho); ?></span></span><br>
-                        <a href="finalizar-compra.php" class="finalize-button">Enviar orçamento</a>
+                        <a href="finalizar-compra.php" class="finalize-button">SOLICITAR ORÇAMENTO</a>
                     </div>
                 </div>
                 <div class="cart-background"></div>

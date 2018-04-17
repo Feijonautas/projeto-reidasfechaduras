@@ -14,10 +14,10 @@
     $dirImagensProduto = "imagens/produtos";
     /*END DEFAULT VARS*/
 
-    $idProduto = isset($_GET["id_produto"]) ? (int)$_GET["id_produto"] : 0;
-    $totalProduto = $pew_functions->contar_resultados($tabela_produtos, "id = '$idProduto'");
+    $idInternaProduto = isset($_GET["id_produto"]) ? (int)$_GET["id_produto"] : 0;
+    $totalProduto = $pew_functions->contar_resultados($tabela_produtos, "id = '$idInternaProduto'");
     $produto = new Produtos();
-    $produto->montar_produto($idProduto);
+    $produto->montar_produto($idInternaProduto);
     $infoProduto = $produto->montar_array();
 
     if($totalProduto > 0){
@@ -267,8 +267,8 @@
                 border: none;
                 color: #fff;
                 background-color: #408122;
-                font-size: 16px;
-                width: 230px;
+                font-size: 24px;
+                width: 170px;
                 height: 40px;
                 transition: .2s;
                 cursor: pointer;
@@ -546,8 +546,7 @@
             <?php
 
             if($infoProduto != null){
-
-
+                
             /*INFO PRODUTO*/
             $nomeProduto = $infoProduto["nome"];
             $precoProduto = $infoProduto["preco"];
@@ -571,6 +570,7 @@
             $alturaProduto = $infoProduto["altura"];
             $pesoProduto = $infoProduto["peso"];
             /*END FRETE VARS*/
+                
 
             /*HTML VIEW*/
             $viewPriceField = null;
@@ -589,7 +589,7 @@
 
             $viewDisponibilidadadeField = $estoqueProduto == 0 ? "<div class='view-disponibilidade indisponivel'><span class='icone-disponibilidade'><i class='fas fa-times'></i></span> SEM ESTOQUE</div>" : "<div class='view-disponibilidade disponivel'><span class='icone-disponibilidade'><i class='fas fa-check'></i></span> EM ESTOQUE</div>";
 
-            $viewBotaoComprar = $estoqueProduto == 0 ? "<button class='botao-comprar sem-estoque'>COMPRAR</button>" : "<input type='number' class='quantidade-produto' value=1 placeholder='Qtd'><button  class='botao-comprar' id='addProdutoCarrinho' carrinho-id-produto='$idProduto'>ADCIONAR AO CARRINHO</button>";
+            $viewBotaoComprar = $estoqueProduto == 0 ? "<button class='botao-comprar sem-estoque'>SOLICITAR</button>" : "<input type='number' class='quantidade-produto' value=1 placeholder='Qtd'><button  class='botao-comprar' id='addProdutoCarrinho' carrinho-id-produto='$idInternaProduto'>SOLICITAR</button>";
             /*END HTML VIEW*/
                 
             $iconArrow = "<i class='fas fa-angle-right icon'></i>";
@@ -674,7 +674,7 @@
                         <button class="botao-calculo-frete"><i class="fas fa-truck"></i></button>
                         <div class='resultado-frete'></div>
                         <div class="display-info-calculo-frete">
-                            <input type="hidden" id="freteIdProduto" value="<?php echo $idProduto; ?>">
+                            <input type="hidden" id="freteIdProduto" value="<?php echo $idInternaProduto; ?>">
                             <input type="hidden" id="freteTituloProduto" value="<?php echo $nomeProduto; ?>">
                             <input type="hidden" id="fretePrecoProduto" value="<?php echo $precoFrete; ?>">
                             <input type="hidden" id="freteComprimentoProduto" value="<?php echo $comprimentoProduto; ?>">
@@ -688,8 +688,34 @@
         </div>
         <section class="produtos-relacionados">
             <?php
-                $vitrineProdutos[0] = new VitrineProdutos("carrossel", 15, "COMPRE JUNTO COM DESCONTO");
-                $vitrineProdutos[0]->montar_vitrine();
+                
+                require_once "@pew/pew-system-config.php";
+                
+                function get_relacionados($id_produto){
+                    global $tabela_produtos_relacionados, $conexao;
+                    $condicao = "id_produto = '$id_produto'";
+                    $selected = array();
+                    $i = 0;
+                    $return = false;
+                    
+                    $query = mysqli_query($conexao, "select id_relacionado from $tabela_produtos_relacionados where $condicao");
+                    while($array = mysqli_fetch_array($query)){
+                        $selected[$i] = $array["id_relacionado"];
+                        $i++;
+                    }
+                    
+                    $return = is_array($selected) && count($selected) > 0 ? $selected : false;
+                    
+                    return $return;
+                }
+                
+                $selectedProdutosRelacionados = get_relacionados($idInternaProduto);
+                
+                if($selectedProdutosRelacionados != false){
+                    $vitrineProdutos[0] = new VitrineProdutos("carrossel", 15, "COMPRE JUNTO COM DESCONTO");
+                    $vitrineProdutos[0]->montar_vitrine($selectedProdutosRelacionados);
+                }
+                
             ?>
         </section>
         <style>
@@ -699,9 +725,7 @@
             .section-bottom .display-paineis{
                 position: relative;
                 width: 90%;
-                height: 55vh;
                 margin: 0 auto;
-                margin-top: 40px;
                 -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
                 -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
                 box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
@@ -732,15 +756,6 @@
             .section-bottom .display-paineis .descricao{
                 text-align: justify;
                 color: #6d6d6d;
-            }
-            .section-bottom .display-paineis table{
-                margin: 0 auto;
-            }
-            .section-bottom .display-paineis thead{
-                text-align: center;
-            }
-            .section-bottom .display-paineis td{
-                padding: 0px 20px;
             }
             .section-bottom .display-paineis .background-loading{
                 position: absolute;
@@ -796,7 +811,7 @@
                 width: calc(100% - 80px);
                 height: calc(50vh - 80px);
                 padding: 40px;
-                z-index: 50;
+                z-index: 0;
                 text-align: left;
                 top: 100%;
                 left: 0;
@@ -815,6 +830,21 @@
                 display: block;
                 visibility: visible;
                 opacity: 1;
+            }
+            .section-bottom .tabela-especificacoes{
+                width: 60%;
+                margin: 0px;
+            }
+            .section-bottom .tabela-especificacoes tbody td{
+                background-color: #fafafa;
+                padding: 8px;
+                transition: .2s;
+                color: #555;
+            }
+            .section-bottom .tabela-especificacoes tbody td:hover{
+                background-color: #eee;
+                color: #333;
+                font-weight: bold;
             }
         </style>
         <script>
@@ -856,22 +886,21 @@
                     ?>
                 </div>
                 <div class="painel" id="infoProdutoDiv2">
+                    <h3 class="info-titulo">Mais informações</h3>
                     <?php
                         $infoEspecificacoesTecnicas = $produto->get_especificacoes_produto();
                         if(is_array($infoEspecificacoesTecnicas) && count($infoEspecificacoesTecnicas) > 0){
-                            echo "<table>";
-                            echo "<thead>";
-                            echo "<th>Titulo</th>";
-                            echo "<th>Descricao</th>";
-                            echo "</thead>";
-                            foreach($infoEspecificacoesTecnicas as $id => $info){
-                                $titulo = $info["titulo"];
-                                $decricao = $info["descricao"];
-                                echo "<tr>";
-                                echo "<td>$titulo</td>";
-                                echo "<td>$decricao</td>";
-                                echo "</tr>";
-                            }
+                            echo "<table class='tabela-especificacoes'>";
+                                echo "<tbody>";
+                                foreach($infoEspecificacoesTecnicas as $id => $info){
+                                    $titulo = $info["titulo"];
+                                    $decricao = $info["descricao"];
+                                    echo "<tr>";
+                                        echo "<td>$titulo</td>";
+                                        echo "<td>$decricao</td>";
+                                    echo "</tr>";
+                                }
+                                echo "</tbody>";
                             echo "</table>";
                         }else{
                             echo "Nenhuma especificação foi encontrada";
