@@ -35,9 +35,8 @@
                 width: 100%;
             }
             .main-content .box .breadcrumb{
-                position: absolute;
-                bottom: 5vw;
-                left: 10vw;
+                width: 80%;
+                margin: 5vh auto;
                 color: #111;
                 font-size: 0.8vw;
             }
@@ -46,10 +45,10 @@
                 text-decoration: none;
             }
             .main-content .display{
-                width: 75vw;
-                margin: 10vh auto;
+                width: 80%;
                 color: #aaa;
-                text-align: center;
+                margin: 0 auto;
+                text-align: justify;
             }
         </style>
         <!--END PAGE CSS-->
@@ -109,7 +108,9 @@
                         echo "</div>";  
                         echo "<div class='display'>";
                             if($video){
+                                echo "<center>";
                                 echo $video;
+                                echo "</center";
                             }
                             echo "<article>$descricaoLonga</article>";
                         echo "</div>";

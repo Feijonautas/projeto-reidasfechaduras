@@ -87,7 +87,7 @@
 }
 .vitrine-standard .display-produtos .box-produto .call-to-action{
     display: block;
-    width: 100px;
+    width: 100%;
     text-decoration: none;
     text-align: center;
     font-size: 14px;
@@ -227,7 +227,8 @@
 }
 .vitrine-categorias .box-categoria img, .vitrine-categorias .box-categoria-dupla img{
     width: 100%;
-    margin: 0px 0px 20px 0px;
+    display: block;
+    margin: 0px 0px 0px 0px;
     cursor: pointer;
 }
 .vitrine-categorias .call-to-action{

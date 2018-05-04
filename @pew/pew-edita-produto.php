@@ -802,12 +802,12 @@
                 $nomeProduto = $infoProduto["nome"];
                 $precoProduto = $infoProduto["preco"];
                 $precoProduto = $pew_functions->custom_number_format($precoProduto);
+                $precoAtivo = $infoProduto["preco_ativo"];
                 $precoPromocaoProduto = $infoProduto["preco_promocao"];
                 $precoPromocaoProduto = $pew_functions->custom_number_format($precoPromocaoProduto);
+                $promocaoAtiva = $infoProduto["promocao_ativa"];
                 $descontoRelacionado = $infoProduto["desconto_relacionado"];
                 $descontoRelacionado = $pew_functions->custom_number_format($descontoRelacionado);
-                $precoAtivo = $infoProduto["preco_ativo"];
-                $promocaoAtiva = $infoProduto["promocao_ativa"];
                 $marcaProduto = $infoProduto["marca"];
                 $idCorProduto = $infoProduto["id_cor"];
                 $estoqueProduto = $infoProduto["estoque"];
@@ -882,7 +882,7 @@
             <form id="formAtualizaProduto" name="formulario_cadastro" method="post" action="pew-update-produto.php" enctype="multipart/form-data">
                 <input type="hidden" name="id_produto" value="<?php echo $idProduto;?>" id="idProduto">
                 <!--LINHA 1-->
-                <div class="label xsmall">
+                <div class="label medium">
                     <h2 class='label-title'>Nome do Produto</h2>
                     <input type="text" name="nome" id="nome" placeholder="Produto" class="label-input" value="<?php echo $nomeProduto;?>">
                 </div>
@@ -898,7 +898,7 @@
                             }
                         ?>
                     </select>
-                </div>
+                </div>  
                 <div class="label xsmall">
                     <h2 class='label-title'>Marca</h2>
                     <select name="marca" class="label-input">
@@ -956,13 +956,13 @@
                     <input type="number" step="any" name="preco" id="preco" placeholder="Preço" class="label-input" style="margin-top: 10px;" value="<?php echo $precoProduto;?>">
                 </div>
                 <div class="label xsmall">
-                    <h2 class='label-title'>Preço ativo</h2>
+                    <h2 class='label-title'>Status Preco</h2>
                     <select name="preco_ativo" class="label-input">
                         <?php
                             $possibleStatus = array(0, 1);
                             foreach($possibleStatus as $selectStatusPromocao){
                                 $nameStatus = $selectStatusPromocao == 1 ? "Ativa" : "Inativa";
-                                $selected = $selectStatusPromocao == $promocaoAtiva ? "selected" : "";
+                                $selected = $selectStatusPromocao == $precoAtivo ? "selected" : "";
                                 echo "<option value='$selectStatusPromocao' $selected>$nameStatus</option>";
                             }
                         ?>

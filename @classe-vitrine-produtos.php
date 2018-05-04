@@ -63,6 +63,7 @@
                     $qtdParcelas = 6;
                     $txtParcelas = $qtdParcelas."x";
                     $preco = $infoProduto["preco"];
+                    $precoAtivo = $infoProduto["preco_ativo"] == 1 ? true : false; 
                     $precoPromocao = $infoProduto["preco_promocao"];
                     $promoAtiva = $precoPromocao > 0 && $precoPromocao < $preco ? true : false;
                     $precoParcela = $promoAtiva == true ? $precoPromocao / $qtdParcelas : $preco / $qtdParcelas;
@@ -74,8 +75,10 @@
                     echo "<div class='box-produto'>";
                         echo "<a href='$urlProduto'><img src='$dirImagensProdutos/$srcImagem' title='$nome' alt='$nome - $nomeLoja'></a>";
                         echo "<a href='$urlProduto' class='title-link'><h3 class='titulo-produto' title='$nome'>$nomeEllipses</h3></a>";
-                        echo "<h4 class='preco-produto'>$priceField ou <span class='view-parcelas'>$txtParcelas R$". number_format($precoParcela, 2, ",", ".") ."</span></h4>";
-                        echo "<a href='$urlProduto' class='call-to-action'>SOLICITAR</a>";
+                        if($precoAtivo){
+                            echo "<h4 class='preco-produto'>$priceField ou <span class='view-parcelas'>$txtParcelas R$". number_format($precoParcela, 2, ",", ".") ."   </span></h4>";
+                        }
+                        echo "<a href='$urlProduto' class='call-to-action'>SOLICITAR ORÇAMENTO</a>";
                         echo "<div class='display-cores'>";
                             if(is_array($infoCoresRelacionadas) and count($infoCoresRelacionadas) > 0){
                                 foreach($infoCoresRelacionadas as $id => $info){
@@ -131,6 +134,7 @@
                     foreach($arrayProdutos as $idProduto){
                         if($ctrlProdutos < $this->limite_produtos){
                             $produto = new Produtos();
+                            
                             $idProduto = $produto->query_produto("status = 1 and id = '$idProduto'");
                             if($idProduto != false){
                                 listar_produto($idProduto);
@@ -284,11 +288,14 @@
                     $multiplicador = $intPorcentoDesconto * 0.01;
                     $preco = $infoProduto["preco"];
                     $precoPromocao = $infoProduto["preco_promocao"];
+                    $promocaoAtiva = $infoProduto["promocao_ativa"] == 1 ? true : false;
                     
-                    $promoAtiva = $precoPromocao > 0 && $precoPromocao < $preco ? true : false;
+                    $promoAtiva = $precoPromocao > 0 && $precoPromocao < $preco && $promocaoAtiva == true ? true : false;
                     $precoParcela = $promoAtiva == true ? $precoPromocao / $qtdParcelas : $preco / $qtdParcelas;
                     
                     if($promoAtiva){
+                        $preco = $precoPromocao;
+                        
                         $desconto = $precoPromocao * $multiplicador;
                         $precoCompreJunto = $preco - $desconto;
                     }else{
@@ -299,13 +306,14 @@
                     $urlProduto = "interna-produto.php?id_produto=$idProduto";
                     /*END VARIAVEIS DO PRODUTO*/
                     
-
                     /*DISPLAY DO PRODUTO*/
                     echo "<div class='box-produto'>";
                         echo "<div class='promo-tag'>-$intPorcentoDesconto%</div>";
                         echo "<a href='$urlProduto'><img src='$dirImagensProdutos/$srcImagem' title='$nome' alt='$nome - $nomeLoja'></a>";
                         echo "<a href='$urlProduto' class='title-link'><h3 class='titulo-produto' title='$nome'>$nomeEllipses</h3></a>";
-                        echo "<h4 class='preco-produto'>$priceField ou <span class='view-parcelas'>$txtParcelas R$". number_format($precoParcela, 2, ",", ".") ."</span></h4>";
+                        if($precoAtivo){
+                        }
+                            echo "<h4 class='preco-produto'>$priceField ou <span class='view-parcelas'>$txtParcelas R$". number_format($precoParcela, 2, ",", ".") ."   </span></h4>";
                         echo "<a class='call-to-action botao-add-compre-junto' carrinho-id-produto='$idProduto'>Adicionar</a>";
                         echo "<div class='display-cores'>";
                             if(is_array($infoCoresRelacionadas) and count($infoCoresRelacionadas) > 0){

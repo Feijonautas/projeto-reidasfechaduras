@@ -963,7 +963,7 @@
                     $descontoRelacionado = $infoProduto["desconto_relacionado"];
                     $descontoRelacionado = $pew_functions->custom_number_format($descontoRelacionado);
                     $promocaoAtiva = $infoProduto["promocao_ativa"];
-                    $precoAtivo = $infoProduto["preco_ativo"];
+                    $precoAtivo = $infoProduto["prec_ativo"];
                     $marcaProduto = $infoProduto["marca"];
                     $estoqueProduto = $infoProduto["estoque"];
                     $estoqueBaixoProduto = $infoProduto["estoque_baixo"];
@@ -1058,12 +1058,12 @@
         <section class="conteudo-painel">
             <form id="formCadastraProduto" action="pew-grava-produto.php" method="post" enctype="multipart/form-data">
                 <!--LINHA 1-->
-                <div class="label xsmall">
+                <div class="label medium">
                     <h2 class='label-title'>Nome do Produto</h2>
                     <input type="text" name="nome" id="nome" placeholder="Produto" class="label-input" value="<?php echo $nomeProduto;?>">
                 </div>
                 <div class="label xsmall">
-                    <h2 class='label-title'>Status</h2>
+                    <h2 class='label-title'>Status Produto</h2>
                     <select name="status" class="label-input">
                         <?php
                             $possibleStatus = array(0, 1);
@@ -1128,17 +1128,30 @@
                 <br class="clear">
                 <!--LINHA 3-->
                 <div class="label xsmall">
+                    <h2 class='label-title'>Status</h2>
+                    <select name="status" class="label-input">
+                        <?php
+                            $possibleStatus = array(0, 1);
+                            foreach($possibleStatus as $selectStatus){
+                                $nameStatus = $selectStatus == 1 ? "Ativo" : "Inativo";
+                                $selected = $selectStatus == $statusProduto ? "selected" : "";
+                                echo "<option value='$selectStatus' $selected>$nameStatus</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
+                <div class="label xsmall">
                     <h2 class='label-title'>Preço</h2>
                     <input type="number" step="any" name="preco" id="preco" placeholder="Preço" class="label-input" style="margin-top: 10px;" value="<?php echo $precoProduto;?>">
                 </div>
                 <div class="label xsmall">
-                    <h2 class='label-title'>Status Preço</h2>
+                    <h2 class='label-title'>Status Preco</h2>
                     <select name="preco_ativo" class="label-input">
                         <?php
                             $possibleStatus = array(0, 1);
                             foreach($possibleStatus as $selectStatusPromocao){
-                                $nameStatus = $selectStatusPromocao == 1 ? "Ativo" : "Inativo";
-                                $selected = $selectStatusPromocao == $promocaoAtiva ? "selected" : "";
+                                $nameStatus = $selectStatusPromocao == 1 ? "Ativa" : "Inativa";
+                                $selected = $selectStatusPromocao == $precoAtivo ? "selected" : "";
                                 echo "<option value='$selectStatusPromocao' $selected>$nameStatus</option>";
                             }
                         ?>

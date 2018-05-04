@@ -18,7 +18,7 @@
             $this->verify_session();
             $this->valor_total = 0;
             $this->status = "vazio";
-            $this->ctrl_produtos = count($_SESSION["carrinho"]["itens"]) > 0 ? count($_SESSION["carrinho"]["itens"]) : 0;
+            $this->ctrl_produtos = count($_SESSION["carrinho_orcamento"]["itens"]) > 0 ? count($_SESSION["carrinho_orcamento"]["itens"]) : 0;
             
             global $pew_functions, $globalVars;
             $this->classe_produtos = new Produtos();
@@ -27,21 +27,29 @@
             $this->set_token();
         }
         
+        function conexao(){
+            return $this->global_vars["conexao"];
+        }
+        
+        function rand_token(){
+            return "CTK" . substr(md5(time()), 0, 10);
+        }
+        
         function set_token(){
-            if(!isset($_SESSION["carrinho"]["token"]) || $_SESSION["carrinho"]["token"] == null){
-                $_SESSION["carrinho"]["token"] = "CTK" . substr(md5(time()), 0, 10);
+            if(!isset($_SESSION["carrinho_orcamento"]["token"]) || $_SESSION["carrinho_orcamento"]["token"] == null){
+                $_SESSION["carrinho_orcamento"]["token"] = $this->rand_token();
             }
         }
         
         function verify_session(){
             if(!isset($_SESSION)) session_start();
             
-            if(!isset($_SESSION["carrinho"])){
-                $_SESSION["carrinho"] = array();   
-                $_SESSION["carrinho"]["itens"] = array();
+            if(!isset($_SESSION["carrinho_orcamento"])){
+                $_SESSION["carrinho_orcamento"] = array();   
+                $_SESSION["carrinho_orcamento"]["itens"] = array();
             }
             
-            if(!isset($_SESSION["carrinho"]["token"]) || $_SESSION["carrinho"]["token"] == null){
+            if(!isset($_SESSION["carrinho_orcamento"]["token"]) || $_SESSION["carrinho_orcamento"]["token"] == null){
                 $this->set_token();
             }
         }
@@ -62,21 +70,22 @@
                 $precoFinal = $promocaoAtiva == 1 && $precoPromocao < $precoBruto && $precoPromocao > 0 ? $precoPromocao : $precoBruto;
                 $this->verify_session();
                 
-                function set_produto($id, $nome, $preco, $estoque, $quantidade, $comprimento, $largura, $altura, $peso, $count){
-                    $_SESSION["carrinho"]["itens"][$count]["id"] = $id;
-                    $_SESSION["carrinho"]["itens"][$count]["nome"] = $nome;
-                    $_SESSION["carrinho"]["itens"][$count]["preco"] = $preco;
-                    $_SESSION["carrinho"]["itens"][$count]["estoque"] = $estoque;
-                    $_SESSION["carrinho"]["itens"][$count]["quantidade"] = $quantidade;
-                    $_SESSION["carrinho"]["itens"][$count]["comprimento"] = $comprimento;
-                    $_SESSION["carrinho"]["itens"][$count]["largura"] = $largura;
-                    $_SESSION["carrinho"]["itens"][$count]["altura"] = $altura;
-                    $_SESSION["carrinho"]["itens"][$count]["peso"] = $peso;
+                function set_produto($id, $nome, $preco, $precoAtivo, $estoque, $quantidade, $comprimento, $largura, $altura, $peso, $count){
+                    $_SESSION["carrinho_orcamento"]["itens"][$count]["id"] = $id;
+                    $_SESSION["carrinho_orcamento"]["itens"][$count]["nome"] = $nome;
+                    $_SESSION["carrinho_orcamento"]["itens"][$count]["preco"] = $preco;
+                    $_SESSION["carrinho_orcamento"]["itens"][$count]["preco_ativo"] = $precoAtivo;
+                    $_SESSION["carrinho_orcamento"]["itens"][$count]["estoque"] = $estoque;
+                    $_SESSION["carrinho_orcamento"]["itens"][$count]["quantidade"] = $quantidade;
+                    $_SESSION["carrinho_orcamento"]["itens"][$count]["comprimento"] = $comprimento;
+                    $_SESSION["carrinho_orcamento"]["itens"][$count]["largura"] = $largura;
+                    $_SESSION["carrinho_orcamento"]["itens"][$count]["altura"] = $altura;
+                    $_SESSION["carrinho_orcamento"]["itens"][$count]["peso"] = $peso;
                 }
                 
                 $is_adicionado = false;
                 $indice_item = null;
-                foreach($_SESSION["carrinho"]["itens"] as $indice => $item){
+                foreach($_SESSION["carrinho_orcamento"]["itens"] as $indice => $item){
                     $idItem = $item["id"];
                     if($idItem == $idProduto){
                         $is_adicionado = true;
@@ -84,18 +93,17 @@
                     }
                 }
                 
-                
                 if($infoProduto["estoque"] > 0 && $quantidade <= $infoProduto["estoque"] && $is_adicionado == false){
-                    set_produto($infoProduto["id"], $infoProduto["nome"], $precoFinal, $infoProduto["estoque"], $quantidade, $infoProduto["comprimento"], $infoProduto["largura"], $infoProduto["altura"], $infoProduto["peso"], $this->ctrl_produtos);
+                    set_produto($infoProduto["id"], $infoProduto["nome"], $precoFinal, $infoProduto["preco_ativo"], $infoProduto["estoque"], $quantidade, $infoProduto["comprimento"], $infoProduto["largura"], $infoProduto["altura"], $infoProduto["peso"], $this->ctrl_produtos);
                     $this->ctrl_produtos++;
                     return "true";
                     
                 }else if($is_adicionado == true && $quantidade <= $infoProduto["estoque"]){
-                    set_produto($infoProduto["id"], $infoProduto["nome"], $precoFinal, $infoProduto["estoque"], $quantidade, $infoProduto["comprimento"], $infoProduto["largura"], $infoProduto["altura"], $infoProduto["peso"], $indice_item);
+                    set_produto($infoProduto["id"], $infoProduto["nome"], $precoFinal, $infoProduto["preco_ativo"], $infoProduto["estoque"], $quantidade, $infoProduto["comprimento"], $infoProduto["largura"], $infoProduto["altura"], $infoProduto["peso"], $indice_item);
                     return "true";
                     
                 }else if($infoProduto["estoque"] > 0){
-                    set_produto($infoProduto["id"], $infoProduto["nome"], $precoFinal, $infoProduto["estoque"], $infoProduto["estoque"], $infoProduto["comprimento"], $infoProduto["largura"], $infoProduto["altura"], $infoProduto["peso"], $indice_item);
+                    set_produto($infoProduto["id"], $infoProduto["nome"], $precoFinal, $infoProduto["preco_ativo"], $infoProduto["estoque"], $infoProduto["estoque"], $infoProduto["comprimento"], $infoProduto["largura"], $infoProduto["altura"], $infoProduto["peso"], $indice_item);
                     return $infoProduto["estoque"];
                 }else{
                     return "sem_estoque";
@@ -110,10 +118,10 @@
         function remover_produto($idRemover){
             $this->verify_session();
             
-            foreach($_SESSION["carrinho"]["itens"] as $indice => $item){
+            foreach($_SESSION["carrinho_orcamento"]["itens"] as $indice => $item){
                 $id = $item["id"];
                 if($idRemover == $id){
-                    unset($_SESSION["carrinho"]["itens"][$indice]);
+                    unset($_SESSION["carrinho_orcamento"]["itens"][$indice]);
                     $this->reordenar_carrinho();
                 }
             }
@@ -128,16 +136,15 @@
             $this->verify_session();
             $carrinho = array();
             $carrinho["itens"] = array();
-            $carrinho["token"] = $_SESSION["carrinho"]["token"];
-            
+            $carrinho["token"] = $_SESSION["carrinho_orcamento"]["token"];
             
             $ctrl = 0;
             
-            foreach($_SESSION["carrinho"]["itens"] as $itens){
+            
+            foreach($_SESSION["carrinho_orcamento"]["itens"] as $itens){
                 $idProduto = $itens["id"];
                 $selectedRelacionados = $this->classe_produtos->get_relacionados_produto($idProduto, "id_relacionado = '$idProduto'");
                 $is_compre_junto = false;
-                
                 
                 $carrinho["itens"][$ctrl] = $itens;
                 
@@ -150,7 +157,7 @@
                         $ctrlInterno++;
                     }
                     
-                    foreach($_SESSION["carrinho"]["itens"] as $index => $valor){
+                    foreach($_SESSION["carrinho_orcamento"]["itens"] as $index => $valor){
                         foreach($selected as $index => $infoRel){
                             if($valor["id"] == $infoRel["id_produto"]){
                                 $is_compre_junto = true;
@@ -173,12 +180,12 @@
         
         function reset_carrinho(){
             $this->verify_session();
-            unset($_SESSION["carrinho"]);
+            unset($_SESSION["carrinho_orcamento"]);
         }
         
         function reordenar_carrinho(){
             $this->verify_session();
-            $carrinho = $_SESSION["carrinho"]["itens"];
+            $carrinho = $_SESSION["carrinho_orcamento"]["itens"];
             
             $reorderedCarrinho = array();
             $ctrl = 0;
@@ -188,9 +195,53 @@
                 $ctrl++;
             }
             
-            $_SESSION["carrinho"]["itens"] = $reorderedCarrinho;
+            $_SESSION["carrinho_orcamento"]["itens"] = $reorderedCarrinho;
             
             return true;
+        }
+        
+        function rebuild_carrinho($token){
+            $tabela_carrinhos = $this->global_vars["tabela_carrinhos"];
+            $tabela_orcamentos = $this->global_vars["tabela_orcamentos"];
+            $this->verify_session();
+            
+            $total = $this->pew_functions->contar_resultados($tabela_carrinhos, "token_carrinho = '$token'");
+            if($total > 0){
+                $carrinho = array();
+                $carrinho["token"] = $this->rand_token();
+                $carrinho["itens"] = array();
+                $ctrlProdutos = 0;
+                
+                $is_orcamento = $this->pew_functions->contar_resultados($tabela_orcamentos, "token_carrinho = '$token'") > 0 ? true : false;
+                
+                $cls_produtos = new Produtos();
+                
+                $query = mysqli_query($this->conexao(), "select * from $tabela_carrinhos where token_carrinho = '$token'");
+                
+                while($array = mysqli_fetch_array($query)){
+                    if($cls_produtos->montar_produto($array["id_produto"])){
+                        $infoProduto = $cls_produtos->montar_array();
+                        
+                        $carrinho["itens"][$ctrlProdutos] = array();
+                        $carrinho["itens"][$ctrlProdutos]["id"] = $array["id_produto"];
+                        $carrinho["itens"][$ctrlProdutos]["nome"] = $array["nome_produto"];
+                        $carrinho["itens"][$ctrlProdutos]["preco"] = $array["preco_produto"];
+                        $carrinho["itens"][$ctrlProdutos]["preco_ativo"] = $infoProduto["preco_ativo"];
+                        $carrinho["itens"][$ctrlProdutos]["estoque"] = $infoProduto["estoque"];
+                        $carrinho["itens"][$ctrlProdutos]["quantidade"] = $array["quantidade_produto"];
+                        $carrinho["itens"][$ctrlProdutos]["comprimento"] = $infoProduto["comprimento"];
+                        $carrinho["itens"][$ctrlProdutos]["largura"] = $infoProduto["largura"];
+                        $carrinho["itens"][$ctrlProdutos]["altura"] = $infoProduto["altura"];
+                        $carrinho["itens"][$ctrlProdutos]["peso"] = $infoProduto["peso"];
+                        $ctrlProdutos++;
+                    }
+                }
+                
+                return $carrinho;
+                
+            }else{
+                return false;
+            }
         }
     }
 
@@ -230,20 +281,24 @@
                 $cls_carrinho = new Carrinho();
                 $carrinho = $cls_carrinho->get_carrinho();
                 $totalCarrinho = 0;
+                
                 if(count($carrinho["itens"]) > 0){
                     foreach($carrinho["itens"] as $item){
                         $id = $item["id"];
                         $titulo = $item["nome"];
                         $preco = $item["preco"];
+                        $precoAtivo = $item["preco_ativo"] == "1" ? true : "style='display: none;'";
                         $quantidade = $item["quantidade"];
                         $total = $preco * $quantidade;
                         $total = $pew_functions->custom_number_format($total);
-                        $totalCarrinho += $total;
+                        if($item["preco_ativo"] == true){
+                            $totalCarrinho += $total;
+                        }
                         $url = "interna-produto.php?id_produto=$id";
                         echo "<div class='cart-item'>";
                             echo "<span class='item-quantity'>{$quantidade}x</span>";
                             echo "<a href='$url' class='item-name'>$titulo</a>";
-                            echo "<span class='item-price'>R$ $total</span>";
+                            echo "<span class='item-price' $precoAtivo>R$ $total</span>";
                             echo "<button class='remove-button' title='Remover este item' carrinho-id-produto='$id'><i class='fas fa-times'></i></button>";
                         echo "</div>";
                     }
@@ -253,7 +308,7 @@
                 echo "</div>";
                 echo "<div class='cart-bottom'>";
                     echo "<span class='total-price'>TOTAL: <span class='price-view'>R$ {$pew_functions->custom_number_format($totalCarrinho)}</span></span><br>";
-                    echo "<a href='finalizar-compra.php' class='finalize-button'>SOLICITAR ORÇAMENTO</a>";
+                    echo "<a href='finalizar-orcamento.php' class='finalize-button'>Solicitar Orçamento</a>";
                 echo "</div>";
         }else if($acao == "remover_produto"){
             $idProduto = isset($_POST["id_produto"]) ? (int)$_POST["id_produto"] : 0;

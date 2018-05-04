@@ -1,5 +1,7 @@
 <?php
 
+    $diretorioAPI = isset($_POST["diretorio_db"]) ? str_replace(" ", "", $_POST["diretorio_db"]) : "../@pew/";
+
     $console = isset($_POST["console"]) && $_POST["console"] == true ? true : false;
     $codigoReferencia = isset($_POST["codigo_referencia"]) ? $_POST["codigo_referencia"] : null;
     if($codigoReferencia != null){
@@ -32,22 +34,24 @@
         curl_close($curl);
 
         //echo $xml; exit; // Depuracao caso precise
-
+        
         $xml = simplexml_load_string($xml);
         
-        $obj = $xml->transactions->transaction;
-        
-        $referencia = $obj->reference;
-        $codigoTransacao = $obj->code;
-        $codigoPagamento = $obj->paymentMethod->type;
-        $statusPagseguro = $obj->status;
-        
-        // CONFIGURAVEL DE ACORDO COM O SISTEMA
-        require "../@pew/pew-system-config.php";
-        require "../@pew/@include-global-vars.php";
-        global $globalVars;
-        $tabela_pedidos = $globalVars{"tabela_pedidos"};
-        
-        mysqli_query($conexao, "update $tabela_pedidos set codigo_transacao = '$codigoTransacao', codigo_pagamento = '$codigoPagamento', status = '$statusPagseguro' where referencia = '$referencia'");
+        if(is_object($xml)){
+            $obj = $xml->transactions->transaction;
+
+            $referencia = $obj->reference;
+            $codigoTransacao = $obj->code;
+            $codigoPagamento = $obj->paymentMethod->type;
+            $statusPagseguro = $obj->status;
+
+            // CONFIGURAVEL DE ACORDO COM O SISTEMA
+            require "{$diretorioAPI}pew-system-config.php";
+            require "{$diretorioAPI}@include-global-vars.php";
+            global $globalVars;
+            $tabela_pedidos = $globalVars{"tabela_pedidos"};
+
+            mysqli_query($conexao, "update $tabela_pedidos set codigo_transacao = '$codigoTransacao', codigo_pagamento = '$codigoPagamento', status = '$statusPagseguro' where referencia = '$referencia'");
+        }
         
     }

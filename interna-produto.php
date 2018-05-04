@@ -15,8 +15,10 @@
     /*END DEFAULT VARS*/
 
     $idInternaProduto = isset($_GET["id_produto"]) ? (int)$_GET["id_produto"] : 0;
-    $totalProduto = $pew_functions->contar_resultados($tabela_produtos, "id = '$idInternaProduto'");
+
     $produto = new Produtos();
+
+    $totalProduto = $produto->query_produto("id = '$idInternaProduto'");
     $produto->montar_produto($idInternaProduto);
     $infoProduto = $produto->montar_array();
 
@@ -267,8 +269,8 @@
                 border: none;
                 color: #fff;
                 background-color: #408122;
-                font-size: 24px;
-                width: 170px;
+                font-size: 22px;
+                width: 300px;
                 height: 40px;
                 transition: .2s;
                 cursor: pointer;
@@ -560,7 +562,7 @@
             $estoqueProduto = $infoProduto["estoque"];
             $imagensProduto = $infoProduto["imagens"];
             $urlVideo = $infoProduto["url_video"];
-                
+            
             $descricaoProduto = $infoProduto["descricao_longa"];
             /*INFO PRODUTO*/
                 
@@ -589,8 +591,8 @@
             }
 
             $viewDisponibilidadadeField = $estoqueProduto == 0 ? "<div class='view-disponibilidade indisponivel'><span class='icone-disponibilidade'><i class='fas fa-times'></i></span> SEM ESTOQUE</div>" : "<div class='view-disponibilidade disponivel'><span class='icone-disponibilidade'><i class='fas fa-check'></i></span> EM ESTOQUE</div>";
-
-            $viewBotaoComprar = $estoqueProduto == 0 ? "<button class='botao-comprar sem-estoque'>SOLICITAR</button>" : "<input type='number' class='quantidade-produto' value=1 placeholder='Qtd'><button  class='botao-comprar' id='addProdutoCarrinho' carrinho-id-produto='$idInternaProduto'>SOLICITAR</button>";
+            
+            $viewBotaoComprar = $estoqueProduto == 0 ? "<button class='botao-comprar sem-estoque'>SOLICITAR ORÇAMENTO</button>" : "<input type='number' class='quantidade-produto' value=1 placeholder='Qtd'><button  class='botao-comprar' id='addProdutoCarrinho' carrinho-id-produto='$idInternaProduto'>SOLICITAR ORÇAMENTO</button>";
             /*END HTML VIEW*/
                 
             $iconArrow = "<i class='fas fa-angle-right icon'></i>";
@@ -638,14 +640,17 @@
                     if($precoAtivo){
                         echo $viewPriceField;
                         echo $viewParcelasField;
+                    }else{
+                        echo "<br>";
                     }
                     echo $viewDisponibilidadadeField;
+                    echo "<br>";
                     ?>
-                    <h6 style="margin: 25px 0px -15px 0px; font-weight: normal;">Outras cores</h6>
-                    <div class="display-cores">
                         <?php
                             $infoCoresRelacionadas = $produto->get_cores_relacionadas();
                             if(is_array($infoCoresRelacionadas) and count($infoCoresRelacionadas) > 0){
+                                echo "<h6 style='margin: 25px 0px -15px 0px; font-weight: normal;'>Outras cores</h6>";
+                                echo "<div class='display-cores'>";
                                 foreach($infoCoresRelacionadas as $id => $info){
                                     $idRelacao = $info["id_relacao"];
                                     $produtoRelacao = new Produtos();
@@ -665,14 +670,12 @@
                                         }
                                     }
                                 }
+                            echo "</div>";
                             }
                         ?>
-                    </div>
                     <div class="display-comprar">
                         <?php
-                            if($precoAtivo){
-                                echo $viewBotaoComprar;
-                            }
+                            echo $viewBotaoComprar;
                         ?>
                     </div>
                     <div class="calculo-frete">
@@ -719,7 +722,7 @@
                 $selectedProdutosRelacionados = get_relacionados($idInternaProduto);
                 
                 if($selectedProdutosRelacionados != false){
-                    $vitrineProdutos[0] = new VitrineProdutos("carrossel", 15, "COMPRE JUNTO COM DESCONTO");
+                    $vitrineProdutos[0] = new VitrineProdutos("carrossel", 15, "PRODUTOS RELACIONADOS");
                     $vitrineProdutos[0]->montar_vitrine($selectedProdutosRelacionados);
                 }
                 

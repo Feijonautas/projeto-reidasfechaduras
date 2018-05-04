@@ -30,7 +30,7 @@
     if($calcular){
         require_once "calcular-frete.php";
         
-        $baseSite = "https://www.efectusdigital.com.br/bolsas/";
+        $baseSite = "https://www.efectusdigital.com.br/reidasfechaduras/";
         /*$baseSite = "localhost/xampp/github/ecommerce_bolsas_em_couro/";*/
         $pastaCorreios = "frete-correios/ws-correios.php";
 

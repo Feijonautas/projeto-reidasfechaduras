@@ -10,6 +10,10 @@
 
     $navigation_title = "Contato - " . $pew_session->empresa;
     $page_title = "Gerenciamento de mensagens contato";
+
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
 <html>
@@ -79,6 +83,7 @@
         <?php
             // STANDARD REQUIRE
             require_once "@include-body.php";
+            require_once "@classe-system-functions.php";
             if(isset($block_level) && $block_level == true){
                 $pew_session->block_level();
             }
@@ -86,13 +91,14 @@
         <!--PAGE CONTENT-->
         <h1 class="titulos"><?php echo $page_title; ?></h1>
         <section class="conteudo-painel">
+            sasasas
             <table class="table-padrao" cellspacing="0">
             <?php
                 $tabela_contatos = $pew_db->tabela_contatos;
                 if(!isset($_GET["id_contato"])){
                     header("location: pew-contatos.php?msg=Nenhum resultado encontrado");
                 }else{
-                    $idContato = pew_string_format($_GET["id_contato"]);
+                    $idContato = $pew_functions->url_format($_GET["id_contato"]);
                 }
                 $contarContato = mysqli_query($conexao, "select count(id) as total_contato from $tabela_contatos where id = '$idContato'");
                 $contagemProposta = mysqli_fetch_assoc($contarContato);
@@ -114,7 +120,7 @@
                         $telefone = $contatos["telefone"];
                         $assunto = $contatos["assunto"];
                         $mensagem = $contatos["mensagem"];
-                        $data = inverterData(substr($contatos["data"], 0, 10));
+                        $data = $pew_functions->inverter_data(substr($contatos["data"], 0, 10));
                         $status = $contatos["status"];
                         switch($status){
                             case 1:
@@ -140,20 +146,22 @@
                     echo "</tbody>";?>
             </table>
             <br><br>
-            <label class="label-medium">
+            <div class="small ">
                 <select id="statusContato">
                     <option value="1">Manter Contato</option>
                     <option value="2">Finalizado</option>
                     <option value="3">Cancelado</option>
                     <option value="0">Fazer primeiro contato</option>
                 </select>
-                <input type="button" class="btn-submit botao-acao" data-id-contato='<?php echo $idContato; ?>' data-acao="atualizar" value="Atualizar Status">
-            </label>
-            <label class="label-small">
-                <button class="btn-excluir botao-acao" data-id-contato='<?php echo $idContato; ?>' data-acao="excluir">
+            </div>
+            <div class="small">
+                <input type="button" class="btn-submit botao-acao label-input" data-id-contato='<?php echo $idContato; ?>' data-acao="atualizar" value="Atualizar Status">
+            </div>
+            <div class="small">
+                <button class="btn-excluir botao-acao label-input" data-id-contato='<?php echo $idContato; ?>' data-acao="excluir">
                     <i class="fa fa-trash" aria-hidden="true"></i> Excluir Mensagem
                 </button>
-            </label>
+            </div>
             <br style="clear: both;">
             <?php
                 }else{

@@ -6,8 +6,8 @@
         private $sku;
         private $nome;
         private $preco;
-        private $preco_promocao;
         private $preco_ativo;
+        private $preco_promocao;
         private $promocao_ativa;
         private $desconto_relacionado;
         private $marca;
@@ -152,6 +152,60 @@
             return $selectedProdutos;
         }
         
+        function buscar($condicao){
+            $tabela_produtos = $this->global_vars["tabela_produtos"];
+            
+            global $selectedFinal, $countFinal;
+            $selectedFinal = array();
+            $countFinal = 0;
+            
+            $condicao = str_replace("where", "", $condicao);
+            $condicao = addslashes($condicao);
+            
+            $selectedDepartamentos = $this->search_departamentos_produtos("departamento like '%$condicao%' or ref like '%$condicao%'");
+            $selectedCategorias = $this->search_categorias_produtos("categoria like '%$condicao%' or ref like '%$condicao%'");
+            $selectedSubcategorias = $this->search_subcategorias_produtos("subcategoria like '%$condicao%' or ref like '%$condicao%'");
+            
+            if(!function_exists("add")){
+                function add($idProduto){
+                    global $selectedFinal, $countFinal;
+
+                    $cls_produto = new Produtos();
+
+                    $is_ativo = $cls_produto->query_produto("id = '$idProduto' and status = 1") != false ? true : false;
+
+                    if(in_array($idProduto, $selectedFinal) != true && $is_ativo == true){
+                        $selectedFinal[$countFinal] = $idProduto;
+                        $countFinal++;
+                    }
+                }
+            }
+            
+            if(!function_exists("ler_array")){
+                function ler_array($array){
+                    if(is_array($array) && count($array) > 0){
+                        foreach($array as $index => $idProduto){
+                            add($idProduto);
+                        }
+                    }
+                }
+            }
+            
+            
+            // MAIN BUSCA
+            $strBusca = "id = '$condicao' or sku like '%$condicao%' or nome like '%$condicao%' or marca like '%$condicao%' and status = 1";
+            $query = mysqli_query($this->conexao(), "select id from $tabela_produtos where $strBusca");
+            while($info = mysqli_fetch_array($query)){
+                add($info["id"]);
+            }
+            
+            ler_array($selectedDepartamentos);
+            ler_array($selectedCategorias);
+            ler_array($selectedSubcategorias);
+            
+            return $selectedFinal;
+        }
+        
         public function montar_produto($idProduto){
             $tabela_produtos = $this->global_vars["tabela_produtos"];
             $tabela_imagens_produtos = $this->global_vars["tabela_imagens_produtos"];
@@ -163,8 +217,8 @@
                 $this->sku = $info["sku"];
                 $this->nome = $info["nome"];
                 $this->preco = $this->pew_functions->custom_number_format($info["preco"]);
+                $this->preco_ativo = $info["preco_ativo"] == 1 ? true : false;
                 $this->preco_promocao = $this->pew_functions->custom_number_format($info["preco_promocao"]);
-                $this->preco_ativo = $this->pew_functions->custom_number_format($info["preco_ativo"]);
                 $this->promocao_ativa = $this->pew_functions->custom_number_format($info["promocao_ativa"]);
                 $this->desconto_relacionado = $this->pew_functions->custom_number_format($info["desconto_relacionado"]);
                 $this->marca = $info["marca"];
@@ -194,6 +248,7 @@
                         $ctrlImagens++;
                     }
                 }
+                return true;
             }else{
                 $this->produto_montado = false;
                 return false;
@@ -429,19 +484,17 @@
                 $intPorcentoDesconto = 5;
                 $multiplicador = $intPorcentoDesconto * 0.01;
 
-                
                 if($this->promocao_ativa == 1 && $this->preco_promocao > 0 && $this->preco_promocao < $this->preco){
                     $desconto = $this->preco_promocao * $multiplicador;
                     $precoCompreJunto = $this->preco_promocao - $desconto;
-                    $retorno = array();
-                    $retorno = $precoCompreJunto;
                 }else{
                     $desconto = $this->preco * $multiplicador;
                     $precoCompreJunto = $this->preco - $desconto;
-                    $retorno = array();
-                    $retorno["valor"] = $precoCompreJunto;
-                    $retorno["desconto"] = $intPorcentoDesconto;
                 }
+                
+                $retorno = array();
+                $retorno["valor"] = $precoCompreJunto;
+                $retorno["desconto"] = $intPorcentoDesconto;
                 
                 return $retorno;
             }else{
@@ -462,8 +515,8 @@
                 $infoProduto["sku"] = $this->get_sku_produto();
                 $infoProduto["nome"] = $this->get_nome_produto();
                 $infoProduto["preco"] = $this->get_preco_produto();
-                $infoProduto["preco_promocao"] = $this->get_preco_promocao_produto();
                 $infoProduto["preco_ativo"] = $this->get_preco_ativo();
+                $infoProduto["preco_promocao"] = $this->get_preco_promocao_produto();
                 $infoProduto["promocao_ativa"] = $this->get_promocao_ativa();
                 $infoProduto["desconto_relacionado"] = $this->get_desconto_relacionado();
                 $infoProduto["marca"] = $this->get_marca_produto();

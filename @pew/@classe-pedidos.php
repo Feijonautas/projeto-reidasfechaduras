@@ -1,6 +1,8 @@
 <?php
     require_once "@include-global-vars.php";
 
+    $diretorioAPI = isset($_POST["diretorio"]) ? str_replace(" ", "", $_POST["diretorio"]) : "../";
+
     class Pedidos{
         private $id = 0;
         private $codigo_confirmacao = null;
@@ -65,9 +67,11 @@
                 
                 $_POST["console"] = false;
                 $_POST["codigo_referencia"] = $info["referencia"];
-                require "../pagseguro/ws-pagseguro-consulta-referencia.php"; // Retorna o $statusPagseguro
                 
-                if($statusPagseguro != $info["status"]){
+                global $diretorioAPI;
+                require "{$diretorioAPI}pagseguro/ws-pagseguro-consulta-referencia.php"; // Retorna o $statusPagseguro
+                
+                if(isset($statusPagseguro) && $statusPagseguro != $info["status"]){
                     mysqli_query($conexao, "update $tabela_pedidos set status = '$statusPagseguro' where id = '{$info["id"]}'");
                     $this->status = $statusPagseguro;
                 }
@@ -111,6 +115,7 @@
             $array["cidade"] = $this->cidade;
             $array["estado"] = $this->estado;
             $array["data_controle"] = $this->data_controle;
+            $array["valor_total"] = $this->valor_total;
             $array["status"] = $this->status;
             return $array;
         }
@@ -193,12 +198,15 @@
         function get_status_transporte_string($status){
             switch($status){
                 case 1:
-                    $str = "Enviado";
+                    $str = "Pronto para envio";
                     break;
                 case 2:
-                    $str = "Entregue";
+                    $str = "Enviado";
                     break;
                 case 3:
+                    $str = "Entregue";
+                    break;
+                case 4:
                     $str = "Cancelado";
                     break;
                 default:
@@ -255,7 +263,7 @@
             
             foreach($selectedIDs as $id){
                 $listar = $this->montar($id) == true ? true : false;
-                if($listar){
+                if($listar && !isset($_POST["box_type"])){
                     $infoProduto = $this->montar_array();
                     
                     $statusStr = $this->get_status_string($this->status);
@@ -356,7 +364,32 @@
                             echo "<button class='btn-voltar btn-voltar-info' id-pedido='infoPedido$id'>Voltar</button>";
                         echo "</div>";
                     echo "</div>";
+                }else{
+                    echo "teste";
                 }
             }
+        }
+        
+        function get_pedidos_conta($idCliente){
+            $tabela_minha_conta = $this->global_vars["tabela_minha_conta"];
+            
+            $pedidosCliente = $this->buscar_pedidos("id_cliente = '$idCliente'");
+            
+            $selected = array();
+            $count = 0;
+            
+            if($pedidosCliente != false){
+                foreach($pedidosCliente as $idPedido){
+                    if(in_array($idPedido, $selected) == false){
+                        $selected[$count] = $idPedido;
+                        $count++;
+                    }
+                }
+                
+                return $selected;
+            }else{
+                return false;
+            }
+            
         }
     }

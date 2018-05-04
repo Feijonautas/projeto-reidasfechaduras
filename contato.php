@@ -2,7 +2,7 @@
     session_start();
     $nomeEmpresa = "Rei das Fechaduras";
     $descricaoPagina = "DESCRIÇÃO MODELO ATUALIZAR...";
-    $tituloPagina = "MUDAR TITULO - $nomeEmpresa";
+    $tituloPagina = "Contato - $nomeEmpresa";
 ?>
 <!DOCTYPE html>
 <html>
@@ -87,16 +87,21 @@
 				flex-direction: column;
 				margin: 0 10px 0 10px;
 			}
-			.display-form .form input{
+			.display-form .form input,
+			.display-form .form select{
 				border-radius: 3px;
 				border: none;
 				height: 25px;
+				outline: none;
+				padding: 5px;
 			}
 			.display-form .form textarea{
 				border-radius: 3px;
 				border: none;
 				height: 100px;
 				resize: none;
+				outline: none;
+				padding: 5px;
 			}
 			.display-form .form .btn-contato{
 				align-self: center;
@@ -138,6 +143,67 @@
         <script>
             $(document).ready(function(){
                 console.log("Página carregada");
+				
+				phone_mask(".telefone-contato");
+				
+				var objFormulario = $(".formulario-contato");
+				var objNome = objFormulario.children("#nomeContato");
+				var objEmail = objFormulario.children("#emailContato");
+				var objTelefone = objFormulario.children("#telefoneContato");
+				var objAssunto = objFormulario.children("#assuntoContato");
+				var objMensagem = objFormulario.children("#mensagemContato");
+				var objEnviaContato = objFormulario.children("#btnEnviaContato");
+				var enviandoContato = false;
+				
+				function validar_dados(){
+					var nome = objNome.val();
+					var email = objEmail.val();
+					var telefone = objTelefone.val();
+					var assunto = objAssunto.val();
+					var mensagem = objMensagem.val();
+					
+					if(nome.length < 3){
+						mensagemAlerta("O campo Nome deve conter no mínimo 3 caracteres.", objNome);
+						return false;
+					}
+					
+					if(validarEmail(email) == false){
+						mensagemAlerta("O campo E-mail deve ser preenchido corretamente.", objEmail);
+						return false;
+					}
+					
+					if(telefone.length < 14){
+						mensagemAlerta("O campo Telefone deve conter no mínimo 14 caracteres.", objTelefone);
+						return false;
+					}
+					
+					if(assunto.length == 0){
+						mensagemAlerta("Selecione uma opção de assunto.", objAssunto);
+						return false;
+					}
+					
+					if(mensagem.length < 10){
+						mensagemAlerta("Sua mensagem deve conter no mínimo 10 caracteres.", objMensagem);
+						return false;
+					}
+					
+					return true;
+				}
+				
+				objFormulario.off().on("submit", function(){
+					event.preventDefault();
+					
+					if(!enviandoContato){
+						enviandoContato = true;
+						
+						if(validar_dados()){
+							objFormulario.submit();
+						}else{
+							enviandoContato = false;
+						}
+					}
+				});
+				
             });
         </script>
         <!--END PAGE JS-->
@@ -192,18 +258,24 @@
        			<div class="box-titulo">
        				<h1>Entre em Contato</h1>
        			</div>
-       			<form  class="form" method="post">
+       			<form class="form formulario-contato" method="post" action="@grava-contato.php">
        				<h1>Nome</h1>
-       				<input type="text" name="nome">
+       				<input type="text" name="nome" id="nomeContato">
        				<h1>E-mail</h1>
-       				<input type="text" name="email">
+       				<input type="text" name="email" id="emailContato">
        				<h1>Telefone</h1>
-       				<input type="text" name="telefone">
+       				<input class="telefone-contato" type="text" name="telefone" id="telefoneContato">
        				<h1>Assunto</h1>
-       				<input type="text" name="assunto">
-       				<h1>Dúvida</h1>
-       				<textarea></textarea>
-       				<input class="btn-contato" type="submit" value="Enviar">
+       				<select name="assunto" id="assuntoContato">
+       					<option value="">- Selecione -</option>
+       					<option>Sugestões</option>
+       					<option>Problemas</option>
+       					<option>Dúvidas</option>
+       					<option>Produto</option>
+       				</select>
+       				<h1>Mensagem</h1>
+       				<textarea name="mensagem" id="mensagemContato"></textarea>
+       				<input class="btn-contato" id="btnEnviaContato" type="submit" name="btn_enviar" value="Enviar">
        			</form>
        		</div>
         </div>

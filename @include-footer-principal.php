@@ -4,7 +4,7 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        background-color: #e2e2e2;
+        background-color: #d2d2d2;
         font-size: 16px;
         flex-flow: row wrap;
         overflow: hidden;
@@ -12,10 +12,11 @@
     .footer-principal .newsletter{
         width: 100%;
         display: block;
-        padding: 50px 0px 50px 0px;
+        background-color: #D2D2D2;
+        color: #002686;
+        padding: 10px;
     }
     .footer-principal .newsletter .titulo{
-        color: #002586;
         margin: 0px 0px 5px 0px;
         font-size: 16px;
         text-align: center;
@@ -35,27 +36,32 @@
         margin-bottom: 10px;
         height: 20px;
         border: none;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid #fff;
         outline: none;
         font-size: 14px;
         background-color: transparent;
         outline: none;
-        color: #333;
+        transition: .2s;
+    }
+    .footer-principal .newsletter .form-newsletter input:focus{
+        border-bottom: 1px solid #ffb700;
     }
     .footer-principal .newsletter .form-newsletter .btn-submit{
         width: 80px;
         height: 25px;
-        background-color: #002586;
-        border: none;
+        background-color: #ffb700;
         color: #fff;
+        border: none;
         transition: .2s;
     }
     .footer-principal .newsletter .form-newsletter .btn-submit:hover{
-        background-color: #ffb700;
+        background-color: #002686;
+        color: #fff;
         cursor: pointer;
     }
     .footer-principal .display-links{
         width: 80%;
+        margin: 5vh auto;
     }
     .footer-principal .display-links .footer-links{
         width: 100%;
@@ -103,8 +109,8 @@
         margin: 0px 0px 5px 0px;
     }
     .footer-principal .display-links .footer-links .first-li .sub-menu li .sub-link:hover{
-		text-decoration: underline;
-		text-decoration-color: #002586;
+        text-decoration: underline;
+        text-decoration-color: #002586;
     }
     .footer-principal .display-links .footer-links .first-li .sub-menu .social-media a{
         display: inline-block;
@@ -223,15 +229,6 @@
     });
 </script>
 <footer class="footer-principal">
-    <div class="newsletter">
-        <h3 class="titulo">RECEBA AS NOVIDADES DO REI DAS FECHADURAS</h3>
-        <h4 class="subtitulo">Lançamentos e promoções em primeira mão</h4>
-        <form class="form-newsletter">
-            <input type="text" placeholder="Digite seu nome" name="nome" class="input-nome">
-            <input type="text" placeholder="Digite seu email" name="email" class="input-email">
-            <input type="submit" value="ENVIAR" class="btn-submit">
-        </form>
-    </div>
     <div class="display-links">
         <?php
         class FooterLinks{
@@ -284,41 +281,136 @@
                 $subLinks = $this->sublinks;
                 echo "<li class='first-li'>";
                 echo "<span>";
-                    echo "<a href='$urlPrincipal' class='link-principal'>$tituloPrincipal</a>";
-                    if($this->qtd_sublinks > 0){
-                        echo "<ul class='sub-menu'>";
-                        foreach($subLinks as $subLink){
-                            $idSubLink = $subLink["id"];
-                            $tituloSubLink = $subLink["titulo"];
-                            $urlSubLink = $subLink["url"];
-                            $qtd_sub_subLinks = $subLink["qtd_sub_sublinks"];
-                            $sub_subLinks = $this->sub_sublinks;
-                            echo "<li><a href='$urlSubLink' class='sub-link'>$tituloSubLink</a></li>";
-                        }
-                        echo "</ul>";
+                echo "<a href='$urlPrincipal' class='link-principal'>$tituloPrincipal</a>";
+                if($this->qtd_sublinks > 0){
+                    echo "<ul class='sub-menu'>";
+                    foreach($subLinks as $subLink){
+                        $idSubLink = $subLink["id"];
+                        $tituloSubLink = $subLink["titulo"];
+                        $urlSubLink = $subLink["url"];
+                        $qtd_sub_subLinks = $subLink["qtd_sub_sublinks"];
+                        $sub_subLinks = $this->sub_sublinks;
+                        echo "<li><a href='$urlSubLink' class='sub-link'>$tituloSubLink</a></li>";
                     }
+                    echo "</ul>";
+                }
                 echo "</span>";
                 echo "</li>";
             }
         }
 
         $link_footer = null;
-        $link_footer[0] = new FooterLinks("PÁGINA INICIAL", "index.php");
-        $link_footer[1] = new FooterLinks("FECHADURAS", "loja.php?categoria=fechaduras");
-        $link_footer[2] = new FooterLinks("SEGURANCA", "loja.php?categoria=seguranca");
-        $link_footer[3] = new FooterLinks("DOBRADIÇAS", "loja.php?categoria=dobradicas");
-        $link_footer[4] = new FooterLinks("CADEADOS", "loja.php?categoria=cadeados");
-        $link_footer[6] = new FooterLinks("DICAS", "dicas.php");
+        $countLinks = 0;
+        
+        /*$link_footer[$countLinks] = new FooterLinks("PÁGINA INICIAL", "index.php");
+        $countLinks++;*/
+        /*SET TABLES*/
+        require_once "@pew/pew-system-config.php";
+        require_once "@classe-system-functions.php";
+        $tabela_categorias = $pew_db->tabela_categorias;
+        $tabela_subcategorias = $pew_db->tabela_subcategorias;
+        $tabela_categorias_produtos = $pew_custom_db->tabela_categorias_produtos;
+        $tabela_subcategorias_produtos = $pew_custom_db->tabela_subcategorias_produtos;
+        $tabela_produtos = $pew_custom_db->tabela_produtos;
+        $tabela_imagens_produtos = $pew_custom_db->tabela_imagens_produtos;
+        $tabela_departamentos = $pew_custom_db->tabela_departamentos;
+        $tabela_links_menu = $pew_custom_db->tabela_links_menu;
+        /*END SET TABLES*/
+        
+        
+        global $departamentoLinks, $ctrlDepartamentoLinks;
+        $departamentoLinks = array();
+        $ctrlDepartamentoLinks = 0;
+            
+        $totalDepartamentos = (int)$pew_functions->contar_resultados($tabela_departamentos, "status = 1");
+
+        if($totalDepartamentos > 0){
+            $queryDepartamentos = mysqli_query($conexao, "select * from $tabela_departamentos where status = 1 order by posicao asc limit 5");
+            while($infoDepartamentos = mysqli_fetch_array($queryDepartamentos)){
+                $idDepartamento = $infoDepartamentos["id"];
+                $tituloDepartamento = $infoDepartamentos["departamento"];
+                $refDepartamento = $infoDepartamentos["ref"];
+                $urlDepartamento = "loja.php?departamento=$refDepartamento";
+                $departamentoLinks[$ctrlDepartamentoLinks] = array();
+                $departamentoLinks[$ctrlDepartamentoLinks]["titulo"] = $tituloDepartamento;
+                $departamentoLinks[$ctrlDepartamentoLinks]["url"] = $urlDepartamento;
+                $qtdSub = $pew_functions->contar_resultados($tabela_links_menu, "id_departamento = '$idDepartamento'");
+                if($qtdSub > 0){
+                    $querySub = mysqli_query($conexao, "select * from $tabela_links_menu where id_departamento = '$idDepartamento'");
+                    $ctrlSub = 0;
+                    $departamentoLinks[$ctrlDepartamentoLinks]["sublinks"] = array();
+                    while($infoSub = mysqli_fetch_array($querySub)){
+                        $idCategoria = $infoSub["id_categoria"];
+                        $totalCategoria = $pew_functions->contar_resultados($tabela_categorias, "id = '$idCategoria' and status = 1");
+                        if($totalCategoria > 0){
+                            $queryCategoria = mysqli_query($conexao, "select * from $tabela_categorias where id = '$idCategoria' and status = 1");
+                            $infoCategoria = mysqli_fetch_array($queryCategoria);
+                            $tituloCategoria = $infoCategoria["categoria"];
+                            $refCategoria = $infoCategoria["ref"];
+                            $urlCategoria = "loja.php?departamento=$refDepartamento&categoria=$refCategoria";
+                            $departamentoLinks[$ctrlDepartamentoLinks]["sublinks"][$ctrlSub] = array();
+                            $departamentoLinks[$ctrlDepartamentoLinks]["sublinks"][$ctrlSub]["titulo"] = $tituloCategoria;
+                            $departamentoLinks[$ctrlDepartamentoLinks]["sublinks"][$ctrlSub]["url"] = $urlCategoria;
+                            $totalSubcategorias = $pew_functions->contar_resultados($tabela_subcategorias, "id_categoria = '$idCategoria'");
+                            $ctrlSub++;
+                        }
+                    }
+                }
+                $ctrlDepartamentoLinks++;
+            }   
+        }
+        
+        foreach($departamentoLinks as $link_departamento){
+            $tituloLink = $link_departamento["titulo"];
+            $urlLink = $link_departamento["url"];
+            $link_footer[$countLinks] = new NavLinks($tituloLink, $urlLink);
+            $sublinks = isset($link_departamento["sublinks"]) ? $link_departamento["sublinks"] : null;
+            $totalSublinks = is_array($sublinks) && count($sublinks) > 0 ? count($sublinks) : 0;
+            if($totalSublinks > 0){
+                $ctrl_sub = 0;
+                foreach($sublinks as $indice => $slink){
+                    $titulo = $slink["titulo"];
+                    $url = $slink["url"];
+                    $subsublinks = isset($slink["subsublinks"]) ? $slink["subsublinks"] : null;
+                    $totalSubsub = is_array($subsublinks) ? count($subsublinks) : 0;
+                    $link_footer[$countLinks]->add_sublink($ctrl_sub, $titulo, $url);
+                    if($totalSubsub > 0){
+                        foreach($subsublinks as $sublink){
+                            $tituloSub = $sublink["titulo"];
+                            $urlSub = $sublink["url"];
+                            $link_footer[$countLinks]->add_sub_sublink($ctrl_sub, $tituloSub, $urlSub, false);
+                        }
+                    }
+                    $ctrl_sub++;
+                }
+            }
+            $countLinks++;
+        }
+        $link_footer[$countLinks] = new FooterLinks("DICAS", "dicas.php");
+        $countLinks++;
+        $link_footer[$countLinks] = new FooterLinks("CONTATO", "contato.php");
+        $countLinks++;
 
         $quantidadeLinks = count($link_footer);
         if($quantidadeLinks > 0){
             echo "<ul class='footer-links'>";
-                foreach($link_footer as $link){
-                    $link->listar_link();
-                }
+            foreach($link_footer as $link){
+                $link->listar_link();
+            }
             echo "</ul>";
         }
         ?>
+    </div>
+    <div class="newsletter">
+        <h3 class="titulo">RECEBA AS NOVIDADES DO REI DAS FECHADURAS</h3>
+        <h4 class="subtitulo">Lançamentos e promoções em primeira mão</h4>
+        <form class="form-newsletter">
+            <input type="text" placeholder="Digite seu nome" name="nome" class="input-nome">
+            <input type="text" placeholder="Digite seu email" name="email" class="input-email">
+            <input type="submit" value="ENVIAR" class="btn-submit">
+        </form>
+    </div>
+    <div class="display-links">
         <br style="clear: both;">
         <ul class="footer-links links-estaticos">
             <li class='first-li'>
@@ -339,19 +431,25 @@
                     </ul>
                 </span>
             </li>
-            <li class='first-li'><span><a href="#" class="link-principal">CONTATO</a></span></li>
+            <li class='first-li'><span><a href="contato.php" class="link-principal">CONTATO</a></span></li>
             <li class='first-li'>
                 <span>
                     <a class="link-principal">REDES SOCIAIS</a>
                     <ul class="sub-menu">
                         <li class="social-media">
-                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/reidasfechadurasofficial/" class="facebook"><i class="fab fa-facebook-f"></i></a>
                         </li>
                     </ul>
                 </span>
             </li>
-            <li class='first-li'><span><a href="formas-de-pagamento.php" class="link-principal">FORMAS DE PAGAMENTO</a></span></li>
+            <li class='first-li'>
+                <span>
+                    <a href="formas-de-pagamento.php" class="link-principal">TIRE SUAS DÚVIDAS</a>
+                    <ul class="sub-menu">
+                        <li><a class="sub-link" href="como-comprar.php">Como Comprar</a></li>
+                    </ul>
+                </span>
+            </li>
             <li class='first-li'><span><a href="seguranca.php" class="link-principal">SEGURANÇA</a></span></li>
         </ul>
     </div>

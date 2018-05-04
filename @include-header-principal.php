@@ -35,7 +35,8 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        background-color: #fff;
+        background-color: #002686;
+        color: #fff;
         border-bottom: 1px solid #dedede;
         z-index: 80;
     }
@@ -45,10 +46,10 @@
         -o-transition: .2s;
         transition: .2s;
         cursor: pointer;
-        color: #666;
+        color: inherit;
     }
     .header-principal .nav-header .top-bar .link-padrao:hover{
-        color: #111;
+        color: #ffb700;
         border-color: #111;
     }
     .header-principal .nav-header .top-bar .header-cart{
@@ -129,6 +130,7 @@
         visibility: visible;
     }
     .header-principal .nav-header .top-bar .header-cart .cart-display .cart-title{
+        color: #000;
         font-size: 16px;
         line-height: 19px;
         margin: 10px;
@@ -136,6 +138,7 @@
         border-bottom: 1px solid #999;
     }
     .header-principal .nav-header .top-bar .header-cart .cart-display .display-itens{
+        color: #000;
         max-height: 280px;
         overflow-y: auto;
         text-align: right;
@@ -211,6 +214,7 @@
         border-top: 1px solid #dedede;
     }
     .header-principal .nav-header .top-bar .header-cart .cart-display .cart-bottom .total-price{
+        color: #000;
         line-height: 30px;
         padding: 0px 0px 0px 10px;
         display: -webkit-box;
@@ -221,12 +225,13 @@
         justify-content: flex-end;
     }
     .header-principal .nav-header .top-bar .header-cart .cart-display .cart-bottom .total-price .price-view{
+        color: #000;
         padding: 0px 0px 0px 10px;
         font-weight: bold;
     }
     .header-principal .nav-header .top-bar .header-cart .cart-display .cart-bottom .finalize-button{
         position: absolute;
-        width: 140px;
+        width: 200px;
         height: 24px;
         line-height: 24px;
         bottom: 10px;
@@ -397,30 +402,39 @@
     .header-principal .nav-header .top-nav .social-media-field{
         width: 30%;
         height: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: flex-end;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
+        align-items: flex-end;
+        flex-direction: column;
     }
-    .header-principal .nav-header .top-nav .social-media-field a{
-        position: relative;
-        width: 30px;
-        height: 30px;
+    .header-principal .nav-header .top-nav .social-media-field .box-media{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 18px;
-        margin: 10px;
+        justify-content: flex-end;
+        height: 50px;
+        padding: 5px 10px;
+    }
+    .header-principal .nav-header .top-nav .social-media-field .box-media input{
         color: #fff;
-        border-radius: 50%;
-        -webkit-transition: .2s;
-        -o-transition: .2s;
-        transition: .2s;
+        padding: 5px 5px;
+        background-color: #ffb700;
+        border: 1px solid #fff;
+        transition: .1s;
+    }
+    .header-principal .nav-header .top-nav .social-media-field .box-media input:hover{
+        border: 1px solid #002686;
+    }
+    .header-principal .nav-header .top-nav .social-media-field .box-media h2{
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        color: #002686;
+    }
+    .header-principal .nav-header .top-nav .social-media-field .box-media a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .header-principal .nav-header .top-nav .social-media-field .box-media span{
+        color: #ffb700;
+		font-size: 15px;
     }
     .header-principal .nav-header .top-nav .social-media-field .facebook{
         border: 1px solid #4267b2;
@@ -489,6 +503,7 @@
         height: 5px;
     }
     .header-principal .nav-header .botao-nav-mobile{
+        color: #fff;
         position: fixed;
         top: 0px;
         font-size: 26px;
@@ -500,6 +515,10 @@
         display: none;
         outline: none;
         cursor: pointer;
+        transition: .2s;
+    }
+    .header-principal .nav-header .botao-nav-mobile:hover{
+        transform: scale(1.1);
     }
     .header-principal .nav-header .active-botao{
         display: block;
@@ -728,139 +747,146 @@
         display: none;
     }
     /*END MOBILE MENU*/
-    @media screen and (max-width: 980px){
-        .header-principal .nav-header .top-bar{
-            width: 100%;
-            padding: 0px;
-        }
-        .header-principal .nav-header .top-nav .search-field{
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-        }
-        .header-principal .nav-header{
-            width: 100%;
-        }
-        .header-principal .nav-header .top-nav .logo-header img{
-            width: 60%;
-        }
-        .header-principal .nav-header .top-nav .logo-header img:hover{
-            width: 65%;
-        }
+    @media screen and (max-width: 1370px){
         .header-principal .nav-header .display-links{
             font-size: 12px;
         }
-        @media screen and (max-width: 720px){
+        @media screen and (max-width: 1260px){
+            .header-principal .nav-header .display-links .link-principal{
+                font-size: 11px;
+            }
+        }
+        @media screen and (max-width: 980px){
             .header-principal .nav-header .top-bar{
-                position: fixed;
                 width: 100%;
-                top: 0px;
-                left: 0px;
-            }
-            .header-principal .nav-header .top-bar .header-cart{
-                margin: 0px 5px 0px 5px;
-            }
-            .header-principal .nav-header .top-nav{
-                margin-top: 40px;
-            }
-            .header-principal .nav-header .top-nav{
-                -webkit-box-flex: 1;
-                -ms-flex: 1;
-                flex: 1;
-                -webkit-box-orient: vertical;
-                -webkit-box-direction: normal;
-                -ms-flex-direction: column;
-                flex-direction: column;
-                height: auto;
-                border: none;
+                padding: 0px;
             }
             .header-principal .nav-header .top-nav .search-field{
-                width: 100%;
-                -webkit-box-ordinal-group: 2;
-                -ms-flex-order: 1;
-                order: 1;
-            }
-            .header-principal .nav-header .top-nav .search-field form{
-                width: 50%;
-                margin: 0px 0px 20px 0px;
-            }
-            .header-principal .nav-header .top-nav .logo-header{
-                width: 100%;
-                -webkit-box-ordinal-group: 1;
-                -ms-flex-order: 0;
-                order: 0;
-            }
-            .header-principal .nav-header .top-nav .logo-header img{
-                width: 60%;
-                margin: 40px 0px 10px 0px;
-            }
-
-            .header-principal .nav-header .top-nav .social-media-field{
-                width: 100%;
-                -webkit-box-ordinal-group: 3;
-                -ms-flex-order: 2;
-                order: 2;
                 -webkit-box-pack: center;
                 -ms-flex-pack: center;
                 justify-content: center;
             }
-            .header-principal .nav-header .botao-nav-mobile{
-                display: block;
-                cursor: pointer;
-            }
-            .header-principal .nav-header .display-links{
-                position: fixed;
-                display: block;
-                width: 75%;
-                height: 100vh;
-                top: 0px;
-                left: -100%;
-                background-color: #fff;
-                z-index: 110;
-                overflow: hidden;
-                overflow-y: auto;
-                -webkit-transition: .4s ease;
-                -o-transition: .4s ease;
-                transition: .4s ease;
-            }
-            .header-principal .nav-header .display-links .first-li{
-                display: block;
-            }
-            .header-principal .nav-header .display-links .link-principal{
-                display: block;
-                width: 80%;
-                height: 35px;
-                line-height: 35px;
-                padding: 10px 10% 10px 10%;
-                white-space: nowrap;
-                border-bottom: 1px solid #ddd;
-            }
-            .header-principal .nav-header .display-links .sub-menu{
-                position: static;
+            .header-principal .nav-header{
                 width: 100%;
-                padding: 0px;
-                top: 0px;
-                left: 0px;
-                visibility: visible;
-                opacity: 1;
-                background-color: #eee;
             }
-            .header-principal .nav-header .display-links .sub-menu .sub-link{
-                width: 80%;
-                padding: 10px 10% 10px 10%;
+            .header-principal .nav-header .top-nav .logo-header img{
+                width: 60%;
             }
-            .header-principal .nav-header .display-links .sub-menu li .sub-sub-links-icon{
-                display: none;
+            .header-principal .nav-header .top-nav .logo-header img:hover{
+                width: 65%;
             }
-            @media screen and (max-width: 480px){
+            @media screen and (max-width: 720px){
                 .header-principal .nav-header .top-bar{
-                    font-size: 11px;
+                    position: fixed;
+                    width: 100%;
+                    top: 0px;
+                    left: 0px;
                 }
-                .header-principal .nav-header .top-bar .header-cart .cart-display{
-                    width: 300px;
+                .header-principal .nav-header .top-bar .header-cart{
+                    margin: 0px 5px 0px 5px;
+                }
+                .header-principal .nav-header .top-nav{
+                    margin-top: 40px;
+                }
+                .header-principal .nav-header .top-nav{
+                    -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                    flex: 1;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                    flex-direction: column;
+                    height: auto;
+                    border: none;
+                }
+                .header-principal .nav-header .top-nav .search-field{
+                    width: 100%;
+                    -webkit-box-ordinal-group: 2;
+                    -ms-flex-order: 1;
+                    order: 1;
                 }
                 .header-principal .nav-header .top-nav .search-field form{
-                    width: 65%;
+                    width: 50%;
+                    margin: 0px 0px 20px 0px;
+                }
+                .header-principal .nav-header .top-nav .logo-header{
+                    width: 100%;
+                    -webkit-box-ordinal-group: 1;
+                    -ms-flex-order: 0;
+                    order: 0;
+                }
+                .header-principal .nav-header .top-nav .logo-header img{
+                    width: 60%;
+                    margin: 40px 0px 10px 0px;
+                }
+
+                .header-principal .nav-header .top-nav .social-media-field{
+                    width: 100%;
+                    -webkit-box-ordinal-group: 3;
+                    -ms-flex-order: 2;
+                    order: 2;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                }
+                .header-principal .nav-header .botao-nav-mobile{
+                    display: block;
+                    cursor: pointer;
+                }
+                .header-principal .nav-header .display-links{
+                    position: fixed;
+                    display: block;
+                    width: 75%;
+                    height: 100vh;
+                    top: 0px;
+                    left: -100%;
+                    background-color: #fff;
+                    z-index: 110;
+                    overflow: hidden;
+                    overflow-y: auto;
+                    -webkit-transition: .4s ease;
+                    -o-transition: .4s ease;
+                    transition: .4s ease;
+                }
+                .header-principal .nav-header .display-links .first-li{
+                    display: block;
+                }
+                .header-principal .nav-header .display-links .link-principal{
+                    display: block;
+                    width: 80%;
+                    height: 35px;
+                    line-height: 35px;
+                    padding: 10px 10% 10px 10%;
+                    white-space: nowrap;
+                    border-bottom: 1px solid #ddd;
+                }
+                .header-principal .nav-header .display-links .sub-menu{
+                    position: static;
+                    width: 100%;
+                    padding: 0px;
+                    top: 0px;
+                    left: 0px;
+                    visibility: visible;
+                    opacity: 1;
+                    background-color: #eee;
+                }
+                .header-principal .nav-header .display-links .sub-menu .sub-link{
+                    width: 80%;
+                    padding: 10px 10% 10px 10%;
+                }
+                .header-principal .nav-header .display-links .sub-menu li .sub-sub-links-icon{
+                    display: none;
+                }
+                @media screen and (max-width: 480px){
+                    .header-principal .nav-header .top-bar{
+                        font-size: 11px;
+                    }
+                    .header-principal .nav-header .top-bar .header-cart .cart-display{
+                        width: 300px;
+                    }
+                    .header-principal .nav-header .top-nav .search-field form{
+                        width: 65%;
+                    }
                 }
             }
         }
@@ -878,7 +904,7 @@
                 $loginConta = new MinhaConta();
                 
                 function botoes_login(){
-                    echo "<a class='link-padrao botao-entrar' id='botaoEntrar'><i class='fas fa-sign-in-alt' data-fa-transform='grow-6 left-6'></i> ENTRAR</a> OU";
+                    echo "<a class='link-padrao botao-entrar' id='botaoEntrar'><i class='fas fa-sign-in-alt' data-fa-transform='grow-6 left-6'></i> ACOMPANHE SEU PEDIDO</a> OU";
                     echo "<a class='link-padrao' id='botaoCadastraConta'>CRIE SUA CONTA</a>";
                 }
             
@@ -909,7 +935,7 @@
             ?>
             <div class="header-cart">
                 <div class="view-quantidade-carrinho"></div>
-                <div class="cart-button"><i class="fas fa-shopping-bag"></i></div>
+                <div class="cart-button"><i class="fas fa-shopping-cart"></i></div>
                 <div class="cart-display">
                     <h4 class="cart-title">Seu carrinho</h4>
                     <div class="display-itens">
@@ -923,26 +949,29 @@
                                     $id = $item["id"];
                                     $titulo = $item["nome"];
                                     $preco = $item["preco"];
+                                    $precoAtivo = $item["preco_ativo"] == "1" ? true : "style='display: none;'";
                                     $quantidade = $item["quantidade"];
                                     $total = $preco * $quantidade;
                                     $total = $pew_functions->custom_number_format($total);
-                                    $totalCarrinho += $total;
+                                    if($item["preco_ativo"] == 1){
+                                        $totalCarrinho += $total;
+                                    }
                                     $url = "interna-produto.php?id_produto=$id";
                                     echo "<div class='cart-item'>";
                                         echo "<span class='item-quantity'>{$quantidade}x</span>";
                                         echo "<a href='$url' class='item-name'>$titulo</a>";
-                                        echo "<span class='item-price'>R$ $total</span>";
+                                        echo "<span class='item-price' $precoAtivo>R$ $total</span>";
                                         echo "<button class='remove-button' title='Remover este item' carrinho-id-produto='$id'><i class='fas fa-times'></i></button>";
                                     echo "</div>";
                                 }
                             }else{
-                                echo "<div align=center>Carrinho vazio</div>";
+                                echo "<div align=center>Seu carrinho</div>";
                             }
                         ?>
                     </div>
                     <div class="cart-bottom">
                         <span class="total-price">TOTAL: <span class="price-view">R$ <?php echo $pew_functions->custom_number_format($totalCarrinho); ?></span></span><br>
-                        <a href="finalizar-compra.php" class="finalize-button">SOLICITAR ORÇAMENTO</a>
+                        <a href="finalizar-orcamento.php" class="finalize-button">Solicitar</a>
                     </div>
                 </div>
                 <div class="cart-background"></div>
@@ -950,15 +979,19 @@
         </div>
         <div class="top-nav">
             <div class="search-field">
-                <form name="busca" method="get" action="busca-produtos.php">
-                    <input type="search" class="search-bar" placeholder="O QUE VOCÊ PROCURA?">
+                <form name="busca" method="get" action="loja.php">
+                    <input type="search" class="search-bar" placeholder="O QUE VOCÊ PROCURA?" name="busca">
                     <button type="submit" class="search-submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
             <div class="logo-header"><a href="index.php"><img src="<?php echo $dirLogoPrincipal;?>" alt="Logo - Rei das Fechaduras" title="Página Inicial - Rei das Fechaduras"></a></div>
             <div class="social-media-field">
-                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                <div class="box-media">
+                    <h2><a href="tel:+554130168008"><span>Loja Visconde</span> - (41) 3016-8008</a></h2>
+                </div>
+                <div class="box-media">
+                    <h2><a href="tel:+554130161414"><span>Loja Cabral Ahú</span> - (41) 3016-1414</a></h2>
+                </div>
             </div>
         </div>
         <?php
@@ -1143,6 +1176,7 @@
                                             
                                         }
                                     }
+                                    $ctrlSubsublinks++;
                                 }
                             }
                             $ctrlSub++;
@@ -1152,27 +1186,29 @@
                 $ctrlDepartamentoLinks++;
             }   
         }
-
         
         foreach($departamentoLinks as $link_departamento){
             $tituloLink = $link_departamento["titulo"];
             $urlLink = $link_departamento["url"];
             $link_nav[$countLinks] = new NavLinks($tituloLink, $urlLink);
             $sublinks = isset($link_departamento["sublinks"]) ? $link_departamento["sublinks"] : null;
-            $totalSublinks = count($sublinks);
-            foreach($sublinks as $indice => $slink){
-                $titulo = $slink["titulo"];
-                $url = $slink["url"];
-                $subsublinks = isset($slink["subsublinks"]) ? $slink["subsublinks"] : null;
-                $totalSubsub = is_array($subsublinks) ? count($subsublinks) : 0;
-                $link_nav[$countLinks]->add_sublink($countLinks, $titulo, $url);
-                if($totalSubsub > 0){
-                    foreach($subsublinks as $sublink){
-                        $tituloSub = $sublink["titulo"];
-                        $urlSub = $sublink["url"];
-                        $boxDestaque = isset($sublink["box_destaque"]) && $sublink["box_destaque"] != "" ? $sublink["box_destaque"] : false;
-                        $link_nav[$countLinks]->add_sub_sublink($countLinks, $tituloSub, $urlSub, $boxDestaque);
+            $totalSublinks = is_array($sublinks) && count($sublinks) > 0 ? count($sublinks) : 0;
+            if($totalSublinks > 0){
+                $ctrl_sub = 0;
+                foreach($sublinks as $indice => $slink){
+                    $titulo = $slink["titulo"];
+                    $url = $slink["url"];
+                    $subsublinks = isset($slink["subsublinks"]) ? $slink["subsublinks"] : null;
+                    $totalSubsub = is_array($subsublinks) ? count($subsublinks) : 0;
+                    $link_nav[$countLinks]->add_sublink($ctrl_sub, $titulo, $url);
+                    if($totalSubsub > 0){
+                        foreach($subsublinks as $sublink){
+                            $tituloSub = $sublink["titulo"];
+                            $urlSub = $sublink["url"];
+                            $link_nav[$countLinks]->add_sub_sublink($ctrl_sub, $tituloSub, $urlSub, false);
+                        }
                     }
+                    $ctrl_sub++;
                 }
             }
             $countLinks++;
@@ -1183,6 +1219,7 @@
         $link_nav[$countLinks] = new NavLinks("DICAS", "dicas.php");
         $countLinks++;
         $link_nav[$countLinks] = new NavLinks("CONTATO", "contato.php");
+        $countLinks++;
         
         /*END LINKS*/
         
