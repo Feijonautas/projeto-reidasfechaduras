@@ -91,7 +91,6 @@
         <!--PAGE CONTENT-->
         <h1 class="titulos"><?php echo $page_title; ?></h1>
         <section class="conteudo-painel">
-            sasasas
             <table class="table-padrao" cellspacing="0">
             <?php
                 $tabela_contatos = $pew_db->tabela_contatos;
