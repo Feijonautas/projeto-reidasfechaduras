@@ -1,8 +1,10 @@
 <?php
-session_start();
-$nomeEmpresa = "Rei das Fechaduras";
-$descricaoPagina = "DESCRIÇÃO MODELO ATUALIZAR...";
-$tituloPagina = "Formas de pagamento - $nomeEmpresa";
+    session_start();
+    
+    require_once "@classe-paginas.php";
+
+    $cls_paginas->set_titulo("Formas de Pagamento");
+    $cls_paginas->set_descricao("DESCRIÇÃO MODELO ATUALIZAR...");
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,14 +13,15 @@ $tituloPagina = "Formas de pagamento - $nomeEmpresa";
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
         <meta name="HandheldFriendly" content="true">
-        <meta name="description" content="<?php echo $descricaoPagina;?>">
+        <meta name="description" content="<?php echo $cls_paginas->descricao;?>">
         <meta name="author" content="Efectus Web">
-        <title><?php echo $tituloPagina;?></title>
+        <title><?php echo $cls_paginas->titulo;?></title>
+        <link type="image/png" rel="icon" href="imagens/identidadeVisual/logo-icon.png">
         <!--DEFAULT LINKS-->
         <?php
-        require_once "@link-standard-styles.php";
-        require_once "@link-standard-scripts.php";
-        require_once "@link-important-functions.php";
+            require_once "@link-standard-styles.php";
+            require_once "@link-standard-scripts.php";
+            require_once "@link-important-functions.php";
         ?>
         <!--END DEFAULT LINKS-->
         <!--PAGE CSS-->
@@ -56,9 +59,9 @@ $tituloPagina = "Formas de pagamento - $nomeEmpresa";
             Finalizado o pedido, o sistema gera o boleto e também envia um link para seu email, o mesmo deverá ser impresso e pago em qualquer banco em até 03 dias corridos. Após esta data, o pedido será cancelado. O(s) produto(s) escolhido(s) terá(ão) sua reserva feita após confirmação de pagamento fornecida pela instituição financeira, o que se dá somente após compensação do valor pago, que pode ocorrer em até 3 dias úteis.
             <h4><b>Cartões de Crédito:  </b></h4>
             Aceitamos os seguintes cartões de crédito: MasterCard, Visa e Diners.
-            • MasterCard – Este cartão oferece parcelamento em até 04 vezes sem juros.
-            • Visa – Este cartão oferece parcelamento em até 04 vezes sem juros.
-            • Diners – Este cartão oferece parcelamento em até 04 vezes sem juros.
+            • MasterCard – Este cartão oferece parcelamento em até 3x sem juros.
+            • Visa – Este cartão oferece parcelamento em até 3x sem juros.
+            • Diners – Este cartão oferece parcelamento em até 3x sem juros.
             Os preços praticados não incluem a instalação dos produtos, que pode ser feita em qualquer loja especializada.
             Aceitamos somente cartões de crédito emitidos no Brasil. Caso a compra seja via cartão de crédito, o CPF e o número do cartão devem ser da mesma pessoa, necessariamente.
             Se você optar por pagar com boleto deverá imprimi-lo após a confirmação da compra.

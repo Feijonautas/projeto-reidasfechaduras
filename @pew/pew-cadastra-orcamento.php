@@ -707,11 +707,16 @@
                             </div>
                             <div class="lista-relacionados-msg"><h4>Exibindo todos os produtos:</h4><a class="link-padrao limpar-todos-relacionados" title="Limpar todos os produtos listados abaixo e que foram selecionados">Limpar todos</a></div>
                         <?php
-                            $queryAllProdutos = mysqli_query($conexao, "select id, nome, preco from $tabela_produtos where status = 1 order by nome asc");
+                            $queryAllProdutos = mysqli_query($conexao, "select id, nome, preco, preco_promocao, promocao_ativa from $tabela_produtos where status = 1 order by nome asc");
                             while($infoRelacionados = mysqli_fetch_array($queryAllProdutos)){
                                 $idProdutoRelacionado = $infoRelacionados["id"];
                                 $nomeProdutoRelacionado = $infoRelacionados["nome"];
-                                $precoProduto = $infoRelacionados["preco"] != "" ? $infoRelacionados["preco"] : "0.00";
+                                $precoPromocao = $infoRelacionados["preco_promocao"];
+                                $promocaoAtiva = $infoRelacionados["promocao_ativa"];
+                                $precoProduto = $infoRelacionados["preco"];
+                                $descontoAtivo = $precoPromocao < $precoProduto && $promocaoAtiva == 1 ? true : false;
+                                $avisoDeconto = $descontoAtivo ? "Valor com desconto" : "Valor original";
+                                $precoProduto = $descontoAtivo ? $precoPromocao : $precoProduto;
                                 $precoProduto = number_format($precoProduto, 2, ".", "");
                                 $search = array_search($idProdutoRelacionado, $selectedProdutos);
                                 if($search !== false){
@@ -737,7 +742,7 @@
                         <h3 class='label-title'>Desconto:&nbsp; <input type="number" class="view-total-desconto label-input" value='<?php echo $desconto; ?>' max="100"> %</h3>
                     </div>
                     <div class="full">
-                        <h3 class='label-title'>Total: R$ <span class="view-total-orcamento">0.00</span></h3>
+                        <h3 class='label-title'>Total: R$ <span class="view-total-orcamento" title="<?php echo $avisoDeconto;?>">0.00</span></h3>
                     </div>
                     <input type="hidden" class="ctrl-total-desconto" name="total_desconto" value="0">
                     <input type="hidden" class="ctrl-total-orcamento" name="total_orcamento" value="0">

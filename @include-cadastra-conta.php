@@ -1072,7 +1072,7 @@
                                             mensagemAlerta(msgSucesso, false, "limegreen");
                                             mensagemConfirmaEmail(objEmail.val());
                                         }else{
-                                            mensagemAlerta(msgErro, false, "limegreen");
+                                            //mensagemAlerta(msgErro, false, "limegreen");
                                         }
                                         finish();
                                     }
@@ -1117,6 +1117,10 @@
                 toggleCadastreConta(); 
             }
             toggleLogin();
+        });
+        
+        $(".btn-trigger-cadastra-conta").off().on("click", function(){
+            toggleCadastreConta();
         });
         /*END DEFAULT TRIGGERS*/
     });

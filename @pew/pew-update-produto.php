@@ -1,5 +1,6 @@
 <?php
-    $post_fields = array("id_produto", "sku", "nome", "marca", "id_cor", "preco", "preco_ativo", "preco_promocao", "promocao_ativa", "desconto_relacionado","estoque", "estoque_baixo", "tempo_fabricacao", "descricao_curta", "descricao_longa", "url_video", "peso", "comprimento", "largura", "altura", "status");
+
+    $post_fields = array("id_produto", "sku", "nome", "marca", "id_cor", "preco_ativo", "preco", "preco_promocao", "promocao_ativa", "desconto_relacionado","estoque", "estoque_baixo", "tempo_fabricacao", "descricao_curta", "descricao_longa", "url_video", "peso", "comprimento", "largura", "altura", "status");
     $file_fields = array();
     $invalid_fields = array();
     $gravar = true;
@@ -31,9 +32,9 @@
         $nomeProduto = addslashes($_POST["nome"]);
         $marcaProduto = addslashes($_POST["marca"]);
         $idCor = (int)$_POST["id_cor"];
+        $precoAtivo = $_POST["preco_ativo"];
         $precoProduto = $_POST["preco"];
         $precoProduto = $pew_functions->custom_number_format($precoProduto);
-        $precoAtivo = intval($_POST["preco_ativo"]) == 1 ? 1 : 0;
         $precoPromocaoProduto = $_POST["preco_promocao"];
         $precoPromocaoProduto = $pew_functions->custom_number_format($precoPromocaoProduto);
         $descontoRelacionado = isset($_POST["desconto_relacionado"]) && $_POST["desconto_relacionado"] ? $_POST["desconto_relacionado"] : 0;
@@ -57,14 +58,13 @@
         $statusProduto = intval($_POST["status"]) == 1 ? 1 : 0;
         $urlVideoProduto = addslashes($_POST["url_video"]);
         
+        
         $http = substr($urlVideoProduto, 0, 5);
         if($http != "http:" && $http != "https" && $urlVideoProduto != ""){
             $urlVideoProduto = "http://".$urlVideoProduto;
         }
-        
         /*END POST DATA*/
         
-
         /*DIR VARS*/
         $dirImagensProdutos = "../imagens/produtos/";
         /*END DIR VARS*/
@@ -84,6 +84,10 @@
         $tabela_especificacoes_produtos = $pew_custom_db->tabela_especificacoes_produtos;
         /*END SET TABLES*/
 
+        $querySku = mysqli_query($conexao, "select sku from $tabela_produtos where id = '$idProduto'");
+        $infoSku = mysqli_fetch_array($querySku);
+        $skuAntigo = $infoSku["sku"];
+        
         if($nomeProduto != ""){
             echo "<h3 align=center>Gravando dados...</h3>";
             
@@ -156,6 +160,8 @@
             /*FIM ATUALIZA SUBCATEGORIAS DO PRODUTO*/
 
             /*ATUALIZA IMAGENS DO PRODUTO*/
+            $selectedImagens = array();
+            $ctrlImagens = 0;
             $maxImagens = isset($_POST["maximo_imagens"]) && (int)$_POST["maximo_imagens"] ? (int)$_POST["maximo_imagens"] : 4;
             for($i = 1; $i <= $maxImagens; $i++){
                 $posicao = $i;
@@ -182,7 +188,12 @@
                             }
                             
                             mysqli_query($conexao, "update $tabela_imagens set imagem = '$nomeFinalImagem', status = 1 where id_produto = '$idProduto' and posicao = '$posicao'");
+                            
+                            $selectedImagens[$ctrlImagens] = $nomeFinalImagem;
+                            $ctrlImagens++;
+                            
                         }else{
+                            echo $posicao;
                             mysqli_query($conexao, "insert into $tabela_imagens (id_produto, imagem, posicao, status) values ('$idProduto', '$nomeFinalImagem', '$posicao', 1)");
                         }
                         
@@ -255,7 +266,7 @@
             }   
             
             /*END ATUALIZA CORES DE PRODUTOS RELACIONADOS*/
-            
+
             echo "<script>window.location.href='pew-edita-produto.php?msg=Produto atualizado com sucesso&msgType=success&id_produto=$idProduto';</script>";
         }else{
             echo "<script>window.location.href='pew-edita-produto.php?erro=validacao_do_produto&msg=Não foi possível atualizar o produto&msgType=error&id_produto=$idProduto';</script>";

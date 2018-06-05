@@ -32,10 +32,12 @@
                 width: calc(100% - 30px);
                 margin: 40px 15px 40px 15px;
                 padding-top: 50px;
+                vertical-align: bottom;
             }
             .box-produto{
                 position: relative;
                 width: calc(25% - 22px);
+                height: 325px;
                 padding: 10px 0px 40px 0px;
                 margin: 0px 20px 30px 0px;
                 background-color: #fff;
@@ -200,6 +202,35 @@
             .btn-voltar:hover{
                 background-color: #dfdfdf;   
             }
+            .form-add-rastreamento{
+                position: fixed;
+                width: 280px;
+                padding: 10px;
+                top: 200px;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                z-index: 200;
+                visibility: hidden;
+                opacity: 0;
+            }
+            .form-add-rastreamento .titulo{
+                color: #222;
+                font-weight: normal;
+                margin: 0px;
+                font-size: 16px;
+            }
+            .form-add-rastreamento .btn-adicionar{
+                padding: 5px 15px 5px 15px;
+                font-size: 14px;
+                background-color: #333;
+                color: #fff;
+                cursor: pointer;
+            }
+            .form-add-rastreamento .btn-adicionar:hover{
+                background-color: #111;
+            }
             /*.display-info-pedido .btn-voltar{
                 position: relative;
                 top: 20px;
@@ -213,9 +244,83 @@
                 var botaoVerInfo = $(".botao-ver-info");
                 var botaoVoltar = $(".display-produtos-pedido .btn-voltar-produtos");
                 var botaoVoltarInfo = $(".display-info-pedido .btn-voltar-info");
-
-                botaoVerProdutos.each(function(){
-
+                var displayPedidos = $(".display-pedido");
+                var rastreamentoOpen = false;
+                var backgroundBlack = $(".background-paineis");
+                var enviandoRastreamento = false;
+                
+                var formAddRastreamento = $(".form-add-rastreamento");
+                
+                formAddRastreamento.off().on("submit", function(){
+                    event.preventDefault(); 
+                    var objCodigo = $("#codigoRastreamento");
+                    var objIdPedido = $("#rastreamentoIdPedido");
+                    var codigo = objCodigo.val();
+                    var idPedido = objIdPedido.val();
+                    if(!enviandoRastreamento){
+                        enviandoRastreamento = true;
+                        
+                        function validar(){
+                            if(codigo.length < 13){
+                                mensagemAlerta("O código de rastreamento deve conter no mínimo 13 caracteres.", objCodigo);
+                                return false;
+                            }
+                            
+                            if(idPedido == 0){
+                                mensagemAlerta("Ocorreu um erro ao cadastrar o código. Recarregue a página e tente novamente.");
+                                return false;
+                            }
+                            
+                            return true;
+                        }
+                        
+                        if(validar() == true){
+                            formAddRastreamento.submit();
+                        }else{
+                            enviandoRastreamento = false;
+                        }
+                        
+                    }
+                });
+                
+                function toggle_add_rastreamento(){
+                    if(!rastreamentoOpen){
+                        rastreamentoOpen = true;
+                        backgroundBlack.css("display", "block");
+                        setTimeout(function(){
+                            backgroundBlack.css("opacity", ".4");
+                            formAddRastreamento.css({
+                                visibility: "visible",
+                                opacity: "1"
+                            });
+                            
+                        }, 100);
+                    }else{
+                        rastreamentoOpen = false;
+                        backgroundBlack.css("opacity", "0");
+                        formAddRastreamento.css({
+                            visibility: "hidden",
+                            opacity: "0"
+                        });
+                        setTimeout(function(){
+                            backgroundBlack.css("display", "none");
+                        }, 100);
+                    }
+                }
+                
+                displayPedidos.each(function(){
+                    var box = $(this);
+                    var idPedido = box.prop("id").substr(10);
+                    var botaoAddRastreamento = $("#addRastreamento"+idPedido);
+                    
+                    botaoAddRastreamento.off().on("click", function(){
+                        $("#rastreamentoIdPedido").val(idPedido);
+                        toggle_add_rastreamento(); 
+                    });
+                });
+                
+                $(".btn-cancelar-add-rastreamento").off().on("click", function(){
+                    toggle_add_rastreamento();
                 });
 
                 function toggleVerProdutos(id){
@@ -333,14 +438,62 @@
                         $strBusca = "";
                     }
                 
-                    $condicaoPedidos = "codigo_confirmacao != '0' order by id desc";
-                    $totalPedidos = $pew_functions->contar_resultados($tabela_pedidos, $condicaoPedidos);
+                
+                    $condicaoTodosPedidos = "codigo_confirmacao != '0' order by id desc";
+                    $condicaoPagos = "codigo_confirmacao != '0' and status = 3 or status = 4";
+                    $condicaoAguardando = "codigo_confirmacao != '0' and status = 1 or status = 2 or status = 0";    
+                    $condicaoCancelados = "codigo_confirmacao != '0' and status = 5 or status = 6 or status = 7";    
+                
+                    $totalPedidos = $pew_functions->contar_resultados($tabela_pedidos, $condicaoTodosPedidos);
+                    $totalPagos = $pew_functions->contar_resultados($tabela_pedidos, $condicaoPagos);
+                    $totalAguardando = $pew_functions->contar_resultados($tabela_pedidos, $condicaoAguardando);
+                    $totalCancelados = $pew_functions->contar_resultados($tabela_pedidos, $condicaoCancelados);
                     
+                    $cls_pedidos = new Pedidos();
+                
                     if($totalPedidos > 0){
                         
-                        $cls_pedido = new Pedidos();
-                        $selectedPedidos = $cls_pedido->buscar_pedidos($condicaoPedidos);
-                        $cls_pedido->listar_pedidos($selectedPedidos);
+                        echo "<form class='form-add-rastreamento' method='post' action='pew-status-pedido.php'>";
+                            echo "<h3 class='titulo'>Atualizar código de rastreamento</h3>";
+                            echo "<input type='text' class='label-input' placeholder='Código' name='codigo_rastreamento' id='codigoRastreamento'>";
+                            echo "<input type='hidden' name='id_pedido' id='rastreamentoIdPedido' value=0>";
+                            echo "<input type='submit' value='Atualizar' class='btn-adicionar'>";
+                            echo "<a class='link-padrao btn-cancelar-add-rastreamento' style='margin: 0px 0px 0px 20px;'>Cancelar</a>";
+                        echo "</form>";
+                        
+                        echo "<div class='multi-tables'>";
+                            echo "<div class='top-buttons'>";
+                                echo "<button class='trigger-button trigger-button-selected' mt-target='mtPainel1'>Pagos ($totalPagos)</button>";
+                                echo "<button class='trigger-button' mt-target='mtPainel2'>Aguardando Pagamento ($totalAguardando)</button>";
+                                echo "<button class='trigger-button' mt-target='mtPainel3'>Cancelados ($totalCancelados)</button>";
+                            echo "</div>";
+                            echo "<div class='display-paineis'>";
+                                echo "<div class='painel selected-painel' id='mtPainel1'>";
+                                    if($totalPagos > 0){
+                                        $selectedPagos = $cls_pedidos->buscar_pedidos($condicaoPagos);
+                                        $cls_pedidos->listar_pedidos($selectedPagos);
+                                    }else{
+                                        echo "<h3 align='center'>Nenhum resultado</h3>";
+                                    }
+                                echo "</div>";
+                                echo "<div class='painel' id='mtPainel2'>";
+                                    if($totalAguardando > 0){
+                                        $selectedAguardando = $cls_pedidos->buscar_pedidos($condicaoAguardando);
+                                        $cls_pedidos->listar_pedidos($selectedAguardando);
+                                    }else{
+                                        echo "<h3 align='center'>Nenhum resultado</h3>";
+                                    }
+                                echo "</div>";
+                                echo "<div class='painel' id='mtPainel3'>";
+                                    if($totalCancelados > 0){
+                                        $selectedCancelados = $cls_pedidos->buscar_pedidos($condicaoCancelados);
+                                        $cls_pedidos->listar_pedidos($selectedCancelados);
+                                    }else{
+                                        echo "<h3 align='center'>Nenhum resultado</h3>";
+                                    }
+                                echo "</div>";
+                            echo "</div>";
+                        echo "</div>";
                         
                     }else{
                         if($strBusca == ""){

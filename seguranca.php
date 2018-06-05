@@ -1,8 +1,10 @@
 <?php
-session_start();
-$nomeEmpresa = "Rei das Fechaduras";
-$descricaoPagina = "DESCRIÇÃO MODELO ATUALIZAR...";
-$tituloPagina = "Segurança - $nomeEmpresa";
+    session_start();
+    
+    require_once "@classe-paginas.php";
+
+    $cls_paginas->set_titulo("Segurança");
+    $cls_paginas->set_descricao("DESCRIÇÃO MODELO ATUALIZAR...");
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,14 +13,15 @@ $tituloPagina = "Segurança - $nomeEmpresa";
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
         <meta name="HandheldFriendly" content="true">
-        <meta name="description" content="<?php echo $descricaoPagina;?>">
+        <meta name="description" content="<?php echo $cls_paginas->descricao;?>">
         <meta name="author" content="Efectus Web">
-        <title><?php echo $tituloPagina;?></title>
+        <title><?php echo $cls_paginas->titulo;?></title>
+        <link type="image/png" rel="icon" href="imagens/identidadeVisual/logo-icon.png">
         <!--DEFAULT LINKS-->
         <?php
-        require_once "@link-standard-styles.php";
-        require_once "@link-standard-scripts.php";
-        require_once "@link-important-functions.php";
+            require_once "@link-standard-styles.php";
+            require_once "@link-standard-scripts.php";
+            require_once "@link-important-functions.php";
         ?>
         <!--END DEFAULT LINKS-->
         <!--PAGE CSS-->

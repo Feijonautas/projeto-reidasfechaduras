@@ -32,7 +32,7 @@
         $emailCliente = addslashes($_POST["email_cliente"]);
         $cpfCliente = addslashes($_POST["cpf_cliente"]);
         $totalPorcentagemDesconto = floatval($_POST["total_desconto"]);
-        $totalOrcamento = floatval($_POST["total_orcamento"]);
+        $_POST["total_orcamento"] = floatval($_POST["total_orcamento"]);
         $produtosOrcamento = isset($_POST["produtos_orcamento"]) ? $_POST["produtos_orcamento"] : "";
         /*END POST DATA*/
 
@@ -114,11 +114,16 @@
                     $quantidadeProduto = $infoProduto["quantidade"];
                     $precoProduto = $infoProduto["preco"];
                     
+                        echo '<br>'.$infoProduto["preco"];
+                        echo "Teste!";      
+                    
                     $quantidadeProduto = $quantidadeProduto > 1 ? $quantidadeProduto : 1;
                     
                     $precoProduto = $pew_functions->custom_number_format($precoProduto);
                     
                     mysqli_query($conexao, "insert into $tabela_carrinhos (token_carrinho, id_produto, nome_produto, quantidade_produto, preco_produto, data_controle, status) values ('$tokenCarrinho', '$idProduto', '$tituloProduto', '$quantidadeProduto', '$precoProduto', '$dataAtual', 2)");
+                    
+                    echo $precoProduto;
                 }
                 
                 $bodyEmail = $cls_orcamentos->montar_email($nomeCliente, $itensCarrinho, $totalPorcentagemDesconto, $tokenCarrinho);

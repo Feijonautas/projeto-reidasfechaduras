@@ -1,8 +1,10 @@
 <?php
     session_start();
-    $nomeEmpresa = "Rei das Fechaduras";
-    $descricaoPagina = "DESCRIÇÃO MODELO ATUALIZAR...";
-    $tituloPagina = "Contato - $nomeEmpresa";
+    
+    require_once "@classe-paginas.php";
+
+    $cls_paginas->set_titulo("Contato");
+    $cls_paginas->set_descricao("DESCRIÇÃO MODELO ATUALIZAR...");
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,9 +13,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
         <meta name="HandheldFriendly" content="true">
-        <meta name="description" content="<?php echo $descricaoPagina;?>">
+        <meta name="description" content="<?php echo $cls_paginas->descricao;?>">
         <meta name="author" content="Efectus Web">
-        <title><?php echo $tituloPagina;?></title>
+        <title><?php echo $cls_paginas->titulo;?></title>
+        <link type="image/png" rel="icon" href="imagens/identidadeVisual/logo-icon.png">
         <!--DEFAULT LINKS-->
         <?php
             require_once "@link-standard-styles.php";
@@ -229,7 +232,7 @@
 						<h2>Horário</h2>
 						<div class="border1"></div>
 						<p>Segunda a Sexta das 8:30 às 18:30h</p>
-						<p>Sábado das 8:30 às 17:00h</p>
+						<p>Sábado das 9h às 13h</p>
 					</div>
 					<div class="item-mapa">
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.26710949123!2d-49.258939784908655!3d-25.395868037764814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce6908411881d%3A0xefb46c4deeeb37d4!2sAv.+Anita+Garibaldi%2C+1854+-+05+-+Ahu%2C+Curitiba+-+PR%2C+80540-180!5e0!3m2!1spt-BR!2sbr!4v1523907053682" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -247,7 +250,7 @@
 						<h2>Horário</h2>
 						<div class="border1"></div>
 						<p>Segunda a Sexta das 8:30 às 18:30h</p>
-						<p>Sábado das 8:30 às 17:00h</p>
+						<p>Sábado das 9h às 13h</p>
 					</div>
 					<div class="item-mapa">
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.1380996678486!2d-49.26253368490777!3d-25.433646139265445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce443a4bcaffd%3A0x1e37bf2224e97a5b!2sAv.+Visc.+de+Guarapuava%2C+1915+-+Centro%2C+Curitiba+-+PR%2C+80060-060!5e0!3m2!1spt-BR!2sbr!4v1523906946567" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

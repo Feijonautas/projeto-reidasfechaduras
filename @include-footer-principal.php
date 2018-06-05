@@ -418,8 +418,6 @@
                     <a href="institucional.php" class="link-principal">INSTITUCIONAL</a>
                     <ul class="sub-menu">
                         <li><a href='quem-somos.php' class='sub-link'>Quem Somos</a></li>
-                        <li><a href='garantia-de-qualidade.php' class='sub-link'>Garantia de qualidade</a></li>
-                        <li><a href='frete-gratis.php' class='sub-link'>Frete Grátis</a></li>
                     </ul>
                 </span>
             </li>
@@ -428,6 +426,7 @@
                     <a class="link-principal">POLÍTICAS</a>
                     <ul class="sub-menu">
                         <li><a href='entrega-e-devolucao.php' class='sub-link'>Entrega e devolução</a></li>
+                        <li><a href='troca-e-devolucao.php' class='sub-link'>Troca e devolução</a></li>
                     </ul>
                 </span>
             </li>
@@ -444,9 +443,10 @@
             </li>
             <li class='first-li'>
                 <span>
-                    <a href="formas-de-pagamento.php" class="link-principal">TIRE SUAS DÚVIDAS</a>
+                    <a class="link-principal">TIRE SUAS DÚVIDAS</a>
                     <ul class="sub-menu">
                         <li><a class="sub-link" href="como-comprar.php">Como Comprar</a></li>
+                        <li><a class="sub-link" href="como-comprar.php">Formas de Pagamento</a></li>
                     </ul>
                 </span>
             </li>

@@ -300,8 +300,6 @@
                 $linksPrincipais[5]["sub_link"][0]["url_sub_link"] = "pew-orcamentos.php";
                 $linksPrincipais[5]["sub_link"][1]["titulo_sub_link"] = "<i class='fa fa-plus' aria-hidden='true'></i> Cadastrar orçamento";
                 $linksPrincipais[5]["sub_link"][1]["url_sub_link"] = "pew-cadastra-orcamento.php";
-                $linksPrincipais[5]["sub_link"][2]["titulo_sub_link"] = "<i class='fa fa-cogs' aria-hidden='true'></i> Opções orçamentos";
-                $linksPrincipais[5]["sub_link"][2]["url_sub_link"] = "pew-config-orcamentos.php";
                 /*Sexto Link*/
                 $linksPrincipais[6]["titulo_link"] = "Mensagens";
                 $linksPrincipais[6]["url_link"] = "pew-newsletter.php";

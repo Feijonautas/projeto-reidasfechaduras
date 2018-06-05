@@ -88,7 +88,7 @@
                     echo "</div>";
                 }
                 echo "<div class='large'>";
-                    echo "<h3 class='label-title'>Atualizar imagem (1280px : 570px)</h3>";
+                    echo "<h3 class='label-title'>Atualizar imagem (1600px : 550px)</h3>";
                     echo "<input type='file' accept='image/*' name='imagem' class='label-input'>";
                 echo "</div>";
                 echo "<br class='clear'>";

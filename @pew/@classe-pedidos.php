@@ -26,6 +26,8 @@
         private $data_controle;
         private $status_transporte = 0;
         private $status = 0;
+        public $valor_frete = 0;
+        public $codigo_rastreamento = 0;
         public $global_vars;
         public $pew_functions;
         
@@ -64,15 +66,47 @@
                 $this->data_controle = $info["data_controle"];
                 $this->status_transporte = $info["status_transporte"];
                 $this->status = $info["status"];
+                $this->valor_frete = $info["vlr_frete"];
+                $this->codigo_rastreamento = $info["codigo_rastreamento"];
                 
                 $_POST["console"] = false;
                 $_POST["codigo_referencia"] = $info["referencia"];
                 
                 global $diretorioAPI;
+                
                 require "{$diretorioAPI}pagseguro/ws-pagseguro-consulta-referencia.php"; // Retorna o $statusPagseguro
                 
+                
                 if(isset($statusPagseguro) && $statusPagseguro != $info["status"]){
-                    mysqli_query($conexao, "update $tabela_pedidos set status = '$statusPagseguro' where id = '{$info["id"]}'");
+                    switch($statusPagseguro){
+                        case 1:
+                            $statusTransporte = 0;
+                            break;
+                        case 2:
+                            $statusTransporte = 0;
+                            break;
+                        case 3:
+                            $statusTransporte = 1;
+                            break;
+                        case 4:
+                            $statusTransporte = 1;
+                            break;
+                        case 5:
+                            $statusTransporte = 4;
+                            break;
+                        case 6:
+                            $statusTransporte = 4;
+                            break;
+                        case 7:
+                            $statusTransporte = 4;
+                            break;
+                        default:
+                            $statusTransporte = 0;
+                    }
+                    
+                    $statusTransporte = $this->status_transporte == 0 ? $statusTransporte : $this->status_transporte;
+                    
+                    mysqli_query($conexao, "update $tabela_pedidos set status = '$statusPagseguro', status_transporte = '$statusTransporte' where id = '{$info["id"]}'");
                     $this->status = $statusPagseguro;
                 }
                 
@@ -86,7 +120,7 @@
                     $valorTotal += $info["preco_produto"] * $info["quantidade_produto"];
                 }
 
-                $this->valor_total = $valorTotal;
+                $this->valor_total = $valorTotal + $this->valor_frete;
                 
                 return true;
             }else{
@@ -117,6 +151,9 @@
             $array["data_controle"] = $this->data_controle;
             $array["valor_total"] = $this->valor_total;
             $array["status"] = $this->status;
+            $array["valor_frete"] = $this->valor_frete;
+            $array["codigo_rastreamento"] = $this->codigo_rastreamento;
+            $array["status_transporte"] = $this->status_transporte;
             return $array;
         }
         
@@ -184,10 +221,10 @@
                     $str = "Em disputa";
                     break;
                 case 6:
-                    $str = "Devolvida";
+                    $str = "Devolvido";
                     break;
                 case 7:
-                    $str = "Cancelada";
+                    $str = "Cancelado";
                     break;
                 default:
                     $str = "Validando";
@@ -198,10 +235,12 @@
         function get_status_transporte_string($status){
             switch($status){
                 case 1:
-                    $str = "Pronto para envio";
+                    //$str = "Pronto para envio";
+                    $str = "<a class='link-padrao btn-add-rastreamento' id='addRastreamento{$this->id}'>Adicionar código de rastreio</a>";
                     break;
                 case 2:
-                    $str = "Enviado";
+                    //$str = "Enviado";
+                    $str = "<a class='link-padrao btn-add-rastreamento' id='addRastreamento{$this->id}'>" . $this->codigo_rastreamento . "</a>";
                     break;
                 case 3:
                     $str = "Entregue";
@@ -244,6 +283,12 @@
         
         function get_transporte_string(){
             switch($this->codigo_transporte){
+                case "7777":
+                    $str = "Retirada na Loja";
+                    break;
+                case "8888":
+                    $str = "Motoboy";
+                    break;
                 case "40010":
                     $str = "Correios - SEDEX";
                     break;
@@ -281,7 +326,7 @@
                     
                     $enderecoFinal = $this->rua . ", ". $this->numero . $txtComplemento . " - " . $this->cep . " - " . $this->cidade . " | " . $this->estado;
                     
-                    echo "<div class='box-produto' id='boxProduto$id'>";
+                    echo "<div class='box-produto display-pedido' id='boxProduto$id'>";
                         echo "<div class='informacoes'>";
                             echo "<h3 class='nome-produto'><a>{$this->nome_cliente}</a></h3>";
                             echo "<div class='half box-info'>";
@@ -334,6 +379,11 @@
                                         echo "<div class='subtotal'>$subtotal</div>";
                                     echo "</div>";
                                 }
+                                echo "<div class='box'>";
+                                    echo "<div class='quantidade'>1 x</div>";
+                                    echo "<div class='nome'>" . $this->get_transporte_string() . "</div>";
+                                    echo "<div class='subtotal'>" . $this->valor_frete . "</div>";
+                                echo "</div>";
                                 echo "<button class='btn-voltar btn-voltar-produtos' id-pedido='idPedido$id'>Voltar</button>";
                             }
                         echo "</div>";
@@ -364,8 +414,6 @@
                             echo "<button class='btn-voltar btn-voltar-info' id-pedido='infoPedido$id'>Voltar</button>";
                         echo "</div>";
                     echo "</div>";
-                }else{
-                    echo "teste";
                 }
             }
         }
@@ -373,7 +421,7 @@
         function get_pedidos_conta($idCliente){
             $tabela_minha_conta = $this->global_vars["tabela_minha_conta"];
             
-            $pedidosCliente = $this->buscar_pedidos("id_cliente = '$idCliente'");
+            $pedidosCliente = $this->buscar_pedidos("id_cliente = '$idCliente' order by id desc");
             
             $selected = array();
             $count = 0;

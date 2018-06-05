@@ -73,6 +73,8 @@
                     
                     $preco = $infoProduto["preco_promocao"] > 0 && $infoProduto["preco_promocao"] < $infoProduto["preco"] && $infoProduto["promocao_ativa"] == 1 ? $infoProduto["preco_promocao"] : $infoProduto["preco"];
                     
+                    echo $infoProduto["preco_promocao"] . ' / ' . $infoProduto["preco"] . ' = ' . $preco;
+                    
                     $carrinho["itens"][$ctrlProdutos] = array();
                     $carrinho["itens"][$ctrlProdutos]["id"] = $infoProduto["id"];
                     $carrinho["itens"][$ctrlProdutos]["nome"] = $infoProduto["nome"];
@@ -90,7 +92,7 @@
                         $carrinho["itens"][$ctrlProdutos]["desconto"] = $desconto;
                         $carrinho["itens"][$ctrlProdutos]["preco"] = $infoProduto["preco"] - $totalDesconto;
                     }else{
-                        $carrinho["itens"][$ctrlProdutos]["preco"] = $infoProduto["preco"];
+                        $carrinho["itens"][$ctrlProdutos]["preco"] = $preco;
                     }
                     
                     $ctrlProdutos++;

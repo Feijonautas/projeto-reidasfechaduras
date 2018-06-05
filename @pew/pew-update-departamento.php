@@ -58,8 +58,8 @@
         $imagemAtual = $infoImagemAtual["imagem"];
         
         if($imagem != ""){
-            
             if(file_exists($dirImagens.$imagemAtual) && $imagemAtual != ""){
+                echo "unlink...";
                 unlink($dirImagens.$imagemAtual);
             }
             
@@ -73,7 +73,6 @@
         }
 
         mysqli_query($conexao, "update $tabela_departamentos set departamento = '$titulo', descricao = '$descricao', imagem = '$nomeImagem', posicao = '$posicao', ref = '$ref', data_controle = '$data', status = '$status' where id = '$idDepartamento'");
-        
         
         mysqli_query($conexao, "delete from $tabela_links_menu where id_departamento = '$idDepartamento'");
         

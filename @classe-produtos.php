@@ -372,6 +372,7 @@
             }
             return $return;
         }
+        
         public function get_categorias_produto(){
             $condicao = "id_produto = '".$this->id."'";
             $tabela_categorias = $this->global_vars["tabela_categorias"];

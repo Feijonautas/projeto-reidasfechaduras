@@ -1,7 +1,15 @@
 <?php
 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     session_start();
-    $nomeEmpresa = "Rei das Fechaduras";
+    
+    require_once "@classe-paginas.php";
+
+    $cls_paginas->set_titulo("Loja");
+    $cls_paginas->set_descricao("...");
 
     $buscarDepartamento = isset($_GET["departamento"]) ? true : false;
     $buscarCategoria = isset($_GET["categoria"]) ? true : false;
@@ -11,31 +19,49 @@
     $getCategoria = $buscarCategoria == true ? addslashes($_GET["categoria"]) : null;
     $getSubcategoria = $buscarSubcategoria == true ? addslashes($_GET["subcategoria"]) : null;
 
+    require_once "@pew/pew-system-config.php";
     require_once "@classe-produtos.php";
 
     $cls_produtos = new Produtos();
 
-    $descricaoPagina = "";
-    $tituloPagina = "Loja - $nomeEmpresa";
-
     if($getSubcategoria != null){
         $headInfo = $cls_produtos->get_referencias("subcategoria", "ref = '$getSubcategoria'");
         if($headInfo != false){
-            $tituloPagina = $headInfo["titulo"] . " - " . $nomeEmpresa;
-            $descricaoPagina = $headInfo["descricao"];
+            $cls_paginas->set_titulo($headInfo["titulo"]);
+            $cls_paginas->set_descricao($headInfo["descricao"]);
         }
     }else if($getCategoria != null){
         $headInfo = $cls_produtos->get_referencias("categoria", "ref = '$getCategoria'");
         if($headInfo != false){
-            $tituloPagina = $headInfo["titulo"] . " - " . $nomeEmpresa;
-            $descricaoPagina = $headInfo["descricao"];
+            $cls_paginas->set_titulo($headInfo["titulo"]);
+            $cls_paginas->set_descricao($headInfo["descricao"]);
         }
     }else if($getDepartamento != null){
         $headInfo = $cls_produtos->get_referencias("departamento", "ref = '$getDepartamento'");
         if($headInfo != false){
-            $tituloPagina = $headInfo["titulo"] . " - " . $nomeEmpresa;
-            $descricaoPagina = $headInfo["descricao"];
+            $cls_paginas->set_titulo($headInfo["titulo"]);
+            $cls_paginas->set_descricao($headInfo["descricao"]);
         }
+    }
+
+    $dirImagensDepartamento = "imagens/departamentos/";
+    $bgPadrao = "background-vitrine-padrao.png";
+
+    if($getDepartamento != null){
+        $tabela_departamentos = $pew_custom_db->tabela_departamentos;
+        $queryImagem = mysqli_query($conexao, "select imagem from $tabela_departamentos where ref = '$getDepartamento'");
+        $infoImagem = mysqli_fetch_array($queryImagem);
+        
+        $imagemDepartamento = $infoImagem["imagem"];
+        
+        if(!file_exists($dirImagensDepartamento.$imagemDepartamento) || $imagemDepartamento == ""){
+            $backgroundVitrine = $dirImagensDepartamento.$bgPadrao;
+        }else{
+            $backgroundVitrine = $dirImagensDepartamento.$imagemDepartamento;
+        }
+        
+    }else{
+        $backgroundVitrine = $dirImagensDepartamento.$bgPadrao;
     }
 
 ?>
@@ -46,9 +72,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
         <meta name="HandheldFriendly" content="true">
-        <meta name="description" content="<?php echo $descricaoPagina;?>">
+        <meta name="description" content="<?php echo $cls_paginas->descricao;?>">
         <meta name="author" content="Efectus Web">
-        <title><?php echo $tituloPagina;?></title>
+        <title><?php echo $cls_paginas->titulo;?></title>
+        <link type="image/png" rel="icon" href="imagens/identidadeVisual/logo-icon.png">
         <!--DEFAULT LINKS-->
         <?php
             require_once "@link-standard-styles.php";
@@ -60,6 +87,8 @@
         <style>
             .background-loja{
                 width: 100%;
+                min-height: 300px;
+                background-color: #eee;
             }
             .background-loja img{
                 width: 100%;
@@ -74,6 +103,25 @@
                 min-height: 300px;
                 background-color: #fff;
                 overflow: hidden;
+            }
+            .btn-show-more{
+                position: absolute;
+                bottom: 0px;
+                margin: 0 auto;
+                right: 0px;
+                width: 60px;
+                height: 60px;
+                background-color: #002685;
+                color: #fff;
+                left: 0px;
+                border-radius: 50%;
+                line-height: 60px;
+                text-align: center;
+                cursor: pointer;
+                font-size: 24px;
+            }
+            .btn-show-more:hover{
+                background-color: #021b5a;
             }
             .vitrine-standard .titulo-vitrine{
                 text-align: left;
@@ -95,6 +143,9 @@
                             top: 0px;
                             margin: 0 auto;
                         }
+                        .background-loja{
+                            min-height: inherit;
+                        }
                     }
                 }
             }
@@ -104,6 +155,88 @@
         <script>
             $(document).ready(function(){
                 console.log("Página carregada");
+                
+                var urlClasseVitrine = "@classe-vitrine-produtos.php";
+                
+                var btnShowMore = $(".js-btn-show-more");
+                
+                var iconPlus = "<i class='fas fa-plus'></i>";
+                var iconLoading = "<i class='fas fa-spinner fa-spin'></i>";
+                
+                var arrayProdutos = $("#vitrineArrayProdutos").val();
+                var exceptionProdutos = $("#vitrineAddedProdutos").val();
+                
+                var arrayProdutosFila = [];
+                var arrayProdutosAdicionados = [];
+                
+                var adicionandoProdutos = false;
+                
+                JSON.parse(arrayProdutos).forEach(function(idProduto){
+                    arrayProdutosFila[arrayProdutosFila.length] = idProduto;
+                });
+                
+                JSON.parse(exceptionProdutos).forEach(function(idProduto){
+                    arrayProdutosAdicionados[arrayProdutosAdicionados.length] = idProduto;
+                });
+                
+                var maxAppend = $("#vitrineMaxAppend").val() > 0 ? $("#vitrineMaxAppend").val() : 20;
+                
+                function append_produtos(){
+                    if(!adicionandoProdutos){
+                        adicionandoProdutos = true;
+                        var add_queue = [];
+                        var ctrl_added = 0;
+                        btnShowMore.html(iconLoading);
+                        arrayProdutosFila.forEach(function(idProduto){
+                            var add = true;
+
+                            arrayProdutosAdicionados.forEach(function(idException){
+                                if(idProduto == idException){
+                                    add = false;
+                                }
+                            });
+
+                            if(add && ctrl_added < maxAppend){
+                                add_queue[ctrl_added] = idProduto;
+                                arrayProdutosAdicionados[arrayProdutosAdicionados.length] = idProduto;
+                                ctrl_added++;
+                            }
+                        });
+                        
+                        function finish(appendContent){
+                            btnShowMore.html(iconPlus);
+                            if(arrayProdutosFila.length == arrayProdutosAdicionados.length){
+                                btnShowMore.remove();
+                            }
+                            adicionandoProdutos = false;
+                            if(appendContent != false){
+                                $(".vitrine-standard .display-produtos").append(appendContent);
+                            }
+                        }
+
+                        $.ajax({
+                            type: "POST",
+                            url: urlClasseVitrine,
+                            data: {acao_vitrine: "get_box_produto", produtos: add_queue},
+                            error: function(){
+                                notificacaoPadrao("Ocorreu um erro ao buscar os produtos");
+                                finish(false);
+                            },
+                            success: function(resposta){
+                                if(resposta != "false"){
+                                    finish(resposta);   
+                                }else{
+                                    finish(false);   
+                                }
+                            }
+                        });
+                    }
+                }
+                
+                btnShowMore.off().on("click", function(){
+                    append_produtos();
+                });
+                
             });
         </script>
         <!--END PAGE JS-->
@@ -119,7 +252,7 @@
         ?>
         <!--THIS PAGE CONTENT-->
         <div class="background-loja">
-            <img src="imagens/departamentos/linha-feminina.png">
+            <img src="<?php echo $backgroundVitrine; ?>">
         </div>
         <div class="main-content">
         <?php
@@ -307,8 +440,21 @@
             
             echo "<div class='navigation-tree'>" . $navigationTree . "</div>";
             
-            $vitrineProdutos[0] = new VitrineProdutos("standard", 20, "<h1>$tituloVitrine</h1>", $descricaoVitrine);
+            
+            $maxAppend = 20;
+            
+            $vitrineProdutos[0] = new VitrineProdutos("standard", $maxAppend, "<h1 class='titulo-vitrine'>$tituloVitrine</h1>", $descricaoVitrine);
             $vitrineProdutos[0]->montar_vitrine($selectedProdutos);
+            $selectedExceptions = $vitrineProdutos[0]->get_exceptions();
+            
+            $jsonProdutos = json_encode($selectedProdutos);
+            $jsonExceptions = json_encode($selectedExceptions);
+            
+            echo "<input type='hidden' value='$jsonProdutos' id='vitrineArrayProdutos'>";
+            echo "<input type='hidden' value='$jsonExceptions' id='vitrineAddedProdutos'>";
+            echo "<input type='hidden' value='$maxAppend' id='vitrineMaxAppend'>";
+            
+            echo "<div class='btn-show-more js-btn-show-more'><i class='fas fa-plus'></i></div>";
         ?>
         </div>
         <!--END THIS PAGE CONTENT-->

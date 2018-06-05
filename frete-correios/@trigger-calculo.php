@@ -1,4 +1,5 @@
 <?php
+
     $jsonData = json_decode(file_get_contents('php://input'), true);
     if($jsonData != null){
         $codigoCorreios = isset($jsonData["codigo_correios"]) ? $jsonData["codigo_correios"] : null;
@@ -13,6 +14,7 @@
         
         if($codigoCorreios != null) $_POST["codigo_correios"] = $codigoCorreios;
         if($declararValor != null) $_POST["declarar_valor"] = $declararValor;
+        
     }
 
     $post_fields = array("cep_destino", "produtos");
@@ -28,10 +30,19 @@
     }
 
     if($calcular){
+        require_once "@classe-paginas.php";
         require_once "calcular-frete.php";
         
-        $baseSite = "https://www.efectusdigital.com.br/reidasfechaduras/";
-        /*$baseSite = "localhost/xampp/github/ecommerce_bolsas_em_couro/";*/
+        if(!function_exists("is_json")){
+            function is_json($string){
+                json_decode($string);
+                return (json_last_error() == JSON_ERROR_NONE);
+            }
+        }
+        
+        $cls_paginas = new Paginas();
+        
+        $baseSite = "https://".$cls_paginas->base_path;
         $pastaCorreios = "frete-correios/ws-correios.php";
 
         $codigoCorreios = isset($_POST["codigo_correios"]) ? $_POST["codigo_correios"] : "41106";
@@ -40,7 +51,19 @@
         
         $declararValor = isset($_POST["declarar_valor"]) ? $_POST["declarar_valor"] : false;
 
+        if(is_json($_POST["produtos"]) && isset($_POST["no_console"])){
+            $_POST["produtos"] = json_decode($_POST["produtos"], true);
+            $arrayProdutos = array();
+            $ctrlProdutos = 0;
+            foreach($_POST["produtos"]["itens"] as $info){
+                $arrayProdutos[$ctrlProdutos] = $info;
+                $ctrlProdutos++;
+            }
+            $_POST["produtos"] = $arrayProdutos;
+        }
+        
         $produtos = is_array($_POST["produtos"]) ? $_POST["produtos"] : array();
+        
         
         /*
         $produtos[0] = array();
@@ -53,11 +76,11 @@
         $produtos[0]["peso"] = ".3";
         */
         
-        $url_correios_api = $baseSite.$pastaCorreios;
+        $url_correios_api = $baseSite."/".$pastaCorreios;
         
         $infoFrete = frete($produtos, $codigoCorreios, $cepDestino, $declararValor, $url_correios_api);
         if($infoFrete != false && $produtos != false){
-            echo $infoFrete; // RETORNO EM JSON
+            //echo $infoFrete; // RETORNO EM JSON
         }else{
             echo "false";
         }

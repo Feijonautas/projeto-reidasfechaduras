@@ -52,6 +52,9 @@
         color: #ffb700;
         border-color: #111;
     }
+    .header-principal .nav-header .top-bar .link-padrao-responsivo{
+        display: none;
+    }
     .header-principal .nav-header .top-bar .header-cart{
         position: relative;
         width: 50px;
@@ -878,6 +881,9 @@
                     display: none;
                 }
                 @media screen and (max-width: 480px){
+                    .header-principal .nav-header .top-nav .social-media-field{
+                        align-items: center;
+                    }
                     .header-principal .nav-header .top-bar{
                         font-size: 11px;
                     }
@@ -886,6 +892,26 @@
                     }
                     .header-principal .nav-header .top-nav .search-field form{
                         width: 65%;
+                    }
+                    @media screen and (max-width: 425px){
+                        .header-principal .nav-header .top-bar .link-padrao{
+                            font-size: 10px;
+                        }
+                        .header-principal .nav-header .botao-nav-mobile{
+                            font-size: 19px;
+                            line-height: 50px;
+                        }
+                        @media screen and (max-width: 375px){
+                            .header-principal .nav-header .top-bar .botao-entrar .hidden-mobile{
+                                display: none;
+                            }
+                            .header-principal .nav-header .top-bar .link-padrao-responsivo{
+                                display: block;
+                            }
+                            .header-principal .nav-header .top-bar .header-cart .cart-button{
+                                font-size: 18px;
+                            }
+                        }
                     }
                 }
             }
@@ -904,8 +930,8 @@
                 $loginConta = new MinhaConta();
                 
                 function botoes_login(){
-                    echo "<a class='link-padrao botao-entrar' id='botaoEntrar'><i class='fas fa-sign-in-alt' data-fa-transform='grow-6 left-6'></i> ACOMPANHE SEU PEDIDO</a> OU";
-                    echo "<a class='link-padrao' id='botaoCadastraConta'>CRIE SUA CONTA</a>";
+                    echo "<a class='link-padrao botao-entrar' id='botaoEntrar'><i class='fas fa-sign-in-alt' data-fa-transform='grow-6 left-6'></i> <span class='hidden-mobile'>ACOMPANHE</span> SEU PEDIDO</a> ";
+                    echo "OU <a class='link-padrao' id='botaoCadastraConta'>CRIE SUA CONTA</a>";
                 }
             
                 if(isset($_SESSION["minha_conta"])){
@@ -1150,7 +1176,7 @@
                             $totalSubcategorias = $pew_functions->contar_resultados($tabela_subcategorias, "id_categoria = '$idCategoria'");
                             $ctrlSubsublinks = 0;
                             if($totalSubcategorias > 0){
-                                $querySubcategorias = mysqli_query($conexao, "select * from $tabela_subcategorias where id_categoria = '$idCategoria' order by subcategoria asc");
+                                $querySubcategorias = mysqli_query($conexao, "select * from $tabela_subcategorias where id_categoria = '$idCategoria'");
                                 while($infoSubcategoriras = mysqli_fetch_array($querySubcategorias)){
                                     $idSubcategoria = $infoSubcategoriras["id"];
                                     $tituloSubcategoria = $infoSubcategoriras["subcategoria"];
@@ -1307,25 +1333,30 @@
             var whiteSpace = 10;
             var alturaDisplayLinks = parseFloat(scrollDisplayLinks) - parseFloat(whiteSpace);
             var tamanhoDisplayLinks = displayLinks.height();
-            if(scrollAtual >= alturaDisplayLinks){
-                if(!botaoNavMobile.hasClass("active-botao")){
-                    botaoNavMobile.addClass("active-botao");
-                }
-                if(!navHeader.hasClass("nav-header-mobile")){
-                    navHeader.addClass("nav-header-mobile");
-                    topNav.css("margin-bottom", tamanhoDisplayLinks+"px");
-                }
-            }else if(!menuAberto){
-                if(botaoNavMobile.hasClass("active-botao")){
-                    botaoNavMobile.removeClass("active-botao");
-                }
-                $(".link-principal").css("transition", ".4s");
-                $(".display-links .sub-menu").css("transition", ".2s");
-                if(navHeader.hasClass("nav-header-mobile")){
-                    $(".display-links .sub-menu").css("transition", "0s");
-                    $(".link-principal").css("transition", "0s");
-                    navHeader.removeClass("nav-header-mobile");
-                    topNav.css("margin-bottom", "0px");
+            
+            var is_over_menu = $(".display-links:hover").length > 0 ? true : false;
+            
+            if(screen.width > 720){
+                if(scrollAtual >= alturaDisplayLinks && is_over_menu == false){
+                    if(!botaoNavMobile.hasClass("active-botao")){
+                        botaoNavMobile.addClass("active-botao");
+                    }
+                    if(!navHeader.hasClass("nav-header-mobile")){
+                        navHeader.addClass("nav-header-mobile");
+                        topNav.css("margin-bottom", tamanhoDisplayLinks+"px");
+                    }
+                }else if(!menuAberto){
+                    if(botaoNavMobile.hasClass("active-botao")){
+                        botaoNavMobile.removeClass("active-botao");
+                    }
+                    $(".link-principal").css("transition", ".4s");
+                    $(".display-links .sub-menu").css("transition", ".2s");
+                    if(navHeader.hasClass("nav-header-mobile")){
+                        $(".display-links .sub-menu").css("transition", "0s");
+                        $(".link-principal").css("transition", "0s");
+                        navHeader.removeClass("nav-header-mobile");
+                        topNav.css("margin-bottom", "0px");
+                    }
                 }
             }
         }

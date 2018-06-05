@@ -83,7 +83,7 @@
                     <input class="label-input" type="file" name="imagem">
                 </div>
                 <div class="label medium">
-                    <h2 class="label-title">Thumbnail da dica: (500px : 500px) OBRIGATÓRIO</h2>
+                    <h2 class="label-title">Thumbnail da dica: (430px : 200px) RECOMENDÁVEL</h2>
                     <input class="label-input" type="file" name="thumbnail">
                 </div>
                 <div class="label medium" align="left">

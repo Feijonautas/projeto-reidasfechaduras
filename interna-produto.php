@@ -1,9 +1,9 @@
 <?php
     session_start();
-    $nomeEmpresa = "Rei das Fechaduras";
     
     require_once "@classe-system-functions.php";
     require_once "@classe-produtos.php";
+    require_once "@classe-paginas.php";
 
     /*SET TABLES*/
     $tabela_produtos = $pew_custom_db->tabela_produtos;
@@ -15,31 +15,30 @@
     /*END DEFAULT VARS*/
 
     $idInternaProduto = isset($_GET["id_produto"]) ? (int)$_GET["id_produto"] : 0;
-
+    $totalProduto = $pew_functions->contar_resultados($tabela_produtos, "id = '$idInternaProduto'");
     $produto = new Produtos();
-
-    $totalProduto = $produto->query_produto("id = '$idInternaProduto'");
     $produto->montar_produto($idInternaProduto);
     $infoProduto = $produto->montar_array();
 
     if($totalProduto > 0){
-        $tituloPagina = $infoProduto["nome"] . " - $nomeEmpresa";
-        $descricaoPagina = $infoProduto["descricao_curta"];
+        $cls_paginas->set_titulo($infoProduto["nome"]);
+        $cls_paginas->set_descricao($infoProduto["descricao_curta"]);
     }else{
+        $cls_paginas->set_titulo("Produto não encontrado");
         $infoProduto = null;
     }
     
     $infoDepartamentos = $produto->get_departamentos_produto();
     $totalDepartamentos = is_array($infoDepartamentos) ? count($infoDepartamentos) : 0;
     if($totalDepartamentos){
-        $breadCrumbDepartamento = ucwords(strtolower($infoDepartamentos[0]["titulo"]));
+        $breadCrumbDepartamento = mb_convert_case($infoDepartamentos[0]["titulo"], MB_CASE_TITLE, "UTF-8");
         $breadCrumbRefDepartamento = $infoDepartamentos[0]["ref"];
     }
 
     $infoCategorias = $produto->get_categorias_produto();
     $totalCategorias = is_array($infoCategorias) ? count($infoCategorias) : 0;
     if($totalCategorias){
-        $breadCrumbCategoria = ucwords(strtolower($infoCategorias[0]["titulo"]));
+        $breadCrumbCategoria = mb_convert_case($infoCategorias[0]["titulo"], MB_CASE_TITLE, "UTF-8");
         $breadCrumbRefCategoria = $infoCategorias[0]["ref"];
     }
 ?>
@@ -50,9 +49,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
         <meta name="HandheldFriendly" content="true">
-        <meta name="description" content="<?php echo $descricaoPagina;?>">
+        <meta name="description" content="<?php echo $cls_paginas->descricao;?>">
         <meta name="author" content="Efectus Web">
-        <title><?php echo $tituloPagina;?></title>
+        <title><?php echo $cls_paginas->titulo;?></title>
+        <link type="image/png" rel="icon" href="imagens/identidadeVisual/logo-icon.png">
         <!--DEFAULT LINKS-->
         <?php
             require_once "@link-standard-styles.php";
@@ -190,6 +190,7 @@
             }
             .section-produto .display-info-produto .view-disponibilidade{
                 font-size: 16px;
+                margin-bottom: 15px;
             }
             .section-produto .display-info-produto .icone-disponibilidade{
                 font-size: 18px;
@@ -251,7 +252,7 @@
                 flex-flow: row wrap;
             }
             .section-produto .display-info-produto .display-comprar .quantidade-produto{
-                height: 36px;
+                height: 46px;
                 width: 40px;
                 padding: 0px;
                 border: 2px solid #ddd;
@@ -269,9 +270,9 @@
                 border: none;
                 color: #fff;
                 background-color: #408122;
-                font-size: 22px;
-                width: 300px;
-                height: 40px;
+                font-size: 18px;
+                width: 170px;
+                height: 50px;
                 transition: .2s;
                 cursor: pointer;
                 outline: none;
@@ -364,14 +365,15 @@
                         justify-content: flex-start;
                     }
                     .section-produto .display-info-produto .display-comprar{
-                        width: 50%;
-                        float: left;
+                        width: 100%;
+                        float: none;
+                        justify-content: flex-start;
                     }
                     .section-produto .display-info-produto .calculo-frete{
                         position: relative;
-                        width: 50%;
+                        width: 100%;
                         margin: 0px;
-                        margin-left: auto;
+                        margin: 40px 0px 10px 0px;
                         top: -10px;
                     }
                     .section-produto .display-info-produto .calculo-frete .input-frete{
@@ -445,9 +447,9 @@
                 
                 botaoCalculoFrete.off().on("click", function(){
                     if(!calculandoFrete){
-                        var urlFrete = "frete-correios/@trigger-calculo.php";
+                        var urlFrete = "@calcular-transporte.php";
                         var cepDestino = inputFrete.val();
-                        var codigosServico = ["41106", "40010", "40215", "40290"];
+                        var codigosServico = ["7777", "8888", "41106", "40010", "40215", "40290"];
                         if(cepDestino.length == 9){
                             
                             botaoCalculoFrete.html(iconLoading);
@@ -457,6 +459,12 @@
                             
                             function get_titulo_servico(cod){
                                 switch(cod){
+                                    case "7777":
+                                        var titulo = "Retirada na Loja";
+                                        break;
+                                    case "8888":
+                                        var titulo = "Motoboy";
+                                        break;
                                     case "40010":
                                         var titulo = "SEDEX";
                                         break;
@@ -474,7 +482,7 @@
                             codigosServico.forEach(function(codigo){
                                 var dados = {
                                     cep_destino: cepDestino,
-                                    codigo_correios: codigo,
+                                    codigo_transporte: codigo,
                                     produtos: jsonProduto,
                                 }
                                 $.ajax({
@@ -495,7 +503,11 @@
                                                 var jsonData = JSON.parse(resultado);
                                                 var valor = jsonData.valor.toFixed(2);
                                                 var prazo = jsonData.prazo;
-                                                var msgPadrao = tituloServico + ": <b>R$" + valor + "</b> em até <b>" + prazo + "</b>";
+                                                var strValor = valor > 0 ? "R$ " + valor : "Grátis";
+                                                valor = strValor == "Grátis" ? "0.01" : valor;
+                                                var strPrazo = prazo != 0 ? " em até <b>"+ prazo +"</b>" : "";
+                                                
+                                                var msgPadrao = tituloServico + ": <b>" + strValor + "</b>" + strPrazo + "</b>";
                                                 mensagemFinal[ctrlExec] = "<br>" + msgPadrao + "<br>";
                                             }else{
                                                 mensagemFinal[ctrlExec] = "<br>" + tituloServico + ": Localidade insdisponível<br>";
@@ -552,7 +564,6 @@
             /*INFO PRODUTO*/
             $nomeProduto = $infoProduto["nome"];
             $precoProduto = $infoProduto["preco"];
-            $precoAtivo = $infoProduto["preco_ativo"] == 1 ? true : false;
             $precoPromocaoProduto = $infoProduto["preco_promocao"];
             $promocaoAtiva = $infoProduto["promocao_ativa"] == 1 && $precoPromocaoProduto > 0 && $precoPromocaoProduto < $precoProduto ? true : false;
             $precoFinal = $promocaoAtiva == true ? $precoPromocaoProduto : $precoProduto;
@@ -562,7 +573,7 @@
             $estoqueProduto = $infoProduto["estoque"];
             $imagensProduto = $infoProduto["imagens"];
             $urlVideo = $infoProduto["url_video"];
-            
+                
             $descricaoProduto = $infoProduto["descricao_longa"];
             /*INFO PRODUTO*/
                 
@@ -591,12 +602,21 @@
             }
 
             $viewDisponibilidadadeField = $estoqueProduto == 0 ? "<div class='view-disponibilidade indisponivel'><span class='icone-disponibilidade'><i class='fas fa-times'></i></span> SEM ESTOQUE</div>" : "<div class='view-disponibilidade disponivel'><span class='icone-disponibilidade'><i class='fas fa-check'></i></span> EM ESTOQUE</div>";
-            
-            $viewBotaoComprar = $estoqueProduto == 0 ? "<button class='botao-comprar sem-estoque'>SOLICITAR ORÇAMENTO</button>" : "<input type='number' class='quantidade-produto' value=1 placeholder='Qtd'><button  class='botao-comprar' id='addProdutoCarrinho' carrinho-id-produto='$idInternaProduto'>SOLICITAR ORÇAMENTO</button>";
+
+            $viewBotaoComprar = $estoqueProduto == 0 ? "<button class='botao-comprar sem-estoque'>SOLICITAR ORÇAMENTO</button>" : "<input type='text' class='quantidade-produto' value=1 placeholder='Qtd'><button  class='botao-comprar' id='addProdutoCarrinho' carrinho-id-produto='$idInternaProduto'>SOLICITAR ORÇAMENTO</button>";
             /*END HTML VIEW*/
                 
             $iconArrow = "<i class='fas fa-angle-right icon'></i>";
-            $navigationTree = "<div class='navigation-tree'><a href='index.php'>Página inicial</a> $iconArrow <a href='loja.php?departamento=$breadCrumbRefDepartamento'>$breadCrumbDepartamento</a> $iconArrow <a href='loja.php?departamento=$breadCrumbRefDepartamento&categoria=$breadCrumbRefCategoria'>$breadCrumbCategoria</a> $iconArrow <a href='#'>$nomeProduto</a></div>";
+				
+            $navigationTree = "<div class='navigation-tree'><a href='index.php'>Página inicial</a>";
+			if(isset($breadCrumbDepartamento)){
+				$navigationTree .= "$iconArrow <a href='loja.php?departamento=$breadCrumbRefDepartamento'>$breadCrumbDepartamento</a>"; 
+			}
+			if(isset($breadCrumbCategoria)){
+				$navigationTree .= "$iconArrow <a href='loja.php?departamento=$breadCrumbRefDepartamento&categoria=$breadCrumbRefCategoria'>$breadCrumbCategoria</a>";
+			}
+			$navigationTree .= "$iconArrow <a href='#'>$nomeProduto</a></div>";
+				
             echo $navigationTree;
                 
             ?>
@@ -613,13 +633,13 @@
                                 if(!file_exists($dirImagensProduto."/".$srcImagem) || $srcImagem == ""){
                                     $imagemPrincipal = "produto-padrao.png";
                                 }
-                                echo "<div class='box-miniaturas'><img src='$dirImagensProduto/$srcImagem' alt='$nomeEmpresa - $nomeProduto - Imagem $ctrlImagens' class='miniatura'></div>";
+                                echo "<div class='box-miniaturas'><img src='$dirImagensProduto/$srcImagem' alt='{$cls_paginas->empresa} - $nomeProduto - Imagem $ctrlImagens' class='miniatura'></div>";
                             }
                         }else{
-                            echo "<div class='box-miniaturas'><img src='$dirImagensProduto/produto-padrao.png' alt='$nomeEmpresa - $nomeProduto - Imagem $ctrlImagens' class='miniatura'></div>";
+                            echo "<div class='box-miniaturas'><img src='$dirImagensProduto/produto-padrao.png' alt='{$cls_paginas->empresa} - $nomeProduto - Imagem $ctrlImagens' class='miniatura'></div>";
                         }
                 
-                        if($urlVideo != null){
+                        if($urlVideo != null && $urlVideo != 0){
                             echo "<div class='box-play'><i class='fas fa-play-circle icon-play'></i>Veja o vídeo</div>";
                             echo "<div class='display-video'>$urlVideo <button class='botao-voltar'><i class='fas fa-times'></i> VOLTAR</button></div>";
                         }
@@ -630,53 +650,49 @@
                         if($imagemPrincipal == ""){
                             $imagemPrincipal = "produto-padrao.png";
                         }
-                        echo "<img src='$dirImagensProduto/$imagemPrincipal' alt='$nomeEmpresa - $nomeProduto - Imagem principal' class='imagem-principal'>";
+                        echo "<img src='$dirImagensProduto/$imagemPrincipal' alt='{$cls_paginas->empresa} - $nomeProduto - Imagem principal' class='imagem-principal'>";
                         
                     ?>
                 </div>
                 <div class="display-info-produto">
                     <h1 class="titulo-produto"><?php echo $nomeProduto; ?></h1>
                     <?php
-                    if($precoAtivo){
                         echo $viewPriceField;
                         echo $viewParcelasField;
-                    }else{
-                        echo "<br>";
-                    }
-                    echo $viewDisponibilidadadeField;
-                    echo "<br>";
-                    ?>
-                        <?php
-                            $infoCoresRelacionadas = $produto->get_cores_relacionadas();
-                            if(is_array($infoCoresRelacionadas) and count($infoCoresRelacionadas) > 0){
-                                echo "<h6 style='margin: 25px 0px -15px 0px; font-weight: normal;'>Outras cores</h6>";
-                                echo "<div class='display-cores'>";
-                                foreach($infoCoresRelacionadas as $id => $info){
-                                    $idRelacao = $info["id_relacao"];
-                                    $produtoRelacao = new Produtos();
-                                    $produtoRelacao->montar_produto($idRelacao);
-                                    $infoProduto = $produtoRelacao->montar_array();
-                                    $idCor = $infoProduto["id_cor"];
-                                    $queryCor = mysqli_query($conexao, "SELECT * FROM pew_cores where id = '$idCor' and status = 1");
-                                    $functions = new systemFunctions();
-                                    $totalCores = $functions->contar_resultados("pew_cores", "id = '$idCor' and status = 1");
-                                    $urlProdutoRelacao = "interna-produto.php?id_produto=$idRelacao";
-                                    $dirImagens = "imagens/cores";
-                                    if($totalCores > 0){
-                                        while($infoCor = mysqli_fetch_assoc($queryCor)){
-                                            $nomeCor = $infoCor["cor"];
-                                            $imagemCor = $infoCor["imagem"];
-                                            echo "<div class='box-cor'><a href='$urlProdutoRelacao'><img title='$nomeCor' src='$dirImagens/$imagemCor'></a></div>";
+                        echo $viewDisponibilidadadeField;
+                
+                        $infoCoresRelacionadas = $produto->get_cores_relacionadas();
+                        $totalCores = is_array($infoCoresRelacionadas) ? count($infoCoresRelacionadas) : 0;
+                        if($totalCores > 0){
+                            echo "<h6 style='margin: 5px 0px -15px 0px; font-weight: normal;'>Outras cores</h6>";
+                            echo "<div class='display-cores'>";
+                            foreach($infoCoresRelacionadas as $id => $info){
+                                $idRelacao = $info["id_relacao"];
+                                $produtoRelacao = new Produtos();
+                                $produtoRelacao->montar_produto($idRelacao);
+                                $infoProduto = $produtoRelacao->montar_array();
+                                $idCor = $infoProduto["id_cor"];
+                                $queryCor = mysqli_query($conexao, "SELECT * FROM pew_cores where id = '$idCor' and status = 1");
+                                $functions = new systemFunctions();
+                                $totalCores = $functions->contar_resultados("pew_cores", "id = '$idCor' and status = 1");
+                                $urlProdutoRelacao = "interna-produto.php?id_produto=$idRelacao";
+                                $dirImagens = "imagens/cores";
+                                if($totalCores > 0){
+                                    while($infoCor = mysqli_fetch_assoc($queryCor)){
+                                        $nomeCor = $infoCor["cor"];
+                                        $imagemCor = $infoCor["imagem"];
+                                        if(!file_exists($dirImagens."/".$imagemCor) || $imagemCor == ""){
+                                            $imagemCor = "cor-padrao.png";
                                         }
+                                        echo "<div class='box-cor'><a href='$urlProdutoRelacao'><img title='$nomeCor' src='$dirImagens/$imagemCor'></a></div>";
                                     }
                                 }
-                            echo "</div>";
                             }
-                        ?>
+                            echo "</div>";
+                        }
+                    ?>
                     <div class="display-comprar">
-                        <?php
-                            echo $viewBotaoComprar;
-                        ?>
+                        <?php echo $viewBotaoComprar; ?>
                     </div>
                     <div class="calculo-frete">
                         <h5 class="titulo-frete">CALCULAR FRETE</h5>
@@ -722,7 +738,7 @@
                 $selectedProdutosRelacionados = get_relacionados($idInternaProduto);
                 
                 if($selectedProdutosRelacionados != false){
-                    $vitrineProdutos[0] = new VitrineProdutos("carrossel", 15, "PRODUTOS RELACIONADOS");
+                    $vitrineProdutos[0] = new VitrineProdutos("carrossel", 15, "COMPRE JUNTO COM DESCONTO");
                     $vitrineProdutos[0]->montar_vitrine($selectedProdutosRelacionados);
                 }
                 

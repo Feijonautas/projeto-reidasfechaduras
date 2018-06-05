@@ -31,9 +31,16 @@ if(isset($_POST["carrinho"]) && $_POST["carrinho"] != null){
     }
 
     // FRETE
-    $codigoCorreios = isset($_POST["codigo_correios"]) ? $_POST["codigo_correios"] : "41106";
+    $codigoTransporte = isset($_POST["codigo_transporte"]) ? $_POST["codigo_transporte"] : "41106";
     $valorFrete = isset($_POST["valor_frete"]) ? $_POST["valor_frete"] : "0.01";
-    switch($codigoCorreios){
+    $valorFrete = $valorFrete > 0 ? $valorFrete : "0.01";
+    switch($codigoTransporte){
+        case "7777":
+            $tituloTransporte = "Retirada na Loja";
+            break;
+        case "8888":
+            $tituloTransporte = "Motoboy";
+            break;
         case "40010":
             $tituloTransporte = "SEDEX";
             break;
@@ -58,12 +65,6 @@ if(isset($_POST["carrinho"]) && $_POST["carrinho"] != null){
     $enviarDados = false;
 }
 
-/*$_POST["cliente"] = array();
-$_POST["cliente"]["nome"] = "Rogerio Mendes";
-$_POST["cliente"]["codigo_area"] = "41";
-$_POST["cliente"]["telefone"] = "997536262";
-$_POST["cliente"]["email"] = "reyrogerio@hotmail.com";*/
-
 if(isset($_POST["cliente"])){
     $infoCliente = $_POST["cliente"];
     $data["senderName"] = $infoCliente["nome"];
@@ -74,7 +75,7 @@ if(isset($_POST["cliente"])){
 
 if($enviarDados){
     
-    $data['reference'] = "PS".substr(md5(uniqid(time())), 0, 10); // REFERENCIA UNICA CRIADA PARA O PEDIDO
+    $data['reference'] = "RF".substr(md5(uniqid(time())), 0, 8); // REFERENCIA UNICA CRIADA PARA O PEDIDO
     $data['shippingType'] = 1;
     $data['shippingAddressStreet'] = $_POST["rua"];
     $data['shippingAddressNumber'] = $_POST["numero"];
@@ -120,7 +121,7 @@ if($enviarDados){
         
         $confirmationCode = $xml->code;
 
-        echo '{"reference": "'.$data['reference'].'", "code": "'.$confirmationCode.'"}'; // RETORNO EM JSON
+        echo '{"reference": "'.$data['reference'].'", "code": "'.$confirmationCode.'", "vlr_frete": "'.$valorFrete.'"}'; // RETORNO EM JSON
         
     }else{
         echo "false";
